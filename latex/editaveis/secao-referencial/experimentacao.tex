@@ -1,12 +1,126 @@
-\section{Experimentação na Engenharia de \textit{Software}}
+\section{Experimentação na Engenharia de Software}
 \label{subsec:experimentacao}
+
+A Engenharia de Software envolve atividades que dependem não apenas de aspectos técnicos, mas também de fatores humanos, organizacionais e contextuais, o que a diferencia de disciplinas em que é possível estabelecer leis universais completamente determinísticas. Como resultado, fenômenos observados no desenvolvimento de software frequentemente exigem investigação empírica para que práticas, técnicas e métodos possam ser compreendidos e avaliados de forma confiável. Nesse contexto, a Engenharia de Software Experimental surge como um campo estruturado que fornece métodos e diretrizes para produzir evidências sistemáticas e fundamentadas sobre o comportamento de abordagens utilizadas no desenvolvimento de software \cite{Wohlin:2012:ESE:2349018}.
+
+Essa perspectiva experimental visa transformar práticas observadas no desenvolvimento de software em conhecimento sistematizado, permitindo que hipóteses sejam investigadas por meio de procedimentos planejados e replicáveis e analisadas de forma rigorosa, conforme discutido por \citeonline{Wohlin:2012:ESE:2349018} e complementado por \citeonline{Basili1994}. Ao apoiar observações controladas e análises quantitativas ou qualitativas, os métodos experimentais tornam possível compreender relações entre variáveis, avaliar o impacto de técnicas emergentes e produzir resultados que sirvam de base para decisões fundamentadas tanto na pesquisa quanto na indústria \cite{Basili1994,Wohlin:2012:ESE:2349018}.
+
+Conforme apresentado por \citeonline{Wohlin:2012:ESE:2349018}, entre os diferentes métodos empíricos empregados na área, o estudo de caso se destaca por permitir o exame detalhado de fenômenos em seu ambiente natural, preservando o contexto no qual eles ocorrem. Essa abordagem é adequada para analisar práticas reais, compreender como equipes utilizam ferramentas e identificar fatores que influenciam resultados em situações práticas. De maneira complementar, surveys possibilitam coletar percepções e experiências de grupos maiores, permitindo análises amplas sobre comportamentos, práticas ou opiniões relacionadas ao fenômeno investigado. Essas pesquisas podem ser conduzidas por meio de questionários estruturados ou entrevistas mais aprofundadas, proporcionando tanto dados quantitativos quanto qualitativos \cite{Wohlin:2012:ESE:2349018}.
+
+Além dessas abordagens, os experimentos controlados desempenham um papel relevante na Engenharia de Software Experimental. Nesse tipo de estudo, o pesquisador manipula variáveis específicas e é feita uma observação de seus efeitos de maneira sistemática, em condições planejadas e replicáveis. Experimentos são particularmente úteis quando o objetivo é comparar diferentes técnicas ou tratamentos e identificar relações causais com maior precisão, tornando-os ferramentas essenciais para validação de hipóteses e avaliação de propostas técnicas \cite{Basili1994,Wohlin:2012:ESE:2349018}.
+
+Em relação a fundamentação de uma pesquisa nesse campo, surge a Revisão Sistemática da Literatura (RSL), onde se estabelece um método afim de identificar, selecionar e analisar evidências já publicadas sobre um tema relacionado. Ao contrário de buscas não estruturadas, a revisão sistemática segue um protocolo previamente definido, que inclui questões de pesquisa, estratégias de busca, critérios de inclusão e exclusão e procedimentos para extração e síntese dos dados. Essa abordagem reduz vieses, assegura rastreabilidade e permite estabelecer o estado da arte de maneira confiável. \citeonline{kitchenham2007guidelines} destacam que a RSL é particularmente importante na Engenharia de Software por sintetizar um corpo de conhecimento fragmentado e orientar pesquisadores na identificação de lacunas e oportunidades de investigação. No contexto deste trabalho, a revisão sistemática oferece a base teórica necessária para compreender o panorama atual das práticas de automação de testes, da escrita de cenários BDD e do uso de técnicas de interpretação automática de requisitos.
+
+\subsection{Estudo de Caso}
+
+O estudo de caso é uma das estratégias citadas na investigação empírica na Engenharia de Software, especialmente quando se busca compreender fenômenos em ambientes reais, preservando as características, limitações e interações que ocorrem naturalmente no contexto estudado. Diferentemente de métodos experimentais que exigem controle rigoroso das variáveis, o estudo de caso permite observar como práticas, ferramentas ou comportamentos se manifestam no cotidiano das organizações, oferecendo uma visão rica e contextualizada do fenômeno analisado \cite{runeson_case_study_2012, Wohlin:2012:ESE:2349018}.
+
+Por sua natureza exploratória e descritiva, essa abordagem é amplamente utilizada quando o objetivo é entender processos complexos, revelar padrões de comportamento, investigar adoções tecnológicas ou avaliar a aplicabilidade de métodos em condições reais. Na concepção de \citeonline{yin_case_study_2009}, os estudos de caso são particularmente adequados para fenômenos contemporâneos que não podem ser isolados do ambiente em que ocorrem, exigindo múltiplas fontes de evidência como documentos, entrevistas, observação direta e artefatos produzidos durante o processo investigado. Ainda segundo o autor, a seguir serão apresentaas as principais etapas envolvidas na condução de um estudo de caso:
+
+\subsubsection{Definição}
+Na etapa inicial são definidas as bases da pesquisa, através do levantamento dos seguintes artefatos:
+
+\begin{itemize}
+    \item \textbf{Objetivo:} o estudo inicia-se pela determinação clara do objetivo da investigação, uma vez que ele orienta a definição do fenômeno a ser analisado e estabelece os limites conceituais iniciais do trabalho. A formulação do objetivo permite delimitar a direção da pesquisa e identificar quais aspectos da realidade serão considerados no estudo de caso, garantindo que a análise permaneça coerente com o propósito central da investigação. Essa etapa é fundamental para assegurar que o delineamento metodológico e a coleta de evidências mantenham foco e relevância ao longo de todo o processo;
+    \item \textbf{Caso:} definição do caso constitui um dos elementos centrais desta etapa, pois envolve especificar claramente qual entidade, evento, processo ou unidade será de fato investigada. Essa delimitação requer distinguir o fenômeno de interesse de seu contexto, estabelecendo fronteiras analíticas e temporais que permitam compreender onde o caso começa e termina. Uma definição adequada evita interpretações ambíguas, conduz a um recorte empírico manejável e assegura coerência entre o caso escolhido, as questões de pesquisa e a fundamentação teórica do estudo;
+    \item \textbf{Trabalhos Relacionados:} revisão preliminar dos trabalhos relacionados contribui para fundamentar conceitualmente o estudo e evitar definições idiossincráticas do caso ou da unidade de análise. Esse levantamento permite identificar como pesquisas anteriores estruturaram investigações semelhantes, quais categorias analíticas já foram consolidadas e quais lacunas persistem no campo. Além disso, a literatura auxilia a refinar conceitos, sustentar escolhas metodológicas e assegurar que o estudo proposto dialogue com tradições investigativas previamente estabelecidas, fortalecendo sua credibilidade e relevância;
+    \item \textbf{Questões de Pesquisa:} formulação das questões de pesquisa orienta toda a investigação, determinando o foco analítico, a unidade de análise e o conjunto de evidências que serão consideradas relevantes. Questões bem definidas delimitam o escopo do estudo, impedem que a coleta de dados se torne excessivamente ampla e servem como guia para a construção das proposições teóricas e das decisões metodológicas subsequentes. Além disso, questões mal especificadas tendem a gerar estudos difusos e pouco conclusivos, reforçando a importância de uma formulação precisa nesta fase inicial;
+    \item \textbf{Métodos:} definição preliminar dos métodos descreve a estratégia geral de investigação que será adotada no estudo de caso. Nesta etapa, não se detalham ainda os procedimentos de coleta, mas delineia-se a abordagem metodológica a partir da relação entre contexto, questões de pesquisa e tipo de caso. Especificar antecipadamente como o estudo será conduzido contribui para a validade e a confiabilidade da pesquisa, destacando a importância de múltiplas fontes de evidência, da triangulação e da coerência entre o delineamento do estudo e o fenômeno investigado. Essa definição metodológica inicial estabelece as bases que serão aprofundadas nas etapas seguintes;
+    \item \textbf{Seleção:} seleção do caso, ou dos casos, envolve justificar a escolha com base na capacidade do objeto selecionado em responder adequadamente às questões de pesquisa. Essa decisão considera fatores como relevância empírica, potencial explicativo, possibilidade de acesso e alinhamento com o tipo de projeto adotado, seja ele único ou múltiplo. A seleção criteriosa é essencial para a robustez da pesquisa, uma vez que casos pouco significativos, insuficientemente definidos ou incompatíveis com as questões analíticas tendem a comprometer o desenvolvimento do estudo e suas conclusões.
+\end{itemize}
+
+\subsubsection{Preparação para a Coleta de Dados}
+
+A coleta de dados é uma etapa essencial nos estudos de campo em engenharia de software, pois permite compreender como os profissionais realmente trabalham em seus contextos naturais, algo enfatizado por \citeonline{lethbridge2005studying}, que destacam que somente pela observação sistemática é possível revelar práticas, dificuldades e padrões que fundamentam teorias e melhorias de processos. Nesse sentido, os autores propõem uma taxonomia organizada em três graus de contato, cada qual refletindo o nível de interação entre pesquisador e participantes.
+
+\begin{itemize}
+    \item \textbf{Primeiro Grau:} envolve interação direta entre pesquisador e engenheiros de software. Essa categoria inclui entrevistas, questionários administrados presencialmente, brainstorming, focus groups, think-aloud, shadowing e participação ativa na equipe. São métodos que permitem acessar julgamentos, raciocínios, motivações e estratégias cognitivas dos profissionais, sendo, portanto, extremamente flexíveis e ricos em informação, embora mais custosos, sujeitos a vieses e capazes de interferir no comportamento natural dos participantes..
+    
+    \item \textbf{Segundo Grau:} caracteriza-se pelo acesso indireto ao ambiente de trabalho, sem interação contínua entre pesquisador e participantes. Aqui situam-se técnicas como instrumentação de sistemas e gravações realizadas pelos próprios engenheiros (“fly on the wall”). São métodos que possibilitam o registro automático e prolongado de atividades reais, com menor intrusividade, mas que oferecem dados predominantemente comportamentais, carecendo do contexto cognitivo necessário para interpretar intenções e decisões.
+    
+    \item \textbf{Terceiro Grau:} constituem de métodos totalmente não intrusivos, baseados exclusivamente na análise de artefatos produzidos no decorrer do trabalho, podendo ser logs de ferramentas, bancos de dados de mudanças, documentação e código-fonte submetido a análises estática ou dinâmica. Esses métodos permitem examinar padrões históricos em larga escala com zero impacto no processo produtivo, embora sejam limitados pela ausência de contato humano, o que dificulta a compreensão das razões subjacentes às ações observadas.
+\end{itemize}
+
+\subsubsection{Análise dos Dados Coletados}
+Na análise dos dados coletados, a interpretação das evidências depende amplamente da capacidade analítica, do rigor lógico e do estilo investigativo do pesquisador, que deve organizar, comparar e relacionar diferentes informações de maneira sistemática. Nessa etapa, torna-se essencial adotar uma estratégia analítica geral, baseada na teoria previamente desenvolvida, para orientar tanto a interpretação das evidências quanto o estabelecimento dos critérios de verificação das proposições do estudo.
+
+A etapa de análise envolve, inicialmente, a utilização de salvaguardas metodológicas, como o uso de um protocolo, a criação de um banco de dados organizado e a manutenção de um encadeamento claro de evidências, que permita rastrear conclusões de volta às fontes originais. Tais práticas reforçam a validade do estudo e garantem transparência ao processo analítico. Em seguida, o pesquisador pode empregar diferentes técnicas auxiliares, como a construção de matrizes de categorias, a disposição das informações em séries ou fluxogramas, a criação de tabelas comparativas e a ordenação temporal dos eventos. Essas manipulações preliminares ajudam a organizar o material empírico, reduzir sua complexidade e evitar que a investigação se torne estagnada diante do volume de dados coletados.
+
+Além dessas técnicas, o estudo de caso permite recorrer a estratégias analíticas mais elaboradas, como a construção iterativa de explicações, que envolve revisar continuamente interpretações à luz das evidências disponíveis e considerar explicações alternativas para os fenômenos observados. Nesse ponto, podem ser incorporadas as técnicas qualitativas destacadas por \citeonline{Wohlin:2012:ESE:2349018} como a codificação sistemática dos dados, a comparação constante entre evidências, a triangulação e o uso de múltiplos pesquisadores para reduzir viés, que fortalecem a cadeia de evidência e promovem interpretações mais confiáveis.
+
+De forma complementar, quando o estudo de caso inclui dados numéricos, também podem ser aplicadas técnicas quantitativas mencionadas por \citeonline{Wohlin:2012:ESE:2349018}, como o uso de estatísticas descritivas, análise de correlação, modelos preditivos ou mesmo testes de hipótese, permitindo explorar padrões, tendências ou relações entre variáveis. Segundo \citeonline{yin_case_study_2009}, em situações específicas, é possível que a análise incorpore métodos como a análise de séries temporais, o que é útil quando há dados quantitativos ou sequenciais que permitam identificar padrões, variações ou tendências ao longo do tempo. Assim, a etapa de análise é estruturada por um processo dinâmico, estruturado e teoricamente orientado, cujo objetivo é produzir interpretações consistentes, fundamentadas e capazes de responder adequadamente às questões de pesquisa.
+
+\subsubsection{Relato dos Resultados}
+
+O relato de pesquisas do “mundo real” deve ser claro, transparente e bem contextualizado. A estrutura a seguir adapta esses princípios para um formato objetivo de apresentação dos resultados \cite{robson2002real}:
+
+\begin{itemize}
+\item {Contexto:} apresenta o ambiente em que o estudo ocorreu, descrevendo participantes, cenário e condições relevantes. Permite ao leitor compreender as especificidades do caso e situar as evidências dentro do contexto real em que foram produzidas;
+
+\item \textbf{Procedimentos:} resume as etapas metodológicas: definição do caso, acesso ao campo, coleta e análise dos dados. Expõe as escolhas feitas e garante transparência metodológica, permitindo avaliar a credibilidade e a replicabilidade do estudo;
+
+\item \textbf{Resultados:} mostra os principais achados de forma direta e organizada. Podem ser incluídos trechos de falas, tabelas, gráficos ou exemplos que funcionem como “instantâneos” das evidências. A apresentação dos dados deve sustentar claramente as conclusões;
+
+\item \textbf{Discussão:} interpreta os resultados à luz da literatura, examinando implicações, significados e explicações possíveis. Conecta os achados ao conhecimento existente, aponta limites e destaca contribuições, sendo um passo essencial no processo interpretativo;
+
+\item \textbf{Conclusões:} sintetiza os pontos centrais do estudo e destaca suas contribuições. Aponta desdobramentos práticos e possíveis direções para pesquisas futuras, encerrando o relato de forma clara e objetiva.
+\end{itemize}
 
 \subsection{Experimento}
 
-\subsubsection{Definição}
+Segundo \citeonline{Wohlin:2012:ESE:2349018}, os experimentos em engenharia de software constituem uma estratégia empírica estruturada que permite manipular variáveis em um ambiente controlado para avaliar seus efeitos sobre resultados específicos. A partir dessa perspectiva, descreve-se um conjunto de componentes e etapas que orientam a condução sistemática de experimentos, garantindo rigor metodológico e clareza na interpretação dos resultados:
 
-\subsubsection{Preparação e Coleta de Dados}
+\subsubsection{Artefatos}
 
-\subsubsection{Análise de Dados}
+\begin{itemize}
+    \item \textbf{Variáveis:} Variáveis representam os fatores manipulados ou observados, podendo ser independentes (controladas pelo pesquisador) ou dependentes (resultados observados).
+    \item \textbf{Tratamentos:} Tratamentos correspondem aos diferentes valores ou condições aplicados às variáveis independentes para comparação.
+    \item \textbf{Objetos:} Objetos são os itens ou artefatos de software aos quais os tratamentos são aplicados, como códigos-fonte, documentos ou ferramentas.
+    \item \textbf{Sujeitos:} Sujeitos, por sua vez, são os participantes que executam as tarefas experimentais, podendo ser estudantes, profissionais ou sistemas automatizados, dependendo do tipo de experimento.
+\end{itemize}
 
-\subsubsection{Relato}
+\subsubsection{Processo}
+
+\begin{itemize}
+    \item \textbf{Definição de Escopo:} delimitação do problema, objetivos e hipótese inicial.
+    \item \textbf{Planejamento:} estabelecimento do contexto, desenho experimental, variáveis, sujeitos, instrumentação e avaliação de validade.
+    \item \textbf{Operação:} preparação dos participantes e materiais, execução conforme o design definido e validação dos dados coletados.
+    \item \textbf{Análise e Interpretação:} aplicação de estatísticas descritivas, possíveis reduções do conjunto de dados e testes de hipótese para avaliar os efeitos dos tratamentos.
+    \item \textbf{Apresentação e Empacotamento:} organização dos resultados, documentação do experimento e preparação dos artefatos necessários para comunicação e eventual replicação.
+\end{itemize}
+
+\section{Metodologia Ágil}
+
+\subsection{As Origens Iterativas e Evolucionárias}
+
+Embora a Programação Extrema (XP) e o Scrum tenham ganhado notoriedade no final da década de 1990 \cite{Uludag2021}, a base do desenvolvimento Ágil reside nas práticas de Iterative and Incremental Development (IID), cujas raízes remontam a décadas. Já na década de 1930, Walter Shewhart propôs os ciclos curtos de "plan-do-study-act" (PDSA) para melhoria da qualidade. No início da década de 1960, o Projeto Mercury demonstrou a aplicação bem-sucedida do IID no software, utilizando iterações curtas (meio dia) e adotando a prática de test-first development (desenvolvimento guiado por testes) \cite{Larman2003iid}.
+
+Segundo \cite{Larman2003iid}, a ascensão dessas abordagens evolutivas se deu em contraste direto com o modelo sequencial em cascata (waterfall) que, apesar de ter sido simplificado e mal interpretado a partir das recomendações de Winston Royce em 1970, dominou a engenharia de software da época, oferecendo uma ilusão de ordem e previsibilidade. Entretanto, a comunidade já reconhecia o valor da abordagem iterativa. Tom Gilb, um dos primeiros e mais ativos promotores do IID, introduziu em 1976 a ideia de que um sistema complexo seria mais bem-sucedido se implementado em pequenos passos, com feedback do mundo real antes do investimento total de recursos. Essa linhagem de pensamento culminou na formalização do Modelo Espiral por \citeonline{Boehm1988sm}, que enfatizou ciclos de desenvolvimento guiados pela avaliação de risco.
+
+\subsection{O Surgimento das Metodologias Lightweight}
+
+A insatisfação com a complexidade e a ineficácia dos processos de desenvolvimento que exigiam vasta documentação e planejamento antecipado rigoroso, gerou um movimento em direção a metodologias mais leves e responsivas no final da década de 1990 \cite{Hoda2018re}. Kent Beck desenvolveu a Extreme Programming (XP), especificamente para atender às necessidades de pequenas equipes lidando com requisitos vagos e em constante mudança, desafiando a premissa de que o custo da mudança aumenta drasticamente ao longo do tempo \cite{Beck2004}. O conjunto completo de práticas do XP, que valoriza a comunicação, a simplicidade, o feedback, coragem e respeito, amadureceu no projeto C3 da Chrysler em 1996 \cite{Larman2003iid}.
+
+\subsection{A Formalização do Movimento Ágil}
+
+O movimento Ágil foi formalmente estabelecido em fevereiro de 2001, quando 17 especialistas se reuniram em Utah para buscar um "terreno comum" entre as diversas novas abordagens \cite{FowlerHighsmith2001}. O resultado dessa colaboração foi o Manifesto para o Desenvolvimento Ágil de Software, que estabeleceu quatro valores centrais \cite{FowlerHighsmith2001, Martin2003}:
+
+\begin{itemize}
+    \item Indivíduos e interações mais que processos e ferramentas;
+    \item Software funcionando mais que documentação abrangente;
+    \item Colaboração com o cliente mais que negociação de contratos;
+    \item Responder a mudanças mais que seguir um plano.
+\end{itemize}
+
+Conforme \citeonline{FowlerHighsmith2001}, o manifesto enfatizou que, embora os itens à direita possuam valor, os itens à esquerda são mais valorizados. A filosofia central do Ágil é que facilitar a mudança é mais eficaz do que tentar preveni-la. Entre os doze princípios que suportam esses valores, estão a prioridade em satisfazer o cliente através da entrega contínua e antecipada de software de valor, a aceitação de requisitos em mudança (mesmo tardiamente), a preferência pela entrega de software funcionando em escalas de semanas a meses, e a constatação de que o software em funcionamento é a medida primária do progresso \cite{FowlerHighsmith2001, Martin2003}.
+
+Assim, o Ágil se tornou uma importante disciplina da engenharia de software, sendo hoje o método de desenvolvimento dominante em escala global \cite{Hoda2018re}
+
+\section{Behavior-Driven Development}
+
+\section{Processamento de Linguagem Natural}
+
+\section{Inteligência Artificial}
+
+\section{Modelos de Qualidade de Software}
+
