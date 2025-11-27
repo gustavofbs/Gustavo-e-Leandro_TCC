@@ -1,1 +1,157 @@
 \section{Realização da Busca e Seleção dos Artigos}
+
+Com a string de busca definida, estabeleceram-se os critérios de inclusão e exclusão com o propósito de selecionar apenas os estudos mais aderentes ao escopo desta pesquisa utilizando a base de dados Scopus \citeonline{elsevier2022}. Inicialmente, procedeu-se à leitura de títulos, resumos e palavras-chave de todos os trabalhos retornados pela busca, etapa fundamental para realizar uma triagem preliminar mais rigorosa e identificar estudos que, ainda que semanticamente próximos, não contribuíam efetivamente para os objetivos do trabalho. Posteriormente, os artigos que atenderam aos critérios estabelecidos foram lidos integralmente, e os dados relevantes para responder às questões de pesquisa foram organizados e registrados em um formulário de extração, assegurando consistência na análise. O protocolo consolidado pode ser visto nas tabelas \ref{tab:questoes-pesquisa}, \ref{tab:criterios} e \ref{tab:form-extracao}. 
+
+Ao todo, a execução da string de busca realizada em 09 de outubro de 2025 resultou em 433 artigos, dos quais 22 foram selecionados para leitura completa após a aplicação criteriosa dos filtros definidos. Essa etapa permitiu refinar o conjunto inicial, privilegiando estudos que tratam diretamente da integração entre BDD, modelos de linguagem, extração semântica e automação de testes.
+
+O conjunto final de artigos selecionados que podem ser vistos nas Tabelas \ref{tab:conjunto-final} e \ref{tab:conjunto-final-2} refletiu, portanto, um equilíbrio entre o rigor metodológico da busca automatizada, permitindo contemplar diferentes perspectivas relevantes ao domínio investigado. A sequência das etapas realizadas, desde a filtragem inicial até a seleção final, foi conduzida de forma a garantir transparência, alinhamento com o protocolo de pesquisa e aderência às questões que orientam este trabalho.
+
+\begin{table}
+\centering
+\caption{Questões de Pesquisa}
+\label{tab:questoes-pesquisa}
+\resizebox{0.7\textwidth}{!}{%
+\begin{tabular}{|p{4cm}|p{11cm}|}
+\hline
+\textbf{Questões de Pesquisa} & 
+\begin{enumerate}
+    \item De que maneira as especificações BDD devem ser escritas e detalhadas para permitir identificação automática de elementos de interface por IA?
+    \item Quais padrões e boas práticas reduzem ambiguidades em cenários BDD?
+    \item Quais desafios técnicos a IA enfrenta ao interpretar especificações BDD?
+    \item Que técnicas de NLP têm sido aplicadas em interpretação automática de BDD?
+    \item Como a padronização de nomenclatura e estrutura influencia a identificação de elementos?
+    \item Quais ferramentas geram testes automaticamente a partir de BDD e como tratam ambiguidades?
+    \item Como modelos semânticos reduzem ambiguidades na interpretação de linguagem natural?
+    \item Como a complexidade da interface gráfica afeta a precisão da IA na identificação de elementos?
+    \item Como estilos de escrita (natural vs técnica) influenciam a interpretação automática?
+    \item Quais fatores limitam a adoção industrial de IA para transformar BDD em testes automatizados?
+\end{enumerate}
+\\ \hline
+\end{tabular}}
+\begin{center}\caption*{Fonte: Autor}\end{center}
+\end{table}
+
+
+
+\begin{table}
+\centering
+\caption{Critérios de Inclusão e Exclusão}
+\label{tab:criterios}
+\resizebox{0.7\textwidth}{!}{%
+\begin{tabular}{|p{4cm}|p{11cm}|}
+\hline
+\textbf{Critérios de Inclusão} &
+\begin{enumerate}
+    \item Estudos publicados entre 2022 e 2025.
+    \item Testes funcionais em nível de sistema que utilizem BDD.
+    \item Estudos sobre automação de testes relacionados a BDD ou critérios de aceitação.
+    \item Trabalhos sobre BDD ou abordagens baseadas em cenários.
+    \item Publicações em inglês ou português.
+\end{enumerate}
+\\ \hline
+
+\textbf{Critérios de Exclusão} &
+\begin{enumerate}
+    \item Estudos sem relação com BDD ou testes funcionais de sistema.
+    \item Estudos focados apenas em ferramentas de automação.
+    \item Trabalhos duplicados.
+    \item Estudos fora da Scopus, IEEE Xplore ou ACM Digital Library.
+\end{enumerate}
+\\ \hline
+\end{tabular}}
+\begin{center}\caption*{Fonte: Autor}\end{center}
+\end{table}
+
+
+\begin{table}
+\centering
+\caption{Formulário de Extração de Dados}
+\label{tab:form-extracao}
+\resizebox{0.85\textwidth}{!}{%
+\begin{tabular}{|p{4cm}|p{11cm}|}
+\hline
+\textbf{Campos de Extração} &
+Q1. Título \newline
+Q2. Resumo \newline
+Q3. Ano de Publicação \newline
+Q4. Fonte de Publicação \newline
+Q5. Autores \newline
+Q6. Palavras-chave \newline
+Q7. Evidências relacionadas às QP1–QP10 \newline
+\quad - QP1: Escrita/detalhamento de BDD \newline
+\quad - QP2: Boas práticas de BDD \newline
+\quad - QP3: Desafios técnicos da IA \newline
+\quad - QP4: Técnicas de NLP \newline
+\quad - QP5: Padronização de cenários \newline
+\quad - QP6: Ferramentas de automação \newline
+\quad - QP7: Modelos semânticos \newline
+\quad - QP8: Complexidade da interface \newline
+\quad - QP9: Estilos de escrita \newline
+\quad - QP10: Fatores limitadores
+\\ \hline
+\end{tabular}}
+\begin{center}\caption*{Fonte: Autor}\end{center}
+\end{table}
+
+
+
+\begin{table}[ht]
+    \caption{Conjunto de Artigos Selecionados}
+    
+    \begin{tabular}{|p{.5cm}|p{6cm}|p{4cm}|p{4cm}|}
+        \hline
+        Nº & Título & Publicado em revista? & Referência \\ \hline
+
+        1 & \textit{A Behavior-driven Development and Reinforcement Learning approach for videogame automated testing} & — & — \\ \hline
+        2 & \textit{AI Driven Tools in Modern Software Quality Assurance: An Assessment of Benefits, Challenges and Future Directions} & — & — \\ \hline
+        3 & \textit{AI-Generated Test Scripts for Web E2E Testing with ChatGPT and Copilot: A Preliminary Study} & — & — \\ \hline
+        4 & \textit{Acceptance Test Generation with Large Language Models: An Industrial Case Study} & — & — \\ \hline
+        5 & \textit{Agentic AI for Behavior-Driven Development Testing Using Large Language Models} & — & — \\ \hline
+        6 & \textit{Agile testing using user language automation with artificial intelligence in Enjisset} & — & — \\ \hline
+        7 & \textit{An Autonomous RL Agent Methodology for Dynamic Web UI Testing in a BDD Framework} & — & — \\ \hline
+        8 & \textit{Assessing the Quality of Behavior-Driven Development Scenarios Using BERT} & — & — \\ \hline
+        9 & \textit{Automatic Generation of Acceptance Test Cases from Use Case Specifications: An NLP-Based Approach} & — & — \\ \hline
+        10 & \textit{Comprehensive Evaluation and Insights Into the Use of Large Language Models in the Automation of Behavior-Driven Development Acceptance Test Formulation} & — & — \\ \hline
+        11 & \textit{Cypress Copilot: Development of an AI Assistant for Boosting Productivity and Transforming Web Application Testing} & — & — \\ \hline
+        \multicolumn{4}{|c|}{Continua na Tabela \ref{tab:conjunto-final-2}} \\ \hline
+    \end{tabular}
+    
+    \begin{center}
+        \caption*{Fonte: Autor}
+    \end{center}
+
+    \label{tab:conjunto-final}
+\end{table}
+
+
+
+\begin{table}[ht]
+    \caption{Conjunto de Artigos Selecionados (Continuação)}
+    
+    \begin{tabular}{|p{.5cm}|p{6cm}|p{4cm}|p{4cm}|}
+        \hline
+        Nº & Título & Publicado em revista? & Referência \\ \hline
+
+        12 & \textit{Empowering Agile-Based Generative Software Development through Human-AI Teamwork} & — & — \\ \hline
+        13 & \textit{Exploring LLMs Impact on Student-Created User Stories and Acceptance Testing in Software Development} & — & — \\ \hline
+        14 & \textit{Exploring Large Language Models for Requirements on String Values} & — & — \\ \hline
+        15 & \textit{Generating Multiple Conceptual Models from Behavior-Driven Development Scenarios} & — & — \\ \hline
+        16 & \textit{Object Oriented BDD and Executable Human-Language Module Specification} & — & — \\ \hline
+        17 & \textit{Prompting Creative Requirements via Traceable and Adversarial Examples in Deep Learning} & — & — \\ \hline
+        18 & \textit{RiverGame-a game testing tool using artificial intelligence} & — & — \\ \hline
+        19 & \textit{Test Case Prioritization Based on Neural Network Classification with Artifacts Traceability} & — & — \\ \hline
+        20 & \textit{The Impact of Generative AI on Test \& Evaluation: Challenges and Opportunities} & — & — \\ \hline
+        21 & \textit{Towards Code Generation from BDD Test Case Specifications: A Vision} & — & — \\ \hline
+        22 & \textit{Visual Test Framework: Enhancing Software Test Automation with Visual Artificial Intelligence and Behavioral Driven Development} & — & — \\ \hline
+    \end{tabular}
+    
+    \begin{center}
+        \caption*{Fonte: Autor}
+    \end{center}
+
+    \label{tab:conjunto-final-2}
+\end{table}
+
+
+
+
