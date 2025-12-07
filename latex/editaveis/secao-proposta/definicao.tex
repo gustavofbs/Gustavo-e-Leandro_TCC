@@ -1,6 +1,14 @@
 \section{Definição}
 
-aa
+Segundo \citeonline{yin2001}, o estudo de caso é uma investigação empírica destinada a compreender fenômenos contemporâneos dentro de seu contexto real, especialmente em situações em que os limites entre o fenômeno e o ambiente não estão claramente definidos. Essa abordagem envolve coleta de múltiplas fontes de evidência e frequentemente pressupõe a participação do pesquisador no ambiente investigado. No entanto, no presente trabalho, o fenômeno analisado, que diz respeito à forma como Histórias de Usuário e Critérios de Aceitação foram produzidos no projeto CAPJu durante o semestre 2023/1, não é contemporâneo, mas sim um evento já concluído, cujos artefatos permanecem disponíveis apenas como registros históricos.
+
+Da mesma forma, a natureza retrospectiva deste estudo impede seu enquadramento em delineamentos experimentais. Conforme descrito por \citeonline{Wohlin:2012:ESE:2349018}, experimentos demandam manipulação de variáveis, definição de tratamentos e controle sistemático de fatores que possam influenciar a observação. Nada disso é possível aqui: não existe controle do pesquisador sobre o processo de desenvolvimento do CAPJu, tampouco há condições para alocação de grupos, aleatorização ou intervenção direta. Além disso, a análise se limita a um único projeto, com com um número limitado de issues contendo Histórias de Usuário e Critérios de Aceitação, inviabilizando qualquer forma de amostragem estatística representativa.
+
+Ainda que o método empregado não caracterize um estudo de caso clássico nos termos de \citeonline{yin2001}, o presente trabalho se beneficia do protocolo de estudo de caso amplamente discutido na Engenharia de Software. \citeonline{runeson2009} enfatizam que esse protocolo é adequado para estruturar investigações empíricas baseadas em artefatos reais de desenvolvimento, mesmo quando o pesquisador não observa o fenômeno em execução. A estrutura sugerida pelos autores contribui para definir claramente a unidade de análise, selecionar evidências relevantes, documentar procedimentos, conduzir a análise sistematicamente e mitigar ameaças à validade, garantindo um maior rigor e transparência.
+
+Nesse sentido, este estudo configura-se como um estudo observacional retrospectivo, orientado pela análise documental das Histórias de Usuário e Critérios de Aceitação produzidos no CAPJu. Embora retrospectivo, ele adota diretrizes do protocolo de estudo de caso apresentado por \citeonline{runeson_case_study_2012}, que destacam que estudos conduzidos a partir de artefatos históricos como documentos de requsisitos, podem seguir os mesmos princípios metodológicos de organização, triangulação e validade aplicados a estudos de caso tradicionais.
+
+Assim, a unidade de análise deste trabalho corresponde especificamente às Histórias de Usuário e aos Critérios de Aceitação identificados como relacionados ao frontend no projeto CAPJu, que constituem o corpus empírico investigado. A partir desses dados, busca-se compreender de maneira sistemática como características textuais e semânticas desses artefatos podem influenciar processos de interpretação automatizada em sistemas de Inteligência Artificial.
 
 \section{Objetivo}
 
@@ -9,3 +17,88 @@ Segundo pesquisas recentes sobre o uso de modelos de linguagem e técnicas de In
 Entretanto, observa-se na prática que especificações BDD frequentemente apresentam inconsistências, variações estruturais e ambiguidades que dificultam sua interpretação automatizada, limitando o potencial das ferramentas de IA para apoiar atividades como geração de testes, identificação de seletores e mapeamento de elementos da interface. Essa lacuna se torna ainda mais relevante diante do avanço de soluções que dependem da compreensão semântica de cenários para gerar testes de sistema de forma autônoma.
 
 Dessa forma, o objetivo deste estudo consiste em investigar de que maneira as especificações BDD devem ser escritas, estruturadas e detalhadas para que sistemas baseados em Inteligência Artificial consigam identificar, de forma autônoma, os elementos de interface gráfica necessários à criação de testes de sistema automatizados. Para alcançar esse objetivo, serão consideradas abordagens, técnicas e ferramentas discutidas na literatura especializada, bem como práticas adotadas na indústria, incluindo o uso de processos automatizados de análise e interpretação textual capazes de estruturar, enriquecer e comparar semanticamente cenários BDD, com o intuito de compreender quais características textuais e estruturais favorecem a correta interpretação dos cenários por sistemas de IA.
+
+\section{Caso}
+
+O objeto de estudo desta pesquisa é o CAPJu, uma aplicação Web de código aberto desenvolvida com o propósito de apoiar o Controle e Acompanhamento de Processos da Justiça, utilizada no contexto da 4ª Vara Cível da Justiça Federal. O sistema foi projetado para auxiliar na organização, gerenciamento e monitoramento de informações processuais, oferecendo suporte às atividades internas do órgão. Por ser empregado em um ambiente institucional real, o CAPJu demanda melhorias contínuas, estabilidade operacional e evolução arquitetural, configurando-se como um caso relevante para investigações no campo da Engenharia de Software.
+
+O desenvolvimento e a manutenção do CAPJu são realizados por estudantes vinculados às disciplinas Métodos de Desenvolvimento de Software (MDS) e Engenharia de Produto de Software (EPS), ambas no contexto da Universidade de Brasília (UnB). Essas equipes são responsáveis pela implementação de funcionalidades, correções, testes, documentação, refinamento de requisitos e decisões arquiteturais, sempre em alinhamento com as orientações do stakeholder institucional. Essa dinâmica promove um ambiente colaborativo que simula um cenário organizacional real, no qual papéis distintos assumem responsabilidades complementares, favorecendo tanto a aprendizagem prática quanto a adoção de boas práticas de desenvolvimento.
+
+A arquitetura do CAPJu é baseada em microserviços, permitindo modularização das responsabilidades, escalabilidade e maior flexibilidade de evolução. O backend é implementado em Node.js utilizando o framework Express.js para o processamento de requisições, enquanto a persistência de dados é realizada em PostgreSQL, apoiada pelo ORM Sequelize. Cada domínio do sistema é encapsulado em um serviço independente, como o Serviço de Usuário, o Serviço de Unidades e o Serviço de Email, todos acessados por meio de um API Gateway, responsável por encaminhar requisições ao microserviço apropriado e garantir o fluxo interno adequado.
+
+O frontend é desenvolvido com tecnologias Web baseadas em JavaScript e consome a API REST fornecida pelo backend. A separação entre interface gráfica e serviços de negócio facilita a manutenção, a escalabilidade e o trabalho paralelo das equipes. A distinção de responsabilidades entre MDS e EPS também contribui para uma organização mais eficiente, considerando que enquanto MDS foca principalmente na implementação de funcionalidades, EPS dedica-se a processos de qualidade, testes, documentação, padronização e evolução estrutural do sistema.
+
+O projeto conta ainda com ambientes específicos para testes e homologação. O ambiente de testes é utilizado para validação contínua das funcionalidades em desenvolvimento, geralmente operando com dados fictícios ou controlados. O ambiente de homologação, por sua vez, reproduz com maior fidelidade as condições de produção, permitindo identificar problemas de integração ou divergências antes das entregas oficiais. A presença desses ambientes reforça a confiabilidade do software e apoia a prática de desenvolvimento incremental.
+
+Além disso, o CAPJu possui uma estrutura organizacional documentada, incluindo histórico de versões, registros de contribuições, orientações técnicas e diretrizes de desenvolvimento presentes nos repositórios do projeto. A utilização de tecnologias amplamente difundidas, a modularidade arquitetural e a documentação acessível tornam o sistema adequado para equipes com alta rotatividade, característica comum em contextos acadêmicos, sem comprometer a continuidade evolutiva da aplicação.
+
+Considerando seu uso real no contexto judiciário, sua arquitetura modular, sua documentação estruturada e seu modelo de desenvolvimento distribuído, o CAPJu constitui um objeto de estudo apropriado para pesquisas em engenharia de software, especialmente no que se refere à análise de artefatos de requisitos, processos colaborativos de desenvolvimento e práticas de qualidade interna. Tais características fornecem uma base sólida para a investigação conduzida neste trabalho, que se apoia no estudo retrospectivo de suas Histórias de Usuário e Critérios de Aceitação.
+
+\section{Trabalhos Relacionados}
+
+A revisão estruturada da literatura realizada neste trabalho permitiu identificar pesquisas que tratam da interseção entre Behavior-Driven Development (BDD), Processamento de Linguagem Natural (PLN) e Inteligência Artificial (IA), fornecendo base conceitual e metodológica para a proposta apresentada.
+
+Um dos eixos centrais encontrados na literatura refere-se aos desafios da escrita de cenários BDD em linguagem natural. Segundo \citeonline{Alinezhadtilaki2025}, a clareza, objetividade e padronização dos cenários são determinantes para reduzir ambiguidades que prejudicam sua interpretação automática. Os autores destacam que a estrutura Given–When–Then funciona como elemento fundamental para uniformizar a comunicação e minimizar subjetividades, tema que se alinha diretamente à investigação deste trabalho. A necessidade de cenários bem definidos também aparece em \citeonline{GUPTA2023102141}, que reforçam atributos desejáveis como unicidade, granularidade adequada e foco em apenas um comportamento por cenário. Esses estudos fundamentam a hipótese de que a forma de escrita impacta diretamente a capacidade de IA interpretar corretamente requisitos comportamentais.
+
+Outro conjunto relevante de pesquisas examina técnicas de PLN aplicadas à interpretação automática de requisitos, especialmente em contextos derivados do BDD. Trabalhos como \citeonline{Wang2022} exploram pipelines compostos por tokenização, POS-tagging, lematização e rotulagem de papéis semânticos (Semantic Role Labeling), elementos essenciais para extrair agentes, ações e objetos das frases em linguagem natural, sendo indispensável para sistemas que buscam traduzir cenários Gherkin em representações formais manipuláveis por máquinas. Em convergência, pesquisas mais recentes como \citeonline{Paduraru2025} demonstram que técnicas de SRL e análise semântica são importantes para reduzir ambiguidades e vincular passos BDD a comportamentos executáveis, reforçando a relevância de investigar como características textuais influenciam essa interpretação.
+
+O avanço dos Large Language Models (LLMs) também introduziu novas possibilidades de automação no fluxo de testes derivados de BDD. \citeonline{Ferreira2025} mostram que modelos como GPT-4 Turbo são capazes de converter cenários Gherkin em scripts de teste executáveis com alta taxa de acerto, especialmente quando há enriquecimento de contexto ou uso de few-shot prompting. Contudo, os autores apontam erros situacionais decorrentes de ambiguidades linguísticas, dificuldades de interpretar elementos implícitos e dependência da qualidade da escrita dos cenários como limitações importantes. Esses achados sustentam a premissa central de que a forma como o cenário é escrito determina o nível de precisão da inferência realizada pelo modelo.
+
+Ferramentas específicas têm explorado essa convergência entre BDD e IA. Soluções como AutoUAT e TestFlow \cite{Ferreira2025} integram modelos de linguagem para gerar cenários e scripts automatizados, enquanto frameworks como BDDTestAIGen \cite{Paduraru2025} combinam PLN tradicional, embeddings semânticos, RAG e agentes ReAct para tratar ambiguidades e sugerir passos de teste. Nessas ferramentas, observou-se que problemas persistem quando os cenários são excessivamente genéricos, quando o vocabulário é inconsistente ou quando a estrutura não segue padrões rígidos do Gherkin. Tais limitações reforçam que o gargalo não está apenas na IA, mas na qualidade das especificações que ela recebe.
+
+Há também estudos dedicados aos desafios da identificação de elementos de interface gráfica por sistemas de IA. \citeonline{Mughal2025} evidencia que aplicações web modernas possuem estruturas altamente dinâmicas, com caminhos interdependentes e elementos sensíveis ao contexto, dificultando tanto a exploração quanto o mapeamento automatizado. \citeonline{Pysmennyi2025} destacam que frameworks de frontend produzem estruturas DOM instáveis, tornando frágeis seletores como XPath e CSS, um problema crítico para LLMs que geram testes End-to-End. A literatura sugere que, diante dessas dificuldades visuais e estruturais, descrições textuais mais ricas auxiliam o modelo a inferir corretamente os elementos envolvidos em cada passo, o que converge diretamente com os objetivos deste trabalho.
+
+Por fim, estudos sobre modelos de qualidade e avaliação semântica de artefatos gerados por IA ampliam o entendimento sobre limitações e expectativas associadas ao uso de LLMs em ambientes de teste. \citeonline{Chemnitz2023} e \citeonline{Wagner2016} reforçam que abordagens avaliativas ainda carecem de métricas bem estabelecidas para medir a correspondência entre requisitos e implementações, apontando para a necessidade de modelos que consigam integrar perspectivas textuais, estruturais e semânticas, motivando parte da proposta metodológica deste TCC.
+
+\section{Questão de Pesquisa}
+
+dd
+
+\section{Fonte de Dados}
+
+Conforme destacado por \cite{yin2001} e \cite{runeson2009}, estudos observacionais baseados em artefatos históricos dependem diretamente da qualidade, completude e disponibilidade dos registros existentes. No presente trabalho, todas as evidências utilizadas para análise derivam exclusivamente do projeto CAPJu, desenvolvido no semestre 2023/1, cujos artefatos permaneceram registrados no sistema de gerenciamento de issues utilizado pela equipe de desenvolvimento.
+
+A principal fonte de dados deste estudo é o conjunto de issues que contêm Histórias de Usuário (HUs) e seus respectivos Critérios de Aceitação (CAs), etiquetados como relacionados ao desenvolvimento de frontend. Esses artefatos representam a documentação funcional elaborada pela equipe durante o ciclo de desenvolvimento do projeto. Ao todo, 45 issues compõem esse conjunto, o qual constitui a unidade de análise deste estudo observacional retrospectivo.
+
+Cada issue contém elementos textuais que descrevem:
+
+\begin{itemize}
+    \item a necessidade ou demanda do usuário (HU);
+    \item o comportamento esperado do sistema, detalhado em Critérios de Aceitação (CAs);
+    \item etiquetas que identificam sua natureza (ex.: frontend);
+    \item e, em alguns casos, comentários ou complementações feitas pelos desenvolvedores.
+\end{itemize}
+
+Esses documentos foram utilizados tal como se encontram registrados, sem qualquer modificação, conforme recomendado por \citeonline{runeson_case_study_2012} para estudos baseados em análise documental. A integridade e fidelidade desses registros são essenciais para garantir o rigor da investigação.
+
+Além das issues, outra fonte de dados utilizada neste estudo é o repositório digital do projeto, do qual são extraídas informações contextuais complementares, como a identificação dos elementos de interface presente no código-fonte. Tais elementos auxiliam na interpretação das HUs e CAs e contribuem para uma triangulação de dados conforme sugerido por \citeonline{yin2001}, ainda que limitada ao escopo documental.
+
+Não há coleta direta com usuários, desenvolvedores ou demais stakeholders, uma vez que o fenômeno estudado já ocorreu e não pode ser reconstituído no contexto original. Assim, toda a análise se apoia em evidências históricas, alinhando-se às características de estudos observacionais retrospectivos descritas na literatura.
+
+Dessa forma, as fontes de dados empregadas neste trabalho são exclusivamente documentais, consistindo em um conjunto estruturado de issues e artefatos associados, que fornecem o material necessário para as etapas subsequentes de análise textual e semântica conduzida pela solução proposta.
+
+\section{Procedimentos}
+
+kk
+
+\section{Análise de Dados}
+
+A análise dos dados neste estudo parte da meta definida pelo método Goal-Question-Metric (GQM), que estabelece como foco a característica de Manutenibilidade, em especial sua subcaracterística Testabilidade, conforme definido pela \citeonline{ISO25010}. Na perspectiva da qualidade interna, a Testabilidade refere-se ao grau em que um produto facilita a criação, execução e avaliação de testes. Nesse sentido, a escrita das especificações BDD e sua relação com a geração automática de testes constituem um elemento central dessa subcaracterística, uma vez que afetam diretamente o esforço necessário para produzir artefatos de teste corretos, completos e semanticamente alinhados aos requisitos.
+
+As métricas propostas avaliam dimensões essenciais da Testabilidade:
+
+\begin{itemize}
+    \item \textbf{Fidelidade Semântica}: mede o grau de correspondência entre o significado expresso nos Critérios de Aceitação e o comportamento implementado nos testes gerados automaticamente. Essa métrica avalia se os testes refletem corretamente as intenções descritas nos requisitos.
+    
+    \item \textbf{Cobertura Funcional}: avalia a extensão em que os testes gerados abrangem todos os Critérios de Aceitação especificados. Essa métrica indica o quão completos são os testes em relação aos requisitos definidos.
+    
+    \item \textbf{Corretude Estrutural}: verifica se a estrutura dos testes gerados está adequada para execução automática, considerando aspectos como sintaxe correta, uso apropriado de frameworks de teste e aderência às melhores práticas de codificação.
+\end{itemize}
+
+Essa abordagem está alinhada ao que \citeonline{yin2001} descreve como análise orientada à construção de padrões interpretativos e ao que \citeonline{runeson2009} caracterizam como análise sistemática de artefatos para fins de investigação empírica em Engenharia de Software. Assim, cada métrica fornece uma evidência mensurável que contribui para responder à questão de pesquisa e apoiar a caracterização da Testabilidade no contexto do uso de BDD aliado a técnicas de IA.
+
+\section{Instrumentação}
+
+jj
+
+\section{Ameaças à Validade Do Estudo}
