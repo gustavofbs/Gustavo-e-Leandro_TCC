@@ -95,7 +95,17 @@ Dessa forma, as fontes de dados empregadas neste trabalho são exclusivamente do
 
 \section{Procedimentos}
 
-kk
+O método de estudo adotado neste trabalho será um estudo observacional retrospectivo, conduzido sob o protocolo de estudo de caso. Essa abordagem foi escolhida porque o projeto analisado já se encontra concluído e não há múltiplas instâncias disponíveis para comparação experimental controlada. Assim, a estratégia mais adequada consiste em observar retrospectivamente seus artefatos, utilizando-os como insumo para o processo de geração automatizada de testes.
+
+A primeira etapa consiste na coleta das histórias de usuário do projeto. Essas histórias serão utilizadas para a elaboração dos cenários em Behavior-Driven Development (BDD), que servirão como base para a geração dos testes automatizados.
+
+Em seguida, o Módulo 1 recebe como entrada as histórias de usuário e os cenários BDD. Ele realiza a tokenização e a marcação morfossintática (POS tagging), identificando elementos como ação, agente e alvo, com o auxílio da biblioteca spaCy. Posteriormente, executa a análise de relações semânticas (SRL) utilizando modelos baseados em Transformers e produz um JSON estruturado contendo as informações extraídas dos requisitos.
+
+O Módulo 2 utiliza o JSON produzido anteriormente para realizar a busca de contexto relevante por meio de RAG (Retrieval-Augmented Generation). Nesse processo, os textos dos cenários e da documentação técnica são convertidos em embeddings semânticos gerados com SBERT, armazenados em um banco vetorial Faiss e consultados por similaridade de cosseno. Os documentos recuperados orientam a construção de um prompt detalhado, que é enviado a um modelo de linguagem (LLM), responsável por gerar automaticamente o código de testes Cypress.
+
+O Módulo 3 utiliza tanto a representação semântica produzida no primeiro módulo quanto o código gerado pelo segundo. Essa etapa calcula a similaridade semântica entre requisitos e testes utilizando CodeBERT, identificando inconsistências ou trechos que não refletem corretamente o comportamento esperado. Além disso, um agente de IA atua como juiz, realizando ajustes no código sempre que necessário, a partir de técnicas de embeddings semânticos e validação automatizada.
+
+Após a finalização do Módulo 3, os testes gerados pelo pipeline serão comparados aos testes produzidos diretamente por modelos de linguagem generalistas, como GPT, DeepSeek e LLaMA. A comparação será baseada em três critérios de avaliação. O primeiro deles é a similaridade semântica entre o BDD e o código de teste, medida por meio da análise de embeddings obtidos por modelos como CodeBERT e avaliados com similaridade de cosseno entre 0 e 1. O segundo critério é a cobertura dos critérios de aceitação, calculada pela proporção de critérios presentes no BDD que são refletidos no teste gerado, considerando como atendidos aqueles que atingirem um limiar mínimo de similaridade. Por fim, avalia-se a correção sintática dos testes gerados, verificando se os scripts Cypress são válidos, executáveis e aderentes à estrutura esperada, de modo a identificar se os padrões aplicados ao BDD contribuem para a redução de erros estruturais.
 
 \section{Análise de Dados}
 
