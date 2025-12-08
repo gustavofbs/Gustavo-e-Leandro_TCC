@@ -125,6 +125,18 @@ Essa abordagem está alinhada ao que \citeonline{yin2001} descreve como análise
 
 \section{Instrumentação}
 
-jj
+A instrumentação se refere às ferramentas que serão utilizadas para a realização do estudo observacional retrospectivo. Aqui estão definidas as ferramentas usadas para possibilitar a geração do código de teste automatizado a partir das especificações BDD e das histórias de usuário utilizando inteligência artificial, bem como para permitir a aplicação das métricas definidas para comparação dos resultados.
+
+O GitHub\footnote{\url{https://github.com/}} é a plataforma de hospedagem e versionamento de código escolhida para o armazenamento das histórias de usuário, cenários BDD, scripts de automação, artefatos gerados e registros do estudo. Ele permitirá rastreabilidade, controle das versões e organização dos experimentos. Complementarmente, o Git será utilizado como sistema de controle de versão distribuído, fornecendo o histórico das alterações, facilitando a reprodutibilidade do estudo e possibilitando acompanhar a evolução dos artefatos durante o processo de geração automatizada dos testes.
+
+O Cypress\footnote{\url{https://www.cypress.io/}} será empregado como ferramenta de automação de testes para validar e executar os scripts gerados pela inteligência artificial a partir dos cenários BDD. Ele permitirá verificar se os testes são executáveis, corretos e funcionais, sendo também responsável pela coleta de métricas relacionadas à completude e eficácia dos testes produzidos.
+
+Para apoiar o processamento de linguagem natural (PLN) das histórias de usuário e dos cenários BDD, será utilizada a biblioteca spaCy\footnote{\url{https://spacy.io/}}, responsável pela análise linguística, extração de entidades e estruturação sintática dos textos. Associado a ela, a biblioteca Transformers\footnote{\url{https://huggingface.co/docs/transformers/}} fornecerá modelos pré-treinados capazes de interpretar relações semânticas, gerar embeddings, classificar trechos e auxiliar na análise contextual dos requisitos. Nesse contexto, a biblioteca sentence-transformers\footnote{\url{https://www.sbert.net/}} será usada especificamente para a geração de embeddings semânticos por meio do SBERT, permitindo a comparação de similaridade entre textos e dando suporte à etapa de interpretação e agrupamento dos cenários.
+
+A API da OpenAI\footnote{\url{https://openai.com/pt-BR/api/}} será utilizada para integração com modelos avançados de linguagem, em especial o GPT-4 Turbo, que será responsável pela interpretação dos cenários BDD, entendimento das histórias de usuário, geração automática do código de teste Cypress e correção dos testes quando necessário. Esses modelos também auxiliarão na validação linguística e estrutural dos artefatos gerados.
+
+Para aprimorar o armazenamento e recuperação eficiente de informações semânticas, será empregada a abordagem de Retrieval-Augmented Generation (RAG) com uso do FAISS\footnote{\url{https://ai.meta.com/tools/faiss/}} como mecanismo de indexação vetorial, combinada com o cálculo da similaridade do cosseno. Esse conjunto permitirá a recuperação rápida de embeddings relacionados, facilitando a contextualização dos cenários, a comparação entre testes e a geração de resultados mais consistentes e alinhados com padrões prévios. Além disso, modelos especializados como o CodeBERT\footnote{\url{https://github.com/microsoft/CodeBERT}} acessados também via Transformers, serão utilizados para análise de trechos de código, identificação de padrões estruturais e apoio na verificação estática dos testes gerados.
+
+Por fim, bibliotecas utilitárias como json, os e typing serão utilizadas para manipulação de arquivos estruturados, organização automática do sistema de diretórios e tipagem explícita das funções implementadas no pipeline experimental, contribuindo para a padronização e legibilidade do código de suporte ao estudo.
 
 \section{Ameaças à Validade Do Estudo}
