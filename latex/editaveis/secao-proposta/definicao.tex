@@ -51,8 +51,24 @@ Há também estudos dedicados aos desafios da identificação de elementos de in
 Por fim, estudos sobre modelos de qualidade e avaliação semântica de artefatos gerados por IA ampliam o entendimento sobre limitações e expectativas associadas ao uso de LLMs em ambientes de teste. \citeonline{Chemnitz2023} e \citeonline{Wagner2016} reforçam que abordagens avaliativas ainda carecem de métricas bem estabelecidas para medir a correspondência entre requisitos e implementações, apontando para a necessidade de modelos que consigam integrar perspectivas textuais, estruturais e semânticas, motivando parte da proposta metodológica deste TCC.
 
 \section{Questão de Pesquisa}
+	
+Para responder a questão principal de pesquisa de trabalho (De que maneira as especificações BDD devem ser escritas e detalhadas para que sistemas baseados em IA consigam identificar, de forma autônoma, os elementos de interface gráfica necessários para criar testes de sistema automatizados?), foram derivadas duas questões específicas para o estudo de caso, juntamente com as métricas que serão utilizadas para sua avaliação, seguindo a abordagem GQM. A metodologia GQM foi utilizada para a definição das perguntas específicas, derivadas da pergunta principal e suas respectivas métricas para conduzir o estudo, de modo a não desviar do objetivo principal e estabelecer a avaliação quantitativa ou qualitativa, de cada uma das questões de pesquisa secundárias, que agora norteiam o estudo observacional retrospectivo \cite{Basili1994}. A ISO/IEC 25010 defini testabilidade como o nível de eficiência e efetividade em que podem ser estabelecidos critérios de teste para um produto, sistema ou componente e diversos testes podem ser feitos para demonstrar que os critérios foram atendidos. No contexto desta pesquisa, a testabilidade está diretamente relacionada à clareza, granularidade e estruturação das sentenças BDD, uma vez que tais características influenciam a capacidade de sistemas baseados em IA compreenderem cenários, reconhecerem elementos de interface gráfica e gerarem testes automatizados de forma robusta.
 
-dd
+• Questão Específica 1: Em que medida a clareza, granularidade e estruturação das sentenças BDD influenciam a capacidade da IA de identificar corretamente elementos da interface gráfica e gerar testes alinhados ao comportamento descrito no cenário?
+
+– Métrica 1.1: Similaridade Semântica BDD–Código, medida por meio da comparação de embeddings (ex.: CodeBERT) entre a representação semântica do cenário e o código de teste gerado, utilizando similaridade de cosseno entre 0 e 1.
+
+– Métrica 1.2: Cobertura dos Critérios de Aceitação (AC), calculada pela proporção de ACs atendidos quando o trecho de código apresenta similaridade acima de um limiar predefinido.
+
+– Métrica 2.3: Correção Sintática dos testes gerados, determinando se cenários padronizados reduzem erros estruturais, aumentando a robustez dos artefatos criados pela IA.
+
+• Questão Específica 2: A padronização da escrita dos cenários BDD (uso consistente de Given–When–Then, definições explícitas de elementos de interface e granularidade adequada) melhora a testabilidade e aumenta a taxa de geração correta de testes automatizados por sistemas de IA?
+
+– Métrica 2.1: Similaridade Semântica BDD–Código, analisando se cenários mais padronizados aumentam o alinhamento entre descrição e teste gerado.
+
+– Métrica 2.2: Cobertura dos Critérios de Aceitação (AC), verificando se a padronização resulta em maior atendimento dos comportamentos esperados.
+
+– Métrica 2.3: Correção Sintática dos testes gerados, determinando se cenários padronizados reduzem erros estruturais, aumentando a robustez dos artefatos criados pela IA.
 
 \section{Fonte de Dados}
 
