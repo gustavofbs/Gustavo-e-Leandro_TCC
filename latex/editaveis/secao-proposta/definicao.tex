@@ -140,3 +140,72 @@ Para aprimorar o armazenamento e recuperação eficiente de informações semân
 Por fim, bibliotecas utilitárias como json, os e typing serão utilizadas para manipulação de arquivos estruturados, organização automática do sistema de diretórios e tipagem explícita das funções implementadas no pipeline experimental, contribuindo para a padronização e legibilidade do código de suporte ao estudo.
 
 \section{Ameaças à Validade Do Estudo}
+
+A análise das ameaças à validade é fundamental para garantir rigor metodológico e confiabilidade na interpretação dos resultados de um estudo científico. Conforme discutido por \cite{cook_campbell_1979} e sistematizado no contexto de Engenharia de Software por \cite{wohlin2012}, as ameaças à validade podem ser agrupadas nas dimensões: validade do construto, validade interna, validade externa e confiabilidade. Nesta seção, são apresentadas as principais ameaças associadas ao estudo observacional retrospectivo realizado, bem como as estratégias adotadas para mitigá-las.
+
+\subsection{Ameaças à Validade do Constructo}
+
+A validade do construto refere-se ao grau em que os instrumentos, métricas e procedimentos utilizados no estudo representam adequadamente os conceitos teóricos que se deseja investigar. Em um estudo observacional retrospectivo que analisa a capacidade de sistemas de Inteligência Artificial gerarem código de teste automatizado a partir de especificações BDD, essa dimensão é particularmente relevante, pois envolve interpretar corretamente as evidências produzidas pelas ferramentas e pelos artefatos manipulados.
+
+Para assegurar essa validade, o pesquisador deve cumprir duas etapas fundamentais:
+
+\begin{itemize}
+\item selecionar os aspectos específicos do fenômeno que serão analisados;
+\item demonstrar que as métricas e procedimentos adotados capturam esses aspectos de forma adequada e mensurável.
+\end{itemize}
+
+No contexto deste estudo, os construtos investigados incluem:
+
+\begin{itemize}
+    \item qualidade estrutural do código de teste gerado pela IA;
+    \item aderência das saídas aos elementos presentes nas histórias de usuário e nos cenários BDD;
+    \item capacidade do modelo de IA identificar corretamente elementos de interface e fluxos de interação necessários para compor o teste automatizado.  
+\end{itemize}
+
+Tais construtos foram operacionalizados por meio de métricas derivadas da abordagem GQM, estabelecendo um alinhamento claro entre objetivo, questões de pesquisa e indicadores mensuráveis. Essa estratégia buscou evitar interpretações subjetivas, além de garantir que as medições representassem aspectos relevantes da geração automatizada de testes.
+
+Entretanto, algumas ameaças persistem. Como as métricas selecionadas são majoritariamente quantitativas, há risco de viés de mono–método, uma vez que não foram coletados dados qualitativos capazes de capturar aspectos subjetivos da qualidade percebida dos testes, da compreensão por parte do desenvolvedor ou da adequação semântica ao contexto da aplicação.
+
+Outra ameaça relevante é o viés de mono–operação: o estudo avaliou apenas um pipeline composto por modelos e ferramentas específicas GPT-4 Turbo, embeddings SBERT, RAG com FAISS e Cypress para execução dos testes. Diferentes modelos ou configurações poderiam produzir variações consideráveis nos resultados, o que limita a abrangência dos construtos avaliados.
+
+\subsection{Ameaças à Validade Interna}
+
+A validade interna refere-se à capacidade de atribuir os resultados observados às condições investigadas. Como este estudo possui natureza observacional retrospectiva, não há controle experimental nem manipulação de variáveis. Portanto, não é possível estabelecer relações causais, apenas descrever comportamentos e analisar associações.
+
+Ainda assim, algumas ameaças podem influenciar a interpretação dos resultados:
+
+Influência de fatores externos: a qualidade das histórias de usuário, a estrutura dos cenários BDD e o nível de detalhamento dos requisitos podem afetar diretamente o desempenho da IA, dificultando distinguir se os resultados refletem limitações do modelo ou dos artefatos analisados.
+
+Dependência do pipeline técnico: modelos de linguagem, embeddings, mecanismos de RAG e ferramentas utilizadas para geração de testes podem introduzir vieses próprios, impactando os resultados independentemente do fenômeno estudado.
+
+Interpretação das saídas da IA: como não há intervenção controlada, variações nas respostas podem decorrer de comportamentos internos do modelo, e não de diferenças reais entre os artefatos avaliados.
+
+Ausência de controle sobre variáveis intervenientes: características específicas do código-fonte, da aplicação ou do contexto de desenvolvimento podem influenciar o processo de geração de testes sem que isso seja observado diretamente.
+
+Embora essas ameaças não possam ser eliminadas, foram mitigadas por meio da documentação detalhada das etapas do estudo, da padronização dos procedimentos e do uso consistente do mesmo conjunto de ferramentas ao longo da análise. Ainda assim, reconhece-se que a ausência de controle experimental limita inferências mais robustas sobre causalidade.
+
+\subsection{Ameaças à Validade Externa}
+
+A validade externa refere-se ao grau em que os resultados obtidos podem ser generalizados para outros contextos, sistemas ou projetos. No caso deste estudo observacional retrospectivo, algumas limitações restringem essa generalização.
+
+Primeiro, os artefatos utilizados histórias de usuário, cenários BDD e código-fonte pertencem a um único sistema, com características específicas de domínio, estilo de escrita e granularidade. Sistemas que apresentem requisitos mais ambíguos, BDD menos estruturado ou arquiteturas distintas podem produzir resultados diferentes quando submetidos ao mesmo pipeline de IA.
+
+Além disso, o estudo empregou um conjunto particular de ferramentas e modelos, como GPT-4 Turbo, SBERT, RAG com FAISS e Cypress. Outras combinações tecnológicas podem gerar variações significativas no desempenho, configurando interação entre tratamento e ambiente tecnológico.
+
+A generalização também é limitada pela qualidade dos artefatos de entrada. Como modelos de IA são sensíveis ao grau de clareza e organização dos requisitos, ambientes de desenvolvimento com maturidade inferior ou práticas inconsistentes de documentação podem não replicar os mesmos resultados.
+
+Outro ponto relevante diz respeito ao contexto temporal e organizacional. Mudanças nas versões dos modelos, na infraestrutura utilizada ou no processo de desenvolvimento adotado pelas equipes podem alterar o comportamento das ferramentas de IA ao longo do tempo.
+
+Apesar dessas limitações, a descrição detalhada do ambiente, das ferramentas e dos procedimentos adotados permite que outros pesquisadores avaliem a compatibilidade de seus contextos com o deste estudo, ampliando a possibilidade de replicação controlada em cenários semelhantes.
+
+\subsection{Ameaças à Confiabilidade}
+
+A confiabilidade refere-se à capacidade de reproduzir o estudo obtendo resultados consistentes. No contexto deste trabalho, algumas ameaças específicas devem ser consideradas.
+
+Primeiro, embora o pipeline técnico utilizado incluindo modelos de linguagem, embeddings, RAG e ferramentas de automação tenha sido mantido constante, modelos de IA apresentam variabilidade estocástica nas respostas. Mesmo com os mesmos prompts e artefatos de entrada, pequenas diferenças podem surgir entre execuções, comprometendo a reprodutibilidade exata.
+
+Além disso, modelos acessados via API, como GPT-4 Turbo, são atualizados periodicamente pelos provedores, o que pode alterar o comportamento do sistema ao longo do tempo. Assim, execuções futuras do estudo podem produzir resultados distintos, mesmo sem modificações no método, configurando uma ameaça típica de dependência de versão.
+
+Outra limitação diz respeito à organização dos dados e artefatos analisados. Como o estudo é retrospectivo, qualquer inconsciência ou alteração na estrutura original dos arquivos pode impactar a capacidade de reproduzir exatamente as etapas realizadas.
+
+Como forma de mitigação, todas as etapas do processo foram documentadas, e os scripts, configurações e artefatos utilizados foram organizados de maneira sistemática, permitindo que outros pesquisadores repliquem o procedimento geral ainda que pequenas variações nas respostas da IA sejam inevitáveis.
