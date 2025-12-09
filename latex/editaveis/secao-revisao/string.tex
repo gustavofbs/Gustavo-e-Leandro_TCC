@@ -1,0 +1,65 @@
+\section{Estruturação da \textit{String} de Busca}
+
+A definição de uma estratégia de busca requer o uso de um protocolo que auxilie na delimitação precisa dos estudos relevantes. Para isso, utilizou-se o protocolo PICO, originalmente proposto na área da medicina, mas amplamente aplicável em diferentes domínios quando se busca estruturar termos de uma busca. Como parte de sua adaptação ao contexto da Engenharia de Software, os elementos do PICO foram reinterpretados de forma a representar a população de estudos, a intervenção tecnológica analisada e os resultados de interesse \cite{Pai2004}. Essa estrutura permitiu organizar a formulação da string de busca e reduzir a ocorrência de artigos não pertinentes a esta investigação, tornando o processo mais preciso e alinhado aos objetivos desta monografia. Uma representação do protocolo na figura \ref{fig:pico} facilita visualizar essa adaptação e compreender seu papel no delineamento da busca.
+
+\begin{figure}[H]
+    \centering
+    \caption{Representação Visual do Protocolo PICO }
+    \includegraphics[width=0.7\linewidth]{figuras/pico.png}
+    \caption*{Fonte: Adaptado de \citeonline{Pai2004}}
+    \label{fig:pico}
+\end{figure}
+
+Ao adaptar o modelo PICO ao contexto desta monografia, seus elementos foram reinterpretados de acordo com as necessidades da Engenharia de Software. No protocolo original, a \textbf{população} corresponde ao perfil dos pacientes; aqui, esse elemento passou a representar o domínio investigado, englobando termos relacionados ao desenvolvimento de software, testes e qualidade. A \textbf{intervenção}, que na medicina remete ao tratamento aplicado, foi convertida para descrever as tecnologias e abordagens analisadas, incluindo inteligência artificial, aprendizado de máquina, modelos de linguagem e técnicas de processamento de linguagem natural. Já o \textbf{resultado} manteve seu propósito essencial, indicando os efeitos buscados nos estudos selecionados, como geração automatizada de cenários BDD, identificação de elementos da interface e criação de casos de teste executáveis. O componente \textbf{comparação}, por sua vez, não foi adotado, pois sua lógica é mais adequada ao corpo de conhecimento indexado em bases digitais da medicina, e não em relação à organização atual do corpo de conhecimento em Engenharia de Software. A estrutura consolidada pode ser vista na Tabela \ref{tab:string-busca}.
+
+\begin{table}[ht]
+\caption{Estrutura dos Termos da String de Busca}
+    \begin{tabular}{|p{2.5cm}|p{4cm}|p{8.5cm}|}
+        \hline
+        \textbf{Camada} & \textbf{Palavra Chave} & \textbf{Sinônimos} \\ \hline
+
+        População 
+        & \textit{software engineering} 
+        & \textit{software development}, \textit{software system}, \textit{software application}, 
+        \textit{software testing}, \textit{quality assurance} \\ \hline
+
+        Intervenção 
+        & \textit{Artificial Intelligence} 
+        & \textit{AI}, \textit{Machine Learning}, \textit{Reinforcement Learning}, \textit{Large Language Model}, 
+        \textit{Deep Learning}, \textit{Neural network}, \textit{AM}, \textit{NLP}, \textit{llm} \\ \hline
+
+        Resultado 
+        & \textit{gherkin} 
+        & \textit{behavior-driven development}, \textit{BDD}, \textit{test generation}, 
+        \textit{test automation}, \textit{end-to-end testing}, \textit{functional testing},
+        \textit{acceptance testing}, \textit{cucumber}, \textit{executable specifications},
+        \textit{scenario-based testing}, \textit{development scenarios}, 
+        \textit{automated test case generation}, \textit{model-based testing}, 
+        \textit{software system testing} \\ \hline
+
+    \end{tabular}
+
+    \begin{center}
+        \caption*{Fonte: Autor}
+    \end{center}
+
+\label{tab:string-busca}
+\end{table}
+
+Para a construção da string de busca, empregou-se o operador lógico OR entre os termos de cada elemento do protocolo PICO, de modo a contemplar sinônimos e variações terminológicas utilizadas na literatura. Os elementos do PICO foram então conectados por meio do operador AND, procurando recuperar estudos alinhados simultaneamente à população, intervenção e resultado. Contudo, as primeiras execuções retornaram um \textcolor{red}{volume significativo} de publicações que não eram de interesse desto estudo, o que demandou um processo iterativo de ajustes e refinamentos. Esse processo envolveu sucessivas revisões dos termos, exclusão de combinações que geravam “ruído” e inclusão de variações semânticas mais precisas, além do uso de sintaxes específicas das bases consultadas. Após diversas iterações, chegou-se à versão final da string, apresentada a seguir:
+
+\todo[inline, color=pink]{Quanto é esse volume significativo? Quantas rodadas foram necessárias. Qual foi a quantidade retornada em cada rodada?}
+
+\textcolor{blue}{volume significativo}\todo[color=yellow]{}
+
+\textit{("Software engineering" OR "Software development" OR "Software system" OR 
+"Software application" OR "software testing" OR "quality assurance")
+AND
+("Artificial Intelligence" OR "AI" OR "Machine Learning" OR "Reinforcement Learning" OR 
+ "Large Language Model" OR "Deep Learning" OR "Neural network" OR "AM" OR "NLP" OR "llm")
+AND
+("gherkin" OR "behavior-driven development" OR "BDD" OR "test generation" OR 
+ "Test automation" OR "end-to-end testing" OR "functional testing" OR "acceptance testing" OR 
+ "cucumber" OR "executable specifications" OR "scenario-based testing" OR 
+ "development scenarios" OR "automated test case generation" OR "model-based testing" OR 
+ "software system testing")}

@@ -1,0 +1,216 @@
+\section{Experimentação na Engenharia de Software}
+\label{subsec:experimentacao}
+
+A Engenharia de Software envolve atividades que dependem não apenas de aspectos técnicos, mas também de fatores humanos, organizacionais e contextuais, o que a diferencia de disciplinas em que é possível estabelecer leis universais completamente determinísticas. Como resultado, fenômenos observados no desenvolvimento de software frequentemente exigem investigação empírica para que práticas, técnicas e métodos possam ser compreendidos e avaliados baseados em evidências. Nesse contexto, o campo da Engenharia de Software Experimental estrutura e organiza os métodos que auxiliam a investigação e observação empírica e experimental \cite{Wohlin:2012:ESE:2349018}.
+
+Essa perspectiva experimental visa transformar práticas observadas no desenvolvimento de software em conhecimento sistematizado, permitindo que hipóteses sejam investigadas por meio de procedimentos planejados e replicáveis e analisadas de forma rigorosa, conforme discutido por \citeonline{Wohlin:2012:ESE:2349018} e complementado por \citeonline{Basili1994}. Ao apoiar observações controladas e análises quantitativas ou qualitativas, os métodos experimentais tornam possível compreender relações entre variáveis, avaliar o impacto de técnicas emergentes e discutir resultados que sirvam de base para decisões baseadas em envidências, tanto na pesquisa quanto na indústria \cite{Basili1994,Wohlin:2012:ESE:2349018}.
+
+Conforme apresentado por \citeonline{Wohlin:2012:ESE:2349018}, entre os diferentes métodos empíricos empregados na área, o estudo de caso se destaca por permitir o exame detalhado de fenômenos em seu ambiente natural, preservando o contexto no qual eles ocorrem. Essa abordagem é adequada para analisar técnicas,  modelos, processos e produtos, aplicados em contextos reais. Dessa forma procura-se compreender como equipes utilizam ferramentas e identificam fatores que influenciam resultados em situações práticas. 
+Já os questionários de opinião, possibilitam coletar percepções e experiências de grupos maiores, permitindo análises amplas sobre comportamentos, práticas ou opiniões relacionadas ao fenômeno investigado. Essas pesquisas podem ser conduzidas por meio de questionários estruturados ou entrevistas mais aprofundadas, evidenciando tanto dados quantitativos quanto qualitativos \cite{Wohlin:2012:ESE:2349018}.
+
+Além dessas abordagens, os experimentos controlados desempenham um papel relevante na Engenharia de Software Experimental. Nesse tipo de estudo, o pesquisador manipula variáveis específicas e é feita uma observação de seus efeitos de maneira sistemática, em condições planejadas e replicáveis. Experimentos são particularmente úteis quando o objetivo é comparar diferentes técnicas ou tratamentos e identificar relações causais com maior precisão, tornando-os ferramentas essenciais para validação de hipóteses e avaliação de propostas técnicas \cite{Basili1994,Wohlin:2012:ESE:2349018}.
+
+Em relação a fundamentação de uma pesquisa nesse campo, surge a Revisão Sistemática da Literatura (RSL), onde se estabelece um método afim de identificar, selecionar e analisar evidências já publicadas sobre um tema relacionado. Ao contrário de buscas não estruturadas, a revisão sistemática segue um protocolo previamente definido, que inclui questões de pesquisa, estratégias de busca, critérios de inclusão e exclusão e procedimentos para extração e síntese dos dados. Essa abordagem reduz vieses, assegura rastreabilidade e permite compreender o estado da arte de maneira confiável. \citeonline{kitchenham2007guidelines} destacam que a RSL é particularmente importante na Engenharia de Software por sintetizar um corpo de conhecimento fragmentado e orientar pesquisadores na identificação de lacunas e oportunidades de investigação. No contexto deste trabalho, foi realizada uma revisão estruturada da literatura baseada no protocolo da revisão sistemática. Assim, foi estabelecida a base teórica necessária para compreender o panorama atual das práticas de automação de testes, da escrita de cenários BDD e do uso de técnicas de interpretação automática de requisitos.
+
+\subsection{Estudo de Caso}
+
+O estudo de caso é uma das estratégias citadas na investigação empírica na Engenharia de Software, especialmente quando se busca compreender fenômenos em ambientes reais, preservando as características, limitações e interações que ocorrem naturalmente no contexto estudado. Diferentemente de métodos experimentais que exigem controle rigoroso das variáveis, o estudo de caso permite observar como práticas, ferramentas ou comportamentos se manifestam no cotidiano das organizações, oferecendo uma visão rica e contextualizada do fenômeno analisado \cite{runeson_case_study_2012, Wohlin:2012:ESE:2349018}.
+
+Por sua natureza exploratória e descritiva, essa abordagem é amplamente utilizada quando o objetivo é entender processos complexos, revelar padrões de comportamento, investigar adoções tecnológicas ou avaliar a aplicabilidade de métodos em condições reais. Segundo \citeonline{yin_case_study_2009}, os estudos de caso são particularmente adequados para fenômenos contemporâneos que não podem ser isolados do ambiente em que ocorrem, exigindo múltiplas fontes de evidência como documentos, entrevistas, observação direta e artefatos produzidos durante o processo investigado. Ainda segundo o autor, a seguir serão apresentadas as principais etapas envolvidas na condução de um estudo de caso:
+
+\subsubsection{Definição}
+Na etapa inicial são definidas as bases da pesquisa, através do levantamento dos seguintes artefatos:
+
+\begin{itemize}
+    \item \textbf{Objetivo:} o estudo inicia-se pela determinação clara do objetivo da investigação, uma vez que ele orienta a definição do fenômeno a ser analisado e estabelece os limites conceituais iniciais do trabalho. A formulação do objetivo permite delimitar a direção da pesquisa e identificar quais aspectos da realidade serão considerados no estudo de caso, garantindo que a análise permaneça coerente com o propósito central da investigação. Essa etapa é fundamental para assegurar que o delineamento metodológico e a coleta de evidências mantenham foco e relevância ao longo de todo o processo;
+    \item \textbf{Caso:} definição do caso constitui um dos elementos centrais desta etapa, pois envolve especificar claramente qual entidade, evento, processo ou unidade será de fato investigada. Essa delimitação requer distinguir o fenômeno de interesse de seu contexto, estabelecendo fronteiras analíticas e temporais que permitam compreender onde o caso começa e termina. Uma definição adequada evita interpretações ambíguas, conduz a um recorte empírico manejável e assegura coerência entre o caso escolhido, as questões de pesquisa e a fundamentação teórica do estudo;
+      \item \textbf{Questões de Pesquisa:} formulação das questões de pesquisa orienta toda a investigação, determinando o foco analítico, a unidade de análise e o conjunto de evidências que serão consideradas relevantes. Questões bem definidas delimitam o escopo do estudo, impedem que a coleta de dados se torne excessivamente ampla e servem como guia para a construção das proposições teóricas e das decisões metodológicas subsequentes. Além disso, questões mal especificadas tendem a gerar estudos difusos e pouco conclusivos, reforçando a importância de uma formulação precisa nesta fase inicial;
+    \item \textbf{Métodos:} definição preliminar dos métodos descreve a estratégia geral de investigação que será adotada no estudo de caso. Nesta etapa, não se detalham ainda os procedimentos de coleta, mas delineia-se a abordagem metodológica a partir da relação entre contexto, questões de pesquisa e tipo de caso. Especificar antecipadamente como o estudo será conduzido contribui para a validade e a confiabilidade da pesquisa, destacando a importância de múltiplas fontes de evidência, da triangulação e da coerência entre o delineamento do estudo e o fenômeno investigado. Essa definição metodológica inicial estabelece as bases que serão aprofundadas nas etapas seguintes;
+    \item \textbf{Seleção:} seleção do caso, ou dos casos, envolve justificar a escolha com base na capacidade do objeto selecionado em responder adequadamente às questões de pesquisa. Essa decisão considera fatores como relevância empírica, potencial explicativo, possibilidade de acesso e alinhamento com o tipo de projeto adotado, seja ele único ou múltiplo. A seleção criteriosa é essencial para a robustez da pesquisa, uma vez que casos pouco significativos, insuficientemente definidos ou incompatíveis com as questões analíticas tendem a comprometer o desenvolvimento do estudo e suas conclusões.
+\end{itemize}
+
+\subsubsection{Preparação para a Coleta de Dados}
+
+A coleta de dados é uma etapa essencial nos estudos de campo em engenharia de software, pois permite compreender como os profissionais realmente trabalham em seus contextos naturais, algo enfatizado por \citeonline{lethbridge2005studying}, que destacam que somente pela observação sistemática é possível revelar práticas, dificuldades e padrões que fundamentam teorias e melhorias de processos. Nesse sentido, os autores propõem uma taxonomia organizada em três graus de contato, cada qual refletindo o nível de interação entre pesquisador e participantes.
+
+\begin{itemize}
+    \item \textbf{Primeiro Grau:} envolve interação direta entre pesquisador e engenheiros de software. Essa categoria inclui entrevistas, questionários administrados presencialmente, brainstorming, focus groups, \textit{think-aloud, shadowing} e participação ativa na equipe. São técnicas que permitem acessar julgamentos, raciocínios, motivações e estratégias cognitivas dos profissionais, sendo, portanto, extremamente flexíveis e ricos em informação, embora mais custosos, sujeitos a vieses e capazes de interferir no comportamento natural dos participantes..
+    
+    \item \textbf{Segundo Grau:} caracteriza-se pelo acesso indireto ao ambiente de trabalho, sem interação contínua entre pesquisador e participantes. Aqui situam-se técnicas como instrumentação de sistemas e gravações realizadas pelos próprios engenheiros. Essas técnicas possibilitam o registro automático e prolongado de atividades reais, com menor intrusividade, mas que oferecem dados predominantemente comportamentais, carecendo do contexto cognitivo necessário para interpretar intenções e decisões.
+    
+    \item \textbf{Terceiro Grau:} considerado totalmente não intrusivos, é baseado exclusivamente na análise de artefatos produzidos no decorrer do trabalho, podendo ser logs de ferramentas, bancos de dados de mudanças, documentação e código-fonte submetido a análises estática ou dinâmica. Esses métodos permitem examinar padrões históricos em larga escala com zero impacto no processo produtivo, embora sejam limitados pela ausência de contato humano, o que dificulta a compreensão das razões subjacentes às ações observadas.
+\end{itemize}
+
+\subsubsection{Análise dos Dados Coletados}
+Na análise dos dados coletados, a interpretação das evidências depende amplamente da capacidade analítica, do rigor lógico e do estilo investigativo do pesquisador, que deve organizar, comparar e relacionar diferentes informações de maneira sistemática. Nessa etapa, torna-se essencial adotar uma estratégia analítica geral, baseada na teoria previamente desenvolvida, para orientar tanto a interpretação das evidências quanto o estabelecimento dos critérios de verificação das proposições do estudo.
+
+A etapa de análise envolve, inicialmente, a utilização de salvaguardas metodológicas, como o uso de um protocolo, a criação de um banco de dados organizado e a manutenção de um encadeamento claro de evidências, que permita rastrear as conclusões de volta às fontes originais. Tais práticas reforçam a validade do estudo e garantem transparência ao processo analítico. Em seguida, o pesquisador pode empregar diferentes técnicas auxiliares, como a construção de matrizes de categorias, a disposição das informações em séries ou fluxogramas, a criação de tabelas comparativas e a ordenação temporal dos eventos. Essas manipulações preliminares ajudam a organizar o material empírico, reduzir sua complexidade e evitar que a investigação se torne estagnada diante do volume de dados coletados.
+
+Além dessas técnicas, o estudo de caso permite recorrer a estratégias analíticas mais elaboradas, como a construção iterativa de explicações, que envolve revisar continuamente interpretações à luz das evidências disponíveis e considerar explicações alternativas para os fenômenos observados. Nesse ponto, podem ser incorporadas as técnicas qualitativas destacadas por \citeonline{Wohlin:2012:ESE:2349018} como a codificação sistemática dos dados, a comparação constante entre evidências, a triangulação e o uso de múltiplos pesquisadores para reduzir viés, que fortalecem a cadeia de evidência e promovem interpretações mais confiáveis.
+
+De forma complementar, quando o estudo de caso inclui dados numéricos, também podem ser aplicadas técnicas quantitativas mencionadas por \citeonline{Wohlin:2012:ESE:2349018}, como o uso de estatísticas descritivas, análise de correlação, modelos preditivos ou mesmo testes de hipótese, permitindo explorar padrões, tendências ou relações entre variáveis. Segundo \citeonline{yin_case_study_2009}, em situações específicas, é possível que a análise incorpore métodos como a análise de séries temporais, o que é útil quando há dados quantitativos ou sequenciais que permitam identificar padrões, variações ou tendências ao longo do tempo. Assim, a etapa de análise é estruturada por um processo dinâmico, estruturado e teoricamente orientado, cujo objetivo é produzir interpretações consistentes, fundamentadas e capazes de responder adequadamente às questões de pesquisa.
+
+\subsubsection{Relato dos Resultados}
+
+O relato de pesquisas do “mundo real” deve ser claro, transparente e bem contextualizado. A estrutura a seguir adapta esses princípios para um formato objetivo de apresentação dos resultados \cite{robson2002real}:
+
+\begin{itemize}
+\item \textbf{Contexto:} apresenta o ambiente em que o estudo ocorreu, descrevendo participantes, cenário e condições relevantes. Permite ao leitor compreender as especificidades do caso e situar as evidências dentro do contexto real em que foram observadas;
+
+\item \textbf{Procedimentos:} resume as etapas metodológicas: definição do caso, acesso ao campo, coleta e análise dos dados. Expõe as escolhas feitas e garante transparência metodológica, permitindo avaliar a credibilidade e a replicabilidade do estudo;
+
+\item \textbf{Resultados:} mostra os principais achados de forma direta e organizada. Podem ser incluídos trechos de falas, tabelas, gráficos ou exemplos que funcionem como “instantâneos” das evidências. A apresentação dos dados deve sustentar claramente as conclusões;
+
+\item \textbf{Discussão:} interpreta os resultados à luz da literatura, examinando implicações, significados e explicações possíveis. Conecta os achados ao conhecimento existente, aponta limites e destaca contribuições, sendo um passo essencial no processo interpretativo;
+
+\item \textbf{Conclusões:} sintetiza os pontos centrais do estudo e destaca suas contribuições. Aponta desdobramentos práticos e possíveis direções para pesquisas futuras, encerrando o relato de forma clara e objetiva.
+\end{itemize}
+
+Neste estudo, serão analisados projetos produtos de software livre reais, em o uso em organizações públicas nacionais. Portanto, trata-se de um observação em restrospectiva. Para tanto, será adodato o protocolo do estudo de caso, aplicado na análise de dados e informações de projetos que já foram desenvolvidos e entregues.
+
+
+\subsection{Experimento}
+
+Segundo \citeonline{Wohlin:2012:ESE:2349018}, os experimentos em engenharia de software constituem uma estratégia empírica estruturada que permite manipular variáveis em um ambiente controlado para avaliar seus efeitos sobre resultados específicos. A partir dessa perspectiva, descreve-se um conjunto de componentes e etapas que orientam a condução sistemática de experimentos, garantindo rigor metodológico e clareza na interpretação dos resultados:
+
+\subsubsection{Artefatos}
+
+\begin{itemize}
+    \item \textbf{Variáveis:} Variáveis representam os fatores manipulados ou observados, podendo ser independentes (controladas pelo pesquisador) ou dependentes (resultados observados).
+    \item \textbf{Tratamentos:} Tratamentos correspondem aos diferentes valores ou condições aplicados às variáveis independentes para comparação.
+    \item \textbf{Objetos:} Objetos são os itens ou artefatos de software aos quais os tratamentos são aplicados, como códigos-fonte, documentos ou ferramentas.
+    \item \textbf{Sujeitos:} Sujeitos, por sua vez, são os participantes que executam as tarefas experimentais, podendo ser estudantes, profissionais ou sistemas automatizados, dependendo do tipo de experimento.
+\end{itemize}
+
+\subsubsection{Processo}
+
+\begin{itemize}
+    \item \textbf{Definição de Escopo:} delimitação do problema, objetivos e hipótese inicial.
+    \item \textbf{Planejamento:} estabelecimento do contexto, desenho experimental, variáveis, sujeitos, instrumentação e avaliação de validade.
+    \item \textbf{Operação:} preparação dos participantes e materiais, execução conforme o design definido e validação dos dados coletados.
+    \item \textbf{Análise e Interpretação:} aplicação de estatísticas descritivas, possíveis reduções do conjunto de dados e testes de hipótese para avaliar os efeitos dos tratamentos.
+    \item \textbf{Apresentação e Empacotamento:} organização dos resultados, documentação do experimento e preparação dos artefatos necessários para comunicação e eventual replicação.
+\end{itemize}
+
+
+\todo[inline, color=pink]{Este capítulo tem o mesmo tipo de problema que a introdução. Antes de começarem a falar de métodos ágeis e BDD, em partticular, é preciso contemporizar a área de VV\&T- Verificação, Validação e principalmente testes de software}
+
+\section{Metodologias Ágeis}
+
+\subsection{As Origens Iterativas e Evolucionárias}
+
+Embora a Programação Extrema (XP) e o Scrum tenham ganhado notoriedade no final da década de 1990 \cite{Uludag2021}, a base dos métodos ágeis reside nas práticas do ciclo de vida iterativo e incremental. Já na década de 1930, Walter Shewhart propôs os ciclos curtos de "plan-do-study-act" (PDSA) para melhoria da qualidade. No início da década de 1960, o Projeto Mercury demonstrou a aplicação bem-sucedida do ciclo de vida iterativo e incremental no desenvolvimento de software, utilizando uma série de 17 iterações ao longo de 31 meses, com uma média de cerca de oito semanas por iteração \cite{Larman2003iid}.
+
+Segundo \cite{Larman2003iid}, a ascensão dessas abordagens evolutivas se deu em contraste direto com o modelo sequencial em cascata (waterfall) que, apesar de ter sido simplificado e mal interpretado a partir das recomendações de Winston Royce em 1970, dominou a engenharia de software da época, oferecendo uma ilusão de ordem e previsibilidade rígidas. Entretanto, a comunidade já reconhecia o valor da abordagem iterativa. Tom Gilb, um dos primeiros e mais ativos promotores do IID, introduziu em 1976 a ideia de que um sistema complexo seria mais bem-sucedido se implementado em pequenos passos, com feedback do mundo real antes do investimento total de recursos. Essa linhagem de pensamento culminou na formalização do Modelo Espiral por \citeonline{Boehm1988sm}, que enfatizou ciclos de desenvolvimento guiados pela avaliação de risco.
+
+\subsection{O Surgimento das Metodologias Lightweight}
+
+A insatisfação com a complexidade e a ineficácia dos processos de desenvolvimento que exigiam vasta documentação e planejamento antecipado rigoroso, gerou um movimento em direção a metodologias mais leves no final da década de 1990 \cite{Hoda2018re}. Kent Beck desenvolveu a Extreme Programming (XP), especificamente para atender às necessidades de pequenas equipes lidando com requisitos vagos e em constante mudança, desafiando a premissa de que o custo da mudança aumenta drasticamente ao longo do tempo \cite{Beck2004}. O conjunto completo de práticas do XP, que valoriza a comunicação, a simplicidade, o feedback, coragem e respeito, amadureceu no projeto C3 da Chrysler em 1996 \cite{Larman2003iid}.
+
+\subsection{A Formalização do Movimento Ágil}
+
+O movimento Ágil foi formalmente estabelecido em fevereiro de 2001, quando 17 especialistas se reuniram em Utah para buscar um "terreno comum" entre as diversas novas abordagens \cite{FowlerHighsmith2001}. O resultado dessa colaboração foi o Manifesto para o Desenvolvimento Ágil de Software, que estabeleceu quatro valores centrais \cite{FowlerHighsmith2001, Martin2003}:
+
+\begin{itemize}
+    \item \textbf{Indivíduos e interações} mais que processos e ferramentas;
+    \item \textbf{Software funcionando} mais que documentação abrangente;
+    \item \textbf{Colaboração com o cliente} mais que negociação de contratos;
+    \item \textbf{Responder a mudanças} mais que seguir um plano.
+\end{itemize}
+
+Conforme \citeonline{FowlerHighsmith2001}, o manifesto enfatizou que, embora os itens à direita possuam valor, os itens à esquerda são mais valorizados. A filosofia central do Ágil é que facilitar a mudança é mais eficaz do que tentar preveni-la. Entre os doze princípios que suportam esses valores, estão a prioridade em satisfazer o cliente através da entrega contínua e antecipada de software de valor para o negócio, a aceitação de requisitos em mudança (mesmo que tardiamente), a preferência pela entrega de software funcionando em escalas de semanas a meses, e a constatação de que o software em funcionamento é a medida primária do progresso \cite{FowlerHighsmith2001, Martin2003}.
+
+Assim, o desenvolvimento ágil se tornou uma importante disciplina da engenharia de software, sendo hoje, proeminente em escala global \cite{Hoda2018re} \cite{Choras2020}.
+
+\section{Behavior-Driven Development}
+
+\subsection{Raízes no Test-Driven Development (TDD)}
+
+O Behavior-Driven Development (BDD) é um método ágil  que surgiu como uma resposta aos problemas e desafios observados na prática do TestDriven Development (TDD) \cite{Solis2011}. O TDD, embora eficaz, apresentava barreiras conceituais: programadores relutavam em escrever ``testes'', testers ficavam ansiosos com programadores escrevendo testes, e os stakeholders de negócio frequentemente não viam valor em artefatos que não fossem código de produção \cite{smart2014bdd}.
+
+Conforme \citeonline{smart2014bdd}, o BDD foi concebido por Dan North no início e meados dos anos 2000. North percebeu que a palavra ``teste'' dificultava a relação dos desenvolvedores com o TDD como uma ferramenta de design \cite{smart2014bdd, RSpec2010}. Em vez de focar em ``testes'' e validação de métodos, ele reorientou a prática para o ``comportamento'' esperado do software. Essa mudança de foco ajudou a aliviar a confusão e o ceticismo em torno do TDD \cite{Solis2011}.
+
+O BDD pode ser considerado uma evolução do TDD e do Acceptance TestDriven Development (ATDD). O ATDD é um tipo de TDD no qual o processo de desenvolvimento é guiado por testes de aceitação que representam os requisitos dos stakeholders. O BDD, por sua vez, baseia-se no ATDD, mas oferece uma linguagem específica mais clara e compreensível para especificar esses testes \cite{Solis2011}.
+
+\subsection{A Formalização da Linguagem e o Foco no Comportamento}
+
+O conceito central do BDD reside na especificação do comportamento do sistema e na definição de especificações executáveis \cite{Solis2011}. O objetivo principal é garantir que o software seja construído para atender às necessidades do negócio, reduzindo a perda de informação e os mal-entendidos que são comuns nos processos tradicionais \cite{smart2014bdd}.
+
+Segundo \citeonline{smart2014bdd}, Dan North trabalhou com o analista de negócios Chris Matts para aplicar sua abordagem ao espaço de análise de requisitos. Juntos, eles desenvolveram o vocabulário Given-When-Then (Dado-Quando-Então). Essa notação estruturada forma a base de uma linguagem onipresente (\textit{ubiquitous language}), um conceito extraído do Domain-Driven Design (DDD), introduzido por Eric Evans em 2003. Uma linguagem ubíqua baseada no domínio do negócio permite que clientes e desenvolvedores falem o mesmo idioma sem ambiguidade \cite{Solis2011}.
+
+\textcolor{blue}{Eric Evans}\todo[color=yellow]{Citar referência.}
+
+O formato Given-When-Then descreve cenários de comportamento de forma clara \cite{smart2014bdd}:
+
+\begin{itemize}
+    \item \textbf{Given}: estabelece o contexto ou pré-condições.
+    \item \textbf{When}: descreve a ação sob teste.
+    \item \textbf{Then}: especifica o resultado ou o \textit{outcome} esperado.
+\end{itemize}
+
+Essa notação evoluiu para um formato amplamente utilizado, muitas vezes referido como Gherkin \cite{smart2014bdd}.
+
+\subsection{Evolução e Maturidade do BDD}
+
+Conforme apresentado em diferentes estudos sobre a evolução do BDD \cite{Solis2011, smart2014bdd, Binamungu2023}, o surgimento de ferramentas e bibliotecas dedicadas desempenhou um papel central na consolidação da abordagem. A primeira delas, o JBehave, foi criada por Dan North em meados dos anos 2000 \cite{smart2014bdd} e posteriormente inspirou versões para outras linguagens, como o RBehave, mais tarde incorporado ao RSpec via \textit{Story Runner} \cite{RSpec2010}. Atualmente, ferramentas como Cucumber, JBehave e RSpec compõem o ecossistema comumente utilizado para o desenvolvimento orientado a comportamento \cite{Solis2011}.
+
+No campo acadêmico, o BDD tem recebido atenção crescente desde sua introdução em 2006 \cite{Solis2011}. Segundo \citeonline{Binamungu2023}, houve um aumento expressivo no número de publicações, com um pico em 2019, além da consolidação de três eixos principais de investigação: o uso do BDD para apoiar atividades de engenharia de software, o aprimoramento do processo e dos artefatos relacionados e a aplicação da abordagem em diferentes contextos organizacionais e técnicos.
+
+Como reflexo desse amadurecimento contínuo, o BDD ultrapassa o status de um conjunto de técnicas ou ferramentas, apresentando-se como uma filosofia de desenvolvimento que busca garantir que as equipes construam “o software certo” e o “construam corretamente”, orientando o processo por meio de uma linguagem clara, compartilhada e centrada no comportamento do sistema \cite{smart2014bdd}.
+
+\section{Processamento de Linguagem Natural}
+
+O Processamento de Linguagem Natural (PLN), ou \textit{Natural Language Processing} (NLP), é um campo da computação dedicado ao estudo e ao desenvolvimento de técnicas capazes de analisar, interpretar e extrair informação estruturada a partir de textos escritos em linguagem natural \cite{Wang2022}. Em engenharia de software, o PLN tem se destacado por apoiar tarefas como análise de requisitos, geração automática de testes e interpretação de artefatos textuais utilizados em metodologias ágeis, especialmente no contexto do \textit{Behavior-Driven Development} (BDD) e do \textit{Acceptance Test-Driven Development} (ATDD) \cite{Penagos2024}.
+
+Segundo \citeonline{Wang2022}, O PLN é frequentemente organizado como um \textit{pipeline} de processamento composto por múltiplas camadas analíticas. Entre as técnicas tradicionalmente empregadas, destacam-se:
+
+\begin{itemize}
+    \item \textbf{Tokenização}: etapa responsável por segmentar sentenças em unidades linguísticas elementares (\textit{tokens}), geralmente com base em regras morfológicas, espaços em branco e sinais de pontuação. Essa segmentação é um requisito para as demais análises \cite{Wang2022}.
+    
+    \item \textbf{Identificação da Parte do Discurso (\textit{POS Tagging})}: atribui a cada palavra sua classe gramatical, como substantivo, verbo ou pronome. Essa técnica é amplamente utilizada em abordagens de análise de requisitos e testes \cite{Wang2022}.
+    
+    \item \textbf{Lematização}: converte palavras para sua forma canônica (\textit{lemma}), reduzindo variações morfológicas e padronizando o texto para análises posteriores. Geralmente é aplicada em conjunto com tokenização e \textit{POS tagging} \cite{Rotaru2023}. 
+    
+    \item \textbf{Reconhecimento de Entidades Nomeadas (NER)}: identifica e classifica entidades específicas em categorias como pessoas, organizações ou localidades. Essa análise contribui para a extração de informações contextuais relevantes em descrições textuais de requisitos e cenários \cite{Wang2022}.
+    
+    \item \textbf{Rotulação de Papéis Semânticos (\textit{Semantic Role Labeling} (SRL))}: técnica avançada que identifica os papéis semânticos desempenhados pelos elementos da sentença, como agente (quem realiza a ação), paciente (quem é afetado) e circunstâncias associadas \cite{Paduraru2025, Rotaru2023}. Modelos baseados em corpora como PropBank e NomBank utilizam anotações como \texttt{ARG0}, \texttt{ARG1} e \texttt{ARGM} para indicar relações semânticas não capturadas adequadamente por POS tagging ou \textit{dependency parsing}. A SRL é especialmente útil em domínios que exigem interpretação precisa de comportamentos, como no mapeamento de passos Given--When--Then para estruturas formais \cite{Wang2022}.
+    
+    \item \textbf{Similaridade Semântica}: Conforme \citeonline{Wang2022}, técnicas de medição de similaridade textual utilizadas para identificar sentenças conceitualmente próximas. Recursos léxicos como VerbNet e WordNet ajudam a identificar sinônimos, estabelecer relações semânticas e agrupar verbos com comportamentos semelhantes, permitindo inferir equivalências entre diferentes descrições de ações.
+\end{itemize}
+
+Além de seu uso em Large Language Models (LLMs), o PLN possui aplicações diretas em engenharia de software. Em BDD, por exemplo, os cenários são expressos em linguagem natural, o que permite aplicar técnicas linguísticas para detectar inconsistências, extrair modelos conceituais ou gerar casos de teste automaticamente \cite{Mastain2023}. Abordagens como a UMTG utilizam o PLN para derivar restrições OCL a partir de casos de uso, enquanto métodos de rastreabilidade automática empregam tokenização, POS tagging e NER combinados a embeddings como Word2Vec para relacionar requisitos, código-fonte e testes \cite{Mastain2023}.
+
+Modelos contemporâneos como o BERT (\textit{Bidirectional Encoder Representations from Transformers}) também têm sido empregados em tarefas de análise linguística avançada \cite{Alinezhadtilaki2025}. Devido à sua natureza bidirecional, o BERT é capaz de capturar nuances contextuais profundas, e estudos indicam que seu uso melhora a objetividade e a precisão na avaliação de cenários BDD \cite{Alinezhadtilaki2025}.
+
+Combinadas, essas técnicas permitem que sistemas automatizados interpretem linguagem natural de maneira robusta, servindo como base para estágios posteriores de inteligência artificial voltados à geração de código, recomendação de testes e validação semântica \cite{Paduraru2025}.
+
+\section{Inteligência Artificial}
+
+Os cenários escritos em linguagem natural no formato BDD frequentemente apresentam variações e ambiguidades que dificultam sua interpretação precisa. Estudos mostram que modelos de linguagem, como o GPT 4 Turbo, conseguem gerar cenários de teste úteis e até revelar casos não considerados inicialmente, demonstrando capacidade de lidar com ambiguidades presentes nas descrições textuais \cite{Ferreira2025}.
+
+Pesquisas evidenciam que modelos como GPT 3.5 e GPT 4 conseguem gerar testes BDD livres de erros de sintaxe e com maior precisão, mesmo diante de ambiguidades linguísticas, especialmente quando aplicadas técnicas de few shot prompting \cite{Karpurapu2024}.
+
+Além disso, LLMs conseguem traduzir descrições textuais de cenários BDD em código de automação Cypress, incluindo definições de passos e classes no padrão \textit{Page Object Model(POM)} com seletores e interações de interface, demonstrando sua habilidade de transformar linguagem natural em ações concretas \cite{Nettur2025}. Esses avanços mostram que modelos de IA podem atuar como compiladores, traduzindo especificações em linguagem natural de comportamento em código executável.
+
+\todo[inline, color=pink]{'código de automação Cypress' salvo engano, é citado pela primeira vez, confere? Precisa ser melhor contextualizado no parágrafo anterior.}
+
+
+
+\section{Modelos de Qualidade de Software}
+
+O Modelo de \citeonline{McCall77} foi o primeiro modelo de qualidade de produto de software proposto e buscava aproximar desenvolvedores e usuários ao organizar a qualidade em três grandes perspectivas, revisão, operação e transição do produto. Esse modelo foi concebido com o objetivo de reduzir a distância entre as necessidades do usuário e as prioridades técnicas do desenvolvedor \cite{AlQutaish2010}. A revisão do produto aborda a capacidade de modificação do software ao longo de sua vida útil, incluindo aspectos como facilidade de manutenção, adaptação a mudanças e possibilidade de testar o sistema de forma eficaz. A operação do produto foca no desempenho durante o uso, considerando precisão das funcionalidades, funcionamento confiável, bom uso dos recursos, segurança contra acessos indevidos e facilidade de aprendizado pelo usuário. Já a transição do produto trata da capacidade de migração ou reaproveitamento do software em novos ambientes, reunindo fatores como transferência para outras plataformas, reutilização de componentes e integração com outros sistemas, organizados nessas três perspectivas que reúnem fatores e critérios de avaliação específicos \cite{AlQutaish2010}.
+
+O Modelo de \citeonline{boehm1978characteristics}  aprofunda essa análise ao organizar a qualidade em três níveis hierárquicos. No nível mai alto, define objetivos gerais do sistema, como utilidade, manutenibilidade e portabilidade. O nível intermediário traduz esses objetivos em atributos essenciais esperados do software, atuando como elo entre as metas amplas e os aspectos técnicos. Por fim, o nível das características primitivas reúne os elementos básicos utilizados na construção das métricas que permitem avaliar a qualidade de forma quantitativa, já que o modelo foi estruturado para possibilitar uma avaliação automática e quantitativa da qualidade de software \cite{AlQutaish2010}.
+
+Publicada em 1991, a ISO/IEC 9126 foi amplamente utilizada para avaliar a qualidade de produtos de software, definindo uma estrutura que futuramente serviria como guia para o desenvolvimento de modelos mais modernos, como a ISO/IEC 25010. Essa norma foi diretamente influenciada pelos trabalhos precursores de McCall e Boehm. Ela reestuturou e organizou seis características essenciais de qualidade: adequação funcional, confiabilidade, usabilidade, eficiência, manutenibilidade e portabilidade \cite{ISO9126:1991}. Esse modelo consolidou diretrizes para o uso dessas características na avaliação de software ao longo de todo o ciclo de vida, servindo como base metodológica inicial para a evolução dos modelos de qualidade utilizados na indústria. Por isso, foi fundamental para consolidar uma visão estruturada e comparável de qualidade, influenciando por conseguinte, modelos posteriores e mais completos.
+
+A ISO/IEC 25010 é a evolução da ISO 9126\textcolor{blue}{software}\todo[color=yellow]{Novamente, o problema do registro bibtex} \cite{ISO25010}.
+\todo[inline, color=pink]{Escrever uma frase antes dessas duas destacando as principais alterações propostas pela ISO 25010}
+ No visão da Qualide em Uso, a qualidade é avaliada conforme a interação do usuário com o sistema, contemplando cinco características principais: efetividade, eficiência, satisfação, ausência de riscos e cobertura de contexto. Já a Qualidade de Produto foca nas visões da qualidade internas e externas do sistema e contempla oito características: adequação funcional, eficiência de desempenho, compatibilidade, usabilidade, confiabilidade, segurança, manutenibilidade e  \textcolor{blue}{portabilidade}\todo[color=yellow]{Novamente, o problema do registro bibtex} \cite{ISO25010}.
+
+Atualmente, a ISO/IEC 25010 é amplamente utilizada para avaliação da qualidade de software, e suas características e subcaracterísticas fornecem ferramentas para especificar a qualidade, possibilitando maior consistência entre requisitos de desenvolvimento. Apesar de sua relevância, ela possui uma limitação importante: define o que é qualidade, mas não descreve como medir ou operacionalizar essa qualidade em ferramentas práticas. “Esses modelos de qualidade não especificam como os atributos devem ser medidos e como os resultados de medição podem ser agregados para uma avaliação geral” (\citeauthor{Wagner2016}, \citeyear{Wagner2016}, p. 2, tradução nossa). Os autores também destacam que “modelos como a ISO 25010 descrevem conceitos gerais de software de alta qualidade, mas carecem da habilidade de serem usados para avaliação ou melhoria concreta” (\citeauthor{Wagner2016}, \citeyear{Wagner2016}, p. 1, tradução nossa). A própria ISO reconhece esse caráter conceitual ao afirmar que suas características devem ser especificadas, medidas e avaliadas utilizando métodos validados ou amplamente aceitos, servindo apenas como referência para identificar características relevantes que, posteriormente, devem ser convertidas em requisitos, critérios de satisfação e métricas correspondentes \cite{ISO25010}. Assim, embora essencial como orientação conceitual, a ISO não fornece as ferramentas necessárias para operacionalizar a qualidade, ainda mais, em ambientes modernos de automação.
+
+A norma não apresenta metodologias como o Behavior-Driven Development (BDD) nem critérios para avaliar de forma objetiva a clareza e o propósito de cenários comportamentais. Também não oferece diretrizes para estruturar requisitos textuais que facilitem a interpretação automática por modelos de linguagem (LLMs). 
+
+\todo[inline, color=pink]{Mudei o parágrafo anterior de lugar. De aqualquer forma precisa ser reescrito. A ISO não vai apresentar isso mesmo. Contextualizar o BDD segundo a sua respectiva característica e sub. Manter coerência com a definição do GQM}
+
