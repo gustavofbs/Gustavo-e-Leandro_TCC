@@ -6,13 +6,12 @@ As questões apresentadas na Tabela \ref{tab:questoes-pesquisa} não configuram 
 
 Ao todo, a execução da string de busca realizada em 09 de outubro de 2025 resultou em 433 artigos, dos quais 22 foram selecionados para leitura completa após a aplicação criteriosa dos filtros definidos. Essa etapa permitiu refinar o conjunto inicial, privilegiando estudos que tratam diretamente da integração entre BDD, modelos de linguagem, extração semântica e automação de testes.
 
-O conjunto final de artigos selecionados que podem ser vistos nas Tabelas \ref{tab:conjunto-final} e \ref{tab:conjunto-final-2} refletiu, portanto, um equilíbrio entre o rigor metodológico da busca automatizada, permitindo contemplar diferentes perspectivas relevantes ao domínio investigado. A sequência das etapas realizadas, desde a filtragem inicial até a seleção final, foi conduzida de forma a garantir transparência, alinhamento com o protocolo de pesquisa e aderência às questões que orientam este trabalho.
+O conjunto final de artigos selecionados que podem ser vistos na Tabela \ref{tab:artigos-selecionados} refletiu, portanto, um equilíbrio entre o rigor metodológico da busca automatizada, permitindo contemplar diferentes perspectivas relevantes ao domínio investigado. A sequência das etapas realizadas, desde a filtragem inicial até a seleção final, foi conduzida de forma a garantir transparência, alinhamento com o protocolo de pesquisa e aderência às questões que orientam este trabalho.
 
 \begin{table}
 \centering
 \caption{Questões de Pesquisa}
 \label{tab:questoes-pesquisa}
-\resizebox{0.7\textwidth}{!}{%
 \begin{tabular}{|p{4cm}|p{11cm}|}
 \hline
 \textbf{Questões de Pesquisa} & 
@@ -29,7 +28,7 @@ O conjunto final de artigos selecionados que podem ser vistos nas Tabelas \ref{t
     \item Quais fatores limitam a adoção industrial de IA para transformar BDD em testes automatizados?
 \end{enumerate}
 \\ \hline
-\end{tabular}}
+\end{tabular}
 \begin{center}\caption*{Fonte: Autor}\end{center}
 \end{table}
 
@@ -39,7 +38,6 @@ O conjunto final de artigos selecionados que podem ser vistos nas Tabelas \ref{t
 \centering
 \caption{Critérios de Inclusão e Exclusão}
 \label{tab:criterios}
-\resizebox{0.7\textwidth}{!}{%
 \begin{tabular}{|p{4cm}|p{11cm}|}
 \hline
 \textbf{Critérios de Inclusão} &
@@ -60,7 +58,7 @@ O conjunto final de artigos selecionados que podem ser vistos nas Tabelas \ref{t
     \item Estudos fora da Scopus, IEEE Xplore ou ACM Digital Library.
 \end{enumerate}
 \\ \hline
-\end{tabular}}
+\end{tabular}
 \begin{center}\caption*{Fonte: Autor}\end{center}
 \end{table}
 
@@ -95,64 +93,49 @@ Q7. Evidências relacionadas às QP1–QP10 \newline
 \begin{center}\caption*{Fonte: Autor}\end{center}
 \end{table}
 
-
-
-\begin{table}[ht]
-    \caption{Conjunto de Artigos Selecionados}
+\begin{longtable}{|p{1cm}|p{4cm}|p{3cm}|p{3cm}|p{4cm}|}
+    \caption{Artigos Selecionados} \label{tab:artigos-selecionados} \\
+    \hline
+    \textbf{Nº} & \textbf{Título} & \textbf{Publicado em Revista} & \textbf{Validação Experimental} & \textbf{Referência} \\
+    \hline
+    \endfirsthead
     
-    \begin{tabular}{|p{.5cm}|p{6cm}|p{4cm}|p{4cm}|}
-        \hline
-        Nº & Título & Publicado em revista? & Referência \\ \hline
+    \multicolumn{5}{c}{\tablename\ \thetable{} -- Continuação} \\
+    \hline
+    \textbf{Nº} & \textbf{Título} & \textbf{Publicado em Revista} & \textbf{Validação Experimental} & \textbf{Referência} \\
+    \hline
+    \endhead
+        
+    \hline
+    \multicolumn{5}{c}{Fonte: Autor} \\
+    \endlastfoot
 
-        1 & \textit{A Behavior-driven Development and Reinforcement Learning approach for videogame automated testing} & Não & \cite{Mastain2024} \\ \hline
-        2 & \textit{AI Driven Tools in Modern Software Quality Assurance: An Assessment of Benefits, Challenges and Future Directions} & Sim & \cite{Pysmennyi2025} \\ \hline
-        3 & \textit{AI-Generated Test Scripts for Web E2E Testing with ChatGPT and Copilot: A Preliminary Study} & Não & \cite{Leotta2024} \\ \hline
-        4 & \textit{Acceptance Test Generation with Large Language Models: An Industrial Case Study} & Não & \cite{Ferreira2025} \\ \hline
-        5 & \textit{Agentic AI for Behavior-Driven Development Testing Using Large Language Models} & Não & \cite{Paduraru2025} \\ \hline
-        6 & \textit{Agile testing using user language automation with artificial intelligence in Enjisset} & Não & \cite{Penagos2024} \\ \hline
-        7 & \textit{An Autonomous RL Agent Methodology for Dynamic Web UI Testing in a BDD Framework} & Sim & \cite{Mughal2025} \\ \hline
-        8 & \textit{Assessing the Quality of Behavior-Driven Development Scenarios Using BERT} & Não & \cite{Alinezhadtilaki2025} \\ \hline
-        9 & \textit{Automatic Generation of Acceptance Test Cases from Use Case Specifications: An NLP-Based Approach} & Sim & \cite{Wang2022} \\ \hline
-        10 & \textit{Comprehensive Evaluation and Insights Into the Use of Large Language Models in the Automation of Behavior-Driven Development Acceptance Test Formulation} & Sim & \cite{Karpurapu2024} \\ \hline
-        11 & \textit{Cypress Copilot: Development of an AI Assistant for Boosting Productivity and Transforming Web Application Testing} & Sim & \cite{Nettur2025} \\ \hline
-        \multicolumn{4}{|c|}{Continua na Tabela \ref{tab:conjunto-final-2}} \\ \hline
-    \end{tabular}
-    
-    \begin{center}
-        \caption*{Fonte: Autor}
-    \end{center}
+1 & \textit{A Behavior-driven Development and Reinforcement Learning approach for videogame automated testing} & Não & & \cite{Mastain2024} \\ \hline
+2 & \textit{AI Driven Tools in Modern Software Quality Assurance: An Assessment of Benefits, Challenges and Future Directions} & Sim & & \cite{Pysmennyi2025} \\ \hline
+3 & \textit{AI-Generated Test Scripts for Web E2E Testing with ChatGPT and Copilot: A Preliminary Study} & Não & & \cite{Leotta2024} \\ \hline
+4 & \textit{Acceptance Test Generation with Large Language Models: An Industrial Case Study} & Não & & \cite{Ferreira2025} \\ \hline
+5 & \textit{Agentic AI for Behavior-Driven Development Testing Using Large Language Models} & Não & & \cite{Paduraru2025} \\ \hline
+6 & \textit{Agile testing using user language automation with artificial intelligence in Enjisset} & Não & & \cite{Penagos2024} \\ \hline
+7 & \textit{An Autonomous RL Agent Methodology for Dynamic Web UI Testing in a BDD Framework} & Sim & & \cite{Mughal2025} \\ \hline
+8 & \textit{Assessing the Quality of Behavior-Driven Development Scenarios Using BERT} & Não & & \cite{Alinezhadtilaki2025} \\ \hline
+9 & \textit{Automatic Generation of Acceptance Test Cases from Use Case Specifications: An NLP-Based Approach} & Sim & & \cite{Wang2022} \\ \hline
+10 & \textit{Comprehensive Evaluation and Insights Into the Use of Large Language Models in the Automation of Behavior-Driven Development Acceptance Test Formulation} & Sim & & \cite{Karpurapu2024} \\ \hline
+11 & \textit{Cypress Copilot: Development of an AI Assistant for Boosting Productivity and Transforming Web Application Testing} & Sim & & \cite{Nettur2025} \\ \hline
+12 & \textit{Empowering Agile-Based Generative Software Development through Human-AI Teamwork} & Sim & & \cite{Zhang2025} \\ \hline
+13 & \textit{Exploring LLMs Impact on Student-Created User Stories and Acceptance Testing in Software Development} & Não & & \cite{Brockenbrough2025} \\ \hline
+14 & \textit{Exploring Large Language Models for Requirements on String Values} & Não & & \cite{Babikian2025} \\ \hline
+15 & \textit{Generating Multiple Conceptual Models from Behavior-Driven Development Scenarios} & Sim & & \cite{GUPTA2023102141} \\ \hline
+16 & \textit{Object Oriented BDD and Executable Human-Language Module Specification} & Não & & \cite{Lee2023} \\ \hline
+17 & \textit{Prompting Creative Requirements via Traceable and Adversarial Examples in Deep Learning} & Não & & \cite{Gudaparthi2023} \\ \hline
+18 & \textit{RiverGame-a game testing tool using artificial intelligence} & Não & & \cite{Paduraru2022} \\ \hline
+19 & \textit{Test Case Prioritization Based on Neural Network Classification with Artifacts Traceability} & Não & & \cite{Rotaru2023} \\ \hline
+20 & \textit{The Impact of Generative AI on Test \& Evaluation: Challenges and Opportunities} & Não & & \cite{Freeman2025} \\ \hline
+21 & \textit{Towards Code Generation from BDD Test Case Specifications: A Vision} & Não & & \cite{Chemnitz2023} \\ \hline
+22 & \textit{Visual Test Framework: Enhancing Software Test Automation with Visual Artificial Intelligence and Behavioral Driven Development} & Não & & \cite{Ragel2023} \\ \hline
 
-    \label{tab:conjunto-final}
-\end{table}
+\end{longtable}
 
 
-
-\begin{table}[ht]
-    \caption{Conjunto de Artigos Selecionados (Continuação)}
-    
-    \begin{tabular}{|p{.5cm}|p{6cm}|p{4cm}|p{4cm}|}
-        \hline
-        Nº & Título & Publicado em revista? & Referência \\ \hline
-
-        12 & \textit{Empowering Agile-Based Generative Software Development through Human-AI Teamwork} & Sim & \cite{Zhang2025} \\ \hline
-        13 & \textit{Exploring LLMs Impact on Student-Created User Stories and Acceptance Testing in Software Development} & Não & \cite{Brockenbrough2025} \\ \hline
-        14 & \textit{Exploring Large Language Models for Requirements on String Values} & Não & \cite{Babikian2025} \\ \hline
-        15 & \textit{Generating Multiple Conceptual Models from Behavior-Driven Development Scenarios} & Sim & \cite{GUPTA2023102141} \\ \hline
-        16 & \textit{Object Oriented BDD and Executable Human-Language Module Specification} & Não & \cite{Lee2023} \\ \hline
-        17 & \textit{Prompting Creative Requirements via Traceable and Adversarial Examples in Deep Learning} & Não & \cite{Gudaparthi2023} \\ \hline
-        18 & \textit{RiverGame-a game testing tool using artificial intelligence} & Não & \cite{Paduraru2022} \\ \hline
-        19 & \textit{Test Case Prioritization Based on Neural Network Classification with Artifacts Traceability} & Não & \cite{Rotaru2023} \\ \hline
-        20 & \textit{The Impact of Generative AI on Test \& Evaluation: Challenges and Opportunities} & Não & \cite{Freeman2025} \\ \hline
-        21 & \textit{Towards Code Generation from BDD Test Case Specifications: A Vision} & Não & \cite{Chemnitz2023} \\ \hline
-        22 & \textit{Visual Test Framework: Enhancing Software Test Automation with Visual Artificial Intelligence and Behavioral Driven Development} & Não & \cite{Ragel2023} \\ \hline
-    \end{tabular}
-    
-    \begin{center}
-        \caption*{Fonte: Autor}
-    \end{center}
-
-    \label{tab:conjunto-final-2}
-\end{table}
 
 
 
