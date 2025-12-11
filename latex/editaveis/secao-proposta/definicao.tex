@@ -102,6 +102,175 @@ O Módulo 3 utiliza tanto a representação semântica produzida no primeiro mó
 
 Após a finalização do Módulo 3, os testes gerados pelo pipeline serão comparados aos testes produzidos diretamente por modelos de linguagem generalistas, como GPT, DeepSeek e LLaMA.
 
+\subsection{Módulo 1: Processamento Semântico}
+
+Entrada:
+
+\[
+T = \{ t_1,\, t_2,\, \ldots,\, t_n \}
+\]
+
+A entrada deste módulo consiste no texto da história de usuário e nos cenários correspondentes escritos em BDD.
+
+1. Tokenização
+
+\[
+T \;\stackrel{\textit{tokenizer}}{\longrightarrow}\; 
+W = \{ \, w_1,\, w_2,\, \ldots,\, w_m \,\}
+\]
+
+A tokenização constitui a etapa inicial do processamento de linguagem natural aplicado ao texto de entrada. Nessa fase, o conjunto textualTT — composto pela história de usuário e pelos cenários BDD — é decomposto em unidades linguísticas mínimas denominadas tokens. Esse processo é essencial para permitir que modelos de NLP interpretem o texto de forma estruturada, reduzindo variações lexicais e preparando os dados para etapas posteriores, como POS-tagging, parsing e extração semântica. Sem essa decomposição preliminar, o modelo teria dificuldade para identificar relações entre palavras, detectar ações ou mapear agentes e objetos de maneira consistente (\citeauthor{Alinezhadtilaki2025}, \citeauthor{Wang2022}).
+
+2. Rotulação Sintática (POS Tagging)
+
+\[
+W \;\stackrel{\textit{parser}}{\longrightarrow}\; 
+D = \{ (\, w_i,\, rel,\, wj \,)\}
+\]
+
+A rotulação sintática (POS Tagging) identifica a classe e a função gramatical de cada token presente em W. Essa etapa permite que o sistema compreenda como as palavras se relacionam entre si, o que é fundamental para interpretar comandos e cenários BDD. Informações sobre verbos, sujeitos e objetos fornecem a estrutura mínima necessária para analisar as ações descritas. Assim, o POS Tagging funciona como um filtro linguístico que organiza o texto antes da aplicação do parser sintático e da extração semântica. Sem essa camada intermediária, seria muito mais difícil distinguir ações, agentes, condições e objetos presentes nos passos do BDD (\citeauthor{Gudaparthi2023}, \citeauthor{Paduraru2025}).
+
+3. Extração Semântica (SRL)
+
+\[
+D \;\stackrel{\textit{SRL}}{\longrightarrow}\; 
+S = \{ (\, agente,\, ação,\, objeto \,)\}
+\]
+
+A extração semântica, realizada por meio de Semantic Role Labeling (SRL), tem como objetivo identificar automaticamente os papéis desempenhados pelos elementos de uma sentença. Enquanto o POS Tagging e o parsing fornecem informações estruturais e gramaticais, a SRL revela quem realiza a ação, qual é a ação executada e qual o alvo dessa ação. Essa etapa é crucial para interpretar histórias de usuário e cenários BDD, pois transforma descrições textuais em estruturas semânticas explícitas. Dessa forma, modelos analíticos ou geradores passam a compreender intenções e comportamentos em nível conceitual, estabelecendo as bases para a geração automática de testes e para o mapeamento formal em JSON (\citeauthor{Wang2022}, \citeauthor{Paduraru2025}).
+
+4. Mapeamento para estrutura formal (JSON):
+
+\[
+S \;\stackrel{\textit{mapper}}{\longrightarrow}\; 
+J\
+\]
+
+Nesta etapa, a estrutura semântica extraída é convertida em uma representação formal no formato JSON.
+
+\[
+J = {JSON\, semântico}
+\]
+
+Essa representação padronizada permite o processamento automático nas etapas seguintes.
+
+\subsection{Módulo 2: Geração do Código de
+Teste}
+
+Entrada:
+
+\[
+J = {JSON\, semântico}
+\]
+
+A entrada do módulo 2 é o JSON semântico produzido no módulo anterior.
+
+1. Validação Semântica Prévia 
+
+\[
+\mathrm{sim}(\mathrm{Emb}(\mathit{BDD}),\ \mathrm{Emb}(J)) = \cos(\theta)
+\]
+
+A validação semântica compara a proximidade entre o texto original do cenário BDD e sua representação formal no JSON. Embeddings gerados por modelos como SBERT são utilizados para medir a similaridade via cosseno, garantindo que a interpretação semântica preserve a intenção do autor do cenário. Se a similaridade for insuficiente, é sinal de que existem ambiguidades ou falhas estruturais que inviabilizam a geração do teste (\citeauthor{Pysmennyi2025}, \citeauthor{Leotta2024}).
+
+
+2. Recuperação de Contexto (RAG)
+
+\[
+\mathit{C} = \mathrm{Faiss}(\mathrm{Emb}(J))
+\]
+
+Após a validação, o sistema executa Retrieval-Augmented Generation (RAG), utilizando o JSON como chave semântica para recuperação de informações adicionais relevantes. O JSON é convertido em embedding e comparado dentro de uma base vetorial construída em Faiss, que armazena passos Given/When/Then, cenários BDD, histórias de usuário e trechos de documentação técnica (\citeauthor{Paduraru2025}).
+
+3. Construção do Prompt Técnico
+
+\[
+P = f(J,\, C,\, RAG)
+\]
+
+Com o contexto recuperado, inicia-se a construção do prompt técnico que será enviado ao modelo de linguagem. Esse prompt agrega:
+
+O prompt criado contém:
+\begin{itemize}
+    \item a interpretação semântica validada (JSON);
+    \item exemplos de cenários Given/When/Then;
+    \item documentos relevantes recuperados via RAG;
+    \item instruções sobre o padrão esperado para o código Cypress;
+    \item restrições formais de sintaxe e formatação.
+\end{itemize}
+
+Esse conjunto de informações orienta o LLM a produzir código consistente e alinhado ao comportamento esperado.
+
+4. Inferência do LLM 
+
+\[
+Codigo = M(P)
+\]
+
+O modelo de linguagem M recebe o prompt enriquecido e gera o código Cypress correspondente ao cenário analisado. A qualidade do código depende diretamente do alinhamento semântico entre o prompt e a implementação desejada. Quando o prompt contém exemplos adequados (few-shot), contexto técnico e instruções claras, o LLM produz testes mais completos e com menor taxa de erros (\citeauthor{Nettur2025}, \citeauthor{Pysmennyi2025}).
+
+\[
+C = {Codigo\, de\, teste\, automatizado}
+\]
+
+\subsection{Módulo 3: Juiz}
+
+Entrada:
+
+\[
+C = {Codigo\, de\, teste\, automatizado}
+\]
+
+\[
+J = {JSON\, semântico}
+\]
+
+Este módulo recebe o código gerado pelo LLM e o JSON semântico do Módulo 1.
+
+1. Embeddings do BDD e do Código
+
+\[
+\mathbf{v}_{\mathit{BDD}} = \mathrm{CodeBERT}(J)
+\]
+
+\[
+\mathbf{v}_{\mathit{Code}} = \mathrm{CodeBERT}(C)
+\]
+
+CodeBERT é utilizado para capturar a semântica estrutural tanto do comportamento esperado (JSON) quanto do código gerado. Esses vetores permitem comparar formalmente o alinhamento entre requisito e implementação (\citeauthor{Pysmennyi2025}, \citeauthor{Zhang2025}).
+
+2. Similaridade entre especificação e código
+
+\[
+\mathrm{sim} = \cos(\mathbf{v}_{\mathit{BDD}},\, \mathbf{v}_{\mathit{Code}})
+\]
+
+A similaridade de cosseno indica o grau de correspondência entre comportamento esperado e código produzido. Valores altos sugerem fidelidade semântica; valores baixos indicam omissões ou implementações incorretas (\citeauthor{Pysmennyi2025}, \citeauthor{Zhang2025}).
+
+3. Detecção de problemas no código
+
+\[
+E = f(\mathbf{v}_{\mathit{Code}},\, \mathrm{sim})
+\]
+
+Com base nos embeddings e no valor de similaridade, o sistema identifica possíveis desvios, como erros de lógica, comandos inconsistentes ou ausência de passos essenciais do cenário (\citeauthor{Pysmennyi2025}, \citeauthor{Zhang2025}).
+
+4. Correção Inteligente (Agente de IA)
+
+\[
+C' = \mathrm{AgenteIA}(C,\, E,\, \mathrm{sim},\, J)
+\]
+
+O agente inteligente analisa o código e aplica correções automáticas, ajustando inconsistências detectadas. As intervenções podem incluir inserção de asserts, correção de comandos Cypress, reorganização do fluxo do teste e realinhamento ao comportamento descrito no BDD. O resultado é um código semanticamente mais fiel e operacionalmente mais robusto (\citeauthor{Pysmennyi2025}, \citeauthor{Ferreira2025}).
+
+5. Geração do Recomendações
+
+\[
+R = h(E, \mathrm{sim}, C, C')
+\]
+
+Por fim, o sistema produz um relatório contendo recomendações e justificativas baseadas nos erros identificados, na similaridade obtida e nas correções aplicadas. Esse relatório agrega transparência e auditabilidade ao processo, auxiliando na avaliação do alinhamento entre requisitos e implementação. Assim, encerra-se o pipeline de geração automatizada de testes, consolidando um artefato interpretável e de suporte à tomada de decisão.
+
 \section{Análise de Dados}
 
 A análise dos dados neste estudo parte da meta definida pelo método Goal-Question-Metric (GQM), que estabelece como foco a característica de Manutenibilidade, em especial sua subcaracterística Testabilidade, conforme definido pela \citeonline{ISO25010}. Na perspectiva da qualidade interna, a Testabilidade refere-se ao grau em que um produto facilita a criação, execução e avaliação de testes. Nesse sentido, a escrita das especificações BDD e sua relação com a geração automática de testes constituem um elemento central dessa subcaracterística, uma vez que afetam diretamente o esforço necessário para produzir artefatos de teste corretos, completos e semanticamente alinhados aos requisitos.
