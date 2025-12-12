@@ -95,6 +95,89 @@ Segundo \citeonline{Wohlin:2012:ESE:2349018}, os experimentos em engenharia de s
 
 \todo[inline, color=pink]{Este capítulo tem o mesmo tipo de problema que a introdução. Antes de começarem a falar de métodos ágeis e BDD, em partticular, é preciso contemporizar a área de VV\&T- Verificação, Validação e principalmente testes de software}
 
+
+\section{Verificação e Validação de Software}
+
+Segundo a ISO/IEC/IEEE 29119-1 e a ISO/IEC/IEEE 12207,
+a Verificação e a Validação (V\&V) consistem em processos distintos,
+porém complementares, que integram as práticas de garantia da qualidade
+em Engenharia de Software, utilizando o teste como uma de suas principais
+atividades de apoio \cite{iso29119_1_2022,iso12207_2017}.
+
+A verificação concentra-se na avaliação da conformidade de um item de teste
+em relação a especificações, requisitos definidos e demais artefatos de
+desenvolvimento, buscando responder se o produto está sendo construído
+corretamente, em conformidade com seus documentos de projeto e requisitos
+estabelecidos.
+
+A validação, por sua vez, está relacionada à aceitabilidade do item de teste
+para satisfazer as necessidades dos stakeholders quando utilizado conforme
+o propósito pretendido, tendo como objetivo assegurar que o produto
+construído seja o produto correto do ponto de vista do usuário e do negócio.
+
+O teste de software constitui uma das principais práticas que suportam tanto
+a verificação quanto a validação, podendo ser conduzido por meio de
+abordagens estáticas ou dinâmicas.
+
+O teste estático envolve a avaliação de itens de teste sem a execução do
+código, incluindo revisões, inspeções e análises estáticas automatizadas,
+sendo aplicável a documentos, modelos e código-fonte ao longo do ciclo de
+vida do software.
+
+O teste dinâmico, por outro lado, requer a execução do software e a aplicação
+de casos de teste sobre código executável, permitindo observar o
+comportamento do sistema em tempo de execução.
+
+As atividades de verificação e validação são fundamentais para a gestão da
+qualidade, na qual o teste atua como mecanismo de controle de qualidade ao
+fornecer evidências que subsidiam decisões relacionadas à aceitação e à
+liberação do software \cite{jalote2005}.
+
+A verificação e a validação estão associadas
+principalmente à análise de artefatos de requisitos e testes de aceitação,
+expressos por meio de especificações escritas em Behavior-Driven Development
+(BDD), nas quais os cenários representam o comportamento esperado do sistema
+a partir das necessidades dos stakeholders \cite{iso29119_1_2022}.
+
+\section{Testes de Software}
+
+Segundo a ISO/IEC/IEEE 29119-1, o teste de software é definido como um conjunto
+de atividades realizadas com o objetivo de facilitar a descoberta e a avaliação
+das propriedades de itens de teste, contribuindo para a identificação de defeitos
+e para a avaliação do comportamento do software \cite{iso29119_1_2022}.
+
+Os principais objetivos do teste incluem a detecção de defeitos, a coleta de
+informações relevantes sobre o item de teste e o fornecimento de confiança para
+apoiar a tomada de decisões ao longo do ciclo de vida do software.
+
+Além da detecção de defeitos, o teste de software desempenha papel fundamental
+no apoio à tomada de decisões relacionadas à aceitação e à liberação do produto,
+fornecendo informações que subsidiam atividades de gestão e garantia da qualidade
+\cite{jalote2005}.
+
+Um item de teste corresponde a qualquer produto de trabalho passível de avaliação,
+incluindo componentes de software, sistemas completos, documentos de requisitos,
+especificações de projeto ou outros artefatos produzidos ao longo do
+desenvolvimento \cite{iso29119_1_2022}.
+
+Devido à complexidade inerente aos sistemas de software, a execução de testes
+exaustivos é impraticável na maioria dos casos, caracterizando o teste como um
+processo de amostragem no qual se busca selecionar casos de teste com maior
+probabilidade de revelar defeitos \cite{iso29119_1_2022}.
+
+Nesse contexto, a série de normas ISO/IEC/IEEE 29119 recomenda a adoção de testes
+baseados em risco como estratégia para a seleção e priorização de testes,
+direcionando o esforço para as funcionalidades e cenários com maior impacto
+potencial em caso de falha \cite{iso29119_1_2022,iso29119_2_2021}.
+
+As técnicas de design de teste consistem em procedimentos sistemáticos utilizados
+para criar modelos de teste, identificar itens de cobertura e derivar casos de
+teste a partir desses modelos \cite{iso29119_4_2021}.
+
+De acordo com a ISO/IEC/IEEE 29119-4, essas técnicas podem ser classificadas em
+técnicas baseadas em especificação, técnicas baseadas em estrutura e técnicas
+baseadas em experiência \cite{iso29119_4_2021}.
+
 \section{Metodologias Ágeis}
 
 \subsection{As Origens Iterativas e Evolucionárias}
