@@ -141,3 +141,11 @@ Mesmo com LLMs, os testes gerados ainda requerem intervenção humana para garan
 A utilização de IA generativa também pode gerar preocupações relacionadas à segurança dos dados, especialmente quando os cenários envolvem sistemas críticos \cite{Ferreira2025}. Além disso, integrar essas soluções às pipelines de Integração e Entrega Contínuas (CI/CD) pode demandar customizações específicas, dependendo das características de cada pipeline \cite{Ferreira2025}.
 
 \todo[inline, color=pink]{Não fiquei convencido que essas questões impedem mesmo a adoção em larga escala, principalmente a justificativa do custo computacional. Do ponto de vista do usuário, basta abrir um prompt desses e tentar gerar. Não fica claro de fato, quais fatores limitam a adoção em larga escala. }
+
+\section{Síntese da Literatura e Concepção da Solução}
+
+A análise dos estudos selecionados ao longo da revisão estruturada da literatura evidenciou que, embora existam diversas abordagens voltadas à automação de testes baseada em Behavior-Driven Development e ao uso de técnicas de Inteligência Artificial, tais soluções tratam o problema de forma parcial. Cada trabalho concentra-se em aspectos específicos, como interpretação semântica de cenários, geração de código de teste ou validação do alinhamento entre requisito e implementação, sem contemplar de maneira integrada todo o fluxo necessário para a automação.
+
+Diante dessa constatação, a solução proposta neste trabalho não foi derivada integralmente de um único estudo, mas concebida a partir da integração de contribuições provenientes de diferentes artigos. Essa integração resultou na definição de uma arquitetura organizada de forma modular, na qual cada módulo incorpora conceitos, técnicas ou mecanismos discutidos na literatura.
+
+A organização da solução em módulos teve como objetivo estruturar de forma clara e sistemática o processo de interpretação das especificações BDD, a geração automática dos testes e a análise do alinhamento entre comportamento esperado e código produzido. Essa concepção serviu de base para a implementação e aplicação da solução descritas no Capítulo 4.
