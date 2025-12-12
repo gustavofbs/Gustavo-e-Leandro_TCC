@@ -119,7 +119,7 @@ T \;\stackrel{\textit{tokenizer}}{\longrightarrow}\;
 W = \{ \, w_1,\, w_2,\, \ldots,\, w_m \,\}
 \]
 
-A tokenização constitui a etapa inicial do processamento de linguagem natural aplicado ao texto de entrada. Nessa fase, o conjunto textualTT — composto pela história de usuário e pelos cenários BDD — é decomposto em unidades linguísticas mínimas denominadas tokens. Esse processo é essencial para permitir que modelos de NLP interpretem o texto de forma estruturada, reduzindo variações lexicais e preparando os dados para etapas posteriores, como POS-tagging, parsing e extração semântica. Sem essa decomposição preliminar, o modelo teria dificuldade para identificar relações entre palavras, detectar ações ou mapear agentes e objetos de maneira consistente (\citeauthor{Alinezhadtilaki2025}, \citeauthor{Wang2022}).
+A tokenização constitui a etapa inicial do processamento de linguagem natural aplicado ao texto de entrada. Nessa fase, o conjunto textual, composto pela história de usuário e pelos cenários BDD, é decomposto em unidades linguísticas mínimas denominadas tokens. Esse processo é essencial para permitir que modelos de NLP interpretem o texto de forma estruturada, reduzindo variações lexicais e preparando os dados para etapas posteriores, como POS-tagging, parsing e extração semântica. Sem essa decomposição preliminar, o modelo teria dificuldade para identificar relações entre palavras, detectar ações ou mapear agentes e objetos de maneira consistente (\citeauthor{Alinezhadtilaki2025}, \citeauthor{Wang2022}).
 
 2. Rotulação Sintática (POS Tagging)
 
@@ -278,11 +278,7 @@ A análise dos dados neste estudo parte da meta definida pelo método Goal-Quest
 As métricas propostas avaliam dimensões essenciais da Testabilidade:
 
 \begin{itemize}
-    \item \textbf{Fidelidade Semântica}: mede o grau de correspondência entre o significado expresso nos Critérios de Aceitação e o comportamento implementado nos testes gerados automaticamente. Essa métrica avalia se os testes refletem corretamente as intenções descritas nos requisitos.
-    
-    \item \textbf{Cobertura Funcional}: avalia a extensão em que os testes gerados abrangem todos os Critérios de Aceitação especificados. Essa métrica indica o quão completos são os testes em relação aos requisitos definidos.
-    
-    \item \textbf{Corretude Estrutural}: verifica se a estrutura dos testes gerados está adequada para execução automática, considerando aspectos como sintaxe correta, uso apropriado de frameworks de teste e aderência às melhores práticas de codificação.
+    \item \textbf{Similaridade Semântica}: mede o grau de correspondência entre o significado expresso nos Critérios de Aceitação e o comportamento implementado nos testes gerados automaticamente. Essa métrica avalia se os testes refletem corretamente as intenções descritas nos requisitos.
 \end{itemize}
 
 Essa abordagem está alinhada ao que \citeonline{yin2001} descreve como análise orientada à construção de padrões interpretativos e ao que \citeonline{runeson2009} caracterizam como análise sistemática de artefatos para fins de investigação empírica em Engenharia de Software. Assim, cada métrica fornece uma evidência mensurável que contribui para responder à questão de pesquisa e apoiar a caracterização da Testabilidade no contexto do uso de BDD aliado a técnicas de IA.
