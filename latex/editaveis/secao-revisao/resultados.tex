@@ -113,8 +113,6 @@ A utilização do formato “Dado, Quando, Então” na escrita de cenários é 
 
 LLMs como GPT-3.5 e GPT-4 apresentam melhor desempenho quando são empregadas técnicas de prompting com poucos exemplos, nas quais exemplos estruturados são fornecidos dentro do prompt \cite{Karpurapu2024}. O uso de técnicas como o prompting encadeado com poucos exemplos demonstrou desempenho superior, gerando código mais completo, mais fácil de manter e com menos erros de sintaxe \cite{Nettur2025}.
 
-\todo[inline, color=pink]{Fiquei com a mesma sensação disso já ter sido respondido em uma questão anterior. Verifiquem cuidadosamente isso.}
-
 Em abordagens como a Modelagem de Casos de Uso para Geração de Testes de Aceitação em Nível de Sistema (UMTG), que geram casos de teste executáveis a partir de especificações de caso de uso, o emprego de um formato estruturado (RUCM), com palavras-chave e regras de restrição, contribuiu para reduzir ambiguidades e permitiu a análise e extração automatizada de informações comportamentais. Isso garantiu à IA informações suficientes para o processo de automação \cite{Wang2022}.
 
 Além disso, o uso da linguagem Gherkin para descrever histórias de usuário, incluindo critérios de aceitação bem definidos, funciona como uma ponte para manter a consistência semântica entre os requisitos e o código gerado pelo agente de IA \cite{Zhang2025}.
@@ -137,8 +135,6 @@ Há também dificuldades relacionadas ao uso de modelos com grandes janelas de c
 Mesmo com LLMs, os testes gerados ainda requerem intervenção humana para garantir precisão. O agente de IA pode não localizar uma etapa correspondente já implementada, apresentar incertezas ou não conseguir identificar todos os parâmetros adequados, exigindo que o usuário edite ou confirme a etapa sugerida \cite{Paduraru2025}.
 
 A utilização de IA generativa também pode gerar preocupações relacionadas à segurança dos dados, especialmente quando os cenários envolvem sistemas críticos \cite{Ferreira2025}. Além disso, integrar essas soluções às pipelines de Integração e Entrega Contínuas (CI/CD) pode demandar customizações específicas, dependendo das características de cada pipeline \cite{Ferreira2025}.
-
-\todo[inline, color=pink]{Não fiquei convencido que essas questões impedem mesmo a adoção em larga escala, principalmente a justificativa do custo computacional. Do ponto de vista do usuário, basta abrir um prompt desses e tentar gerar. Não fica claro de fato, quais fatores limitam a adoção em larga escala. }
 
 \section{Síntese da Literatura e Concepção da Solução}
 

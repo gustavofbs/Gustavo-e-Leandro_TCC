@@ -189,7 +189,7 @@ A validação semântica compara a proximidade entre o texto original do cenári
 \mathit{C} = \mathrm{Faiss}(\mathrm{Emb}(J))
 \]
 
-Após a validação, o sistema executa Retrieval-Augmented Generation (RAG), utilizando o JSON como chave semântica para recuperação de informações adicionais relevantes. O JSON é convertido em embedding e comparado dentro de uma base vetorial construída em Faiss, que armazena passos Given/When/Then, cenários BDD, histórias de usuário e trechos de documentação técnica (\citeauthor{Paduraru2025}).
+Após a validação, o sistema executa Retrieval-Augmented Generation (RAG), utilizando o JSON como chave semântica para recuperação de informações adicionais relevantes. O JSON é convertido em embedding e comparado dentro de uma base vetorial construída em Faiss, que armazena passos Dado/Quando/Então, cenários BDD, histórias de usuário e trechos de documentação técnica (\citeauthor{Paduraru2025}).
 
 3. Construção do Prompt Técnico
 
@@ -202,7 +202,7 @@ Com o contexto recuperado, inicia-se a construção do prompt técnico que será
 O prompt criado contém:
 \begin{itemize}
     \item a interpretação semântica validada (JSON);
-    \item exemplos de cenários Given/When/Then;
+    \item exemplos de cenários Dado/Quando/Então;
     \item documentos relevantes recuperados via RAG;
     \item instruções sobre o padrão esperado para o código Cypress;
     \item restrições formais de sintaxe e formatação.
