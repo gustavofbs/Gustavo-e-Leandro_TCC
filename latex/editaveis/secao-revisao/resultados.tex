@@ -41,7 +41,7 @@ As técnicas de NLP também desempenham um papel importante no estabelecimento d
 
 A padronização da nomenclatura e da estrutura dos cenários é fundamental para garantir uma identificação clara e eficiente dos elementos da interface, principalmente em contextos de desenvolvimento e testes orientados por comportamento (BDD) \cite{Paduraru2022, Babikian2025}. A estrutura “Dado-Quando-Então”, típica do Gherkin, organiza a escrita dos cenários e deixa explícito o que deve acontecer em cada etapa, ajudando na definição dos critérios de aceitação \cite{Alinezhadtilaki2025, Babikian2025}. Essa clareza faz com que todos os envolvidos no projeto entendam o comportamento esperado do sistema, diminuindo as chances de erro e falhas de comunicação \cite{Alinezhadtilaki2025}.
 
-Essa estrutura também facilita diretamente a automação e a identificação dos elementos da interface por ferramentas e modelos de Inteligência Artificial (IA). Em processos de geração automática de testes de aceitação, por exemplo, Large Language Models (LLMs) conseguem transformar cenários Gherkin em scripts executáveis \cite{Paduraru2025, Ferreira2025}. Uma prática comum e eficiente é orientar o LLM a usar o \textcolor{blue}{data-test-id}\todo[color=yellow]{traduzir} para localizar o elemento correto durante a execução. Assim, a padronização do cenário, ao deixar explícita a ação que deve ser feita, permite mapear essa ação para o elemento técnico da interface que realmente importa \cite{Ferreira2025}.
+Essa estrutura também facilita diretamente a automação e a identificação dos elementos da interface por ferramentas e modelos de Inteligência Artificial (IA). Em processos de geração automática de testes de aceitação, por exemplo, Large Language Models (LLMs) conseguem transformar cenários Gherkin em scripts executáveis \cite{Paduraru2025, Ferreira2025}. Uma prática comum e eficiente é orientar o LLM a usar o atributo HTML data-test-id para localizar o elemento correto durante a execução. Assim, a padronização do cenário, ao deixar explícita a ação que deve ser feita, permite mapear essa ação para o elemento técnico da interface que realmente importa \cite{Ferreira2025}.
 
 Além disso, a padronização e o uso de uma linguagem voltada ao usuário, como acontece no BDD e no Desenvolvimento Orientado por Testes de Aceitação (Acceptance Test-Driven Development)
  (ATDD), ajudam as plataformas de automação a separar a lógica do teste da dificuldade de identificar elementos técnicos da interface \cite{Penagos2024}. 
@@ -103,31 +103,28 @@ A qualidade da interpretação realizada pela IA está diretamente relacionada �
 
 
 
-Frases imprecisas e terminologia inconsistente podem provocar falhas na geração automática de restrições em abordagens que utilizam PLN, como o \textcolor{blue}{Semantic Role Labeling}\todo[color=yellow]{traduzir} (SRL), para traduzir o texto em restrições formais, como OCL \cite{Wang2022}. A falta de precisão na redação dos requisitos pode levar os agentes de IA a não interpretar corretamente as informações, resultando em código defeituoso ou desconectado do objetivo real, exigindo intervenção humana para correções \cite{Zhang2025}.
+Frases imprecisas e terminologia inconsistente podem provocar falhas na geração automática de restrições em abordagens que utilizam PLN, como a rotulagem de papéis semânticos (SRL), para traduzir o texto em restrições formais, como OCL \cite{Wang2022}. A falta de precisão na redação dos requisitos pode levar os agentes de IA a não interpretar corretamente as informações, resultando em código defeituoso ou desconectado do objetivo real, exigindo intervenção humana para correções \cite{Zhang2025}.
 
 
 
- \textcolor{blue}{Modelos de grande porte}\todo[color=yellow]{Utilizem a mesma tradução feita anteriormente} (LLMs) que recebem cenários via \textcolor{blue}{zero-shot prompting}\todo[color=yellow]{traduzir}, ou seja, sem exemplos, demonstraram uma incidência significativamente maior de erros de sintaxe  representando 89\% dos erros observados em um \textcolor{blue}{estudo}\todo[color=yellow]{Qual estudo?}  além de inconsistências no formato de saída, o que exige engenharia de \textit{prompt} cuidadosa ou pós-processamento \cite{Karpurapu2024}.
+Modelos de linguagem (LLMs) que recebem cenários via prompting sem exemplos demonstraram uma incidência significativamente maior de erros de sintaxe, representando 89\% dos erros observados em \textit{Comprehensive Evaluation and Insights Into the Use of Large Language Models in the Automation of Behavior-Driven Development Acceptance Test Formulation}, além de inconsistências no formato de saída, o que exige engenharia de prompt cuidadosa ou pós-processamento \cite{Karpurapu2024}.
 
 \subsubsection{Descrições Estruturadas e Técnicas}
 
+A utilização do formato “Dado, Quando, Então” na escrita de cenários é uma prática essencial para organizar o comportamento do sistema de forma estruturada e favorecer a clareza, reduzindo ambiguidades na interpretação dos requisitos. Esse padrão facilita a compreensão compartilhada do resultado esperado por todos os membros da equipe\cite{Alinezhadtilaki2025}.
 
-
-A utilização do formato \textcolor{blue}{“Given, When, Then”}\todo[color=yellow]{traduzir}  na escrita de cenários é uma prática essencial para a \textcolor{blue}{essencial para a qualidade do software}\todo[color=yellow]{Como assim? Qualidade de software é muita coisa}, pois garante que todos os membros da equipe compreendam claramente o resultado esperado \cite{Alinezhadtilaki2025}.
-
-
-LLMs como GPT-3.5 e GPT-4 apresentam melhor desempenho quando são empregadas técnicas de \textcolor{blue}{few-shot prompting}\todo[color=yellow]{traduzir}, nas quais exemplos estruturados são fornecidos dentro do prompt \cite{Karpurapu2024}. O uso de técnicas como o \textcolor{blue}{few-shot chain prompt}\todo[color=yellow]{traduzir} demonstrou desempenho superior, gerando código mais completo, mais fácil de manter e com menos erros de sintaxe \cite{Nettur2025}.
+LLMs como GPT-3.5 e GPT-4 apresentam melhor desempenho quando são empregadas técnicas de prompting com poucos exemplos, nas quais exemplos estruturados são fornecidos dentro do prompt \cite{Karpurapu2024}. O uso de técnicas como o prompting encadeado com poucos exemplos demonstrou desempenho superior, gerando código mais completo, mais fácil de manter e com menos erros de sintaxe \cite{Nettur2025}.
 
 \todo[inline, color=pink]{Fiquei com a mesma sensação disso já ter sido respondido em uma questão anterior. Verifiquem cuidadosamente isso.}
 
-Em abordagens como a \textcolor{blue}{UMTG}\todo[color=yellow]{?????} , que geram casos de teste executáveis a partir de especificações de caso de uso, o emprego de um formato estruturado (RUCM), com palavras-chave e regras de restrição, contribuiu para reduzir ambiguidades e permitiu a análise e extração automatizada de informações comportamentais. Isso garantiu à IA informações suficientes para o processo de automação \cite{Wang2022}.
+Em abordagens como a Modelagem de Casos de Uso para Geração de Testes de Aceitação em Nível de Sistema (UMTG), que geram casos de teste executáveis a partir de especificações de caso de uso, o emprego de um formato estruturado (RUCM), com palavras-chave e regras de restrição, contribuiu para reduzir ambiguidades e permitiu a análise e extração automatizada de informações comportamentais. Isso garantiu à IA informações suficientes para o processo de automação \cite{Wang2022}.
 
 Além disso, o uso da linguagem Gherkin para descrever histórias de usuário, incluindo critérios de aceitação bem definidos, funciona como uma ponte para manter a consistência semântica entre os requisitos e o código gerado pelo agente de IA \cite{Zhang2025}.
 
 \subsubsection{Impacto dos Estilos de Escrita na Interpretação pela IA}
  
 
-A linguagem natural informal aumenta a ambiguidade e dificulta que a IA identifique ações, pré-condições e resultados esperados, resultando em interpretações inconsistentes. Em contraste, a linguagem técnica e estruturada  como Gherkin e RUCM  fornece padrões previsíveis que facilitam o \textcolor{blue}{parsing}\todo[color=yellow]{traduzir}, reduzem erros semânticos e permitem melhor geração automática de testes ou código. Assim, quanto mais estruturado o cenário, maior a precisão da interpretação realizada pela IA.
+A linguagem natural informal aumenta a ambiguidade e dificulta que a IA identifique ações, pré-condições e resultados esperados, resultando em interpretações inconsistentes. Em contraste, a linguagem técnica e estruturada  como Gherkin e RUCM  fornece padrões previsíveis que facilitam a análise sintática, reduzem erros semânticos e permitem melhor geração automática de testes ou código. Assim, quanto mais estruturado o cenário, maior a precisão da interpretação realizada pela IA.
 
 \subsection{Quais fatores limitam a adoção em larga escala de soluções baseadas em IA para transformar especificações BDD em testes de sistema automatizados na indústria de software?}
 
