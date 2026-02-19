@@ -92,10 +92,6 @@ Segundo \citeonline{Wohlin:2012:ESE:2349018}, os experimentos em engenharia de s
     \item \textbf{Apresentação e Empacotamento:} organização dos resultados, documentação do experimento e preparação dos artefatos necessários para comunicação e eventual replicação.
 \end{itemize}
 
-
-\todo[inline, color=pink]{Este capítulo tem o mesmo tipo de problema que a introdução. Antes de começarem a falar de métodos ágeis e BDD, em partticular, é preciso contemporizar a área de VV\&T- Verificação, Validação e principalmente testes de software}
-
-
 \section{Verificação e Validação de Software}
 
 Segundo a ISO/IEC/IEEE 29119-1 e a ISO/IEC/IEEE 12207,
@@ -104,40 +100,11 @@ porém complementares, que integram as práticas de garantia da qualidade
 em Engenharia de Software, utilizando o teste como uma de suas principais
 atividades de apoio \cite{iso29119_1_2022,iso12207_2017}.
 
-A verificação concentra-se na avaliação da conformidade de um item de teste
-em relação a especificações, requisitos definidos e demais artefatos de
-desenvolvimento, buscando responder se o produto está sendo construído
-corretamente, em conformidade com seus documentos de projeto e requisitos
-estabelecidos.
+A verificação consiste em avaliar se cada artefato produzido ao longo do ciclo de vida do sistema está correto, completo e consistente com os requisitos estabelecidos. O IEEE 1012 organiza a verificação como um conjunto de atividades sistemáticas que ocorrem em todos os processos técnicos, incluindo análise de requisitos, definição de arquitetura, projeto e integração, com o objetivo de produzir evidências objetivas de que o produto em construção atende às especificações impostas. O padrão descreve tarefas como análise de requisitos, avaliação de arquitetura, rastreabilidade e revisões críticas como parte essencial do processo de verificação, assegurando que cada elemento do sistema esteja sendo construído corretamente segundo critérios mensuráveis e revisões formais \cite{IEEE1012-2016}.
 
-A validação, por sua vez, está relacionada à aceitabilidade do item de teste
-para satisfazer as necessidades dos stakeholders quando utilizado conforme
-o propósito pretendido, tendo como objetivo assegurar que o produto
-construído seja o produto correto do ponto de vista do usuário e do negócio.
+A validação complementa a verificação ao buscar determinar se o sistema resultante atende às necessidades e expectativas dos usuários e demais partes interessadas. Enquanto a verificação concentra-se na conformidade com especificações, a validação volta-se à adequação do sistema ao seu propósito no contexto real de uso. De acordo com o IEEE 1012, as atividades de validação acompanham diversos processos do ciclo de vida, envolvendo testes de qualificação, testes de aceitação e análise dos resultados de operação, com o objetivo de confirmar que o sistema é adequado ao propósito a que se destina. A validação depende de evidências obtidas por meio de testes integrados e avaliações em contexto real, garantindo que o produto final não apenas esteja correto do ponto de vista técnico, mas também seja apropriado ao ambiente operacional pretendido \cite{IEEE1012-2016}.
 
-O teste de software constitui uma das principais práticas que suportam tanto
-a verificação quanto a validação, podendo ser conduzido por meio de
-abordagens estáticas ou dinâmicas.
-
-O teste estático envolve a avaliação de itens de teste sem a execução do
-código, incluindo revisões, inspeções e análises estáticas automatizadas,
-sendo aplicável a documentos, modelos e código-fonte ao longo do ciclo de
-vida do software.
-
-O teste dinâmico, por outro lado, requer a execução do software e a aplicação
-de casos de teste sobre código executável, permitindo observar o
-comportamento do sistema em tempo de execução.
-
-As atividades de verificação e validação são fundamentais para a gestão da
-qualidade, na qual o teste atua como mecanismo de controle de qualidade ao
-fornecer evidências que subsidiam decisões relacionadas à aceitação e à
-liberação do software \cite{jalote2005}.
-
-A verificação e a validação estão associadas
-principalmente à análise de artefatos de requisitos e testes de aceitação,
-expressos por meio de especificações escritas em Behavior-Driven Development
-(BDD), nas quais os cenários representam o comportamento esperado do sistema
-a partir das necessidades dos stakeholders \cite{iso29119_1_2022}.
+Dessa forma, os testes de software constituem um dos principais mecanismos para produzir evidências objetivas que sustentam as atividades de verificação e validação. Sua eficácia depende não apenas da correta definição dos casos de teste, mas também da capacidade de executá-los de forma consistente e sustentável ao longo da evolução do sistema.
 
 \section{Testes de Software}
 
