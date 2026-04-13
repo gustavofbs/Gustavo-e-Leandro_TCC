@@ -24,7 +24,7 @@ Dessa forma, o objetivo deste estudo consiste em investigar de que maneira as es
 
 \section{Caso}
 
-O objeto de estudo desta pesquisa é o CAPJu \footnote{\url{https://github.com/fga-eps-mds/2023-1-CAPJu-Doc}} (Controle e Acompanhamento de Processos da Justiça) do Tribunal Regional Federal (TRF) da 1ª Região, uma aplicação Web de código aberto desenvolvida utilizada no contexto da 4ª Vara Cível da Justiça Federal. O sistema foi projetado para auxiliar na organização, gerenciamento e monitoramento de informações processuais, oferecendo suporte às atividades internas do órgão. 
+O objeto de estudo desta pesquisa é o CAPJu \footnote{\url{https://github.com/fga-eps-mds/2023-1-CAPJu-Doc}} (Controle e Acompanhamento de Processos da Justiça) do Tribunal Regional Federal (TRF) da 1ª Região, uma aplicação Web de código aberto desenvolvida utilizada no contexto da 4ª Vara Cível da Justiça Federal. O sistema foi projetado para suprir a lacuna de auxílio na organização, gerenciamento e monitoramento de informações processuais, tendo como objetivo oferecer suporte às atividades internas do órgão. 
 
 O desenvolvimento e a manutenção do CAPJu são realizados por estudantes vinculados às disciplinas Métodos de Desenvolvimento de Software (MDS), composta por 10 estudantes do 4º período, e Engenharia de Produto de Software (EPS) constituída por 7 estudantes do 8º período, ambas inseridas no contexto da organização em plataformas de código da Universidade de Brasília (UnB) \footnote{\url{https://github.com/fga-eps-mds}}. Essas equipes são responsáveis pela implementação de funcionalidades, correções, testes, documentação, refinamento de requisitos e decisões arquiteturais, sempre em alinhamento com as orientações do stakeholder institucional.
 
@@ -41,6 +41,8 @@ O frontend é desenvolvido com tecnologias Web baseadas em JavaScript e consome 
 \end{figure}
 
 Além disso, o CAPJu possui uma estrutura organizacional documentada, incluindo histórico de versões, registros de contribuições, orientações técnicas e diretrizes de desenvolvimento presentes nos repositórios do projeto. O que é especialmente importante para esse estudo é que as histórias de usuário e os critérios de aceitação, que constituem a base para as especificações BDD, estão registrados permitindo uma análise para a criação de cenários desenvolvimento orientado a comportamento (BDD) que serão utilizados como insumo para a geração de testes automatizados.
+
+A escolha deste projeto, dentre tantos outros que existem no repositório da disciplina \footnote{\url{https://github.com/fga-eps-mds}} para este estudo foi motivada por conveniência, considerando que os autores deste trabalho de conclusão de curso estiveram diretamente envolvidos no desenvolvimento do CAPJu, o que facilita o acesso a informações, artefatos e stakeholders relevantes para a pesquisa. Além disso, o CAPJu é um projeto que foi concluído e entregue para o TRF ao final do seu desenvolvimento, o que o torna um caso representativo para investigar a questão de pesquisa proposta, dentro de um contexto real. O projeto também se destaca pela adoção de práticas ágeis e pela utilização de ferramentas de desenvolvimento consolidadas no mercado, o que contribui para a relevância e aplicabilidade dos resultados obtidos neste estudo.
 
 Dessa forma o Capju cobre uma das lacunas apresentadas no estudo \citeonline{Nettur2025} que é a falta de um estudo de caso real, para avaliar a eficácia da geração automática de testes a partir de cenários BDD. O CAPJu, com um conjunto de requisitos, histórias de usuário e critérios de aceitação documentados, oferece um meio para investigar como as especificações BDD podem ser estruturadas para maximizar a capacidade de sistemas baseados em IA interpretarem corretamente os cenários e gerarem testes automatizados eficazes.
 
@@ -62,29 +64,27 @@ Por fim, estudos sobre modelos de qualidade e avaliação semântica de artefato
 
 \section{Questão de Pesquisa}
 
-Para responder a questão principal de pesquisa de trabalho \ref{txt:questao-pesquisa}, foi derivada uma questão específica para o estudo de caso, juntamente com as métricas que \citeonline{Nettur2025} forneceu para a sua avaliação, seguindo a abordagem GQM \ref{tab:gqm}. A metodologia GQM foi utilizada para a definição das perguntas específicas, derivadas da pergunta principal e suas respectivas métricas para conduzir o estudo, de modo a não desviar do objetivo principal e estabelecer a avaliação quantitativa ou qualitativa, de cada uma das questões de pesquisa secundárias, que agora norteiam o estudo observacional retrospectivo \cite{Basili1994}. A ISO/IEC 25010 defini testabilidade como o nível de eficácia e eficiência em que podem ser estabelecidos critérios de teste para um produto, sistema ou componente e diversos testes podem ser feitos para demonstrar que os critérios foram atendidos. No contexto desta pesquisa, a testabilidade está diretamente relacionada à eficácia das sentenças BDD, uma vez que tais características influenciam a capacidade de sistemas baseados em IA compreenderem cenários, reconhecerem elementos de interface gráfica e gerarem testes automatizados de forma eficaz.
+Para responder à questão principal apresentada na Seção \ref{txt:questao-pesquisa}, foi derivada uma questão específica para o estudo de caso, juntamente com as métricas utilizadas em sua avaliação, seguindo a abordagem GQM \citeonline{Basili1994}. Essa abordagem permite desdobrar a questão principal em um problema empiricamente observável, mantendo o alinhamento com o objetivo central da pesquisa e viabilizando sua avaliação por meio de métricas adequadas.
 
-• Questão Específica 1: Em que medida a estruturação e o detalhamento dos cenários BDD influenciam a eficácia da IA na geração de testes automatizados?
+No contexto deste trabalho, essa estrutura permanece coerente com a subcaracterística de testabilidade discutida no referencial teórico. À luz da \citeonline{ISO25010} a testabilidade relaciona-se à eficácia e à eficiência com que critérios de teste podem ser estabelecidos e os testes podem ser executados. Assim, os cenários BDD são relevantes por contribuírem para explicitar comportamentos esperados e tornar mensurável a capacidade de geração automática de testes.
 
-- Métrica 1.1 - Número de Métodos de Passo Gerados: mede o total de métodos de passo gerados para corresponder aos passos dos cenários BDD, considerando todos os cenários e histórias de usuário. A ideia é verificar o quanto o modelo conseguiu cobrir os passos especificados; menos métodos gerados indicam menor completude.
+Em relação ao CAPJu, a questão específica será avaliada com base nas métricas propostas por \citeonline{Nettur2025}, organizadas em eficácia e qualidade do código gerado pela IA. A eficácia será observada por métricas de completude, enquanto a qualidade será analisada pela ocorrência de erros sintáticos e de execução no código produzido.
 
-- Métrica 1.2 - Número de Métodos de Passo sem Implementação: mede quantos métodos de passo foram gerados, mas ficaram sem código interno. Essa métrica evidencia lacunas onde o código foi criado estruturalmente, porém não ficou funcional
+À vista disso, foi elaborada a seguinte questão específica deste estudo:
 
-- Métrica 1.3 - Número de Métodos POM Gerados: mede o total de métodos da classe Page Object Model gerados para suportar os passos dos cenários BDD. Serve para estimar o quanto o modelo produziu a camada de abstração da interface necessária à automação.
+- Questão Específica 1 (QE-1): Em que medida a forma de escrita dos cenários BDD influencia a eficácia e a qualidade do código de testes automatizados gerado por IA no contexto do CAPJu?
 
-- Métrica 1.4 - Número de Métodos POM sem Implementação: mede quantos métodos POM foram gerados sem código executável. Indica incompletude na camada de interação com a aplicação.
-
-- Métrica 1.5 - Fração de Métodos de Passo com Implementação: razão entre o número de métodos de passo implementados e o total de métodos de passo gerados, calculada por história de usuário. Formalmente:
-Métodos de Passo implementados / total de Métodos de Passo gerados.
-
-- Métrica 1.6 - Fração de Métodos de Passo sem Implementação: razão entre o número de métodos de passo sem implementação e o total de métodos de passo gerados, também por história de usuário. Formalmente:
-Métodos de Passo sem implementação / total de Métodos de Passo gerados.
-
-- Métrica 1.7 - Fração de Métodos POM com Implementação: razão entre o número de métodos POM implementados e o total de métodos POM gerados, por história de usuário. Formalmente:
-métodos POM implementados / total de métodos POM gerados.
-
-- Métrica 1.8 - Fração de Métodos POM sem Implementação: razão entre o número de métodos POM sem implementação e o total de métodos POM gerados, por história de usuário. Formalmente:
-métodos POM sem implementação / total de métodos POM gerados.
+\begin{itemize}
+    \item \textbf{Métrica 1.1 - Número de Métodos de Passo Gerados:} mede o total de métodos de passo gerados para corresponder aos passos dos cenários BDD, considerando todos os cenários e histórias de usuário. A ideia é verificar o quanto o modelo conseguiu cobrir os passos especificados; menos métodos gerados indicam menor completude.
+    \item \textbf{Métrica 1.2 - Número de Métodos de Passo sem Implementação:} mede quantos métodos de passo foram gerados, mas ficaram sem código interno. Essa métrica evidencia lacunas onde o código foi criado estruturalmente, porém não ficou funcional
+    \item \textbf{Métrica 1.3 - Número de Métodos POM Gerados:} mede o total de métodos da classe Page Object Model gerados para suportar os passos dos cenários BDD. Serve para estimar o quanto o modelo produziu a camada de abstração da interface necessária à automação.
+    \item \textbf{Métrica 1.4 - Número de Métodos POM sem Implementação:} mede quantos métodos POM foram gerados sem código executável. Indica incompletude na camada de interação com a aplicação.
+    \item \textbf{Métrica 1.5 - Fração de Métodos de Passo com Implementação:} razão entre o número de métodos de passo implementados e o total de métodos de passo gerados, calculada por história de usuário. Formalmente:
+    \item \textbf{Métrica 1.6 - Fração de Métodos de Passo sem Implementação:} razão entre o número de métodos de passo sem implementação e o total de métodos de passo gerados, também por história de usuário. Formalmente:
+    \item \textbf{Métrica 1.7 - Fração de Métodos POM com Implementação:} razão entre o número de métodos POM implementados e o total de métodos POM gerados, por história de usuário. Formalmente:
+    \item \textbf{Métrica 1.8 - Fração de Métodos POM sem Implementação:} razão entre o número de métodos POM sem implementação e o total de métodos POM gerados, por história de usuário. Formalmente:
+    \item \textbf{Métrica 1.9 - Erros Sintáticos e de Execução:} avalia a presença de erros sintáticos e de execução no código gerado, verificando se ele adere corretamente às regras da linguagem de programação e se executa de forma adequada no ambiente de testes. Erros sintáticos indicam problemas de corretude do código, enquanto erros de execução evidenciam falhas que surgem durante sua execução, comprometendo sua qualidade.
+\end{itemize}
 
 \section{Fonte de Dados}
 
