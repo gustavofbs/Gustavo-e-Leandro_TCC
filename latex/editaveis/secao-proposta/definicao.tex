@@ -88,11 +88,11 @@ Em relação ao CAPJu, a questão específica será avaliada com base nas métri
 
 Este estudo utiliza exclusivamente fontes de dados documentais, uma vez que se caracteriza como uma investigação observacional retrospectiva baseada em artefatos históricos do projeto CAPJu. Nesse tipo de delineamento, as evidências dependem da qualidade, completude e disponibilidade dos registros produzidos durante o desenvolvimento do sistema.
 
-As fontes primárias de dados do estudo são duas. A primeira corresponde ao conjunto de issues registradas no ZenHub, vinculado ao repositório do projeto, que contêm as Histórias de Usuário (HUs), seus respectivos Critérios de Aceitação (CAs), etiquetas de classificação e, em alguns casos, comentários complementares inseridos pela equipe ao longo do desenvolvimento.
+A principal fonte de dados é o conjunto de issues do projeto registradas no ZenHub \footnote{\url{https://www.zenhub.com/}} e vinculadas ao repositório do CAPJu \footnote{\url{https://github.com/fga-eps-mds/2023-1-CAPJu-Doc}}, sendo aquelas que contêm Histórias de Usuário e seus respectivos Critérios de Aceitação. Esses registros constituem a base documental a partir da qual serão elaboradas as especificações BDD utilizadas no estudo, preservando o vínculo com os requisitos originalmente produzidos pela equipe do projeto.
 
-A segunda fonte de dados corresponde ao repositório digital do projeto, do qual serão extraídas informações contextuais complementares, especialmente elementos de interface presentes no código-fonte e outros artefatos técnicos necessários para interpretar as histórias de usuário e seus critérios de aceitação.
+De forma complementar, o repositório digital do projeto será utilizado como segunda fonte documental, onde serão utilizados elementos de interface presentes no código-fonte, estruturas da aplicação e outros registros técnicos que auxiliam na correspondência entre o comportamento descrito nas Histórias de Usuário e os componentes efetivamente existentes no sistema.
 
-Não haverá coleta direta com usuários, desenvolvedores ou outros stakeholders, pois o fenômeno investigado já ocorreu e não pode ser reconstituído em seu contexto original. Dessa forma, toda a análise se apoia em evidências históricas registradas no projeto, em conformidade com a natureza retrospectiva do estudo.
+A partir dessas fontes, serão obtidas também as informações necessárias para o cálculo das métricas do estudo que serão obtidas ao longo do experimento através da extensão Cypress Copilot \footnote{\url{https://github.com/OptimizeAIHub/Cypress-Copilot}} de \citeonline{Nettur2025} e do processo de análise dos artefatos gerados, como a identificação de erros sintáticos e de execução no código gerado, de forma quantitativa.
 
 % --- Versão antiga abaixo ---
 
@@ -189,8 +189,7 @@ J = {JSON\, semântico}
 
 Essa representação padronizada permite o processamento automático nas etapas seguintes.
 
-\subsection{Módulo 2: Geração do Código de
-Teste}
+\subsection{Módulo 2: Geração do Código de Teste}
 
 Entrada:
 
