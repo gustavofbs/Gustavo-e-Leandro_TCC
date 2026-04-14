@@ -73,14 +73,14 @@ Em relação ao CAPJu, a questão específica será avaliada com base nas métri
 - Questão Específica 1 (QE-1): Em que medida a forma de escrita dos cenários BDD influencia a eficácia e a qualidade do código de testes automatizados gerado por IA no contexto do CAPJu?
 
 \begin{itemize}
-    \item \textbf{Métrica 1.1 - Número de Métodos de Passo Gerados:} mede o total de métodos de passo gerados para corresponder aos passos dos cenários BDD, considerando todos os cenários e histórias de usuário. A ideia é verificar o quanto o modelo conseguiu cobrir os passos especificados; menos métodos gerados indicam menor completude.
+    \item \textbf{Métrica 1.1 - Número de Métodos de Passo Gerados:} mede o total de métodos de passo gerados para corresponder aos passos dos cenários BDD, considerando todos os cenários e histórias de usuário. O objetivo é verificar o quanto o modelo conseguiu cobrir os passos especificados; menos métodos gerados indicam menor completude.
     \item \textbf{Métrica 1.2 - Número de Métodos de Passo sem Implementação:} mede quantos métodos de passo foram gerados, mas ficaram sem código interno. Essa métrica evidencia lacunas onde o código foi criado estruturalmente, porém não ficou funcional
     \item \textbf{Métrica 1.3 - Número de Métodos POM Gerados:} mede o total de métodos da classe Page Object Model gerados para suportar os passos dos cenários BDD. Serve para estimar o quanto o modelo produziu a camada de abstração da interface necessária à automação.
     \item \textbf{Métrica 1.4 - Número de Métodos POM sem Implementação:} mede quantos métodos POM foram gerados sem código executável. Indica incompletude na camada de interação com a aplicação.
-    \item \textbf{Métrica 1.5 - Fração de Métodos de Passo com Implementação:} razão entre o número de métodos de passo implementados e o total de métodos de passo gerados, calculada por história de usuário. Formalmente:
-    \item \textbf{Métrica 1.6 - Fração de Métodos de Passo sem Implementação:} razão entre o número de métodos de passo sem implementação e o total de métodos de passo gerados, também por história de usuário. Formalmente:
-    \item \textbf{Métrica 1.7 - Fração de Métodos POM com Implementação:} razão entre o número de métodos POM implementados e o total de métodos POM gerados, por história de usuário. Formalmente:
-    \item \textbf{Métrica 1.8 - Fração de Métodos POM sem Implementação:} razão entre o número de métodos POM sem implementação e o total de métodos POM gerados, por história de usuário. Formalmente:
+    \item \textbf{Métrica 1.5 - Fração de Métodos de Passo com Implementação:} razão entre o número de métodos de passo implementados e o total de métodos de passo gerados, calculada por história de usuário.
+    \item \textbf{Métrica 1.6 - Fração de Métodos de Passo sem Implementação:} razão entre o número de métodos de passo sem implementação e o total de métodos de passo gerados, também por história de usuário.
+    \item \textbf{Métrica 1.7 - Fração de Métodos POM com Implementação:} razão entre o número de métodos POM implementados e o total de métodos POM gerados, por história de usuário.
+    \item \textbf{Métrica 1.8 - Fração de Métodos POM sem Implementação:} razão entre o número de métodos POM sem implementação e o total de métodos POM gerados, por história de usuário.
     \item \textbf{Métrica 1.9 - Erros Sintáticos e de Execução:} avalia a presença de erros sintáticos e de execução no código gerado, verificando se ele adere corretamente às regras da linguagem de programação e se executa de forma adequada no ambiente de testes. Erros sintáticos indicam problemas de corretude do código, enquanto erros de execução evidenciam falhas que surgem durante sua execução, comprometendo sua qualidade.
 \end{itemize}
 
@@ -119,191 +119,22 @@ A partir dessas fontes, serão obtidas também as informações necessárias par
 
 \section{Unidades de Análise e Procedimentos}
 
-O método de estudo adotado neste trabalho será um estudo observacional retrospectivo, conduzido sob o protocolo de estudo de caso. Essa abordagem foi escolhida porque o projeto analisado já se encontra concluído e não há múltiplas instâncias disponíveis para comparação experimental controlada. Assim, a estratégia mais adequada consiste em observar retrospectivamente seus artefatos, utilizando-os como insumo para o processo de geração automatizada de testes.
+Para atender ao objetivo deste estudo, adota-se um delineamento observacional retrospectivo com unidades de análise, uma vez que o fenômeno investigado é examinado por meio de diferentes artefatos relacionados entre si no contexto do projeto CAPJu. Essa organização permite observar, de forma encadeada, como a informação evolui desde a descrição funcional inicial até o artefato final produzido pela solução baseada em Inteligência Artificial (AI), favorecendo uma análise mais abrangente do problema investigado.
 
-A solução proposta é organizada em módulos funcionais independentes, cada um responsável por uma etapa específica do processamento das histórias de usuário e da geração dos artefatos derivados. Cada módulo opera como um componente isolado dentro da arquitetura, recebendo entradas bem definidas, aplicando transformações ou análises específicas e produzindo saídas estruturadas que alimentam as etapas subsequentes do sistema. Essa modularização permite isolar responsabilidades, facilitar a manutenção, favorecer a reprodutibilidade do estudo e possibilitar a avaliação individual de cada componente do pipeline.
+As unidades de análise deste estudo são compostas por quatro tipos de artefato: 
 
-Neste trabalho, os cenários escritos em Behavior-Driven Development (BDD) não são utilizados apenas como artefatos de comunicação entre stakeholders, mas também como insumo direto para a automação de testes baseada em inteligência artificial. De forma deliberada, os cenários BDD são escritos contendo identificadores explícitos dos elementos da interface gráfica (IDs de seletores HTML), associados às ações e verificações descritas nos passos Given, When e Then. Essa adaptação é inspirada por abordagens que utilizam o HTML da interface para a geração de testes executáveis \cite{Ferreira2025} e por frameworks que estabelecem ligações explícitas entre cenários, código e execução \cite{Paduraru2025}.
-
-A primeira etapa consiste na coleta das histórias de usuário do projeto, que serão utilizadas para a elaboração dos cenários em Behavior-Driven Development (BDD), servindo como base para a geração dos testes automatizados. Para cada história, são produzidas duas versões de BDD com diferentes níveis de conformidade ao padrão Dado – Quando – Então, a fim de permitir a análise do comportamento do módulo diante de variações de qualidade na especificação. Uma das versões apresenta maior aderência estrutural ao formato Gherkin e aos critérios de aceitação, enquanto a outra representa um padrão de escrita menos rigoroso, contendo elementos comuns em cenários reais, como indefinições, variações de estilo e ausência parcial de estruturação formal. Em seguida, o Módulo 1 recebe as histórias e suas respectivas versões de BDD, realiza a tokenização e o POS tagging com spaCy, identifica ação, agente e alvo, executa a análise de papéis semânticos (SRL) com modelos baseados em Transformers e, por fim, produz um JSON estruturado contendo as informações extraídas dos requisitos.
-
-O Módulo 2 utiliza o JSON produzido anteriormente para realizar uma validação semântica prévia, assegurando que a interpretação gerada no processamento semântico preserva o significado do cenário BDD original. Para isso, tanto o BDD quanto o JSON são convertidos em embeddings utilizando modelos como SBERT, e sua similaridade é medida por cosseno. Caso o valor esteja abaixo de um limiar definido, indicando ambiguidade, falta de clareza ou estrutura inadequada, o fluxo é interrompido e a geração do teste não é realizada.
-
-Apenas após essa verificação o módulo prossegue para a busca de contexto relevante por meio de RAG (Retrieval-Augmented Generation). Nesse processo, os textos dos cenários e da documentação técnica são convertidos em embeddings semânticos gerados com SBERT, armazenados em um banco vetorial Faiss e consultados por similaridade de cosseno. Os documentos recuperados orientam a construção de um prompt detalhado, que é enviado a um modelo de linguagem (LLM), responsável por gerar automaticamente o código de testes Cypress.
-
-O Módulo 3 utiliza tanto a representação semântica produzida no primeiro módulo quanto o código gerado pelo segundo. Essa etapa calcula a similaridade semântica entre requisitos e testes utilizando CodeBERT, identificando inconsistências ou trechos que não refletem corretamente o comportamento esperado. Além disso, um agente de IA atua como juiz, realizando ajustes no código sempre que necessário, a partir de técnicas de embeddings semânticos e validação automatizada.
-
-Após a finalização do Módulo 3, os testes gerados pelo pipeline serão comparados aos testes produzidos diretamente por modelos de linguagem generalistas, como GPT, DeepSeek e LLaMA.
-
-As etapas descritas anteriormente apresentam uma visão geral do pipeline proposto e do papel de cada módulo no processo de geração automatizada de testes. A seguir, cada módulo é detalhado individualmente, com a descrição formal de suas entradas, operações internas e saídas, de modo a explicitar os mecanismos técnicos e computacionais empregados em cada etapa do método.
-
-\subsection{Módulo 1: Processamento Semântico}
-
-Entrada:
-
-\[
-T = \{ t_1,\, t_2,\, \ldots,\, t_n \}
-\]
-
-A entrada deste módulo consiste no texto da história de usuário e nos cenários correspondentes escritos em BDD.
-
-1. Tokenização
-
-\[
-T \;\stackrel{\textit{tokenizer}}{\longrightarrow}\; 
-W = \{ \, w_1,\, w_2,\, \ldots,\, w_m \,\}
-\]
-
-A tokenização constitui a etapa inicial do processamento de linguagem natural aplicado ao texto de entrada. Nessa fase, o conjunto textual, composto pela história de usuário e pelos cenários BDD, é decomposto em unidades linguísticas mínimas denominadas tokens. Esse processo é essencial para permitir que modelos de NLP interpretem o texto de forma estruturada, reduzindo variações lexicais e preparando os dados para etapas posteriores, como POS-tagging, parsing e extração semântica. Sem essa decomposição preliminar, o modelo teria dificuldade para identificar relações entre palavras, detectar ações ou mapear agentes e objetos de maneira consistente (\citeauthor{Alinezhadtilaki2025}, \citeauthor{Wang2022}).
-
-2. Rotulação Sintática (POS Tagging)
-
-\[
-W \;\stackrel{\textit{parser}}{\longrightarrow}\; 
-D = \{ (\, w_i,\, rel,\, wj \,)\}
-\]
-
-A rotulação sintática (POS Tagging) identifica a classe e a função gramatical de cada token presente em W. Essa etapa permite que o sistema compreenda como as palavras se relacionam entre si, o que é fundamental para interpretar comandos e cenários BDD. Informações sobre verbos, sujeitos e objetos fornecem a estrutura mínima necessária para analisar as ações descritas. Assim, o POS Tagging funciona como um filtro linguístico que organiza o texto antes da aplicação do parser sintático e da extração semântica. Sem essa camada intermediária, seria muito mais difícil distinguir ações, agentes, condições e objetos presentes nos passos do BDD (\citeauthor{Gudaparthi2023}, \citeauthor{Paduraru2025}).
-
-3. Extração Semântica (SRL)
-
-\[
-D \;\stackrel{\textit{SRL}}{\longrightarrow}\; 
-S = \{ (\, agente,\, ação,\, objeto \,)\}
-\]
-
-A extração semântica, realizada por meio de Semantic Role Labeling (SRL), tem como objetivo identificar automaticamente os papéis desempenhados pelos elementos de uma sentença. Enquanto o POS Tagging e o parsing fornecem informações estruturais e gramaticais, a SRL revela quem realiza a ação, qual é a ação executada e qual o alvo dessa ação. Essa etapa é crucial para interpretar histórias de usuário e cenários BDD, pois transforma descrições textuais em estruturas semânticas explícitas. Dessa forma, modelos analíticos ou geradores passam a compreender intenções e comportamentos em nível conceitual, estabelecendo as bases para a geração automática de testes e para o mapeamento formal em JSON (\citeauthor{Wang2022}, \citeauthor{Paduraru2025}).
-
-4. Mapeamento para estrutura formal (JSON):
-
-\[
-S \;\stackrel{\textit{mapper}}{\longrightarrow}\; 
-J\
-\]
-
-Nesta etapa, a estrutura semântica extraída é convertida em uma representação formal no formato JSON.
-
-\[
-J = {JSON\, semântico}
-\]
-
-Essa representação padronizada permite o processamento automático nas etapas seguintes.
-
-\subsection{Módulo 2: Geração do Código de Teste}
-
-Entrada:
-
-\[
-J = {JSON\, semântico}
-\]
-
-A entrada do módulo 2 é o JSON semântico produzido no módulo anterior.
-
-1. Validação Semântica Prévia 
-
-\[
-\mathrm{sim}(\mathrm{Emb}(\mathit{BDD}),\ \mathrm{Emb}(J)) = \cos(\theta)
-\]
-
-A validação semântica compara a proximidade entre o texto original do cenário BDD e sua representação formal no JSON. Embeddings gerados por modelos como SBERT são utilizados para medir a similaridade via cosseno, garantindo que a interpretação semântica preserve a intenção do autor do cenário. Se a similaridade for insuficiente, é sinal de que existem ambiguidades ou falhas estruturais que inviabilizam a geração do teste (\citeauthor{Pysmennyi2025}, \citeauthor{Leotta2024}).
-
-
-2. Recuperação de Contexto (RAG)
-
-\[
-\mathit{C} = \mathrm{Faiss}(\mathrm{Emb}(J))
-\]
-
-Após a validação, o sistema executa Retrieval-Augmented Generation (RAG), utilizando o JSON como chave semântica para recuperação de informações adicionais relevantes. O JSON é convertido em embedding e comparado dentro de uma base vetorial construída em Faiss, que armazena passos Dado/Quando/Então, cenários BDD, histórias de usuário e trechos de documentação técnica (\citeauthor{Paduraru2025}).
-
-3. Construção do Prompt Técnico
-
-\[
-P = f(J,\, C,\, RAG)
-\]
-
-Com o contexto recuperado, inicia-se a construção do prompt técnico que será enviado ao modelo de linguagem. Esse prompt agrega:
-
-O prompt criado contém:
 \begin{itemize}
-    \item a interpretação semântica validada (JSON);
-    \item exemplos de cenários Dado/Quando/Então;
-    \item documentos relevantes recuperados via RAG;
-    \item instruções sobre o padrão esperado para o código Cypress;
-    \item restrições formais de sintaxe e formatação.
+    \item A primeira corresponde às 23 Histórias de Usuário (USs), que expressam a necessidade funcional e o objetivo de negócio associado a cada demanda do sistema.
+    \item A segunda unidade é formada pelos Critérios de Aceitação (CAs), que detalham as condições, regras e resultados esperados para validação da funcionalidade descrita.
+    \item A terceira unidade de análise corresponde às Especificações BDD, elaboradas a partir das USs e dos CAs e organizadas no formato Dado-Quando-Então, de modo a estruturar os comportamentos esperados de forma compatível com a solução proposta.
+    \item Por fim, a quarta unidade de análise é o código de teste gerado, entendido como o artefato produzido pela IA a partir das especificações BDD e utilizado como evidência para avaliação dos resultados do estudo.
 \end{itemize}
 
-Esse conjunto de informações orienta o LLM a produzir código consistente e alinhado ao comportamento esperado.
+Os procedimentos do estudo serão conduzidos em etapas sequenciais. Inicialmente, houve o levantamento de 23 Histórias de Usuário com Critérios de Aceitação associados. Em seguida, essas informações serão utilizadas para a elaboração das especificações BDD que servirão de entrada para a extensão de \citeonline{Nettur2025}, a fim de retornar o código de teste gerado por meio do Modelo de Objeto de Página (POM) e Métodos de Passo.
 
-4. Inferência do LLM 
+Durante essa execução, serão observados de forma quantitativa os resultados gerados pela extensão após cada iteração, com foco nas métricas de completude do código produzido e ocorrência de erros sintáticos e de execução. Esses registros obtidos ao longo dessas execuções serão organizados em base estruturada, preservando a rastreabilidade entre a issue de origem, a especificação BDD correspondente e os artefatos gerados pela solução. Essa organização permitirá que, na etapa seguinte, os dados sejam analisados de forma consistente e alinhada às métricas definidas para o estudo.
 
-\[
-Codigo = M(P)
-\]
-
-O modelo de linguagem M recebe o prompt enriquecido e gera o código Cypress correspondente ao cenário analisado. A qualidade do código depende diretamente do alinhamento semântico entre o prompt e a implementação desejada. Quando o prompt contém exemplos adequados (few-shot), contexto técnico e instruções claras, o LLM produz testes mais completos e com menor taxa de erros (\citeauthor{Nettur2025}, \citeauthor{Pysmennyi2025}).
-
-\[
-C = {Codigo\, de\, teste\, automatizado}
-\]
-
-\subsection{Módulo 3: Juiz}
-
-Entrada:
-
-\[
-C = {Codigo\, de\, teste\, automatizado}
-\]
-
-\[
-J = {JSON\, semântico}
-\]
-
-Este módulo recebe o código gerado pelo LLM e o JSON semântico do Módulo 1.
-
-1. Embeddings do BDD e do Código
-
-\[
-\mathbf{v}_{\mathit{BDD}} = \mathrm{CodeBERT}(J)
-\]
-
-\[
-\mathbf{v}_{\mathit{Code}} = \mathrm{CodeBERT}(C)
-\]
-
-CodeBERT é utilizado para capturar a semântica estrutural tanto do comportamento esperado (JSON) quanto do código gerado. Esses vetores permitem comparar formalmente o alinhamento entre requisito e implementação (\citeauthor{Pysmennyi2025}, \citeauthor{Zhang2025}).
-
-2. Similaridade entre especificação e código
-
-\[
-\mathrm{sim} = \cos(\mathbf{v}_{\mathit{BDD}},\, \mathbf{v}_{\mathit{Code}})
-\]
-
-A similaridade de cosseno indica o grau de correspondência entre comportamento esperado e código produzido. Valores altos sugerem fidelidade semântica; valores baixos indicam omissões ou implementações incorretas (\citeauthor{Pysmennyi2025}, \citeauthor{Zhang2025}).
-
-3. Detecção de problemas no código
-
-\[
-E = f(\mathbf{v}_{\mathit{Code}},\, \mathrm{sim})
-\]
-
-Com base nos embeddings e no valor de similaridade, o sistema identifica possíveis desvios, como erros de lógica, comandos inconsistentes ou ausência de passos essenciais do cenário (\citeauthor{Pysmennyi2025}, \citeauthor{Zhang2025}).
-
-4. Correção Inteligente (Agente de IA)
-
-\[
-C' = \mathrm{AgenteIA}(C,\, E,\, \mathrm{sim},\, J)
-\]
-
-O agente inteligente analisa o código e aplica correções automáticas, ajustando inconsistências detectadas. As intervenções podem incluir inserção de asserts, correção de comandos Cypress, reorganização do fluxo do teste e realinhamento ao comportamento descrito no BDD. O resultado é um código semanticamente mais fiel e operacionalmente mais robusto (\citeauthor{Pysmennyi2025}, \citeauthor{Ferreira2025}).
-
-5. Geração do Recomendações
-
-\[
-R = h(E, \mathrm{sim}, C, C')
-\]
-
-Por fim, o sistema produz um relatório contendo recomendações e justificativas baseadas nos erros identificados, na similaridade obtida e nas correções aplicadas. Esse relatório agrega transparência e auditabilidade ao processo, auxiliando na avaliação do alinhamento entre requisitos e implementação. Assim, encerra-se o pipeline de geração automatizada de testes, consolidando um artefato interpretável e de suporte à tomada de decisão.
+Além disso, é necessário destacar que houve uma adaptação feita pelos autores deste estudo na extensão de \citeonline{Nettur2025} para que ela pudesse ser utilizada no contexto do CAPJu, considerando as particularidades do projeto e a necessidade de adequação dos prompts para a geração de código de teste para a aplicação em questão. Essa adaptação envolveu ajustes nos templates de prompt, na estruturação das especificações BDD e na criação de funções para auxiliar na obtenção de métricas relacionadas ao código gerado sendo elas a identificação de métodos de passo e métodos POM.
 
 \section{Análise de Dados}
 
@@ -328,13 +159,11 @@ O ZenHub\footnote{\url{https://www.zenhub.com/}}
 
 O Cypress\footnote{\url{https://www.cypress.io/}} será empregado como ferramenta de automação de testes para validar e executar os scripts gerados pela inteligência artificial a partir dos cenários BDD. Ele permitirá verificar se os testes são executáveis, corretos e funcionais, sendo também responsável pela coleta de métricas relacionadas à completude e eficácia dos testes produzidos.
 
-Para apoiar o processamento de linguagem natural (PLN) das histórias de usuário e dos cenários BDD, será utilizada a biblioteca spaCy\footnote{\url{https://spacy.io/}}, responsável pela análise linguística, extração de entidades e estruturação sintática dos textos. Associado a ela, a biblioteca Transformers\footnote{\url{https://huggingface.co/docs/transformers/}} fornecerá modelos pré-treinados capazes de interpretar relações semânticas, gerar embeddings, classificar trechos e auxiliar na análise contextual dos requisitos. Nesse contexto, a biblioteca sentence-transformers\footnote{\url{https://www.sbert.net/}} será usada especificamente para a geração de embeddings semânticos por meio do SBERT, permitindo a comparação de similaridade entre textos e dando suporte à etapa de interpretação e agrupamento dos cenários.
+A extensão Cypress Copilot\footnote{\url{https://github.com/OptimizeAIHub/Cypress-Copilot}} será utilizada para facilitar a integração entre os cenários BDD e a geração automática de testes pelo modelo de linguagem pré-definido e uso de uma chave de API. Inclusive será com ele que serão obtidas as métricas relacionadas à completude do código gerado, como o número de métodos de passo e métodos POM gerados, bem como a identificação de erros sintáticos e de execução.
 
-A API da OpenAI\footnote{\url{https://openai.com/pt-BR/api/}} será utilizada para integração com modelos avançados de linguagem, em especial o GPT-4 Turbo, que será responsável pela interpretação dos cenários BDD, entendimento das histórias de usuário, geração automática do código de teste Cypress e correção dos testes quando necessário. Esses modelos também auxiliarão na validação linguística e estrutural dos artefatos gerados.
+A API da OpenAI\footnote{\url{https://openai.com/pt-BR/api/}} será utilizada para integração com modelos avançados de linguagem, em especial o GPT-4o, que será responsável pela geração dos testes por meio de Modelos de Objeto de Página (POM) e Métodos de Passo. Esses modelos também auxiliarão na adaptação da extensão Cypress Copilot \footnote{\url{https://github.com/OptimizeAIHub/Cypress-Copilot}} que realizamos ao longo do estudo.
 
-Para aprimorar o armazenamento e recuperação eficiente de informações semânticas, será empregada a abordagem de Retrieval-Augmented Generation (RAG) com uso do FAISS\footnote{\url{https://ai.meta.com/tools/faiss/}} como mecanismo de indexação vetorial, combinada com o cálculo da similaridade do cosseno. Esse conjunto permitirá a recuperação rápida de embeddings relacionados, facilitando a contextualização dos cenários, a comparação entre testes e a geração de resultados mais consistentes e alinhados com padrões prévios. Além disso, modelos especializados como o CodeBERT\footnote{\url{https://github.com/microsoft/CodeBERT}} acessados também via Transformers, serão utilizados para análise de trechos de código, identificação de padrões estruturais e apoio na verificação estática dos testes gerados.
 
-Por fim, bibliotecas utilitárias como json, os e typing serão utilizadas para manipulação de arquivos estruturados, organização automática do sistema de diretórios e tipagem explícita das funções implementadas no pipeline experimental, contribuindo para a padronização e legibilidade do código de suporte ao estudo.
 
 \section{Ameaças à Validade Do Estudo}
 
