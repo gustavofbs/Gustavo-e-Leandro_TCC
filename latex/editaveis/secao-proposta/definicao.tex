@@ -42,7 +42,7 @@ O frontend é desenvolvido com tecnologias Web baseadas em JavaScript e consome 
 
 Além disso, o CAPJu possui uma estrutura organizacional documentada, incluindo histórico de versões, registros de contribuições, orientações técnicas e diretrizes de desenvolvimento presentes nos repositórios do projeto. O que é especialmente importante para esse estudo é que as histórias de usuário e os critérios de aceitação, que constituem a base para as especificações BDD, estão registrados permitindo uma análise para a criação de cenários desenvolvimento orientado a comportamento (BDD) que serão utilizados como insumo para a geração de testes automatizados.
 
-A escolha deste projeto, dentre tantos outros que existem no repositório da disciplina \footnote{\url{https://github.com/fga-eps-mds}} para este estudo foi motivada por conveniência, considerando que os autores deste trabalho de conclusão de curso estiveram diretamente envolvidos no desenvolvimento do CAPJu, o que facilita o acesso a informações, artefatos e stakeholders relevantes para a pesquisa. Além disso, o CAPJu é um projeto que foi concluído e entregue para o TRF ao final do seu desenvolvimento, o que o torna um caso representativo para investigar a questão de pesquisa proposta, dentro de um contexto real. O projeto também se destaca pela adoção de práticas ágeis e pela utilização de ferramentas de desenvolvimento consolidadas no mercado, o que contribui para a relevância e aplicabilidade dos resultados obtidos neste estudo.
+A escolha deste projeto, dentre tantos outros que existem no repositório da disciplina \footnote{\url{https://github.com/fga-eps-mds}} para este estudo foi motivada por conveniência, considerando que os autores deste trabalho de conclusão de curso estiveram diretamente envolvidos no desenvolvimento do CAPJu no semestre 2023/1, o que facilita o acesso a informações, artefatos e stakeholders relevantes para a pesquisa. Além disso, o CAPJu é um projeto que foi concluído e entregue para o TRF ao final do seu desenvolvimento, o que o torna um caso representativo para investigar a questão de pesquisa proposta, dentro de um contexto real. O projeto também se destaca pela adoção de práticas ágeis e pela utilização de ferramentas de desenvolvimento consolidadas no mercado, o que contribui para a relevância e aplicabilidade dos resultados obtidos neste estudo.
 
 Dessa forma o Capju cobre uma das lacunas apresentadas no estudo \citeonline{Nettur2025} que é a falta de um estudo de caso real, para avaliar a eficácia da geração automática de testes a partir de cenários BDD. O CAPJu, com um conjunto de requisitos, histórias de usuário e critérios de aceitação documentados, oferece um meio para investigar como as especificações BDD podem ser estruturadas para maximizar a capacidade de sistemas baseados em IA interpretarem corretamente os cenários e gerarem testes automatizados eficazes.
 
@@ -88,26 +88,36 @@ Em relação ao CAPJu, a questão específica será avaliada com base nas métri
 
 \section{Fonte de Dados}
 
-Conforme destacado por \cite{yin2001} e \cite{runeson2009}, estudos observacionais baseados em artefatos históricos dependem diretamente da qualidade, completude e disponibilidade dos registros existentes. No presente trabalho, todas as evidências utilizadas para análise derivam exclusivamente do projeto CAPJu, desenvolvido no semestre 2023/1, cujos artefatos permaneceram registrados no sistema de gerenciamento de issues utilizado pela equipe de desenvolvimento.
+Este estudo utiliza exclusivamente fontes de dados documentais, uma vez que se caracteriza como uma investigação observacional retrospectiva baseada em artefatos históricos do projeto CAPJu. Nesse tipo de delineamento, as evidências dependem da qualidade, completude e disponibilidade dos registros produzidos durante o desenvolvimento do sistema.
 
-A fonte de dados deste estudo serão as especificações BDD a partir do conjunto de issues que contêm Histórias de Usuário (HUs) e seus respectivos Critérios de Aceitação (CAs), adquiridas por meio do ZenHub vinculado ao projeto da organização. etiquetados como relacionados ao desenvolvimento de frontend. Esses artefatos representam a documentação funcional elaborada pela equipe durante o ciclo de desenvolvimento do projeto. Ao todo, 45 issues compõem esse conjunto, o qual constitui a unidade de análise deste estudo observacional retrospectivo.
+As fontes primárias de dados do estudo são duas. A primeira corresponde ao conjunto de issues registradas no ZenHub, vinculado ao repositório do projeto, que contêm as Histórias de Usuário (HUs), seus respectivos Critérios de Aceitação (CAs), etiquetas de classificação e, em alguns casos, comentários complementares inseridos pela equipe ao longo do desenvolvimento.
 
-Cada issue contém elementos textuais que descrevem:
+A segunda fonte de dados corresponde ao repositório digital do projeto, do qual serão extraídas informações contextuais complementares, especialmente elementos de interface presentes no código-fonte e outros artefatos técnicos necessários para interpretar as histórias de usuário e seus critérios de aceitação.
 
-\begin{itemize}
-    \item a necessidade ou demanda do usuário (HU);
-    \item o comportamento esperado do sistema, detalhado em Critérios de Aceitação (CAs);
-    \item etiquetas que identificam sua natureza (ex.: frontend);
-    \item e, em alguns casos, comentários ou complementações feitas pelos desenvolvedores.
-\end{itemize}
+Não haverá coleta direta com usuários, desenvolvedores ou outros stakeholders, pois o fenômeno investigado já ocorreu e não pode ser reconstituído em seu contexto original. Dessa forma, toda a análise se apoia em evidências históricas registradas no projeto, em conformidade com a natureza retrospectiva do estudo.
 
-Esses documentos foram utilizados tal como se encontram registrados, sem qualquer modificação, conforme recomendado por \citeonline{runeson_case_study_2012} para estudos baseados em análise documental. A integridade e fidelidade desses registros são essenciais para garantir o rigor da investigação.
+% --- Versão antiga abaixo ---
 
-Além das issues, outra fonte de dados utilizada neste estudo é o repositório digital do projeto, do qual são extraídas informações contextuais complementares, como a identificação dos elementos de interface presente no código-fonte. Tais elementos auxiliam na interpretação das HUs e CAs e contribuem para uma triangulação de dados conforme sugerido por \citeonline{yin2001}, ainda que limitada ao escopo documental.
+% Conforme destacado por \cite{yin2001} e \cite{runeson2009}, estudos observacionais baseados em artefatos históricos dependem diretamente da qualidade, completude e disponibilidade dos registros existentes. No presente trabalho, todas as evidências utilizadas para análise derivam exclusivamente do projeto CAPJu, desenvolvido no semestre 2023/1, cujos artefatos permaneceram registrados no sistema de gerenciamento de issues utilizado pela equipe de desenvolvimento.
 
-Não há coleta direta com usuários, desenvolvedores ou demais stakeholders, uma vez que o fenômeno estudado já ocorreu e não pode ser reconstituído no contexto original. Assim, toda a análise se apoia em evidências históricas, alinhando-se às características de estudos observacionais retrospectivos descritas na literatura.
+% A fonte de dados deste estudo serão as especificações BDD a partir do conjunto de issues que contêm Histórias de Usuário (HUs) e seus respectivos Critérios de Aceitação (CAs), adquiridas por meio do ZenHub vinculado ao projeto da organização. etiquetados como relacionados ao desenvolvimento de frontend. Esses artefatos representam a documentação funcional elaborada pela equipe durante o ciclo de desenvolvimento do projeto. Ao todo, 45 issues compõem esse conjunto, o qual constitui a unidade de análise deste estudo observacional retrospectivo.
 
-Dessa forma, as fontes de dados empregadas neste trabalho são exclusivamente documentais, consistindo em um conjunto estruturado de issues e artefatos associados, que fornecem o material necessário para as etapas subsequentes da solução proposta.
+% Cada issue contém elementos textuais que descrevem:
+
+%\begin{itemize}
+%    \item a necessidade ou demanda do usuário (HU);
+ %   \item o comportamento esperado do sistema, detalhado em Critérios de Aceitação (CAs);
+  %  \item etiquetas que identificam sua natureza (ex.: frontend);
+   % \item e, em alguns casos, comentários ou complementações feitas pelos desenvolvedores.
+%\end{itemize}
+
+%Esses documentos foram utilizados tal como se encontram registrados, sem qualquer modificação, conforme recomendado por \citeonline{runeson_case_study_2012} para estudos baseados em análise documental. A integridade e fidelidade desses registros são essenciais para garantir o rigor da investigação.
+
+%Além das issues, outra fonte de dados utilizada neste estudo é o repositório digital do projeto, do qual são extraídas informações contextuais complementares, como a identificação dos elementos de interface presente no código-fonte. Tais elementos auxiliam na interpretação das HUs e CAs e contribuem para uma triangulação de dados conforme sugerido por \citeonline{yin2001}, ainda que limitada ao escopo documental.
+
+%Não há coleta direta com usuários, desenvolvedores ou demais stakeholders, uma vez que o fenômeno estudado já ocorreu e não pode ser reconstituído no contexto original. Assim, toda a análise se apoia em evidências históricas, alinhando-se às características de estudos observacionais retrospectivos descritas na literatura.
+
+%Dessa forma, as fontes de dados empregadas neste trabalho são exclusivamente documentais, consistindo em um conjunto estruturado de issues e artefatos associados, que fornecem o material necessário para as etapas subsequentes da solução proposta.
 
 \section{Procedimentos}
 
