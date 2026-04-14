@@ -6,42 +6,47 @@ Este trabalho é classificado como um estudo de caso de natureza descritiva e ex
 
 O estudo adota um desenho de caso único, uma vez que a investigação se concentra em um único contexto de projeto, sem o objetivo de realizar generalizações estatísticas, mas sim uma generalização analítica, conforme proposto por \citeonline{yin2001}. Além disso, trata-se de um estudo de caso embutido, pois envolve múltiplas unidades de análise dentro de um mesmo caso, de acordo com a distinção entre estudos holísticos e embutidos apresentada por \citeonline{yin2001} e operacionalizada por \citeonline{runeson2009}, especificamente as especificações BDD derivadas de Histórias de Usuário e Critérios de Aceitação analisadas no projeto em questão.
 
-
-Da mesma forma, a natureza retrospectiva deste estudo impede seu enquadramento em delineamentos experimentais. Conforme descrito por \citeonline{Wohlin:2012:ESE:2349018}, experimentos demandam manipulação de variáveis, definição de tratamentos e controle sistemático de fatores que possam influenciar a observação. Nada disso é possível aqui: não existe controle do pesquisador sobre o processo de desenvolvimento do caso, tampouco há condições para alocação de grupos, aleatorização ou intervenção direta. Além disso, a análise se limita a um único projeto, com com um número limitado de issues contendo Histórias de Usuário e Critérios de Aceitação, sendo a fonte necessária para as especificações BDD, inviabilizando qualquer forma de amostragem estatística representativa.
+Da mesma forma, a natureza retrospectiva deste estudo impede seu enquadramento em delineamentos experimentais. Conforme descrito por \citeonline{Wohlin:2012:ESE:2349018}, experimentos demandam manipulação de variáveis, definição de tratamentos e controle sistemático de fatores que possam influenciar a observação. Neste estudo, não existe controle do pesquisador sobre o processo de desenvolvimento do caso, tampouco há condições para alocação de grupos, aleatorização ou intervenção direta. Além disso, a análise se limita a um único projeto, com com um número limitado de tarefas contendo Histórias de Usuário e Critérios de Aceitação, sendo a fonte necessária para as especificações BDD, inviabilizando qualquer forma de amostragem estatística representativa.
 
 Ainda que o método empregado não caracterize um estudo de caso clássico nos termos de \citeonline{yin2001}, o presente trabalho se beneficia do protocolo de estudo de caso amplamente discutido na Engenharia de Software. \citeonline{runeson2009} enfatizam que esse protocolo é adequado para estruturar investigações empíricas baseadas em artefatos reais de desenvolvimento, mesmo quando o pesquisador não observa o fenômeno em execução. A estrutura sugerida pelos autores contribui para definir claramente a unidade de análise, selecionar evidências relevantes, documentar procedimentos, conduzir a análise sistematicamente e mitigar ameaças à validade, garantindo um maior rigor e transparência.
 
 Nesse sentido, este estudo configura-se como um estudo observacional retrospectivo, orientado pela análise documental das especificações BDD produzidos no CAPJu. Embora retrospectivo, ele adota diretrizes do protocolo de estudo de caso apresentado por \citeonline{runeson_case_study_2012}, que destacam que estudos conduzidos a partir de artefatos históricos como documentos de requsisitos, podem seguir os mesmos princípios metodológicos de organização, triangulação e validade aplicados a estudos de caso tradicionais.
 
-Assim, a unidade de análise deste trabalho corresponde às especificações BDD construídas a partir das Histórias de Usuário e Critérios de Aceitação, identificados como relacionados ao frontend no projeto CAPJu, que constituem o corpus empírico investigado. A partir desses dados, busca-se compreender de maneira sistemática como características textuais e semânticas desses artefatos podem influenciar processos de interpretação automatizada em sistemas de Inteligência Artificial.
-
 \section{Objetivo}
 
-Segundo pesquisas recentes sobre o uso de modelos de linguagem e técnicas de Inteligência Artificial no apoio ao desenvolvimento e à automação de testes \cite{Ferreira2025, Nettur2025}, práticas baseadas em Behavior-Driven Development (BDD) têm se consolidado como um meio eficaz para expressar o comportamento esperado de sistemas por meio de linguagem natural estruturada. Contudo, a forma como esses cenários são escritos em especial a clareza, o nível de detalhamento e a padronização terminológica exerce influência direta sobre a capacidade de sistemas baseados em IA interpretarem corretamente as ações descritas e identificarem, de maneira autônoma, os elementos de interface gráfica necessários para a automação de testes.
+A literatura aponta que a utilização de cenários BDD pode favorecer a geração de testes automatizados por sistemas baseados em IA, especialmente quando esses cenários apresentam maior clareza, estruturação e detalhamento. Nesse sentido, \citeonline{Nettur2025} demonstram que a avaliação desse processo pode ser realizada a partir da eficácia e da qualidade do código gerado, observadas por métricas de completude e pela ocorrência de erros sintáticos e de execução.
 
-Entretanto, observa-se na prática que especificações BDD frequentemente apresentam inconsistências, variações estruturais e ambiguidades que dificultam sua interpretação automatizada, limitando o potencial das ferramentas de IA para apoiar atividades como geração de testes, identificação de seletores e mapeamento de elementos da interface. Essa lacuna se torna ainda mais relevante diante do avanço de soluções que dependem da compreensão semântica de cenários para gerar testes de sistema de forma autônoma.
+Entretanto, em contextos reais de desenvolvimento, as especificações podem apresentar ambiguidades, contexto insuficiente e lacunas nos critérios de aceitação, o que pode comprometer a geração adequada dos testes. \citeonline{Ferreira2025} mostram que a qualidade dos testes gerados esteve mais relacionada à clareza e ao contexto fornecidos nas histórias de usuário e nos cenários Gherkin, enquanto \citeonline{Alinezhadtilaki2025} destacam que ambiguidades e inconsistências em cenários BDD prejudicam sua qualidade e sua avaliação.
 
-Dessa forma, o objetivo deste estudo consiste em investigar de que maneira as especificações BDD devem ser escritas, estruturadas e detalhadas para que sistemas baseados em Inteligência Artificial consigam identificar, de forma autônoma, os elementos de interface gráfica necessários à criação de testes de sistema automatizados. Para alcançar esse objetivo, serão consideradas abordagens, técnicas e ferramentas discutidas na literatura especializada, bem como práticas adotadas na indústria, incluindo o uso de processos automatizados de análise e interpretação textual capazes de estruturar, enriquecer e comparar semanticamente cenários BDD, com o intuito de compreender quais características textuais e estruturais favorecem a correta interpretação dos cenários por sistemas de IA.
+Dessa forma, o presente estudo visa investigar em que medida a forma de escrita, a estruturação e o nível de detalhamento das especificações BDD influenciam a eficácia e a qualidade do código de testes automatizados gerado por IA no contexto do CAPJu.
 
 \section{Caso}
 
-O objeto de estudo desta pesquisa é o CAPJu \footnote{\url{https://github.com/fga-eps-mds/2023-1-CAPJu-Doc}} (Controle e Acompanhamento de Processos da Justiça) do Tribunal Regional Federal (TRF) da 1ª Região, uma aplicação Web de código aberto desenvolvida utilizada no contexto da 4ª Vara Cível da Justiça Federal. O sistema foi projetado para auxiliar na organização, gerenciamento e monitoramento de informações processuais, oferecendo suporte às atividades internas do órgão. Por ser empregado em um ambiente institucional real, o CAPJu demanda melhorias contínuas, estabilidade operacional e evolução arquitetural, configurando-se como um caso relevante para investigações no campo da Engenharia de Software.
+O objeto de estudo desta pesquisa é o CAPJu \footnote{\url{https://github.com/fga-eps-mds/2023-1-CAPJu-Doc}} (Controle e Acompanhamento de Processos da Justiça) do Tribunal Regional Federal (TRF) da 1ª Região, uma aplicação Web de código aberto desenvolvida utilizada no contexto da 4ª Vara Cível da Justiça Federal. O sistema foi projetado para suprir a lacuna de auxílio na organização, gerenciamento e monitoramento de informações processuais, tendo como objetivo oferecer suporte às atividades internas do órgão. 
 
-O desenvolvimento e a manutenção do CAPJu são realizados por estudantes vinculados às disciplinas Métodos de Desenvolvimento de Software (MDS) e Engenharia de Produto de Software (EPS), ambas no contexto da organização em plataformas de código por parte da Universidade de Brasília (UnB) \footnote{\url{https://github.com/fga-eps-mds}}. Essas equipes são responsáveis pela implementação de funcionalidades, correções, testes, documentação, refinamento de requisitos e decisões arquiteturais, sempre em alinhamento com as orientações do stakeholder institucional. Essa dinâmica promove um ambiente colaborativo que simula um cenário organizacional real, no qual papéis distintos assumem responsabilidades complementares, favorecendo tanto a aprendizagem prática quanto a adoção de boas práticas de desenvolvimento.
+O desenvolvimento e a manutenção do CAPJu são realizados por estudantes vinculados às disciplinas Métodos de Desenvolvimento de Software (MDS), composta por 10 estudantes do 4º período, e Engenharia de Produto de Software (EPS) constituída por 7 estudantes do 8º período, ambas inseridas no contexto da organização em plataformas de código da Universidade de Brasília (UnB) \footnote{\url{https://github.com/fga-eps-mds}}. Essas equipes são responsáveis pela implementação de funcionalidades, correções, testes, documentação, refinamento de requisitos e decisões arquiteturais, sempre em alinhamento com as orientações do stakeholder institucional.
 
 A arquitetura do CAPJu é baseada em microserviços, permitindo modularização das responsabilidades, escalabilidade e maior flexibilidade de evolução. O backend é implementado em Node.js utilizando o framework Express.js para o processamento de requisições, enquanto a persistência de dados é realizada em PostgreSQL, apoiada pelo ORM Sequelize. Cada domínio do sistema é encapsulado em um serviço independente, como o Serviço de Usuário, o Serviço de Unidades e o Serviço de Email, todos acessados por meio de um API Gateway, responsável por encaminhar requisições ao microserviço apropriado e garantir o fluxo interno adequado.
 
 O frontend é desenvolvido com tecnologias Web baseadas em JavaScript e consome a API REST fornecida pelo backend. A separação entre interface gráfica e serviços de negócio facilita a manutenção, a escalabilidade e o trabalho paralelo das equipes. A distinção de responsabilidades entre MDS e EPS também contribui para uma organização mais eficiente, considerando que enquanto MDS foca principalmente na implementação de funcionalidades, EPS dedica-se a processos de qualidade, testes, documentação, padronização e evolução estrutural do sistema.
 
-O projeto conta ainda com ambientes específicos para testes e homologação. O ambiente de testes é utilizado para validação contínua das funcionalidades em desenvolvimento, geralmente operando com dados fictícios ou controlados. O ambiente de homologação, por sua vez, reproduz com maior fidelidade as condições de produção, permitindo identificar problemas de integração ou divergências antes das entregas oficiais. A presença desses ambientes reforça a confiabilidade do software e apoia a prática de desenvolvimento incremental.
+\begin{figure}[h!]
+    \caption{Arquitetura da aplicação CAPJu}
+    \centering
+    \includegraphics[width=.7\linewidth]{figuras/arquitetura_capju.jpeg}
+    \caption*{Fonte: CAPJu}
+    \label{fig:arquitetura_capju}
+\end{figure}
 
-Além disso, o CAPJu possui uma estrutura organizacional documentada, incluindo histórico de versões, registros de contribuições, orientações técnicas e diretrizes de desenvolvimento presentes nos repositórios do projeto. A utilização de tecnologias amplamente difundidas, a modularidade arquitetural e a documentação acessível tornam o sistema adequado para equipes com alta rotatividade, característica comum em contextos acadêmicos, sem comprometer a continuidade evolutiva da aplicação.
+Além disso, o CAPJu possui uma estrutura organizacional documentada, incluindo histórico de versões, registros de contribuições, orientações técnicas e diretrizes de desenvolvimento presentes nos repositórios do projeto. O que é especialmente importante para esse estudo é que as histórias de usuário e os critérios de aceitação, que constituem a base para as especificações BDD, estão registrados permitindo uma análise para a criação de cenários desenvolvimento orientado a comportamento (BDD) que serão utilizados como insumo para a geração de testes automatizados.
 
-Considerando seu uso real no contexto judiciário, sua arquitetura modular, sua documentação estruturada e seu modelo de desenvolvimento distribuído, o CAPJu constitui um objeto de estudo apropriado para pesquisas em engenharia de software, especialmente no que se refere à análise de artefatos de requisitos, processos colaborativos de desenvolvimento e práticas de qualidade interna. Tais características fornecem uma base sólida para a investigação conduzida neste trabalho, que se apoia no estudo retrospectivo de suas Histórias de Usuário e Critérios de Aceitação para a criação da especificação BDD.
+A escolha deste projeto, dentre tantos outros que existem no repositório da disciplina \footnote{\url{https://github.com/fga-eps-mds}} para este estudo foi motivada por conveniência, considerando que os autores deste trabalho de conclusão de curso estiveram diretamente envolvidos no desenvolvimento do CAPJu no semestre 2023/1, o que facilita o acesso a informações, artefatos e stakeholders relevantes para a pesquisa. Além disso, o CAPJu é um projeto que foi concluído e entregue para o TRF ao final do seu desenvolvimento, o que o torna um caso representativo para investigar a questão de pesquisa proposta, dentro de um contexto real. O projeto também se destaca pela adoção de práticas ágeis e pela utilização de ferramentas de desenvolvimento consolidadas no mercado, o que contribui para a relevância e aplicabilidade dos resultados obtidos neste estudo.
+
+Dessa forma o Capju cobre uma das lacunas apresentadas no estudo \citeonline{Nettur2025} que é a falta de um estudo de caso real, para avaliar a eficácia da geração automática de testes a partir de cenários BDD. O CAPJu, com um conjunto de requisitos, histórias de usuário e critérios de aceitação documentados, oferece um meio para investigar como as especificações BDD podem ser estruturadas para maximizar a capacidade de sistemas baseados em IA interpretarem corretamente os cenários e gerarem testes automatizados eficazes.
 
 \section{Trabalhos Relacionados}
 
-A revisão estruturada da literatura realizada neste trabalho permitiu identificar pesquisas que tratam da interseção entre Behavior-Driven Development (BDD), Processamento de Linguagem Natural (PLN) e Inteligência Artificial (IA), fornecendo base conceitual e metodológica para a proposta apresentada.
+A revisão estruturada da literatura realizada neste trabalho permitiu identificar pesquisas que tratam da interseção entre Desenvolvimento Orientado a Comportamento (BDD), Processamento de Linguagem Natural (PLN) e Inteligência Artificial (IA), fornecendo base conceitual e metodológica para a proposta apresentada.
 
 Um dos eixos centrais encontrados na literatura refere-se aos desafios da escrita de cenários BDD em linguagem natural. Segundo \citeonline{Alinezhadtilaki2025}, a clareza, objetividade e padronização dos cenários são determinantes para reduzir ambiguidades que prejudicam sua interpretação automática. Os autores destacam que a estrutura Given–When–Then funciona como elemento fundamental para uniformizar a comunicação e minimizar subjetividades, tema que se alinha diretamente à investigação deste trabalho. A necessidade de cenários bem definidos também aparece em \citeonline{GUPTA2023102141}, que reforçam atributos desejáveis como unicidade, granularidade adequada e foco em apenas um comportamento por cenário. Esses estudos fundamentam a hipótese de que a forma de escrita impacta diretamente a capacidade de IA interpretar corretamente requisitos comportamentais.
 
@@ -57,240 +62,89 @@ Por fim, estudos sobre modelos de qualidade e avaliação semântica de artefato
 
 \section{Questão de Pesquisa}
 
-Para responder a questão principal de pesquisa de trabalho (De que maneira as especificações BDD devem ser escritas e detalhadas para que sistemas baseados em IA consigam identificar, de forma autônoma, os elementos de interface gráfica necessários para criar testes de sistema automatizados?), foram derivadas duas questões específicas para o estudo de caso, juntamente com as métricas que serão utilizadas para sua avaliação, seguindo a abordagem GQM. A metodologia GQM foi utilizada para a definição das perguntas específicas, derivadas da pergunta principal e suas respectivas métricas para conduzir o estudo, de modo a não desviar do objetivo principal e estabelecer a avaliação quantitativa ou qualitativa, de cada uma das questões de pesquisa secundárias, que agora norteiam o estudo observacional retrospectivo \cite{Basili1994}. A ISO/IEC 25010 defini testabilidade como o nível de eficiência e efetividade em
-que podem ser estabelecidos critérios de teste para um produto, sistema ou componente e diversos testes podem ser feitos para demonstrar que os critérios foram atendidos. No contexto desta pesquisa, a testabilidade está diretamente relacionada à clareza, granularidade e estruturação das sentenças BDD, uma vez que tais características influenciam a capacidade de sistemas baseados em IA compreenderem cenários, reconhecerem elementos de interface gráfica e gerarem testes automatizados de forma robusta.
+Para responder à questão principal apresentada no subcapítulo \ref{txt:questao-pesquisa}, foi derivada uma questão específica para o estudo de caso, juntamente com as métricas utilizadas em sua avaliação, seguindo a abordagem GQM \citeonline{Basili1994}. Essa abordagem permite desdobrar a questão principal em um problema empiricamente observável, mantendo o alinhamento com o objetivo central da pesquisa e viabilizando sua avaliação por meio de métricas adequadas.
 
-• Questão Específica 1: Em que medida a clareza das sentenças BDD influenciam a capacidade da IA de identificar corretamente elementos da interface gráfica e gerar testes alinhados ao comportamento descrito no cenário?
+No contexto deste trabalho, essa estrutura permanece coerente com a subcaracterística de testabilidade discutida no referencial teórico. À luz da \citeonline{ISO25010} a testabilidade relaciona-se à eficácia e à eficiência com que critérios de teste podem ser estabelecidos e os testes podem ser executados. Assim, os cenários BDD são relevantes por contribuírem para explicitar comportamentos esperados e tornar mensurável a capacidade de geração automática de testes.
 
-– Métrica 1.1: Similaridade Semântica BDD–Código, medida por meio da comparação de embeddings (ex.: CodeBERT) entre a representação semântica do cenário e o código de teste gerado, utilizando similaridade de cosseno entre 0 e 1.
+Em relação ao CAPJu, a questão específica será avaliada com base nas métricas propostas por \citeonline{Nettur2025}, organizadas em eficácia e qualidade do código gerado pela IA. A eficácia será observada por métricas de completude, enquanto a qualidade será analisada pela ocorrência de erros sintáticos e de execução no código produzido.
 
-• Questão Específica 2: Em que medida a padronização da escrita dos cenários BDD contribui para a testabilidade ao melhorar a coerência e a aderência semântica do cenário durante a validação semântica prévia à geração do código, reduzindo ambiguidades e facilitando a correta compreensão do comportamento pela IA?
+À vista disso, foi elaborada a seguinte questão específica deste estudo:
 
-– Métrica 2.1: Grau de aderência e consistência semântica BDD–JSON, medido pela similaridade de cosseno entre embeddings da sentença BDD original e sua representação semântica estruturada obtida pelo processamento de linguagem natural, caracterizando a qualidade da validação semântica prévia à geração do código.
+- Questão Específica 1 (QE-1): Em que medida a forma de escrita dos cenários BDD influencia a eficácia e a qualidade do código de testes automatizados gerado por IA no contexto do CAPJu?
+
+\begin{itemize}
+    \item \textbf{Métrica 1.1 - Número de Métodos de Passo Gerados:} mede o total de métodos de passo gerados para corresponder aos passos dos cenários BDD, considerando todos os cenários e histórias de usuário. O objetivo é verificar o quanto o modelo conseguiu cobrir os passos especificados; menos métodos gerados indicam menor completude.
+    \item \textbf{Métrica 1.2 - Número de Métodos de Passo sem Implementação:} mede quantos métodos de passo foram gerados, mas ficaram sem código interno. Essa métrica evidencia lacunas onde o código foi criado estruturalmente, porém não ficou funcional
+    \item \textbf{Métrica 1.3 - Número de Métodos POM Gerados:} mede o total de métodos da classe Page Object Model gerados para suportar os passos dos cenários BDD. Serve para estimar o quanto o modelo produziu a camada de abstração da interface necessária à automação.
+    \item \textbf{Métrica 1.4 - Número de Métodos POM sem Implementação:} mede quantos métodos POM foram gerados sem código executável. Indica incompletude na camada de interação com a aplicação.
+    \item \textbf{Métrica 1.5 - Fração de Métodos de Passo com Implementação:} razão entre o número de métodos de passo implementados e o total de métodos de passo gerados, calculada por história de usuário.
+    \item \textbf{Métrica 1.6 - Fração de Métodos de Passo sem Implementação:} razão entre o número de métodos de passo sem implementação e o total de métodos de passo gerados, também por história de usuário.
+    \item \textbf{Métrica 1.7 - Fração de Métodos POM com Implementação:} razão entre o número de métodos POM implementados e o total de métodos POM gerados, por história de usuário.
+    \item \textbf{Métrica 1.8 - Fração de Métodos POM sem Implementação:} razão entre o número de métodos POM sem implementação e o total de métodos POM gerados, por história de usuário.
+    \item \textbf{Métrica 1.9 - Erros Sintáticos e de Execução:} avalia a presença de erros sintáticos e de execução no código gerado, verificando se ele adere corretamente às regras da linguagem de programação e se executa de forma adequada no ambiente de testes. Erros sintáticos indicam problemas de corretude do código, enquanto erros de execução evidenciam falhas que surgem durante sua execução, comprometendo sua qualidade.
+\end{itemize}
 
 \section{Fonte de Dados}
 
-Conforme destacado por \cite{yin2001} e \cite{runeson2009}, estudos observacionais baseados em artefatos históricos dependem diretamente da qualidade, completude e disponibilidade dos registros existentes. No presente trabalho, todas as evidências utilizadas para análise derivam exclusivamente do projeto CAPJu, desenvolvido no semestre 2023/1, cujos artefatos permaneceram registrados no sistema de gerenciamento de issues utilizado pela equipe de desenvolvimento.
+Este estudo utiliza exclusivamente fontes de dados documentais, uma vez que se caracteriza como uma investigação observacional retrospectiva baseada em artefatos históricos do projeto CAPJu. Nesse tipo de delineamento, as evidências dependem da qualidade, completude e disponibilidade dos registros produzidos durante o desenvolvimento do sistema.
 
-A fonte de dados deste estudo serão as especificações BDD a partir do conjunto de issues que contêm Histórias de Usuário (HUs) e seus respectivos Critérios de Aceitação (CAs), adquiridas por meio do ZenHub vinculado ao projeto da organização. etiquetados como relacionados ao desenvolvimento de frontend. Esses artefatos representam a documentação funcional elaborada pela equipe durante o ciclo de desenvolvimento do projeto. Ao todo, 45 issues compõem esse conjunto, o qual constitui a unidade de análise deste estudo observacional retrospectivo.
+A principal fonte de dados é o conjunto de issues do projeto registradas no ZenHub \footnote{\url{https://www.zenhub.com/}} e vinculadas ao repositório do CAPJu \footnote{\url{https://github.com/fga-eps-mds/2023-1-CAPJu-Doc}}, sendo aquelas que contêm Histórias de Usuário e seus respectivos Critérios de Aceitação. Esses registros constituem a base documental a partir da qual serão elaboradas as especificações BDD utilizadas no estudo, preservando o vínculo com os requisitos originalmente produzidos pela equipe do projeto.
 
-Cada issue contém elementos textuais que descrevem:
+De forma complementar, o repositório digital do projeto será utilizado como segunda fonte documental, onde serão utilizados elementos de interface presentes no código-fonte, estruturas da aplicação e outros registros técnicos que auxiliam na correspondência entre o comportamento descrito nas Histórias de Usuário e os componentes efetivamente existentes no sistema.
+
+A partir dessas fontes, serão obtidas também as informações necessárias para o cálculo das métricas do estudo que serão obtidas ao longo do experimento através da extensão Cypress Copilot \footnote{\url{https://github.com/OptimizeAIHub/Cypress-Copilot}} de \citeonline{Nettur2025} e do processo de análise dos artefatos gerados, como a identificação de erros sintáticos e de execução no código gerado, de forma quantitativa.
+
+% --- Versão antiga abaixo ---
+
+% Conforme destacado por \cite{yin2001} e \cite{runeson2009}, estudos observacionais baseados em artefatos históricos dependem diretamente da qualidade, completude e disponibilidade dos registros existentes. No presente trabalho, todas as evidências utilizadas para análise derivam exclusivamente do projeto CAPJu, desenvolvido no semestre 2023/1, cujos artefatos permaneceram registrados no sistema de gerenciamento de issues utilizado pela equipe de desenvolvimento.
+
+% A fonte de dados deste estudo serão as especificações BDD a partir do conjunto de issues que contêm Histórias de Usuário (HUs) e seus respectivos Critérios de Aceitação (CAs), adquiridas por meio do ZenHub vinculado ao projeto da organização. etiquetados como relacionados ao desenvolvimento de frontend. Esses artefatos representam a documentação funcional elaborada pela equipe durante o ciclo de desenvolvimento do projeto. Ao todo, 45 issues compõem esse conjunto, o qual constitui a unidade de análise deste estudo observacional retrospectivo.
+
+% Cada issue contém elementos textuais que descrevem:
+
+%\begin{itemize}
+%    \item a necessidade ou demanda do usuário (HU);
+ %   \item o comportamento esperado do sistema, detalhado em Critérios de Aceitação (CAs);
+  %  \item etiquetas que identificam sua natureza (ex.: frontend);
+   % \item e, em alguns casos, comentários ou complementações feitas pelos desenvolvedores.
+%\end{itemize}
+
+%Esses documentos foram utilizados tal como se encontram registrados, sem qualquer modificação, conforme recomendado por \citeonline{runeson_case_study_2012} para estudos baseados em análise documental. A integridade e fidelidade desses registros são essenciais para garantir o rigor da investigação.
+
+%Além das issues, outra fonte de dados utilizada neste estudo é o repositório digital do projeto, do qual são extraídas informações contextuais complementares, como a identificação dos elementos de interface presente no código-fonte. Tais elementos auxiliam na interpretação das HUs e CAs e contribuem para uma triangulação de dados conforme sugerido por \citeonline{yin2001}, ainda que limitada ao escopo documental.
+
+%Não há coleta direta com usuários, desenvolvedores ou demais stakeholders, uma vez que o fenômeno estudado já ocorreu e não pode ser reconstituído no contexto original. Assim, toda a análise se apoia em evidências históricas, alinhando-se às características de estudos observacionais retrospectivos descritas na literatura.
+
+%Dessa forma, as fontes de dados empregadas neste trabalho são exclusivamente documentais, consistindo em um conjunto estruturado de issues e artefatos associados, que fornecem o material necessário para as etapas subsequentes da solução proposta.
+
+\section{Unidades de Análise e Procedimentos}
+
+Para atender ao objetivo deste estudo, adota-se um delineamento observacional retrospectivo com unidades de análise, uma vez que o fenômeno investigado é examinado por meio de diferentes artefatos relacionados entre si no contexto do projeto CAPJu. Essa organização permite observar, de forma encadeada, como a informação evolui desde a descrição funcional inicial até o artefato final produzido pela solução baseada em Inteligência Artificial (AI), favorecendo uma análise mais abrangente do problema investigado.
+
+As unidades de análise deste estudo são compostas por quatro tipos de artefato: 
 
 \begin{itemize}
-    \item a necessidade ou demanda do usuário (HU);
-    \item o comportamento esperado do sistema, detalhado em Critérios de Aceitação (CAs);
-    \item etiquetas que identificam sua natureza (ex.: frontend);
-    \item e, em alguns casos, comentários ou complementações feitas pelos desenvolvedores.
+    \item A primeira corresponde às 23 Histórias de Usuário (USs), que expressam a necessidade funcional e o objetivo de negócio associado a cada demanda do sistema.
+    \item A segunda unidade é formada pelos Critérios de Aceitação (CAs), que detalham as condições, regras e resultados esperados para validação da funcionalidade descrita.
+    \item A terceira unidade de análise corresponde às Especificações BDD, elaboradas a partir das USs e dos CAs e organizadas no formato Dado-Quando-Então, de modo a estruturar os comportamentos esperados de forma compatível com a solução proposta.
+    \item Por fim, a quarta unidade de análise é o código de teste gerado, entendido como o artefato produzido pela IA a partir das especificações BDD e utilizado como evidência para avaliação dos resultados do estudo.
 \end{itemize}
 
-Esses documentos foram utilizados tal como se encontram registrados, sem qualquer modificação, conforme recomendado por \citeonline{runeson_case_study_2012} para estudos baseados em análise documental. A integridade e fidelidade desses registros são essenciais para garantir o rigor da investigação.
+Os procedimentos do estudo serão conduzidos em etapas sequenciais. Inicialmente, houve o levantamento de 23 Histórias de Usuário com Critérios de Aceitação associados. Em seguida, essas informações serão utilizadas para a elaboração das especificações BDD que servirão de entrada para a extensão de \citeonline{Nettur2025}, a fim de retornar o código de teste gerado por meio do Modelo de Objeto de Página (POM) e Métodos de Passo.
 
-Além das issues, outra fonte de dados utilizada neste estudo é o repositório digital do projeto, do qual são extraídas informações contextuais complementares, como a identificação dos elementos de interface presente no código-fonte. Tais elementos auxiliam na interpretação das HUs e CAs e contribuem para uma triangulação de dados conforme sugerido por \citeonline{yin2001}, ainda que limitada ao escopo documental.
+Durante essa execução, serão observados de forma quantitativa os resultados gerados pela extensão após cada iteração, com foco nas métricas de completude do código produzido e ocorrência de erros sintáticos e de execução. Esses registros obtidos ao longo dessas execuções serão organizados em base estruturada, preservando a rastreabilidade entre a issue de origem, a especificação BDD correspondente e os artefatos gerados pela solução. Essa organização permitirá que, na etapa seguinte, os dados sejam analisados de forma consistente e alinhada às métricas definidas para o estudo.
 
-Não há coleta direta com usuários, desenvolvedores ou demais stakeholders, uma vez que o fenômeno estudado já ocorreu e não pode ser reconstituído no contexto original. Assim, toda a análise se apoia em evidências históricas, alinhando-se às características de estudos observacionais retrospectivos descritas na literatura.
-
-Dessa forma, as fontes de dados empregadas neste trabalho são exclusivamente documentais, consistindo em um conjunto estruturado de issues e artefatos associados, que fornecem o material necessário para as etapas subsequentes de análise textual e semântica conduzida pela solução proposta.
-
-\section{Procedimentos}
-
-O método de estudo adotado neste trabalho será um estudo observacional retrospectivo, conduzido sob o protocolo de estudo de caso. Essa abordagem foi escolhida porque o projeto analisado já se encontra concluído e não há múltiplas instâncias disponíveis para comparação experimental controlada. Assim, a estratégia mais adequada consiste em observar retrospectivamente seus artefatos, utilizando-os como insumo para o processo de geração automatizada de testes.
-
-A solução proposta é organizada em módulos funcionais independentes, cada um responsável por uma etapa específica do processamento das histórias de usuário e da geração dos artefatos derivados. Cada módulo opera como um componente isolado dentro da arquitetura, recebendo entradas bem definidas, aplicando transformações ou análises específicas e produzindo saídas estruturadas que alimentam as etapas subsequentes do sistema. Essa modularização permite isolar responsabilidades, facilitar a manutenção, favorecer a reprodutibilidade do estudo e possibilitar a avaliação individual de cada componente do pipeline.
-
-Neste trabalho, os cenários escritos em Behavior-Driven Development (BDD) não são utilizados apenas como artefatos de comunicação entre stakeholders, mas também como insumo direto para a automação de testes baseada em inteligência artificial. De forma deliberada, os cenários BDD são escritos contendo identificadores explícitos dos elementos da interface gráfica (IDs de seletores HTML), associados às ações e verificações descritas nos passos Given, When e Then. Essa adaptação é inspirada por abordagens que utilizam o HTML da interface para a geração de testes executáveis \cite{Ferreira2025} e por frameworks que estabelecem ligações explícitas entre cenários, código e execução \cite{Paduraru2025}.
-
-A primeira etapa consiste na coleta das histórias de usuário do projeto, que serão utilizadas para a elaboração dos cenários em Behavior-Driven Development (BDD), servindo como base para a geração dos testes automatizados. Para cada história, são produzidas duas versões de BDD com diferentes níveis de conformidade ao padrão Dado – Quando – Então, a fim de permitir a análise do comportamento do módulo diante de variações de qualidade na especificação. Uma das versões apresenta maior aderência estrutural ao formato Gherkin e aos critérios de aceitação, enquanto a outra representa um padrão de escrita menos rigoroso, contendo elementos comuns em cenários reais, como indefinições, variações de estilo e ausência parcial de estruturação formal. Em seguida, o Módulo 1 recebe as histórias e suas respectivas versões de BDD, realiza a tokenização e o POS tagging com spaCy, identifica ação, agente e alvo, executa a análise de papéis semânticos (SRL) com modelos baseados em Transformers e, por fim, produz um JSON estruturado contendo as informações extraídas dos requisitos.
-
-O Módulo 2 utiliza o JSON produzido anteriormente para realizar uma validação semântica prévia, assegurando que a interpretação gerada no processamento semântico preserva o significado do cenário BDD original. Para isso, tanto o BDD quanto o JSON são convertidos em embeddings utilizando modelos como SBERT, e sua similaridade é medida por cosseno. Caso o valor esteja abaixo de um limiar definido, indicando ambiguidade, falta de clareza ou estrutura inadequada, o fluxo é interrompido e a geração do teste não é realizada.
-
-Apenas após essa verificação o módulo prossegue para a busca de contexto relevante por meio de RAG (Retrieval-Augmented Generation). Nesse processo, os textos dos cenários e da documentação técnica são convertidos em embeddings semânticos gerados com SBERT, armazenados em um banco vetorial Faiss e consultados por similaridade de cosseno. Os documentos recuperados orientam a construção de um prompt detalhado, que é enviado a um modelo de linguagem (LLM), responsável por gerar automaticamente o código de testes Cypress.
-
-O Módulo 3 utiliza tanto a representação semântica produzida no primeiro módulo quanto o código gerado pelo segundo. Essa etapa calcula a similaridade semântica entre requisitos e testes utilizando CodeBERT, identificando inconsistências ou trechos que não refletem corretamente o comportamento esperado. Além disso, um agente de IA atua como juiz, realizando ajustes no código sempre que necessário, a partir de técnicas de embeddings semânticos e validação automatizada.
-
-Após a finalização do Módulo 3, os testes gerados pelo pipeline serão comparados aos testes produzidos diretamente por modelos de linguagem generalistas, como GPT, DeepSeek e LLaMA.
-
-As etapas descritas anteriormente apresentam uma visão geral do pipeline proposto e do papel de cada módulo no processo de geração automatizada de testes. A seguir, cada módulo é detalhado individualmente, com a descrição formal de suas entradas, operações internas e saídas, de modo a explicitar os mecanismos técnicos e computacionais empregados em cada etapa do método.
-
-\subsection{Módulo 1: Processamento Semântico}
-
-Entrada:
-
-\[
-T = \{ t_1,\, t_2,\, \ldots,\, t_n \}
-\]
-
-A entrada deste módulo consiste no texto da história de usuário e nos cenários correspondentes escritos em BDD.
-
-1. Tokenização
-
-\[
-T \;\stackrel{\textit{tokenizer}}{\longrightarrow}\; 
-W = \{ \, w_1,\, w_2,\, \ldots,\, w_m \,\}
-\]
-
-A tokenização constitui a etapa inicial do processamento de linguagem natural aplicado ao texto de entrada. Nessa fase, o conjunto textual, composto pela história de usuário e pelos cenários BDD, é decomposto em unidades linguísticas mínimas denominadas tokens. Esse processo é essencial para permitir que modelos de NLP interpretem o texto de forma estruturada, reduzindo variações lexicais e preparando os dados para etapas posteriores, como POS-tagging, parsing e extração semântica. Sem essa decomposição preliminar, o modelo teria dificuldade para identificar relações entre palavras, detectar ações ou mapear agentes e objetos de maneira consistente (\citeauthor{Alinezhadtilaki2025}, \citeauthor{Wang2022}).
-
-2. Rotulação Sintática (POS Tagging)
-
-\[
-W \;\stackrel{\textit{parser}}{\longrightarrow}\; 
-D = \{ (\, w_i,\, rel,\, wj \,)\}
-\]
-
-A rotulação sintática (POS Tagging) identifica a classe e a função gramatical de cada token presente em W. Essa etapa permite que o sistema compreenda como as palavras se relacionam entre si, o que é fundamental para interpretar comandos e cenários BDD. Informações sobre verbos, sujeitos e objetos fornecem a estrutura mínima necessária para analisar as ações descritas. Assim, o POS Tagging funciona como um filtro linguístico que organiza o texto antes da aplicação do parser sintático e da extração semântica. Sem essa camada intermediária, seria muito mais difícil distinguir ações, agentes, condições e objetos presentes nos passos do BDD (\citeauthor{Gudaparthi2023}, \citeauthor{Paduraru2025}).
-
-3. Extração Semântica (SRL)
-
-\[
-D \;\stackrel{\textit{SRL}}{\longrightarrow}\; 
-S = \{ (\, agente,\, ação,\, objeto \,)\}
-\]
-
-A extração semântica, realizada por meio de Semantic Role Labeling (SRL), tem como objetivo identificar automaticamente os papéis desempenhados pelos elementos de uma sentença. Enquanto o POS Tagging e o parsing fornecem informações estruturais e gramaticais, a SRL revela quem realiza a ação, qual é a ação executada e qual o alvo dessa ação. Essa etapa é crucial para interpretar histórias de usuário e cenários BDD, pois transforma descrições textuais em estruturas semânticas explícitas. Dessa forma, modelos analíticos ou geradores passam a compreender intenções e comportamentos em nível conceitual, estabelecendo as bases para a geração automática de testes e para o mapeamento formal em JSON (\citeauthor{Wang2022}, \citeauthor{Paduraru2025}).
-
-4. Mapeamento para estrutura formal (JSON):
-
-\[
-S \;\stackrel{\textit{mapper}}{\longrightarrow}\; 
-J\
-\]
-
-Nesta etapa, a estrutura semântica extraída é convertida em uma representação formal no formato JSON.
-
-\[
-J = {JSON\, semântico}
-\]
-
-Essa representação padronizada permite o processamento automático nas etapas seguintes.
-
-\subsection{Módulo 2: Geração do Código de
-Teste}
-
-Entrada:
-
-\[
-J = {JSON\, semântico}
-\]
-
-A entrada do módulo 2 é o JSON semântico produzido no módulo anterior.
-
-1. Validação Semântica Prévia 
-
-\[
-\mathrm{sim}(\mathrm{Emb}(\mathit{BDD}),\ \mathrm{Emb}(J)) = \cos(\theta)
-\]
-
-A validação semântica compara a proximidade entre o texto original do cenário BDD e sua representação formal no JSON. Embeddings gerados por modelos como SBERT são utilizados para medir a similaridade via cosseno, garantindo que a interpretação semântica preserve a intenção do autor do cenário. Se a similaridade for insuficiente, é sinal de que existem ambiguidades ou falhas estruturais que inviabilizam a geração do teste (\citeauthor{Pysmennyi2025}, \citeauthor{Leotta2024}).
-
-
-2. Recuperação de Contexto (RAG)
-
-\[
-\mathit{C} = \mathrm{Faiss}(\mathrm{Emb}(J))
-\]
-
-Após a validação, o sistema executa Retrieval-Augmented Generation (RAG), utilizando o JSON como chave semântica para recuperação de informações adicionais relevantes. O JSON é convertido em embedding e comparado dentro de uma base vetorial construída em Faiss, que armazena passos Dado/Quando/Então, cenários BDD, histórias de usuário e trechos de documentação técnica (\citeauthor{Paduraru2025}).
-
-3. Construção do Prompt Técnico
-
-\[
-P = f(J,\, C,\, RAG)
-\]
-
-Com o contexto recuperado, inicia-se a construção do prompt técnico que será enviado ao modelo de linguagem. Esse prompt agrega:
-
-O prompt criado contém:
-\begin{itemize}
-    \item a interpretação semântica validada (JSON);
-    \item exemplos de cenários Dado/Quando/Então;
-    \item documentos relevantes recuperados via RAG;
-    \item instruções sobre o padrão esperado para o código Cypress;
-    \item restrições formais de sintaxe e formatação.
-\end{itemize}
-
-Esse conjunto de informações orienta o LLM a produzir código consistente e alinhado ao comportamento esperado.
-
-4. Inferência do LLM 
-
-\[
-Codigo = M(P)
-\]
-
-O modelo de linguagem M recebe o prompt enriquecido e gera o código Cypress correspondente ao cenário analisado. A qualidade do código depende diretamente do alinhamento semântico entre o prompt e a implementação desejada. Quando o prompt contém exemplos adequados (few-shot), contexto técnico e instruções claras, o LLM produz testes mais completos e com menor taxa de erros (\citeauthor{Nettur2025}, \citeauthor{Pysmennyi2025}).
-
-\[
-C = {Codigo\, de\, teste\, automatizado}
-\]
-
-\subsection{Módulo 3: Juiz}
-
-Entrada:
-
-\[
-C = {Codigo\, de\, teste\, automatizado}
-\]
-
-\[
-J = {JSON\, semântico}
-\]
-
-Este módulo recebe o código gerado pelo LLM e o JSON semântico do Módulo 1.
-
-1. Embeddings do BDD e do Código
-
-\[
-\mathbf{v}_{\mathit{BDD}} = \mathrm{CodeBERT}(J)
-\]
-
-\[
-\mathbf{v}_{\mathit{Code}} = \mathrm{CodeBERT}(C)
-\]
-
-CodeBERT é utilizado para capturar a semântica estrutural tanto do comportamento esperado (JSON) quanto do código gerado. Esses vetores permitem comparar formalmente o alinhamento entre requisito e implementação (\citeauthor{Pysmennyi2025}, \citeauthor{Zhang2025}).
-
-2. Similaridade entre especificação e código
-
-\[
-\mathrm{sim} = \cos(\mathbf{v}_{\mathit{BDD}},\, \mathbf{v}_{\mathit{Code}})
-\]
-
-A similaridade de cosseno indica o grau de correspondência entre comportamento esperado e código produzido. Valores altos sugerem fidelidade semântica; valores baixos indicam omissões ou implementações incorretas (\citeauthor{Pysmennyi2025}, \citeauthor{Zhang2025}).
-
-3. Detecção de problemas no código
-
-\[
-E = f(\mathbf{v}_{\mathit{Code}},\, \mathrm{sim})
-\]
-
-Com base nos embeddings e no valor de similaridade, o sistema identifica possíveis desvios, como erros de lógica, comandos inconsistentes ou ausência de passos essenciais do cenário (\citeauthor{Pysmennyi2025}, \citeauthor{Zhang2025}).
-
-4. Correção Inteligente (Agente de IA)
-
-\[
-C' = \mathrm{AgenteIA}(C,\, E,\, \mathrm{sim},\, J)
-\]
-
-O agente inteligente analisa o código e aplica correções automáticas, ajustando inconsistências detectadas. As intervenções podem incluir inserção de asserts, correção de comandos Cypress, reorganização do fluxo do teste e realinhamento ao comportamento descrito no BDD. O resultado é um código semanticamente mais fiel e operacionalmente mais robusto (\citeauthor{Pysmennyi2025}, \citeauthor{Ferreira2025}).
-
-5. Geração do Recomendações
-
-\[
-R = h(E, \mathrm{sim}, C, C')
-\]
-
-Por fim, o sistema produz um relatório contendo recomendações e justificativas baseadas nos erros identificados, na similaridade obtida e nas correções aplicadas. Esse relatório agrega transparência e auditabilidade ao processo, auxiliando na avaliação do alinhamento entre requisitos e implementação. Assim, encerra-se o pipeline de geração automatizada de testes, consolidando um artefato interpretável e de suporte à tomada de decisão.
+Além disso, é necessário destacar que houve uma adaptação feita pelos autores deste estudo na extensão de \citeonline{Nettur2025} para que ela pudesse ser utilizada no contexto do CAPJu, considerando as particularidades do projeto e a necessidade de adequação dos prompts para a geração de código de teste para a aplicação em questão. Essa adaptação envolveu ajustes nos templates de prompt, na estruturação das especificações BDD e na criação de funções para auxiliar na obtenção de métricas relacionadas ao código gerado sendo elas a identificação de métodos de passo e métodos POM.
 
 \section{Análise de Dados}
 
-A análise dos dados neste estudo parte da meta definida pelo método Goal-Question-Metric (GQM), que estabelece como foco a característica de Manutenibilidade, em especial sua subcaracterística Testabilidade, conforme definido pela \citeonline{ISO25010}. Na perspectiva da qualidade interna, a Testabilidade refere-se ao grau em que um produto facilita a criação, execução e avaliação de testes. Nesse sentido, a escrita das especificações BDD e sua relação com a geração automática de testes constituem um elemento central dessa subcaracterística, uma vez que afetam diretamente o esforço necessário para produzir artefatos de teste corretos, completos e semanticamente alinhados aos requisitos.
+A análise dos dados deste estudo será conduzida com abordagem predominantemente quantitativa, uma vez que a questão específica formulada busca examinar, a partir de evidências observáveis, como a forma de escrita das especificações BDD se relaciona com a eficácia e a qualidade do código de testes automatizados gerado por Inteligência Artificial. No protocolo de estudos de caso \cite{Wohlin:2012:ESE:2349018,runeson_case_study_2012}, dados quantitativos podem ser analisados por meio de estatística descritiva e outras técnicas compatíveis com o tipo e o volume de dados disponíveis, desde que se preserve a ligação entre as evidências coletadas, as unidades de análise e a questão de pesquisa.
 
-As métricas propostas avaliam dimensões essenciais da Testabilidade:
+Com base nisso, a análise será organizada em torno da QE-1 e das métricas definidas. Inicialmente, os dados gerados para cada caso serão consolidados em base estruturada, preservando a rastreabilidade entre a História de Usuário (USs), seus Critérios de Aceitação (CAs), a especificação BDD elaborada e o código de teste gerado pela solução. Essa organização permite manter uma cadeia clara de evidências, princípio central na análise de estudos de caso, onde os resultados obtidos possam ser relacionados de forma explícita aos artefatos que os originaram.
 
-\begin{itemize}
-    \item \textbf{Similaridade Semântica}: mede o grau de correspondência entre o significado expresso nos Critérios de Aceitação e o comportamento implementado nos testes gerados automaticamente. Essa métrica avalia se os testes refletem corretamente as intenções descritas nos requisitos.
-\end{itemize}
+Em termos analíticos, será empregada, em primeiro lugar, estatística descritiva para sintetizar os resultados observados em cada métrica. Isso inclui a apresentação de frequências, totais, proporções e estatísticas descritivas adequadas aos dados coletados, de modo a caracterizar o código gerado pela IA quanto à completude dos métodos de passo e métodos POM, bem como quanto à ocorrência de erros sintáticos e de execução. Esse tipo de tratamento é compatível com a análise quantitativa em estudos de caso, especialmente quando o conjunto de dados é limitado e o objetivo principal é descrever padrões, tendências e variações observadas entre os casos analisados.
 
-Essa abordagem está alinhada ao que \citeonline{yin2001} descreve como análise orientada à construção de padrões interpretativos e ao que \citeonline{runeson2009} caracterizam como análise sistemática de artefatos para fins de investigação empírica em Engenharia de Software. Assim, cada métrica fornece uma evidência mensurável que contribui para responder à questão de pesquisa e apoiar a caracterização da Testabilidade no contexto do uso de BDD aliado a técnicas de IA.
+A interpretação dos resultados será realizada em função da relação entre os artefatos analisados e os valores observados nas métricas. Assim, a análise não se limitará à apresentação isolada dos números, mas buscará examinar como a escrita das especificações BDD elaboradas a partir das USs e de seus CAs se refletem na qualidade estrutural e na completude do código produzido. Dessa forma, a resposta à questão específica será construída a partir do encadeamento entre USs e CAs, especificações BDD e código de testes gerados pela ferramenta, preservando a coerência entre unidades de análise, evidências empíricas e interpretação dos resultados.
 
 \section{Instrumentação}
 
@@ -303,81 +157,53 @@ O ZenHub\footnote{\url{https://www.zenhub.com/}}
 
 O Cypress\footnote{\url{https://www.cypress.io/}} será empregado como ferramenta de automação de testes para validar e executar os scripts gerados pela inteligência artificial a partir dos cenários BDD. Ele permitirá verificar se os testes são executáveis, corretos e funcionais, sendo também responsável pela coleta de métricas relacionadas à completude e eficácia dos testes produzidos.
 
-Para apoiar o processamento de linguagem natural (PLN) das histórias de usuário e dos cenários BDD, será utilizada a biblioteca spaCy\footnote{\url{https://spacy.io/}}, responsável pela análise linguística, extração de entidades e estruturação sintática dos textos. Associado a ela, a biblioteca Transformers\footnote{\url{https://huggingface.co/docs/transformers/}} fornecerá modelos pré-treinados capazes de interpretar relações semânticas, gerar embeddings, classificar trechos e auxiliar na análise contextual dos requisitos. Nesse contexto, a biblioteca sentence-transformers\footnote{\url{https://www.sbert.net/}} será usada especificamente para a geração de embeddings semânticos por meio do SBERT, permitindo a comparação de similaridade entre textos e dando suporte à etapa de interpretação e agrupamento dos cenários.
+A extensão Cypress Copilot\footnote{\url{https://github.com/OptimizeAIHub/Cypress-Copilot}} será utilizada para facilitar a integração entre os cenários BDD e a geração automática de testes pelo modelo de linguagem pré-definido e uso de uma chave de API. Inclusive será com ele que serão obtidas as métricas relacionadas à completude do código gerado, como o número de métodos de passo e métodos POM gerados, bem como a identificação de erros sintáticos e de execução.
 
-A API da OpenAI\footnote{\url{https://openai.com/pt-BR/api/}} será utilizada para integração com modelos avançados de linguagem, em especial o GPT-4 Turbo, que será responsável pela interpretação dos cenários BDD, entendimento das histórias de usuário, geração automática do código de teste Cypress e correção dos testes quando necessário. Esses modelos também auxiliarão na validação linguística e estrutural dos artefatos gerados.
+A API da OpenAI\footnote{\url{https://openai.com/pt-BR/api/}} será utilizada para integração com modelos avançados de linguagem, em especial o GPT-4o, que será responsável pela geração dos testes por meio de Modelos de Objeto de Página (POM) e Métodos de Passo. Esses modelos também auxiliarão na adaptação da extensão Cypress Copilot \footnote{\url{https://github.com/OptimizeAIHub/Cypress-Copilot}} que realizamos ao longo do estudo.
 
-Para aprimorar o armazenamento e recuperação eficiente de informações semânticas, será empregada a abordagem de Retrieval-Augmented Generation (RAG) com uso do FAISS\footnote{\url{https://ai.meta.com/tools/faiss/}} como mecanismo de indexação vetorial, combinada com o cálculo da similaridade do cosseno. Esse conjunto permitirá a recuperação rápida de embeddings relacionados, facilitando a contextualização dos cenários, a comparação entre testes e a geração de resultados mais consistentes e alinhados com padrões prévios. Além disso, modelos especializados como o CodeBERT\footnote{\url{https://github.com/microsoft/CodeBERT}} acessados também via Transformers, serão utilizados para análise de trechos de código, identificação de padrões estruturais e apoio na verificação estática dos testes gerados.
 
-Por fim, bibliotecas utilitárias como json, os e typing serão utilizadas para manipulação de arquivos estruturados, organização automática do sistema de diretórios e tipagem explícita das funções implementadas no pipeline experimental, contribuindo para a padronização e legibilidade do código de suporte ao estudo.
 
 \section{Ameaças à Validade Do Estudo}
 
-A análise das ameaças à validade é fundamental para garantir rigor metodológico e confiabilidade na interpretação dos resultados de um estudo científico. Conforme discutido por \cite{cook_campbell_1979} e sistematizado no contexto de Engenharia de Software por \cite{wohlin2012}, as ameaças à validade podem ser agrupadas nas dimensões: validade do construto, validade interna, validade externa e confiabilidade. Nesta seção, são apresentadas as principais ameaças associadas ao estudo observacional retrospectivo realizado, bem como as estratégias adotadas para mitigá-las.
+A análise das ameaças à validade é fundamental para garantir rigor metodológico e confiabilidade na interpretação dos resultados de um estudo científico. Conforme discutido por \cite{cook_campbell_1979} e sistematizado no contexto de Engenharia de Software por \cite{wohlin2012}, as ameaças à validade podem ser agrupadas nas dimensões: validade do construto, validade interna, validade externa e confiabilidade. Neste capítulo, são apresentadas as principais ameaças associadas ao estudo observacional retrospectivo
+realizado, bem como as estratégias adotadas para mitigá-las.
 
 \subsection{Ameaças à Validade do Constructo}
 
-A validade do construto refere-se ao grau em que os instrumentos, métricas e procedimentos utilizados no estudo representam adequadamente os conceitos teóricos que se deseja investigar. Em um estudo observacional retrospectivo que analisa a capacidade de sistemas de Inteligência Artificial gerarem código de teste automatizado a partir de especificações BDD, essa dimensão é particularmente relevante, pois envolve interpretar corretamente as evidências produzidas pelas ferramentas e pelos artefatos manipulados.
+A validade do construto refere-se ao grau em que as métricas e os procedimentos adotados representam adequadamente os conceitos investigados. Neste estudo, os principais construtos analisados são a completude e a qualidade do código de teste gerado a partir de cenários BDD.
 
-Para assegurar essa validade, o pesquisador deve cumprir duas etapas fundamentais:
+Esses construtos foram avaliados por métricas quantitativas baseadas no \citeonline{Nettur2025}, como número de métodos gerados, número de métodos sem implementação e incidência de erros de sintaxe e de execução.
 
-\begin{itemize}
-\item selecionar os aspectos específicos do fenômeno que serão analisados;
-\item demonstrar que as métricas e procedimentos adotados capturam esses aspectos de forma adequada e mensurável.
-\end{itemize}
+Como ameaça à validade do construto, destaca-se o fato de que essas métricas, embora úteis para medir completude e qualidade estrutural, não capturam totalmente aspectos subjetivos, como legibilidade, manutenibilidade percebida e adequação do teste ao contexto de negócio. Além disso, o estudo apoia-se em uma ferramenta específica, a extensão Cypress Copilot, adaptada ao contexto deste trabalho, o que pode limitar a abrangência dos construtos avaliados.
 
-No contexto deste estudo, os construtos investigados incluem:
-
-\begin{itemize}
-    \item qualidade estrutural do código de teste gerado pela IA;
-    \item aderência das saídas aos elementos presentes nas histórias de usuário e nos cenários BDD;
-    \item capacidade do modelo de IA identificar corretamente elementos de interface e fluxos de interação necessários para compor o teste automatizado.  
-\end{itemize}
-
-Tais construtos foram operacionalizados por meio de métricas derivadas da abordagem GQM, estabelecendo um alinhamento claro entre objetivo, questões de pesquisa e indicadores mensuráveis. Essa estratégia buscou evitar interpretações subjetivas, além de garantir que as medições representassem aspectos relevantes da geração automatizada de testes.
-
-Entretanto, algumas ameaças persistem. Como as métricas selecionadas são majoritariamente quantitativas, há risco de viés de mono–método, uma vez que não foram coletados dados qualitativos capazes de capturar aspectos subjetivos da qualidade percebida dos testes, da compreensão por parte do desenvolvedor ou da adequação semântica ao contexto da aplicação.
-
-Outra ameaça relevante é o viés de mono–operação: o estudo avaliou apenas um pipeline composto por modelos e ferramentas específicas GPT-4 Turbo, embeddings SBERT, RAG com FAISS e Cypress para execução dos testes. Diferentes modelos ou configurações poderiam produzir variações consideráveis nos resultados, o que limita a abrangência dos construtos avaliados.
+Como forma de mitigação, buscou-se manter alinhamento entre questão de pesquisa, objetivo do estudo e métricas utilizadas, bem como explicitar as limitações de interpretação dos resultados.
 
 \subsection{Ameaças à Validade Interna}
 
-A validade interna refere-se à capacidade de atribuir os resultados observados às condições investigadas. Como este estudo possui natureza observacional retrospectiva, não há controle experimental nem manipulação de variáveis. Portanto, não é possível estabelecer relações causais, apenas descrever comportamentos e analisar associações.
+A validade interna refere-se à confiança de que os resultados observados decorrem das condições investigadas. Neste estudo, algumas ameaças podem influenciar os resultados.
 
-Ainda assim, algumas ameaças podem influenciar a interpretação dos resultados:
+Uma delas é a qualidade dos cenários BDD de entrada, pois diferenças na estrutura dos cenários podem afetar diretamente o código gerado. Assim, parte dos resultados pode estar relacionada não apenas à ferramenta utilizada, mas também à qualidade dos artefatos fornecidos.
 
-Influência de fatores externos: a qualidade das histórias de usuário, a estrutura dos cenários BDD e o nível de detalhamento dos requisitos podem afetar diretamente o desempenho da IA, dificultando distinguir se os resultados refletem limitações do modelo ou dos artefatos analisados.
+Outra ameaça é a dependência da ferramenta e de sua adaptação ao contexto do estudo. Como o trabalho utiliza uma versão adaptada da extensão Cypress Copilot, eventuais mudanças realizadas na ferramenta podem influenciar os resultados obtidos.
 
-Dependência do pipeline técnico: modelos de linguagem, embeddings, mecanismos de RAG e ferramentas utilizadas para geração de testes podem introduzir vieses próprios, impactando os resultados independentemente do fenômeno estudado.
+Além disso, a própria variabilidade do modelo de IA pode afetar a geração do código, já que diferenças nas respostas podem ocorrer mesmo diante de entradas semelhantes.
 
-Interpretação das saídas da IA: como não há intervenção controlada, variações nas respostas podem decorrer de comportamentos internos do modelo, e não de diferenças reais entre os artefatos avaliados.
-
-Ausência de controle sobre variáveis intervenientes: características específicas do código-fonte, da aplicação ou do contexto de desenvolvimento podem influenciar o processo de geração de testes sem que isso seja observado diretamente.
-
-Embora essas ameaças não possam ser eliminadas, foram mitigadas por meio da documentação detalhada das etapas do estudo, da padronização dos procedimentos e do uso consistente do mesmo conjunto de ferramentas ao longo da análise. Ainda assim, reconhece-se que a ausência de controle experimental limita inferências mais robustas sobre causalidade.
+Como forma de mitigação, buscou-se padronizar os procedimentos de execução, utilizar os mesmos critérios de avaliação e documentar as adaptações realizadas na ferramenta. Ainda assim, reconhece-se que esses fatores podem influenciar os resultados finais.
 
 \subsection{Ameaças à Validade Externa}
 
-A validade externa refere-se ao grau em que os resultados obtidos podem ser generalizados para outros contextos, sistemas ou projetos. No caso deste estudo observacional retrospectivo, algumas limitações restringem essa generalização.
+A validade externa refere-se ao grau em que os resultados deste estudo podem ser generalizados para outros contextos. Neste trabalho, essa generalização é limitada pelo uso de uma ferramenta específica, o Cypress Copilot, adaptada ao contexto da pesquisa, bem como pelo uso de cenários BDD e artefatos com características próprias.
 
-Primeiro, os artefatos utilizados histórias de usuário, cenários BDD e código-fonte pertencem a um único sistema, com características específicas de domínio, estilo de escrita e granularidade. Sistemas que apresentem requisitos mais ambíguos, BDD menos estruturado ou arquiteturas distintas podem produzir resultados diferentes quando submetidos ao mesmo pipeline de IA.
+Além disso, os resultados podem variar em outros projetos, domínios ou aplicações que apresentem requisitos mais ambíguos, menor padronização dos cenários BDD ou diferentes práticas de automação de testes. A própria sensibilidade dos modelos de IA à qualidade da entrada também pode afetar a reprodução dos resultados em outros contextos.
 
-Além disso, o estudo empregou um conjunto particular de ferramentas e modelos, como GPT-4 Turbo, SBERT, RAG com FAISS e Cypress. Outras combinações tecnológicas podem gerar variações significativas no desempenho, configurando interação entre tratamento e ambiente tecnológico.
+Outro fator que limita a generalização é a dependência do ambiente tecnológico adotado, incluindo modelo de IA, extensão utilizada, framework Cypress e estrutura POM. Mudanças nessas tecnologias podem produzir resultados diferentes.
 
-A generalização também é limitada pela qualidade dos artefatos de entrada. Como modelos de IA são sensíveis ao grau de clareza e organização dos requisitos, ambientes de desenvolvimento com maturidade inferior ou práticas inconsistentes de documentação podem não replicar os mesmos resultados.
-
-Outro ponto relevante diz respeito ao contexto temporal e organizacional. Mudanças nas versões dos modelos, na infraestrutura utilizada ou no processo de desenvolvimento adotado pelas equipes podem alterar o comportamento das ferramentas de IA ao longo do tempo.
-
-Apesar dessas limitações, a descrição detalhada do ambiente, das ferramentas e dos procedimentos adotados permite que outros pesquisadores avaliem a compatibilidade de seus contextos com o deste estudo, ampliando a possibilidade de replicação controlada em cenários semelhantes.
+Como forma de mitigação, buscou-se descrever de maneira legível a ferramenta utilizada, as adaptações realizadas e os procedimentos adotados, de modo a facilitar futuras replicações em contextos semelhantes.
 
 \subsection{Ameaças à Confiabilidade}
 
-A confiabilidade refere-se à capacidade de reproduzir o estudo obtendo resultados consistentes. No contexto deste trabalho, algumas ameaças específicas devem ser consideradas.
+A confiabilidade refere-se à possibilidade de reproduzir o estudo com resultados consistentes. Neste trabalho, uma das principais ameaças está relacionada à variabilidade das respostas geradas pelo modelo de IA, que pode produzir saídas diferentes mesmo quando recebe entradas semelhantes.
 
-Primeiro, embora o pipeline técnico utilizado incluindo modelos de linguagem, embeddings, RAG e ferramentas de automação tenha sido mantido constante, modelos de IA apresentam variabilidade estocástica nas respostas. Mesmo com os mesmos prompts e artefatos de entrada, pequenas diferenças podem surgir entre execuções, comprometendo a reprodutibilidade exata.
+Outra ameaça decorre da dependência da ferramenta e do ambiente tecnológico adotado. Como o estudo utiliza uma versão adaptada do Cypress Copilot e modelos acessados por API, mudanças na ferramenta, no modelo de IA ou em suas versões podem influenciar os resultados obtidos.
 
-Além disso, modelos acessados via API, como GPT-4 Turbo, são atualizados periodicamente pelos provedores, o que pode alterar o comportamento do sistema ao longo do tempo. Assim, execuções futuras do estudo podem produzir resultados distintos, mesmo sem modificações no método, configurando uma ameaça típica de dependência de versão.
-
-Outra limitação diz respeito à organização dos dados e artefatos analisados. Como o estudo é retrospectivo, qualquer inconsciência ou alteração na estrutura original dos arquivos pode impactar a capacidade de reproduzir exatamente as etapas realizadas.
-
-Como forma de mitigação, todas as etapas do processo foram documentadas, e os scripts, configurações e artefatos utilizados foram organizados de maneira sistemática, permitindo que outros pesquisadores repliquem o procedimento geral ainda que pequenas variações nas respostas da IA sejam inevitáveis.
+Como forma de mitigação, buscou-se documentar as etapas do estudo, as adaptações realizadas na ferramenta e os procedimentos de avaliação, de modo a permitir a reprodução do processo, ainda que pequenas variações nas saídas da IA possam ocorrer.
