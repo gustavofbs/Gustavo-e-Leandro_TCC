@@ -105,7 +105,7 @@ O teste de software é uma das principais práticas que é utilizada tanto em ve
 
 Segundo \citeonline{jalote2005}, a verificação e a validação estão ligadas à gestão de qualidade e são realizadas principalmente por meio de inspeções e testes. Para o autor, o teste é "a principal medida de controle de qualidade utilizada durante o desenvolvimento de software. Sua função básica é detectar defeitos no software" \cite[p.~19, tradução nossa]{jalote2005}, e seu resultado influencia decisões como aceitação do software pelo cliente. 
 
-Neste trabalho a verificação e a validação são analisadas principalmente a partir de artefatos de requisitos e testes de aceitação, expressos por meio de especificações escritas em Desenvolvimento Orientado ao Comportamento (BDD), nas quais os cenários representam o comportamento esperado do sistema a partir das necessidades das partes interessadas.
+Neste trabalho a verificação e a validação são analisadas principalmente a partir de artefatos de requisitos e testes de aceitação, expressos por meio de especificações escritas em Desenvolvimento Orientado por Comportamento (BDD), nas quais os cenários representam o comportamento esperado do sistema a partir das necessidades das partes interessadas.
 
 \section{Testes de Software}
 
@@ -117,7 +117,7 @@ Devido ao tamanho e à complexidade dos sistemas de software, a execução de te
 
 As técnicas de design de teste são definidas como "procedimento utilizado para criar ou selecionar um modelo de teste, identificar itens de cobertura de teste e derivar os casos de teste correspondentes" \cite[p.~11, tradução nossa]{iso29119_1_2022}. De acordo com a ISO/IEC/IEEE 29119-4, essas técnicas podem ser classificadas em técnicas baseadas em especificação, nas quais os testes são derivados das entradas e saídas do sistema ou produto, sem que o testador precise conhecer detalhes da implementação; técnicas baseadas em estrutura, nas quais o testador observa como o software foi construído, geralmente analisando o código, e cria testes para partes específicas dele; e técnicas baseadas em experiência, nas quais os testes são criados a partir da experiência e do conhecimento do testador \cite{iso29119_4_2021,iso29119_1_2022}.
 
-Neste trabalho, destacam-se as técnicas baseadas em especificação, pois os cenários de Desenvolvimento Orientado ao Comportamento (BDD) derivam os testes a partir do comportamento descrito nos requisitos, sem depender do código-fonte.
+Neste trabalho, destacam-se as técnicas baseadas em especificação, pois os cenários de Desenvolvimento Orientado por Comportamento (BDD) derivam os testes a partir do comportamento descrito nos requisitos, sem depender do código-fonte.
 
 \section{Metodologias Ágeis}
 
@@ -127,7 +127,7 @@ A Programação Extrema (XP) e o Scrum ganharam notoriedade no final da década 
 
 \subsection{O Surgimento das Metodologias Lightweight}
 
-A insatisfação com métodos complexos focados em documentação, medição e ferramentas gerou um movimento em direção a metodologias mais leves no final da década de 1990 \cite{Hoda2018re}. Kent Beck desenvolveu a Extreme Programming (XP) originalmente para atender às necessidades de pequenas e médias equipes lidando com requisitos vagos e em constante mudança \cite{Beck2004}. 
+A insatisfação com métodos complexos focados em documentação, medição e ferramentas gerou um movimento em direção a metodologias mais leves no final da década de 1990 \cite{Hoda2018re}. Kent Beck desenvolveu a Programação Extrema (XP) originalmente para atender às necessidades de pequenas e médias equipes lidando com requisitos vagos e em constante mudança \cite{Beck2004}. 
 
 \subsection{A Formalização do Movimento Ágil}
 
@@ -144,13 +144,13 @@ Conforme \citeonline[não paginado, tradução nossa]{FowlerHighsmith2001}, o ma
 
 \section{Behavior-Driven Development}
 
-\subsection{Raízes no Test-Driven Development (TDD)}
+\subsection{Raízes no Desenvolvimento Orientado por Testes (TDD)}
 
 O Desenvolvimento Orientado por Comportamento (BDD) é uma abordagem ágil que surgiu como uma resposta aos problemas e desafios observados na prática do Desenvolvimento Orientado por Testes (TDD) \cite{Solis2011}. O TDD, apesar de ser uma técnica eficaz \cite{smart2014bdd}, apresentava alguns conflitos: "os programadores não queriam escrever testes; os testadores não queriam que os programadores escrevessem testes; e os stakeholders de negócio não viam valor em nada que não fosse código de produção" \cite[p.~xviii, tradução nossa]{smart2014bdd}.
 
 Conforme \citeonline{smart2014bdd}, o BDD foi concebido por Dan North no início e meados dos anos 2000. Segundo o autor, em vez de focar em testes e validação de métodos, North reorientou a prática para o comportamento esperado do software. Essa mudança de foco respondia à demanda dos desenvolvedores que se sentiam confusos ao usar o TDD \cite{Solis2011}.
 
-O BDD pode ser considerado uma evolução do TDD e do Desenvolvimento Orientado a Testes de Aceitação (ATDD) \cite{Solis2011}. Segundo \citeonline[p.~383, tradução nossa]{Solis2011}, "o ATDD é um tipo de TDD no qual o processo de desenvolvimento é guiado por testes de aceitação que representam os requisitos dos stakeholders". O BDD, por sua vez, baseia-se no ATDD, mas oferece uma linguagem específica fazendo com que seus testes sejam mais claros e compreensíveis \cite{Solis2011}.
+O BDD pode ser considerado uma evolução do TDD e do Desenvolvimento Orientado por Testes de Aceitação (ATDD) \cite{Solis2011}. Segundo \citeonline[p.~383, tradução nossa]{Solis2011}, "o ATDD é um tipo de TDD no qual o processo de desenvolvimento é guiado por testes de aceitação que representam os requisitos dos stakeholders". O BDD, por sua vez, baseia-se no ATDD, mas oferece uma linguagem específica fazendo com que seus testes sejam mais claros e compreensíveis \cite{Solis2011}.
 
 \subsection{A Formalização da Linguagem e o Foco no Comportamento}
 
@@ -168,27 +168,27 @@ Essa notação deu origem ao Gherkin, que é adotado por muitas ferramentas de B
 
 \section{Processamento de Linguagem Natural}
 
-O Processamento de Linguagem Natural (PLN) é uma subárea da ciência da computação que permite que os computadores interpretem a linguagem humana. O PLN é formado por um conjunto de técnicas que têm como objetivo extrair informações de forma estruturada de documentos escritos em linguagem natural \cite{Wang2022}.
+O Processamento de Linguagem Natural (NLP) é uma subárea da ciência da computação que permite que os computadores interpretem a linguagem humana. O NLP é formado por um conjunto de técnicas que têm como objetivo extrair informações de forma estruturada de documentos escritos em linguagem natural \cite{Wang2022}.
 
-Segundo \citeonline{Wang2022}, o PLN é geralmente organizado como um pipeline de processamento formado por múltiplas camadas analíticas. Entre as técnicas e etapas de processamento tradicionalmente utilizadas, destacam-se:
+Segundo \citeonline{Wang2022}, o NLP é geralmente organizado como um pipeline de processamento formado por múltiplas camadas analíticas. Entre as técnicas e etapas de processamento tradicionalmente utilizadas, destacam-se:
 
 \begin{itemize}
     \item \textbf{Tokenização}: é responsável por dividir frases em pequenas partes chamadas de tokens, geralmente com base em regras predefinidas \cite{Wang2022}.
 
-    \item \textbf{Identificação da Parte do Discurso (POS Tagging)}: atribui a cada palavra sua classe gramatical, como substantivo, verbo ou pronome \cite{Wang2022}.
+    \item \textbf{Identificação da Classe Gramatical (POS)}: atribui a cada palavra sua classe gramatical, como substantivo, verbo ou pronome \cite{Wang2022}.
 
-    \item \textbf{Lematização}: é responsável por transformar as palavras em sua forma base. A palavra comendo, por exemplo viraria comer. No trabalho de \citeonline{Rotaru2023} essa técnica foi utilizada em conjunto com a tokenização e POS tagging para padronizar os dados textuais.
+    \item \textbf{Lematização}: é responsável por transformar as palavras em sua forma base. A palavra comendo, por exemplo viraria comer. No trabalho de \citeonline{Rotaru2023} essa técnica foi utilizada em conjunto com a tokenização e etiquetagem de Classe Gramatical para padronizar os dados textuais.
 
     \item \textbf{Reconhecimento de Entidades Nomeadas (NER)}: identifica e classifica entidades específicas em categorias como pessoas, organizações ou localidades (WANG et al., 2022; LI et al., 2020).
 
     \item \textbf{Rotulação de Papéis Semânticos (SRL)}: identifica a função de cada elemento em uma frase, como quem realiza e quem recebe uma ação e em quais circunstâncias ela acontece \cite{Wang2022, Paduraru2025}. É utilizada em situações que exigem interpretação de comportamentos, como no mapeamento Dado-Quando-Então do Desenvolvimento Orientado por Comportamento (BDD) \cite{Paduraru2025}.
 \end{itemize}
 
-O PLN possui aplicações diretas em engenharia de software. Em BDD, por exemplo, os cenários são escritos em linguagem natural \cite{Mastain2023}, o que permite aplicar técnicas de PLN para extrair a informação de seus passos e gerar casos de teste automaticamente \cite{Paduraru2025}.
+O NLP possui aplicações diretas em engenharia de software. Em BDD, por exemplo, os cenários são escritos em linguagem natural \cite{Mastain2023}, o que permite aplicar técnicas de NLP para extrair a informação de seus passos e gerar casos de teste automaticamente \cite{Paduraru2025}.
 
 \section{Inteligência Artificial}
 
-Os Modelos de Linguagem de Grande Escala (LLM) são modelos treinados com grandes quantidades de textos que possuem a capacidade de realizar tarefas como gerar textos e códigos de programação. Além da geração de código, esses modelos são capazes de revisar código e escrever requisitos \cite{Brockenbrough2025}. Os LLMs também são capazes de gerar casos de teste a partir de critérios de aceitação \cite{Pysmennyi2025}.
+Os Grandes Modelos de Linguagem (LLMs) são modelos treinados com grandes quantidades de textos que possuem a capacidade de realizar tarefas como gerar textos e códigos de programação. Além da geração de código, esses modelos são capazes de revisar código e escrever requisitos \cite{Brockenbrough2025}. Os LLMs também são capazes de gerar casos de teste a partir de critérios de aceitação \cite{Pysmennyi2025}.
 
 Os cenários escritos em Desenvolvimento Orientado por Comportamento (BDD) utilizam linguagem natural, mas, por esse motivo, eles podem ser ambíguos, dificultando a interpretação. LLMs como o GPT-4 Turbo conseguem gerar cenários de teste úteis a partir de histórias de usuário, que também são escritas em linguagem natural, e até revelar casos não considerados inicialmente, demonstrando capacidade de lidar com descrições pouco claras \cite{Ferreira2025}. 
 
