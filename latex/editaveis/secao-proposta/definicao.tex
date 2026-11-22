@@ -21,6 +21,7 @@ Entretanto, em contextos reais de desenvolvimento, as especificações podem apr
 Dessa forma, o presente estudo visa investigar em que medida a forma de escrita, a estruturação e o nível de detalhamento das especificações BDD influenciam a eficácia e a qualidade do código de testes automatizados gerado por AI no contexto do CAPJu.
 
 \section{Caso}
+\label{sec:caso}
 
 O objeto de estudo desta pesquisa é o CAPJu \footnote{\url{https://github.com/fga-eps-mds/2023-1-CAPJu-Doc}} (Controle e Acompanhamento de Processos da Justiça) do Tribunal Regional Federal (TRF) da 1ª Região, uma aplicação Web de código aberto desenvolvida utilizada no contexto da 4ª Vara Cível da Justiça Federal. O sistema foi projetado para suprir a lacuna de auxílio na organização, gerenciamento e monitoramento de informações processuais, tendo como objetivo oferecer suporte às atividades internas do órgão. 
 
@@ -61,6 +62,7 @@ Há também estudos dedicados aos desafios da identificação de elementos de in
 Por fim, estudos sobre modelos de qualidade e avaliação semântica de artefatos gerados por AI ampliam o entendimento sobre limitações e expectativas associadas ao uso de LLMs em ambientes de teste. \citeonline{Chemnitz2023} e \citeonline{Wagner2016} reforçam que abordagens avaliativas ainda carecem de métricas bem estabelecidas para medir a correspondência entre requisitos e implementações, apontando para a necessidade de modelos que consigam integrar perspectivas textuais, estruturais e semânticas, motivando parte da proposta metodológica deste TCC.
 
 \section{Questão de Pesquisa}
+\label{sec:questao-pesquisa}
 
 Para responder à questão principal apresentada no subcapítulo \ref{txt:questao-pesquisa}, foi derivada uma questão específica para o estudo de caso, juntamente com as métricas utilizadas em sua avaliação, seguindo a abordagem GQM \citeonline{Basili1994}. Essa abordagem permite desdobrar a questão principal em um problema empiricamente observável, mantendo o alinhamento com o objetivo central da pesquisa e viabilizando sua avaliação por meio de métricas adequadas.
 
@@ -137,6 +139,7 @@ Durante essa execução, serão observados de forma quantitativa os resultados g
 Além disso, é necessário destacar que houve uma adaptação feita pelos autores deste estudo na extensão de \citeonline{Nettur2025} para que ela pudesse ser utilizada no contexto do CAPJu, considerando as particularidades do projeto e a necessidade de adequação dos prompts para a geração de código de teste para a aplicação em questão. Essa adaptação envolveu ajustes nos templates de prompt, na estruturação das especificações BDD e na criação de funções para auxiliar na obtenção de métricas relacionadas ao código gerado sendo elas a identificação de métodos de passo e métodos POM.
 
 \section{Análise de Dados}
+\label{sec:analise_dados}
 
 A análise dos dados deste estudo será conduzida com abordagem predominantemente quantitativa, uma vez que a questão específica formulada busca examinar, a partir de evidências observáveis, como a forma de escrita das especificações BDD se relaciona com a eficácia e a qualidade do código de testes automatizados gerado por Inteligência Artificial. No protocolo de estudos de caso \cite{Wohlin:2012:ESE:2349018,runeson_case_study_2012}, dados quantitativos podem ser analisados por meio de estatística descritiva e outras técnicas compatíveis com o tipo e o volume de dados disponíveis, desde que se preserve a ligação entre as evidências coletadas, as unidades de análise e a questão de pesquisa.
 
@@ -164,6 +167,7 @@ A API da OpenAI\footnote{\url{https://openai.com/pt-BR/api/}} será utilizada pa
 
 
 \section{Ameaças à Validade Do Estudo}
+\label{sec:ameacas-validade}
 
 A análise das ameaças à validade é fundamental para garantir rigor metodológico e confiabilidade na interpretação dos resultados de um estudo científico. Conforme discutido por \cite{cook_campbell_1979} e sistematizado no contexto de Engenharia de Software por \cite{Wohlin:2012:ESE:2349018}, as ameaças à validade podem ser agrupadas nas dimensões: validade do construto, validade interna, validade externa e confiabilidade. Neste capítulo, são apresentadas as principais ameaças associadas ao estudo observacional retrospectivo
 realizado, bem como as estratégias adotadas para mitigá-las.
