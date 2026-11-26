@@ -1,50 +1,126 @@
 \chapter{Conclusão}
 \label{ch:conclusao}
 
-Este capítulo retoma as atividades propostas na seção 1.6 para avaliar sua execução, apresenta os resultados obtidos ao final do trabalho e descreve o planejamento para a fase seguinte da monografia.
+Este capítulo retoma a questão principal de pesquisa, sintetiza os resultados, apresenta as contribuições e discute os achados à luz da literatura. A Seção~\ref{sec:atividades-concluidas} relaciona as atividades concluídas, a Seção~\ref{sec:objetivos-especificos} apresenta o atendimento aos objetivos específicos, e as Seções~\ref{sec:limitacoes} e~\ref{sec:trabalhos-futuros} abordam as limitações e os trabalhos futuros.
 
-\section{Atividades Propostas}
+\section{Atividades Concluídas}
+\label{sec:atividades-concluidas}
+
+As atividades da monografia foram previstas \ref{sc:cronograma2}, para as duas etapas do trabalho. A Tabela~\ref{quad:atividades} apresenta a situação de cada uma e indica onde os resultados estão registrados. Todas as atividades previstas foram concluídas, exceto a apresentação final, que está agendada.
 
 \begin{table}[h]
-    \centering
-	\caption{Atividades Concluídas}
-    \begin{tabular}{|p{9cm}|p{1.8cm}|}
-        \hline
-        \textbf{Atividade} & \textbf{Situação} \\
-        \hline
-        Contextualização sobre Engenharia de Software Experimental & Concluída  \\
-        \hline
-        Definição do GQM & Concluída \\
-        \hline
-        Elaboração do Protocolo de Revisão da Literatura & Concluída \\
-        \hline
-        Execução da String de Busca e Seleção dos Artigos & Concluída \\
-        \hline
-        Leitura do Material Selecionado & Concluída \\
-        \hline
-        Definição da Proposta de Solução & Concluída \\
-        \hline
-        Escrita da Monografia & Concluída \\
-        \hline
-        Revisão da Monografia & Concluída \\
-        \hline
-        Apresentação da Monografia & Agendada \\
-        \hline
-    \end{tabular} \\[0.5em]
-   	Fonte: Autores (2026).
-	\label{tab:atividades-concluidas}
+\centering
+\caption{Atividades Concluídas}
+\label{quad:atividades}
+\small
+\begin{tabular}{|p{7.2cm}|c|c|c|}
+\hline
+\textbf{Atividade} & \textbf{Etapa} & \textbf{Situação} \\
+\hline
+Contextualização em Experimentação na Engenharia de Software & TCC 1 & Concluída \\
+\hline
+Definição do GQM & TCC 1 & Concluída  \\
+\hline
+Definição do Protocolo de Revisão da Literatura & TCC 1 & Concluída \\
+\hline
+Execução da String de Busca e Seleção dos Artigos & TCC 1 & Concluída \\
+\hline
+Leitura do Material Selecionado & TCC 1 & Concluída \\
+\hline
+Planejamento do Estudo Observacional & TCC 1 & Concluída \\
+\hline
+Escrita, revisão e apresentação da primeira etapa & TCC 1 & Concluída \\
+\hline
+Evolução do Trabalho orientada às Observações da Banca & TCC 2 & Concluída \\
+\hline
+Preparação e Organização dos Artefatos & TCC 2 & Concluída \\
+\hline
+Execução do Estudo Observacional & TCC 2 & Concluída \\
+\hline
+Análise e Consolidação dos Resultados & TCC 2 & Concluída \\
+\hline
+Escrita e revisão da monografia & TCC 2 & Concluída \\
+\hline
+Apresentação final & TCC 2 & Agendada \\
+\hline
+\end{tabular}
+\legend{Fonte: Autores (2026).}
 \end{table}
 
 \section{Resultados Obtidos}
+\label{sec:resultados-obtidos}
 
-A revisão estruturada da literatura permitiu consolidar o estado da arte sobre o uso de especificações BDD em conjunto com técnicas de Inteligência Artificial para apoio à automação de testes de software. A partir da análise dos 22 estudos selecionados, foi possível identificar evidências de que a forma de escrita, a estruturação e o nível de detalhamento dos artefatos textuais influenciam a capacidade de modelos baseados em AI de gerar cenários e códigos de teste com maior aderência ao comportamento esperado.
+Retomando a questão principal definida no início deste trabalho, \textbf{De que maneira as especificações BDD devem ser escritas e detalhadas para que sistemas baseados em IA consigam identificar, os elementos de interface gráfica necessários para criar testes de sistema automatizados?}, esta seção reúne os resultados obtidos. O caminho percorrido incluiu uma revisão estruturada da literatura, o planejamento de um estudo observacional retrospectivo com o protocolo de estudo de case, a execução desse estudo no CAPJu \footnote{\url{https://github.com/fga-eps-mds/2023-1-CAPJu-Doc}} e a análise dos dados.
 
-Os estudos analisados também evidenciaram que, embora existam avanços relevantes na automação de testes com AI, ainda persistem limitações relacionadas à ambiguidade da linguagem natural, ao contexto insuficiente das especificações e à dificuldade de traduzir requisitos escritos em artefatos executáveis de forma consistente. Em contrapartida, a literatura também mostrou que cenários mais estruturados e contextualizados tendem a favorecer a geração de artefatos mais completos e com menos falhas, especialmente quando apoiados por estratégias de prompting e por mecanismos adicionais de contextualização.
+\subsection{Embasamento teórico e metodológico}
+\label{subsec:embasamento}
 
-Com base nessa revisão, o principal resultado desta primeira etapa foi a consolidação do protocolo metodológico do estudo observacional retrospectivo a ser executado no contexto do CAPJu. Esse protocolo passou a incluir a definição do caso, da questão específica do estudo, das fontes de dados, das unidades de análise e das métricas utilizadas para avaliar a eficácia e a qualidade do código de testes automatizados gerado por AI a partir de especificações BDD.
+A revisão estruturada da literatura~\ref{ch:revisao} identificou lacunas na automação de testes baseada em BDD, cujas soluções tendem a abordar etapas isoladas do processo. Também apontou que a clareza dos cenários reduz ambiguidades na interpretação por sistemas de IA \cite{Alinezhadtilaki2025, Ferreira2025}, enquanto a dinamicidade das aplicações web dificulta a identificação de elementos de interface \cite{Mughal2025, Pysmennyi2025}.
 
-Dessa forma, esta etapa da monografia forneceu não apenas a fundamentação teórica do problema, mas também a estrutura metodológica necessária para a execução empírica do estudo na segunda etapa do trabalho. Espera-se, com isso, produzir evidências sobre como a forma de escrita das especificações BDD se relaciona com os resultados obtidos na geração automatizada de testes, contribuindo para a compreensão do uso de AI nesse contexto.
+Entre os estudos analisados, \citeonline{Nettur2025} apresentou a abordagem mais próxima desta investigação, utilizando a extensão \textit{Cypress Copilot}\footnote{\url{https://marketplace.visualstudio.com/items?itemName=SureshNettur.ccaia}} para gerar código \textit{Cypress} a partir de cenários BDD. Entretanto, a identificação dos elementos de interface permanecia sob responsabilidade do usuário, e a avaliação não contemplou projetos de software reais. Essas lacunas motivaram a adaptação da ferramenta, adotada como base desta investigação por ser de código aberto (Seção~\ref{sec:sintese-literatura}).
 
-\section{Cronograma da Segunda Etapa da Monografia}
+O planejamento~\ref{ch:proposta} também foi reformulado: a proposta inicial, baseada em similaridade semântica, foi substituída pelas métricas de eficácia e qualidade de \citeonline{Nettur2025}, mantendo-se a questão principal de pesquisa e o objetivo central.
 
-O cronograma que pode ser visto na Figura de atividades \ref{fig:cronograma_2} está organizado para o período de março a julho, iniciando com a evolução do trabalho a partir das observações e a preparação dos artefatos nos meses de março e abril. Em seguida, entre abril e maio, é realizada a execução do estudo observacional retrospectivo, com posterior análise e consolidação dos resultados ao longo de maio e junho. A escrita da monografia acontece principalmente em junho, seguida pela fase de revisão entre junho e julho, finalizando com a apresentação da monografia no mês de julho, concluindo assim todas as etapas do trabalho.
+\subsection{Resultados do estudo observacional}
+\label{subsec:resultados-estudo}
+
+O estudo foi executado no CAPJu, com 23 Histórias de Usuário que originaram 37 cenários BDD, dos quais 27 puderam ser executados, totalizando 54 tentativas válidas. Os 10 restantes foram bloqueados por \textit{bugs} reais da aplicação (4) ou por critérios de aceitação ambíguos (6). A IA gerou código estruturalmente completo em todas as tentativas (100\% de completude), mas apenas 12 dos 27 cenários (44,4\%) executaram sem erros na primeira execução. Das 27 falhas, 63,0\% estiveram ligadas à forma como o elemento de interface foi referenciado no BDD, e 13 dos 15 cenários que precisaram de correção foram resolvidos alterando a escrita do cenário. Em resposta à QE-1, portanto, não se observou influência da escrita do BDD sobre a eficácia, que não variou, mas ela esteve associada à qualidade do código gerado. A síntese completa está na Seção~\ref{sec:sintese-resultados} (Tabela~\ref{tab:sintese}).
+
+\subsection{Resposta à questão principal}
+\label{subsec:resposta-qp}
+
+Nas condições do estudo, a evidência indica que os cenários BDD devem identificar cada elemento de interface com um seletor estável e único. Na prática, isso significa:
+
+\begin{itemize}
+    \item \textbf{Informar o seletor no próprio cenário.} Indicar, entre parênteses no texto do passo, o seletor do elemento com que o passo interage, por exemplo, \texttt{fills the CPF field(input[name="cpf"])}, para que a IA não precise inferir a qual elemento o passo se refere.
+    \item \textbf{Priorizar seletores estáveis e únicos.} Usar atributos estáveis, como \texttt{id}, \texttt{name} e \texttt{aria-label}, ou combinações únicas de atributos, como \texttt{button[role="tab"]}\allowbreak\texttt{[data-index="5"]}. Quando não há um ID estável, um seletor CSS construído a partir de \textit{tags} e atributos HTML estáveis cumpre o papel de ``ID'' substituto.
+    \item \textbf{Evitar seletores dinâmicos e genéricos.} Não usar IDs e classes gerados automaticamente por \textit{frameworks} de \textit{front-end}, que deixam de corresponder ao elemento real a cada renderização, nem seletores que se relacionam com vários elementos da tela.
+    \item \textbf{Indexar elementos repetidos.} Quando o mesmo elemento aparece mais de uma vez na tela, indicar o índice \texttt{[N]}.
+    \item \textbf{Explicitar os textos a validar.} Escrever no cenário o texto exato que deve aparecer na tela, para que a asserção gerada não dependa da interpretação do modelo.
+\end{itemize}
+
+Essas convenções só funcionaram porque o \textit{system prompt} ensinou a IA a interpretá-las, como a regra que obriga o uso literal do seletor indicado no cenário. A escrita do BDD e as instruções dadas ao modelo atuam, portanto, em conjunto.
+
+Os cenários bloqueados indicam ainda uma condição anterior à escrita do BDD: os critérios de aceitação precisam ser testáveis. Nos seis cenários bloqueados por ambiguidade, a ``padronização'' mencionada nunca foi definida, o que impediu até a escrita do cenário. A qualidade dos requisitos de entrada limita, portanto, o que a escrita do BDD pode alcançar.
+
+Cabe uma ressalva sobre a autonomia da IA. Na abordagem estudada, a extensão adaptada reconhece os seletores indicados entre parênteses no texto do cenário, de modo que a identificação do elemento depende do que foi escrito no BDD. Cenários que descrevam os elementos apenas em linguagem natural, sem seletor, não foram avaliados. A resposta vale, portanto, para a escrita de cenários com seletores explícitos, no contexto de um único caso, e não esgota a questão da identificação totalmente autônoma.
+
+\subsection{Discussão dos resultados em relação à literatura}
+\label{subsec:discussao-literatura}
+
+Os resultados convergem com parte da literatura revisada. \citeonline{Pysmennyi2025} apontam que \textit{frameworks} de \textit{front-end} produzem estruturas DOM instáveis, o que fragiliza seletores CSS e XPath em testes gerados por modelos de linguagem. Isso se alinha com a categoria mais frequente de falha neste estudo, o seletor dinâmico instável (9 de 27 falhas, 33,3\%), e com o conjunto de falhas ligadas ao elemento de interface (63,0\%). A dificuldade de mapear aplicações web dinâmicas \cite{Mughal2025} também aparece nos resultados. \citeonline{Ferreira2025} registram erros decorrentes de ambiguidades linguísticas e a dependência da qualidade da escrita dos cenários, o que é compatível com o fato de a maior parte das correções ter sido feita no BDD e com os critérios ambíguos que bloquearam seis cenários.
+
+Em relação a \citeonline{Nettur2025}, as métricas e os conceitos de eficácia e qualidade foram os mesmos, mas as condições diferem, considerando que aqui o estudo foi feito em uma aplicação real, com cenários que identificam os elementos de interface, e o \textit{prompting} usou regras explícitas de transformação, em vez da técnica \textit{few-shot chain} do artigo. Por isso, os valores obtidos não são diretamente comparáveis aos do trabalho original. Os próprios autores observaram que aumentar o nível de detalhe dos cenários BDD leva a um código mais próximo do comportamento esperado da aplicação \cite[p.~3226]{Nettur2025}. Os resultados deste estudo são coerentes com essa observação e a especificam no CAPJu, onde o detalhe que mais pesou foi a identificação do elemento de interface, justamente a etapa que, no fluxo original, fica a cargo do usuário depois da geração. O que este estudo acrescenta é a aplicação da abordagem em um caso real e a identificação dos pontos em que a escrita do BDD afeta o resultado.
+
+Algumas explicações alternativas merecem registro, retomando apenas as ameaças à validade que se materializaram nos dados (Seção~\ref{sec:ameacas-validade}). A variabilidade do modelo apareceu em cenários que passaram sem alteração no BDD (US16-CA00 e US25-CA00), e parte da melhora observada entre tentativas pode, portanto, ser acaso. Os cenários foram escritos e corrigidos pelos próprios autores, e os BDD já haviam sido ajustados na calibração, o que tende a favorecer o resultado da primeira execução. A ausência de IDs estáveis no CAPJu pode ter ampliado o peso das falhas de seletor. Por fim, o estudo usou um único modelo (GPT-4o), e a completude de 100\% indica que essa métrica não discriminou entre cenários.
+
+\section{Limitações}
+\label{sec:limitacoes}
+
+A interpretação dos resultados considera limitações identificadas durante a execução e a análise do estudo, complementando as ameaças à validade discutidas~\ref{sec:ameacas-validade}.
+
+A primeira limitação decorre do próprio desenho do estudo. Trata-se de um estudo observacional de caso único, conduzido no CAPJu, escolhido por conveniência por ter sido desenvolvido com a participação dos autores~\ref{sec:caso}, e sem grupo de controle. Os resultados descrevem, portanto, associações e mecanismos plausíveis, e não efeitos causais quantificados, e não há garantia de que se generalizem para outros contextos. Soma-se a isso uma característica do caso: o CAPJu não foi desenvolvido pensando em automação de testes e não tem identificadores estáveis em elementos importantes da interface. Isso pode ter ampliado o peso das falhas de seletor, e os resultados podem não se repetir em aplicações preparadas para automação.
+
+O estudo também se restringiu a um único modelo e a uma única forma de instruir a IA. Foi avaliado apenas o GPT-4o, com um \textit{system prompt} de regras explícitas de transformação. O padrão de erros observado, sobretudo o relacionado a seletores, pode mudar com outros modelos, com outras versões do mesmo modelo ou com outras estruturas de \textit{prompt}. Além disso, o modelo pode produzir resultados diferentes para o mesmo cenário e o mesmo \textit{prompt}, como ocorreu na US25-CA00, o que impede garantir o sucesso na primeira execução. Como cada cenário teve uma única geração inicial, essa variabilidade foi apenas observada, e não medida por meio de repetições.
+
+Outra limitação está na forma como a ferramenta adaptada identifica os elementos. Ela usa os seletores indicados no texto do cenário, de modo que qualquer imprecisão no identificador leva a erro no teste, e cenários que descrevem os elementos apenas em linguagem natural, sem seletor, não foram avaliados. A ferramenta também pode gerar \textit{step definitions} com a mesma assinatura. Na US06-CA00, isso ocorreu dentro do código de um mesmo cenário: dois passos que diferiam apenas pelo texto entre aspas deram origem a duas definições \texttt{should appear in the table \{string\}}, o que causou o erro de múltiplas correspondências em quatro tentativas seguidas. Como a ferramenta processa cada cenário de forma independente, sem acesso aos passos já gerados para outros cenários, o mesmo conflito pode surgir entre cenários que compartilhem um passo idêntico, já que ela não consegue reaproveitá-lo.
+
+Parte dos cenários planejados também não pôde ser avaliada. Dos 37 cenários, 10 (27,0\%) foram bloqueados, quatro por \textit{bugs} reais do CAPJu e seis por critérios de aceitação ambíguos, que mencionam uma ``padronização'' nunca definida e impediram até mesmo a escrita do cenário BDD. Esses cenários ficaram fora das métricas, e as funcionalidades correspondentes não foram representadas nos resultados.
+
+Há ainda a participação dos autores em todas as etapas. Os cenários foram escritos e corrigidos pelos próprios autores, e os BDD já haviam sido ajustados durante a calibração do \textit{system prompt}, o que tende a favorecer o resultado da primeira execução. A classificação das causas das falhas também foi feita manualmente pelos autores, com base nas observações registradas em texto livre, e esses registros nem sempre descrevem todas as alterações feitas no cenário entre uma tentativa e outra.
+
+Por fim, as métricas têm alcance limitado. A completude estrutural foi de 100\% em todas as tentativas e, por isso, não discriminou entre cenários. Além disso, ela indica apenas se cada método foi implementado, e não se está funcionalmente correto.
+
+\section{Trabalhos Futuros}
+\label{sec:trabalhos-futuros}
+
+As limitações apresentadas na Seção~\ref{sec:limitacoes} apontam as principais linhas de continuidade deste trabalho.
+
+A primeira é variar os componentes mantidos fixos neste estudo. Isso inclui repetir a investigação com outros modelos de linguagem além do GPT-4o e comparar as regras explícitas de transformação com outras estruturas de \textit{system prompt}, como explicações conceituais, instruções passo a passo e a técnica \textit{few-shot chain} de \citeonline{Nettur2025}. Em todos os casos, o objetivo é verificar se os padrões de erro, sobretudo os relacionados a seletores, se mantêm. Gerar cada cenário várias vezes, com o mesmo BDD e o mesmo \textit{prompt}, permitiria ainda quantificar a variabilidade do modelo e separar o seu efeito do efeito da escrita do BDD.
+
+A segunda é ampliar o alcance da resposta à questão principal. Avaliar cenários que descrevam os elementos apenas em linguagem natural, em comparação com cenários que trazem o seletor no texto, mostraria em que medida a AI consegue identificar os elementos de forma realmente autônoma. Replicar o estudo em outros projetos, incluindo aplicações preparadas para automação, indicaria se o peso das falhas de seletor diminui e se os resultados se generalizam além do CAPJu.
+
+Por fim, há melhorias no processo e na ferramenta. A extensão poderia processar em conjunto os cenários de uma mesma História de Usuário e verificar as assinaturas das \textit{step definitions} antes de gravá-las, evitando definições duplicadas. As métricas poderiam incorporar tempo, custo e esforço de correção, para avaliar a eficiência do processo, como previa a versão anterior do planejamento. Também vale investigar como tornar os critérios de aceitação testáveis antes da escrita do BDD, reduzindo os bloqueios por ambiguidade observados neste estudo.
+
+
+

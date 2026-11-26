@@ -1,0 +1,56 @@
+\section{Consolidação dos Resultados}
+\label{sec:consolidacao-resultados}
+
+Como visto no capítulo 5, foi consolidado em uma base os registros da execução final do estudo. Cada linha da base corresponde a uma tentativa de geração e execução de um cenário BDD ou, no caso dos cenários bloqueados, ao registro do motivo do bloqueio. Para cada tentativa, a base traz o cenário, o código gerado (POM e Métodos de Passo), as contagens das Métricas 1.1 a 1.4 e as frações das Métricas 1.5 a 1.8, o resultado da execução (\textbf{S} para sucesso e \textbf{N} para falha) e observações em texto livre sobre os ajustes feitos. Os registros foram mantidos em planilha e processados no \textit{notebook} do estudo, preservando a rastreabilidade entre a História de Usuário (HU), o Critério de Aceitação (CA), o cenário BDD e o código gerado, conforme planejado na Seção~\ref{sec:analise_dados}. Os cenários são identificados pela convenção US\textit{xx}-CA\textit{yy}, em que \textit{xx} é o número da HU e \textit{yy} é o índice do CA testado separadamente, iniciado em 00.
+
+Das 23 HUs levantadas, foram derivados 37 cenários BDD. A execução gerou 64 registros, sendo 10 bloqueados e 54 tentativas válidas, distribuídas em 27 cenários. Ao todo, 18 HUs tiveram cenários executados, enquanto cinco permaneceram integralmente bloqueadas. A Tabela~\ref{tab:composicao-base} apresenta essa composição.
+
+\begin{table}[htb]
+\centering
+\caption{Composição da base de análise}
+\label{tab:composicao-base}
+\begin{tabular}{lr}
+\hline
+\textbf{Item} & \textbf{Quantidade} \\
+\hline
+Histórias de Usuário levantadas & 23 \\
+Cenários BDD (combinações de HU e CA) & 37 \\
+\quad Cenários bloqueados & 10 \\
+\quad Cenários executados com resultado verificado & 27 \\
+Registros da execução final & 64 \\
+\quad Registros de cenários bloqueados & 10 \\
+\quad Tentativas válidas (S ou N) & 54 \\
+\qquad Tentativas com sucesso (S) & 27 \\
+\qquad Tentativas com falha (N) & 27 \\
+\hline
+\end{tabular}
+\legend{Fonte: Autores (2026).}
+\end{table}
+
+Os 10 cenários bloqueados foram excluídos das métricas: quatro devido a bugs confirmados no CAPJu e seis por ambiguidade ou ausência de especificação nos CAs, que inviabilizaram a elaboração de cenários testáveis. A Tabela~\ref{tab:cenarios-bloqueados} apresenta essa classificação.
+
+\begin{table}[htb]
+\centering
+\caption{Cenários bloqueados por tipo de bloqueio}
+\label{tab:cenarios-bloqueados}
+\begin{tabular}{p{5.2cm}cp{6.6cm}}
+\hline
+\textbf{Tipo de bloqueio} & \textbf{Quantidade} & \textbf{Cenários} \\
+\hline
+\textit{Bug} real confirmado no CAPJu & 4 & US07-CA00, US28-CA00, US37-CA00, US39-CA00 \\
+Critério de Aceitação ambíguo & 6 & US01-CA00, US01-CA01, US01-CA03, US19-CA00, US19-CA01, US19-CA02 \\
+\hline
+\end{tabular}
+\legend{Fonte: Autores (2026).}
+\end{table}
+
+Para o tratamento dos dados, foram adotadas as seguintes premissas:
+
+\begin{itemize}
+    \item Apenas a execução final foi considerada na análise. As fases de calibração do \textit{system prompt} ficaram de fora, pois constituem uma etapa exploratória de ajuste do instrumento, e não uma medição de resultados. Além disso, só a execução final registra, tentativa a tentativa, se o teste gerado de fato executou com sucesso.
+    \item O mesmo modelo (GPT-4o) e o mesmo \textit{system prompt} definitivo, composto por 20 regras (numeradas de 0 a 19), foram usados em todas as tentativas.
+    \item Cada cenário termina com exatamente uma tentativa bem-sucedida, que é a última registrada. Assim, o número de tentativas de um cenário equivale ao número de execuções até o primeiro teste sem erros, e as 54 tentativas se dividem em 27 sucessos e 27 falhas.
+    \item As contagens das Métricas 1.1 a 1.4 foram extraídas automaticamente pela extensão adaptada a partir do código gerado, e as frações das Métricas 1.5 a 1.8 foram calculadas a partir dessas contagens. A Métrica 1.9 foi avaliada pelo resultado (S ou N) de cada execução, considerando-se livre de erros o cenário cuja primeira tentativa resultou em S.
+\end{itemize}
+
+Os procedimentos de consolidação e os dados utilizados nas análises deste capítulo estão disponíveis no repositório do estudo \cite{repositorio-estudo}, na Seção~6 do \textit{notebook} \footnote{\url{https://github.com/gustavofbs/Gustavo-e-Leandro_TCC/blob/master/Notebook/}}. A partir dessa base, as seções seguintes apresentam os resultados da QE-1, iniciando pela eficácia (Métricas 1.1 a 1.8).
