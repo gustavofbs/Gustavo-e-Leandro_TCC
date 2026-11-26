@@ -4,20 +4,17 @@ A definição de uma estratégia de busca requer o uso de um protocolo que auxil
 
 \begin{figure}[H]
     \centering
-    \caption{Representação Visual do Protocolo PICO }
-    \includegraphics[width=0.7\linewidth]{figuras/pico.png}
+    \caption{Representação Visual do Protocolo PICO}
+    \includegraphics[width=1.1\linewidth]{figuras/pico.png}
     \caption*{Fonte: Adaptado de \citeonline{Pai2004}}
     \label{fig:pico}
 \end{figure}
-
-
-\todo[inline, color=pink]{Corrigir o espaço em branco entre a imagem o o próximo parágrafo.}
-
+%\todo[inline, color=pink]{Corrigir o espaço em branco entre a imagem o o próximo parágrafo.}
 Ao adaptar o modelo PICO ao contexto desta monografia, seus elementos foram reinterpretados de acordo com as necessidades da Engenharia de Software. No protocolo original, a \textbf{população} corresponde ao perfil dos pacientes; aqui, esse elemento passou a representar o domínio investigado, englobando termos relacionados ao desenvolvimento de software, testes e qualidade. A \textbf{intervenção}, que na medicina remete ao tratamento aplicado, foi convertida para descrever as tecnologias e abordagens analisadas, incluindo inteligência artificial, aprendizado de máquina, modelos de linguagem e técnicas de processamento de linguagem natural. Já o \textbf{resultado} manteve seu propósito essencial, indicando os efeitos buscados nos estudos selecionados, como geração automatizada de cenários BDD, identificação de elementos da interface e criação de casos de teste executáveis. O componente \textbf{comparação}, por sua vez, não foi adotado, pois sua lógica é mais adequada ao corpo de conhecimento indexado em bases digitais da medicina, e não em relação à organização atual do corpo de conhecimento em Engenharia de Software. A estrutura consolidada pode ser vista na Tabela \ref{tab:string-busca}.
 
 \begin{table}[H]
 \caption{Estrutura dos Termos da \textit{String} de Busca}
-    \begin{tabular}{|p{2.5cm}|p{4cm}|p{8.5cm}|}
+    \begin{tabular}{|p{2.5cm}|p{4cm}|p{8.15cm}|}
         \hline
         \textbf{Camada} & \textbf{Palavra Chave} & \textbf{Sinônimos} \\ \hline
 
@@ -55,29 +52,10 @@ Para a construção da \textit{string} de busca, empregou-se o operador lógico 
 
 Como o refinamento da \textit{string} de busca ocorreu de forma iterativa, optou-se por apresentar apenas os marcos representativos desse processo. Esses marcos correspondem às versões da \textit{string} que melhor evidenciam o impacto das modificações nos termos do protocolo PICO sobre a abrangência e a precisão dos resultados.
 
-Na primeiro marco, a presença de expressões amplas relacionadas a testes de software e identificação de elementos de interface resultou na recuperação de 97 documentos, muitos deles sem relação direta com BDD ou com técnicas de IA aplicadas à geração ou interpretação de cenários de teste.
+No primeiro marco, a presença de expressões amplas relacionadas a testes de software e identificação de elementos de interface resultou na recuperação de 97 documentos, muitos deles sem relação direta com BDD ou com técnicas de IA aplicadas à geração ou interpretação de cenários de teste. A string correspondente é apresentada na Seção \ref{ap:string-marco-1} do Apêndice.
 
-\textit{("software engineering" OR "software technology" OR "software development" OR "software applications" OR "software projects" OR "software testing" OR "software quality testing" OR "automated UI testing") AND ("artificial intelligence" OR "inteligência artificial" OR "AI" OR "IA" OR "soluções baseadas em IA" OR "sistemas de IA" OR "machine learning" OR "aprendizado de máquina" OR "aprendizagem de máquina" OR "AM" OR "ML" OR "sistemas de ML" OR "deep learning" OR "aprendizado profundo" OR "aprendizagem profunda" OR "redes neurais" OR "large language model" OR "LLM" OR "modelos preditivos" OR "AI testing" OR "intelligent software testing" OR "natural language processing" OR "NLP" OR "processamento de linguagem natural" OR "ontologies" OR "semantic analysis") AND ("behavior driven development" OR "BDD" OR "desenvolvimento orientado por comportamento" OR "specification by example" OR "executable scenarios" OR "cenários de teste executáveis" OR "BDD testing" OR "acceptance testing" OR "system testing" OR "functional system testing" OR "end-to-end testing" OR "testes de aceitação" OR "testes funcionais de sistema" OR "automated system test generation" OR "geração automatizada de testes de sistema" OR "automated acceptance test generation" OR "testes de aceitação automatizados" OR "UI identifiers" OR "identificação de elementos da interface" OR "interface element identifiers")}
+No segundo marco, expressões excessivamente genéricas foram removidas e adicionaram-se sinônimos mais específicos, como \textit{gherkin scenarios}, \textit{executable specifications} e termos ligados a critérios de aceitação, o que reduziu o retorno para 66 documentos. Embora mais preciso, esse conjunto tornou-se estreito demais, indicando perda de abrangência. A string correspondente é apresentada na Seção \ref{ap:string-marco-2} do Apêndice.
 
-No segundo marco, expressões excessivamente genéricas foram removidas e adicionaram-se sinônimos mais específicos, como \textit{gherkin scenarios}, \textit{executable specifications} e termos ligados a critérios de aceitação, o que reduziu o retorno para 66 documentos. Embora mais preciso, esse conjunto tornou-se estreito demais, indicando perda de abrangência.
+Para avaliar os limites superiores da cobertura, um terceiro marco semanticamente expandido reintroduziu termos amplos, como system testing, test case generation e scenario-based testing, combinados a múltiplas variações linguísticas de BDD e de técnicas de IA. Essa ampliação elevou substancialmente o número de resultados para 720 documentos, demonstrando o aumento significativo de ruído. A string correspondente é apresentada na Seção \ref{ap:string-marco-3} do Apêndice.
 
-
-\textit{("software engineering" OR "software technology" OR "software development" OR "software applications" OR "software projects" OR "software testing" OR "software quality testing") AND ("artificial intelligence" OR "inteligência artificial" OR "AI" OR "IA" OR "soluções baseadas em IA" OR "sistemas de IA" OR "machine learning" OR "aprendizado de máquina" OR "aprendizagem de máquina" OR "AM" OR "ML" OR "sistemas de ML" OR "deep learning" OR "aprendizado profundo" OR "aprendizagem profunda" OR "redes neurais" OR "large language model" OR "LLM" OR "modelos preditivos" OR "AI testing" OR "intelligent software testing" OR "natural language processing" OR "NLP" OR "processamento de linguagem natural" OR "ontologies" OR "semantic analysis") AND ("behavior driven development" OR "BDD" OR "desenvolvimento orientado por comportamento" OR "specification by example" OR "executable scenarios" OR "cenários de teste executáveis" OR "BDD testing" OR "gherkin scenarios" OR "executable specifications" OR "acceptance testing" OR "acceptance criteria testing" OR "acceptance test-driven development" OR "executable acceptance criteria" OR "functional acceptance testing" OR "web acceptance testing" OR "system testing of web applications" OR "functional testing of web systems" OR "functional system testing" OR "testes funcionais de sistema" OR "testes de sistema web" OR "testes funcionais de aplicações web" OR "end-to-end testing of web applications" OR "end-to-end testing of web systems" OR "test automation in web applications" OR "requirements-based testing" OR "acceptance criteria validation" OR "traceability of acceptance tests" OR "automated functional test generation" OR "automated system test generation" OR "geração automatizada de testes de sistema" OR "automated acceptance test generation" OR "testes de aceitação automatizados" OR "automated BDD scenario generation" OR "test script generation" OR "UI test generation" OR "automated GUI testing" OR "interface test automation" OR "UI identifiers" OR "identificação de elementos da interface" OR "interface element identifiers")}
-
-Para avaliar os limites superiores da cobertura, um terceiro marco semanticamente expandido reintroduziu termos amplos, como system testing, test case generation e scenario-based testing, combinados a múltiplas variações linguísticas de BDD e de técnicas de IA. Essa ampliação elevou substancialmente o número de resultados para 720 documentos, demonstrando o aumento significativo de ruído.
-
-\textit{( "Software engineering" OR "Software development" OR "Software system" OR "Software application" OR "Engenharia de software" OR "Desenvolvimento de software" OR "Sistema* de software" OR "Aplicação* de software" OR "software testing" OR "quality assurance" ) AND ( "Artificial Intelligence" OR "AI" OR "Machine Learning" OR "ML" OR "Predictive model" OR "Large Language Model" OR "LLM" OR "Deep Learning" OR "Neural network" OR "Inteligência Artificial" OR "IA" OR "Soluç baseada* em IA" OR "Sistema* de IA" OR "Aprendizado de Máquina" OR "Aprendizagem de Máquina" OR "AM" OR "Modelo* preditiv" OR "Aprendizado profundo" OR "Aprendizagem profunda" OR "Rede neural" OR "Sistema de ML" OR "NLP" OR "llm" ) AND ( "BDD testing" OR "automated test generation" OR "behaviour-driven development" OR "behavior-driven development" OR "model-based test generation" OR "model-based testing" OR "test case design" OR "test case generation" OR "executable specifications" OR "gherkin" OR "gherkin scenarios" OR "scenario-based testing" OR "cucumber" OR "test scenarios" OR "behavioral scenario" OR "development scenarios" OR "25010" OR "behavior driven" OR "behaviour-driven testing" OR "software system testing" OR "functional testing" OR "system testing" OR "test automation" OR "acceptance testing" OR "test suite" )}
-
-Com base nessa análise comparativa, o marco final foi construída selecionando apenas os termos que demonstraram maior capacidade de recuperar estudos alinhados ao objetivo da revisão, especialmente combinações envolvendo \textit{gherkin}, \textit{BDD}, \textit{test automation} e técnicas de IA, e evitando expressões excessivamente genéricas. Essa configuração final retornou 433 documentos, representando um equilíbrio adequado entre abrangência e precisão, e foi adotada como a \textit{string} definitiva da busca.
-
-\textit{("Software engineering" OR "Software development" OR "Software system" OR 
-"Software application" OR "software testing" OR "quality assurance")
-AND
-("Artificial Intelligence" OR "AI" OR "Machine Learning" OR "Reinforcement Learning" OR 
- "Large Language Model" OR "Deep Learning" OR "Neural network" OR "AM" OR "NLP" OR "llm")
-AND
-("gherkin" OR "behavior-driven development" OR "BDD" OR "test generation" OR 
- "Test automation" OR "end-to-end testing" OR "functional testing" OR "acceptance testing" OR 
- "cucumber" OR "executable specifications" OR "scenario-based testing" OR 
- "development scenarios" OR "automated test case generation" OR "model-based testing" OR 
- "software system testing")}
+Com base nessa análise comparativa, o marco final foi construído selecionando apenas os termos que demonstraram maior capacidade de recuperar estudos alinhados ao objetivo da revisão, especialmente combinações envolvendo \textit{gherkin}, \textit{BDD}, \textit{test automation} e técnicas de IA, e evitando expressões excessivamente genéricas. Essa configuração final retornou 433 documentos, representando um equilíbrio adequado entre abrangência e precisão, e foi adotada como a \textit{string} definitiva da busca. Sua versão completa é apresentada na Seção \ref{ap:string-marco-final} do Apêndice.
