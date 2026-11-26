@@ -55,9 +55,9 @@ Cada uma das 27 execuções com resultado N foi analisada individualmente a part
 \hline
 \textbf{Categoria} & \textbf{Descrição} & \textbf{Falhas} & \textbf{\%} \\
 \hline
-Seletor dinâmico instável & ID ou classe gerado automaticamente pelo \textit{framework} de interface (React, Chakra, Emotion) não corresponde ao DOM real & 9 & 33,3\% \\
+Seletor dinâmico instável & ID ou classe gerado automaticamente pelo \textit{framework} de interface (React, Chakra, Emotion) não corresponde ao Modelo de Objeto de Documento (DOM) real & 9 & 33,3\% \\
 Seletor genérico ou ambíguo & O seletor casa com vários elementos da tela e o Cypress rejeita o clique & 6 & 22,2\% \\
-Erro de geração de código & Texto do passo diverge entre o arquivo \texttt{.feature} e a \textit{step definition}, ou há definições duplicadas & 6 & 22,2\% \\
+Erro de geração de código & Texto do passo diverge entre o arquivo \texttt{.feature} e o método de passo, ou há definições duplicadas & 6 & 22,2\% \\
 Elemento repetido sem indexação & Elemento duplicado na tela, sem [N] ou \texttt{.eq(N)} para desambiguar & 2 & 7,4\% \\
 BDD descreve comportamento incorreto & O texto ou a condição esperada nunca ocorre na aplicação & 1 & 3,7\% \\
 Erro de digitação no texto gerado & Um erro de digitação alterou a \textit{string} esperada na asserção & 1 & 3,7\% \\
@@ -93,7 +93,7 @@ BDD ou asserção não corresponde ao comportamento real da aplicação & BDD de
 Variabilidade pura do modelo & Variabilidade pura do modelo & 1 & 3,7\% \\
 \hline
 \end{tabular}
-\legend{Fonte: Autores (2026)}
+\legend{Fonte: Autores (2026).}
 \end{table}
 
 \begin{figure}[htb]
@@ -108,7 +108,7 @@ A maior parte das falhas, 63,0\% (17 de 27), está diretamente relacionada a com
 
 O interessante é que o CAPJu não foi desenvolvido pensando em testes automatizados, considerando que percebemos a falta de IDs estáveis em elementos importantes da interface. Isso foi contornado com seletores CSS, que funcionam como um endereço para um ponto específico da página quando não há ID disponível. Os resultados podem, por isso, ser mais pronunciados do que em aplicações preparadas para automação.
 
-Os 37,0\% restantes têm origem mista (geração de código pela IA, notação do BDD, conteúdo do BDD ou variabilidade do modelo) e não foram atribuídos individualmente à escrita do BDD. Há ainda uma incerteza sobre o grupo de 11,1\%: na US16-CA00, as falhas por erro de digitação e por lógica de asserção desapareceram sem nenhuma alteração no BDD (Seção~\ref{subsec:correcoes}), o que sugere que parte delas também decorre da variabilidade do modelo. Os percentuais referem-se às 27 tentativas com falha, e não aos 15 cenários corrigidos da Seção~\ref{subsec:correcoes}.
+Os 37,0\% restantes têm origem mista (geração de código pela Inteligência Artificial (IA), notação do BDD, conteúdo do BDD ou variabilidade do modelo) e não foram atribuídos individualmente à escrita do BDD. Há ainda uma incerteza sobre o grupo de 11,1\%: na US16-CA00, as falhas por erro de digitação e por lógica de asserção desapareceram sem nenhuma alteração no BDD (Seção~\ref{subsec:correcoes}), o que sugere que parte delas também decorre da variabilidade do modelo. Os percentuais referem-se às 27 tentativas com falha, e não aos 15 cenários corrigidos da Seção~\ref{subsec:correcoes}.
 
 \subsection{Imprevisibilidade da IA: dois casos}
 \label{subsec:imprevisibilidade}
@@ -124,7 +124,7 @@ Dois cenários ilustram a imprevisibilidade do modelo mesmo com um \textit{syste
 \hline
 \textbf{Cenário} & \textbf{Tent.} & \textbf{Result.} & \textbf{Erro registrado} & \textbf{Alteração no BDD antes da tentativa seguinte} \\
 \hline
-US06-CA00 & 1 & N & \textit{Step implementation missing} (divergência de aspas entre o arquivo de \textit{feature} e a \textit{step definition}) & Nenhuma no texto dos passos \\
+US06-CA00 & 1 & N & \textit{Step implementation missing} (divergência de aspas entre o arquivo de \textit{feature} e o método de passo) & Nenhuma no texto dos passos \\
 US06-CA00 & 2 a 5 & N & \textit{Multiple matching step definitions} (duas definições com a mesma assinatura) & Nenhuma no texto dos passos até a 5ª (na 4ª, só o seletor entre parênteses foi reescrito, sem efeito); após a 5ª, aspas duplas removidas do texto do BDD \\
 US06-CA00 & 6 & S & -- & -- \\
 \hline
