@@ -1,4 +1,4 @@
-\chapter{Execução do Estudo Observacional}
+\chapter{Execução do Estudo Observacional Retrospectivo}
 \label{ch:execucao}
 
 Este capítulo apresenta os processos, etapas e ferramentas utilizados para a realização do estudo nesta pesquisa. Serão tratados detalhes sobre preparação dos artefatos, no caso as histórias de usuário, a adaptação da extensão Cypress Copilot e o ambiente de execução do caso CAPJu.
@@ -6,7 +6,7 @@ Este capítulo apresenta os processos, etapas e ferramentas utilizados para a re
 \section{Preparação dos Artefatos}
 \label{sec:preparacao-artefatos}
 
-As histórias de usuário do CAPJu feitas durante o semestre 2023/1 estavam disponíveis no ZenHub\footnote{Disponível em: \url{https://app.zenhub.com/workspaces/2023-1-capju-64320b44af1e32d8b7b66b3f/board}.}, então utilizamos as tags US e frontend, pois a pesquisa trata de identificação de elementos de interface e testes de sistema, e sobraram 26 histórias de usuário de 58. Os critérios de escolha para as histórias de usuário foram ter pelo menos um critério de aceitação, ter sido feita durante o semestre 2023/1, estar fechada e não ser repetida. Também ficou acordado que cada critério de aceitação seria utilizado para a escrita de um cenário BDD; dessa forma, uma história de usuário com três critérios de aceitação se transformaria em três cenários BDD. Após aplicar esses critérios, sobraram 23. A Figura \ref{fig:us06} apresenta um exemplo de história de usuário.
+As histórias de usuário do CAPJu feitas durante o semestre 2023/1 estavam disponíveis no ZenHub\footnote{Disponível em: \url{https://app.zenhub.com/workspaces/2023-1-capju-64320b44af1e32d8b7b66b3f/board}.}, e somavam 127 \textit{issues}, todas fechadas (\textit{closed}). Filtramos pelo \textit{label} \textit{US}, que identifica as histórias de usuário, e sobraram 26 histórias de usuário de 127. Em seguida, foram retiradas as US15, US17 e US27, por não possuírem critérios de aceitação definidos, restando 23 histórias de usuário. Também ficou acordado que cada critério de aceitação seria utilizado para a escrita de um cenário BDD; dessa forma, uma história de usuário com três critérios de aceitação se transformaria em três cenários BDD. A Figura \ref{fig:us06} apresenta um exemplo de história de usuário.
 
 \begin{figure}[htbp]
     \caption{Exemplo de história de usuário do CAPJu (US06 -- Status do processo)}
@@ -122,6 +122,8 @@ Não medimos os efeitos de cada regra isoladamente. Algumas regras possuem exemp
 Utilizamos o projeto CAPJu de 2023.1 rodando localmente para executar os testes automatizados feitos pela extensão modificada. O modelo utilizado foi o GPT-4o da OpenAI, os testes foram executados no Electron, navegador padrão do Cypress, e muitos cenários exigiam condições prévias. Por exemplo, um cenário de editar um processo exige que já exista um processo criado. Nesse caso, criamos antes, diretamente no banco, um processo, antes de rodar o teste automatizado no Cypress. Da mesma forma foi feito para usuários. As condições prévias foram inseridas diretamente no banco de dados do CAPJu.
 
 A extensão modificada foi rodada diretamente no VS Code local, utilizando o system prompt final, e seguimos a regra de que cada critério de aceitação virou um cenário BDD. Executamos o cenário na extensão, pegamos o código gerado, colamos e criamos os arquivos no Cypress: o POM, o steps e a feature, que é o BDD sem os identificadores, só no formato Gherkin, pois o Cypress pede assim, com o Cucumber, que é necessário para rodar cenários em BDD.
+
+As Métricas 1.1 a 1.8, definidas na Seção~\ref{sec:questao-pesquisa}, foram medidas pela própria extensão Cypress Copilot adaptada, que calcula e exibe essas métricas para cada código gerado. Para a Métrica 1.9, adaptando a métrica de erros de sintaxe e execução de \citeonline{Nettur2025}, o código gerado foi executado no Cypress com o Cucumber, sem modificações. Foi considerado aprovado quando não houve erros de sintaxe ou execução e o cenário BDD foi executado conforme o comportamento especificado nos passos \textit{Given}/\textit{When}/\textit{Then}.
 
 Cada tentativa de execução foi registrada na Tabela 4, na coluna Execution, e marcada com S, indicando que o teste ponta a ponta executou no Cypress, ou com N, indicando que o teste teve algum problema. Cada erro foi registrado na coluna Observações. Em cada tentativa que falhou, o system prompt permanecia o mesmo, e o cenário BDD era ajustado para gerar o código novamente na extensão. O código gerado pela extensão não foi editado nenhuma vez, mesmo após falhas. Antes de cada tentativa, o banco era limpo.
 
