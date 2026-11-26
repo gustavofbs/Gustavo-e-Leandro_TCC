@@ -4,16 +4,16 @@ A definição de uma estratégia de busca requer o uso de um protocolo que auxil
 
 \begin{figure}[H]
     \centering
-    \caption{Representação Visual do Protocolo PICO}
+    \caption{Representação visual do protocolo PICO}
     \includegraphics[width=1.1\linewidth]{figuras/pico.png}
-    \caption*{Fonte: Adaptado de \citeonline{Pai2004}}
+    \legend{Fonte: Adaptado de \citeonline{Pai2004}.}
     \label{fig:pico}
 \end{figure}
 %\todo[inline, color=pink]{Corrigir o espaço em branco entre a imagem o o próximo parágrafo.}
-Ao adaptar o modelo PICO ao contexto desta monografia, seus elementos foram reinterpretados de acordo com as necessidades da Engenharia de Software. No protocolo original, a \textbf{população} corresponde ao perfil dos pacientes; aqui, esse elemento passou a representar o domínio investigado, englobando termos relacionados ao desenvolvimento de software, testes e qualidade. A \textbf{intervenção}, que na medicina remete ao tratamento aplicado, foi convertida para descrever as tecnologias e abordagens analisadas, incluindo inteligência artificial, aprendizado de máquina, modelos de linguagem e técnicas de processamento de linguagem natural. Já o \textbf{resultado} manteve seu propósito essencial, indicando os efeitos buscados nos estudos selecionados, como geração automatizada de cenários BDD, identificação de elementos da interface e criação de casos de teste executáveis. O componente \textbf{comparação}, por sua vez, não foi adotado, pois sua lógica é mais adequada ao corpo de conhecimento indexado em bases digitais da medicina, e não em relação à organização atual do corpo de conhecimento em Engenharia de Software. A estrutura consolidada pode ser vista na Tabela \ref{tab:string-busca}.
+Ao adaptar o modelo PICO ao contexto desta monografia, seus elementos foram reinterpretados de acordo com as necessidades da Engenharia de Software. No protocolo original, a \textbf{população} corresponde ao perfil dos pacientes; aqui, esse elemento passou a representar o domínio investigado, englobando termos relacionados ao desenvolvimento de software, testes e qualidade. A \textbf{intervenção}, que na medicina remete ao tratamento aplicado, foi convertida para descrever as tecnologias e abordagens analisadas, incluindo IA, aprendizado de máquina, modelos de linguagem e técnicas de NLP. Já o \textbf{resultado} manteve seu propósito essencial, indicando os efeitos buscados nos estudos selecionados, como geração automatizada de cenários BDD, identificação de elementos da interface e criação de casos de teste executáveis. O componente \textbf{comparação}, por sua vez, não foi adotado, pois sua lógica é mais adequada ao corpo de conhecimento indexado em bases digitais da medicina, e não em relação à organização atual do corpo de conhecimento em Engenharia de Software. A estrutura consolidada pode ser vista na Tabela \ref{tab:string-busca}.
 
 \begin{table}[H]
-\caption{Estrutura dos Termos da \textit{String} de Busca}
+\caption{Estrutura dos termos da \textit{string} de busca}
     \begin{tabular}{|p{2.5cm}|p{4cm}|p{8.15cm}|}
         \hline
         \textbf{Camada} & \textbf{Palavra Chave} & \textbf{Sinônimos} \\ \hline
@@ -40,7 +40,7 @@ Ao adaptar o modelo PICO ao contexto desta monografia, seus elementos foram rein
     \end{tabular}
 
     \begin{center}
-        \caption*{Fonte: Autores (2026).}
+        \legend{Fonte: Autores (2026).}
     \end{center}
 
 \label{tab:string-busca}
@@ -54,7 +54,7 @@ Como o refinamento da \textit{string} de busca ocorreu de forma iterativa, optou
 
 No primeiro marco, a presença de expressões amplas relacionadas a testes de software e identificação de elementos de interface resultou na recuperação de 97 documentos, muitos deles sem relação direta com BDD ou com técnicas de IA aplicadas à geração ou interpretação de cenários de teste. A string correspondente é apresentada na Seção \ref{ap:string-marco-1} do Apêndice.
 
-No segundo marco, expressões excessivamente genéricas foram removidas e adicionaram-se sinônimos mais específicos, como \textit{gherkin scenarios}, \textit{executable specifications} e termos ligados a critérios de aceitação, o que reduziu o retorno para 66 documentos. Embora mais preciso, esse conjunto tornou-se estreito demais, indicando perda de abrangência. A string correspondente é apresentada na Seção \ref{ap:string-marco-2} do Apêndice.
+No segundo marco, expressões excessivamente genéricas foram removidas e adicionaram-se sinônimos mais específicos, como \textit{gherkin scenarios}, \textit{executable specifications} e termos ligados a critérios de aceitação (CAs), o que reduziu o retorno para 66 documentos. Embora mais preciso, esse conjunto tornou-se estreito demais, indicando perda de abrangência. A string correspondente é apresentada na Seção \ref{ap:string-marco-2} do Apêndice.
 
 Para avaliar os limites superiores da cobertura, um terceiro marco semanticamente expandido reintroduziu termos amplos, como system testing, test case generation e scenario-based testing, combinados a múltiplas variações linguísticas de BDD e de técnicas de IA. Essa ampliação elevou substancialmente o número de resultados para 720 documentos, demonstrando o aumento significativo de ruído. A string correspondente é apresentada na Seção \ref{ap:string-marco-3} do Apêndice.
 

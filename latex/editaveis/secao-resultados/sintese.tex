@@ -3,7 +3,7 @@
 
 Em relação à QE-1: em que medida a forma de escrita dos cenários BDD influencia a eficácia e a qualidade do código de testes automatizados gerado por IA no contexto do CAPJu? Conforme definido na Seção~\ref{sec:questao-pesquisa}, a eficácia é medida pela completude estrutural do código gerado (Métricas 1.1 a 1.8) e a qualidade, pela ocorrência de erros sintáticos e de execução (Métrica 1.9), ambas adaptadas de \citeonline{Nettur2025}.
 
-Dos 37 cenários BDD planejados, 27 puderam ser executados contra o CAPJu, e os outros 10 foram bloqueados por \textit{bugs} reais da aplicação (4) ou por critérios de aceitação ambíguos (6). Nos 27 cenários executados, a IA gerou código estruturalmente completo em todas as tentativas, mas apenas 12 (44,4\%) executaram sem erros na primeira execução. Em mediana, foram necessárias duas tentativas por cenário, em uma distribuição assimétrica e não normal, com máximo de seis. A Tabela~\ref{tab:sintese} consolida os principais indicadores.
+Dos 37 cenários BDD planejados, 27 puderam ser executados contra o CAPJu, e os outros 10 foram bloqueados por \textit{bugs} reais da aplicação (4) ou por CAs ambíguos (6). Nos 27 cenários executados, a IA gerou código estruturalmente completo em todas as tentativas, mas apenas 12 (44,4\%) executaram sem erros na primeira execução. Em mediana, foram necessárias duas tentativas por cenário, em uma distribuição assimétrica e não normal, com máximo de seis. A Tabela~\ref{tab:sintese} consolida os principais indicadores.
 
 \begin{table}[htb]
 \centering
@@ -91,5 +91,5 @@ Qualidade (Métrica 1.9) & 12 de 27 cenários (44,4\%) sem erro na 1ª execuçã
 \legend{Fonte: Autores (2026).}
 \end{table}
 
-É importante destacar que, por se tratar de um estudo observacional de caso único, sem grupo de controle e com cenários escritos e corrigidos iterativamente, os resultados descrevem associação e um mecanismo plausível, e não um efeito causal quantificado. Além das ressalvas da Seção~\ref{subsec:qualidade}, o CAPJu não foi desenvolvido pensando em automação e carece de identificadores estáveis em elementos importantes da interface, o que pode ter ampliado o peso das falhas ligadas ao elemento de interface. O Capítulo~\ref{cap:conclusao} interpreta esses resultados à luz da literatura e responde à questão principal da pesquisa.
+É importante destacar que, por se tratar de um estudo observacional de caso único, sem grupo de controle e com cenários escritos e corrigidos iterativamente, os resultados descrevem associação e um mecanismo plausível, e não um efeito causal quantificado. Além das ressalvas da Seção~\ref{subsec:qualidade}, o CAPJu não foi desenvolvido pensando em automação e carece de identificadores estáveis em elementos importantes da interface, o que pode ter ampliado o peso das falhas ligadas ao elemento de interface. O Capítulo~\ref{ch:conclusao} interpreta esses resultados à luz da literatura e responde à questão principal da pesquisa.
 
