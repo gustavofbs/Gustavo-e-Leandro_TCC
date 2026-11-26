@@ -169,6 +169,12 @@ Essa notação deu origem ao Gherkin, que é adotado por muitas ferramentas de B
 
 \todo[inline, color=pink]{Esse parágrafo precisa ser revisado para garantir a precisão das informações. Isso contradiz em absoluto o que o Leandro me disse em nossa última reunião.}
 
+\subsection{Automação de Testes com Cypress e Cucumber}
+
+Os testes automatizados são testes executados por \textit{scripts} ou ferramentas, que comparam o resultado de cada execução com o resultado esperado \cite{iso29119_1_2022}. O Cypress é um \textit{framework} gratuito e de código aberto que permite escrever e executar testes automatizados de aplicações \textit{web} \cite{cypressdocs}. No entanto, seus testes são escritos em código, o que os torna difíceis de entender para pessoas não técnicas. É nesse ponto que entra o \textit{Behavior-Driven Development} (BDD), uma abordagem que busca facilitar o entendimento entre todos os membros do time \cite{smart2014bdd}. No BDD, os cenários são escritos em linguagem próxima da natural, e o Gherkin é uma das notações usadas para isso. O Cucumber é uma ferramenta que permite executar esses cenários como testes automatizados \cite{cucumberdocs}. Assim, o Cucumber pode ser usado em conjunto com o Cypress para que todo o time compreenda os testes automatizados.
+
+Nesta pesquisa, o Cypress foi utilizado com o \textit{plugin} do Cucumber para converter cenários BDD, escritos em Gherkin, em código de teste automatizado de uma forma que todos consigam entender. Para isso, foram utilizados três elementos: o arquivo \textit{feature}, que contém o cenário BDD no formato \textit{Given-When-Then}; o \textit{Page Object Model} (POM), que concentra os seletores pertencentes a cada página; e as definições de passo (\textit{step definitions}), que contêm o código de execução do teste, com uma implementação para cada passo do Gherkin descrito na \textit{feature} \cite{Nettur2025}. O Cucumber foi escolhido porque o objetivo desta pesquisa é estudar como os cenários BDD podem ser escritos e detalhados para que, a partir deles, sejam gerados testes automatizados com o apoio de inteligência artificial.
+
 
 \section{Inteligência Artificial}
 
