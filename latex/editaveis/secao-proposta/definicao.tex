@@ -99,29 +99,6 @@ De forma complementar, o repositório digital do projeto será utilizado como se
 
 A partir dessas fontes, serão obtidas também as informações necessárias para o cálculo das métricas do estudo que serão obtidas ao longo do experimento através da extensão Cypress Copilot \footnote{\url{https://github.com/OptimizeAIHub/Cypress-Copilot}} de \citeonline{Nettur2025} e do processo de análise dos artefatos gerados, como a identificação de erros sintáticos e de execução no código gerado, de forma quantitativa.
 
-% --- Versão antiga abaixo ---
-
-% Conforme destacado por \cite{yin2001} e \cite{runeson2009}, estudos observacionais baseados em artefatos históricos dependem diretamente da qualidade, completude e disponibilidade dos registros existentes. No presente trabalho, todas as evidências utilizadas para análise derivam exclusivamente do projeto CAPJu, desenvolvido no semestre 2023/1, cujos artefatos permaneceram registrados no sistema de gerenciamento de issues utilizado pela equipe de desenvolvimento.
-
-% A fonte de dados deste estudo serão as especificações BDD a partir do conjunto de issues que contêm Histórias de Usuário (HUs) e seus respectivos Critérios de Aceitação (CAs), adquiridas por meio do ZenHub vinculado ao projeto da organização. etiquetados como relacionados ao desenvolvimento de frontend. Esses artefatos representam a documentação funcional elaborada pela equipe durante o ciclo de desenvolvimento do projeto. Ao todo, 45 issues compõem esse conjunto, o qual constitui a unidade de análise deste estudo observacional retrospectivo.
-
-% Cada issue contém elementos textuais que descrevem:
-
-%\begin{itemize}
-%    \item a necessidade ou demanda do usuário (HU);
- %   \item o comportamento esperado do sistema, detalhado em Critérios de Aceitação (CAs);
-  %  \item etiquetas que identificam sua natureza (ex.: frontend);
-   % \item e, em alguns casos, comentários ou complementações feitas pelos desenvolvedores.
-%\end{itemize}
-
-%Esses documentos foram utilizados tal como se encontram registrados, sem qualquer modificação, conforme recomendado por \citeonline{runeson_case_study_2012} para estudos baseados em análise documental. A integridade e fidelidade desses registros são essenciais para garantir o rigor da investigação.
-
-%Além das issues, outra fonte de dados utilizada neste estudo é o repositório digital do projeto, do qual são extraídas informações contextuais complementares, como a identificação dos elementos de interface presente no código-fonte. Tais elementos auxiliam na interpretação das HUs e CAs e contribuem para uma triangulação de dados conforme sugerido por \citeonline{yin2001}, ainda que limitada ao escopo documental.
-
-%Não há coleta direta com usuários, desenvolvedores ou demais stakeholders, uma vez que o fenômeno estudado já ocorreu e não pode ser reconstituído no contexto original. Assim, toda a análise se apoia em evidências históricas, alinhando-se às características de estudos observacionais retrospectivos descritas na literatura.
-
-%Dessa forma, as fontes de dados empregadas neste trabalho são exclusivamente documentais, consistindo em um conjunto estruturado de issues e artefatos associados, que fornecem o material necessário para as etapas subsequentes da solução proposta.
-
 \section{Unidades de Análise e Procedimentos}
 
 Para atender ao objetivo deste estudo, adota-se um delineamento observacional retrospectivo com unidades de análise, uma vez que o fenômeno investigado é examinado por meio de diferentes artefatos relacionados entre si no contexto do projeto CAPJu. Essa organização permite observar, de forma encadeada, como a informação evolui desde a descrição funcional inicial até o artefato final produzido pela solução baseada em IA, favorecendo uma análise mais abrangente do problema investigado.
@@ -176,68 +153,70 @@ A extensão Cypress Copilot\footnote{\url{https://github.com/OptimizeAIHub/Cypre
 
 A API da OpenAI\footnote{\url{https://openai.com/pt-BR/api/}} será utilizada para integração com modelos avançados de linguagem, em especial o GPT-4o, que será responsável pela geração dos testes por meio de POM e Métodos de Passo. Esses modelos também auxiliarão na adaptação da extensão Cypress Copilot \footnote{\url{https://github.com/OptimizeAIHub/Cypress-Copilot}} que realizamos ao longo do estudo.
 
-
-
-\section{Ameaças à Validade Do Estudo}
+\section{Ameaças à Validade do Estudo}
 \label{sec:ameacas-validade}
 
-A validade de um estudo diz respeito à confiança que se pode depositar em seus resultados, isto é, em que medida eles são verdadeiros e não enviesados pelo ponto de vista subjetivo dos pesquisadores \cite{runeson2009}. Como a validade deve ser tratada desde o planejamento e só pode ser avaliada de forma definitiva na fase de análise \cite{runeson2009}, esta seção reúne as ameaças identificadas neste estudo e as contramedidas adotadas para cada uma. Adota-se a classificação proposta por \citeonline{runeson2009} que distingue quatro aspectos: validade do construto, validade interna, validade externa e confiabilidade.
+A validade de um estudo diz respeito à confiança que se pode depositar em seus resultados, isto é, em que medida eles são verdadeiros e não enviesados pelo ponto de vista subjetivo dos pesquisadores \cite{runeson2009}. Adota-se a classificação de \citeonline{runeson2009}, que distingue quatro aspectos: validade do construto, validade interna, validade externa e confiabilidade. Como a validade deve ser tratada desde o planejamento, mas só pode ser avaliada de forma definitiva após a análise \cite{runeson2009}, esta seção considera também os dados observados nas execuções. Para cada aspecto, indica-se o que foi feito e o que permanece sem mitigação. Quando não houve ação verificável, a ameaça é declarada como não mitigada e retomada nas Limitações (Seção~\ref{sec:limitacoes}).
 
-\subsection{Ameaças à Validade do Constructo}
+\subsection{Ameaças à Validade do Construto}
 
-A validade do construto refere-se ao grau em que as métricas e os procedimentos adotados representam adequadamente os conceitos investigados. Neste estudo, os principais construtos analisados são a completude e a qualidade do código de teste gerado a partir de cenários BDD.
+A validade do construto refere-se ao grau em que as métricas e os procedimentos adotados representam adequadamente os conceitos investigados. Neste estudo, os principais construtos são a completude e a qualidade do código de teste gerado a partir de cenários BDD, avaliados por métricas baseadas em \citeonline{Nettur2025}.
 
-Esses construtos foram avaliados por métricas quantitativas baseadas no \citeonline{Nettur2025}, como número de métodos gerados, número de métodos sem implementação e incidência de erros de sintaxe e de execução.
+\begin{itemize}
+    \item \textbf{A ``forma de escrita'' não foi operacionalizada como variável.} A QE-1 pergunta em que medida a forma de escrita influencia a eficácia e a qualidade do código. Porém, os cenários não foram escritos em estilos distintos para comparação: foram escritos de um único modo, com seletores explícitos, e alterados quando falhavam. A influência da escrita foi inferida \textit{a posteriori}, a partir do tipo de correção aplicada (Tabela~\ref{tab:correcoes}). Assim, o construto ``forma de escrita'' é observado de modo indireto.
+    \item \textbf{A Métrica 1.9 mistura causas diferentes.} O resultado S/N da execução reflete a escrita do BDD, mas também o seletor, o estado do banco (condições prévias inseridas manualmente), o ambiente Cypress e o modelo. Além disso, um teste que executa sem erro não garante que verifique o comportamento correto.
+    \item \textbf{Saturação da completude.} As Métricas 1.1 a 1.8 ficaram em 100\% em todas as 54 tentativas. Elas medem apenas completude estrutural e não distinguem cenários bem ou mal escritos. Também não capturam aspectos como legibilidade, manutenibilidade percebida e adequação do teste ao contexto de negócio.
+    \item \textbf{A identificação do elemento foi fornecida, não inferida.} A extensão adaptada reconhece os seletores escritos entre parênteses no cenário, e a Regra 0 do \textit{system prompt} obriga seu uso literal. O que a IA fez foi, em grande parte, usar o seletor dado, e não identificar o elemento na interface. Os resultados respondem, portanto, sobre como escrever cenários com seletores explícitos, e não sobre identificação autônoma de elementos, que é o que a questão principal sugere. Cenários descritos apenas em linguagem natural não foram avaliados.
+\end{itemize}
 
-Como ameaça à validade do construto, destaca-se o fato de que essas métricas, embora úteis para medir completude e qualidade estrutural, não capturam totalmente aspectos subjetivos, como legibilidade, manutenibilidade percebida e adequação do teste ao contexto de negócio. Além disso, o estudo apoia-se em uma ferramenta específica, a extensão Cypress Copilot, adaptada ao contexto deste trabalho, o que pode limitar a abrangência dos construtos avaliados.
+\textbf{O que foi feito:} as métricas vêm de \citeonline{Nettur2025}. As Métricas 1.1 a 1.8 foram extraídas automaticamente pela extensão adaptada. A Métrica 1.9 foi avaliada executando o código gerado no Cypress sem nenhuma modificação, e o banco foi limpo antes de cada tentativa.
 
-Como forma de mitigação, buscou-se manter alinhamento entre questão de pesquisa, objetivo do estudo e métricas utilizadas, bem como explicitar as limitações de interpretação dos resultados.
+\textbf{Não mitigado:} o resultado de 44,4\% de cenários sem erro na primeira execução não isola o efeito da escrita. A análise das causas das falhas (Seção~\ref{sec:analises-complementares}) reduz essa limitação, mas não a elimina. A limitação da Ameaça 4 foi explicitada na resposta à questão principal.
 
 \subsection{Ameaças à Validade Interna}
 
-A validade interna refere-se à confiança de que os resultados observados decorrem das condições investigadas. Neste estudo, algumas ameaças podem influenciar os resultados.
+A validade interna refere-se à confiança de que os resultados observados decorrem das condições investigadas. Como o estudo busca explicar como a escrita influencia a geração, a validade interna se aplica, e a ausência de grupo de controle é uma limitação central.
 
-Uma delas é a qualidade dos cenários BDD de entrada, pois diferenças na estrutura dos cenários podem afetar diretamente o código gerado. Assim, parte dos resultados pode estar relacionada não apenas à ferramenta utilizada, mas também à qualidade dos artefatos fornecidos.
+\begin{itemize}
+    \item \textbf{Fatores de confusão.} Variabilidade do modelo, tipo de seletor, complexidade da HU e ausência de IDs estáveis no CAPJu podem explicar parte dos resultados. Os cenários US16-CA00 e US25-CA00 passaram sem nenhuma mudança no BDD, o que mostra que parte da ``melhora'' entre tentativas pode ser acaso.
+    \item \textbf{Execução única por cenário.} Cada cenário teve uma única geração inicial de um modelo não determinístico. A variabilidade foi observada, não medida por repetições.
+    \item \textbf{Critério de parada.} Os cenários foram ajustados até passar, então o sucesso final de 100\% é consequência do protocolo, e não resultado. Por isso ele não foi usado como medida de qualidade.
+    \item \textbf{Calibração e avaliação no mesmo conjunto.} O \textit{system prompt} foi calibrado nas mesmas HUs usadas na avaliação final. A primeira execução da etapa final já usava cenários ajustados durante a calibração, o que tende a favorecer o resultado.
+    \item \textbf{Contaminação de treino.} O CAPJu é público no GitHub desde 2023, e o GPT-4o pode ter visto o código ou trechos dele. Não é possível avaliar a extensão desse efeito.
+    \item \textbf{Efeito conjunto de BDD e \textit{prompt}.} As convenções de escrita (seletor entre parênteses, índice \texttt{[N]}, \texttt{[text: ...]}) só funcionaram porque o \textit{system prompt} as interpreta. Como o \textit{prompt} foi mantido fixo e o efeito de cada regra não foi medido isoladamente, não é possível atribuir o resultado apenas à escrita do BDD.
+    \item \textbf{Seleção e exclusão de cenários.} Dos 37 cenários planejados, 10 (27,0\%) foram excluídos das métricas: 4 por bugs reais do CAPJu e 6 por critérios de aceitação ambíguos. Isso introduz viés de seleção, pois os resultados valem apenas para cenários que puderam ser escritos e executados. Em contrapartida, esses bloqueios são achados relevantes para a questão de pesquisa: indicam que a testabilidade do critério de aceitação é pré-condição para qualquer escrita de BDD, e não apenas um obstáculo de execução.
+\end{itemize}
 
-Outra ameaça é a dependência da ferramenta e de sua adaptação ao contexto do estudo. Como o trabalho utiliza uma versão adaptada da extensão Cypress Copilot, eventuais mudanças realizadas na ferramenta podem influenciar os resultados obtidos.
+\textbf{O que foi feito:} o modelo, o \textit{system prompt} (mantido fixo após as etapas de calibração) e a aplicação foram os mesmos na execução final, de modo que as mudanças entre tentativas se limitam ao BDD ou ao acaso. O código gerado nunca foi editado manualmente. Fixar modelo e \textit{prompt} foi uma escolha deliberada para isolar a variável ``cenário BDD'', o que favorece a validade interna, mas tem custo na validade externa. Os 10 cenários excluídos foram registrados com o motivo do bloqueio.
 
-Além disso, a própria variabilidade do modelo de IA pode afetar a geração do código, já que diferenças nas respostas podem ocorrer mesmo diante de entradas semelhantes.
-
-Como forma de mitigação, buscou-se padronizar os procedimentos de execução, utilizar os mesmos critérios de avaliação e documentar as adaptações realizadas na ferramenta. Ainda assim, reconhece-se que esses fatores podem influenciar os resultados finais.
+\textbf{Não mitigado:} variabilidade do modelo (Ameaças 1 e 2), calibração e avaliação no mesmo conjunto (Ameaça 4) e contaminação de treino (Ameaça 5). Não é possível separar o efeito da escrita do BDD do efeito do acaso nem do efeito das regras do \textit{prompt}. Por isso, os resultados são interpretados como associação com mecanismo plausível, e não como efeito causal.
 
 \subsection{Ameaças à Validade Externa}
 
-A validade externa refere-se ao grau em que os resultados deste estudo podem ser generalizados para outros contextos. Neste trabalho, essa generalização é limitada pelo uso de uma ferramenta específica, o Cypress Copilot, adaptada ao contexto da pesquisa, bem como pelo uso de cenários BDD e artefatos com características próprias.
+Por ser um estudo observacional retrospectivo de um único projeto, que segue o protocolo de estudo de caso, não há uma população da qual se tenha extraído uma amostra estatisticamente representativa, então nesse caso a generalização pretendida é analítica, onde os resultados são relevantes para contextos com características comuns às do CAPJu \cite{runeson2009}.
 
-Além disso, os resultados podem variar em outros projetos, domínios ou aplicações que apresentem requisitos mais ambíguos, menor padronização dos cenários BDD ou diferentes práticas de automação de testes. A própria sensibilidade dos modelos de IA à qualidade da entrada também pode afetar a reprodução dos resultados em outros contextos.
+\begin{itemize}
+    \item \textbf{Modelo e \textit{prompt} únicos.} Foi avaliado apenas o GPT-4o, com um único \textit{system prompt} de regras explícitas de transformação (20 regras, de 0 a 19). Não foram testados outros modelos, outras versões do mesmo modelo nem outras estruturas de \textit{prompt}, como o \textit{few-shot chain} de \citeonline{Nettur2025}. O padrão de erros observado, sobretudo o relacionado a seletores (63,0\% das falhas), pode ser específico dessa combinação.
+    \item \textbf{Caso único}, escolhido por conveniência, desenvolvido por estudantes (MDS e EPS) e com participação dos autores.
+    \item \textbf{Combinação tecnológica específica:} Cypress Copilot adaptado, Cypress com Cucumber e POM.
+    \item \textbf{Cenários com seletores explícitos}, escritos pelos autores.
+    \item \textbf{Aplicação sem IDs estáveis}, o que pode ter ampliado o peso das falhas de seletor.
+    \item \textbf{Funcionalidades dos 10 cenários excluídos} sem representação nos resultados.
+\end{itemize}
 
-Outro fator que limita a generalização é a dependência do ambiente tecnológico adotado, incluindo modelo de IA, extensão utilizada, framework Cypress e estrutura POM. Mudanças nessas tecnologias podem produzir resultados diferentes.
+\textbf{O que foi feito:} o contexto do caso, as adaptações da ferramenta, o \textit{system prompt} completo (Apêndice~\ref{ap:system-prompt}) e as versões das ferramentas (Cypress 13.17.0, \textbf{@badeball/cypress-cucumber-preprocessor} 21.0.3, Electron 118 e Node.js) foram documentados, para que o leitor avalie a aplicabilidade a outros contextos.
 
-Como forma de mitigação, buscou-se descrever de maneira legível a ferramenta utilizada, as adaptações realizadas e os procedimentos adotados, de modo a facilitar futuras replicações em contextos semelhantes.
+\textbf{Não mitigado:} a generalização para outros modelos, outras estruturas de \textit{prompt} e outras aplicações permanece em aberto e é indicada como trabalho futuro (Seção~\ref{sec:trabalhos-futuros}).
+
+\textbf{Alcance:} os achados são mais transferíveis para aplicações web de página única com seletores instáveis, gerando testes Cypress a partir de cenários com seletores indicados, com modelo e \textit{prompt} semelhantes aos usados. Não se estendem a cenários sem seletor, a outros modelos nem a outras estruturas de \textit{prompt}.
 
 \subsection{Ameaças à Confiabilidade}
 
-A confiabilidade refere-se à possibilidade de reproduzir o estudo com resultados consistentes. Neste trabalho, uma das principais ameaças está relacionada à variabilidade das respostas geradas pelo modelo de IA, que pode produzir saídas diferentes mesmo quando recebe entradas semelhantes.
+A confiabilidade refere-se à possibilidade de reproduzir o estudo com resultados consistentes.
 
-Outra ameaça decorre da dependência da ferramenta e do ambiente tecnológico adotado. Como o estudo utiliza uma versão adaptada do Cypress Copilot e modelos acessados por API, mudanças na ferramenta, no modelo de IA ou em suas versões podem influenciar os resultados obtidos.
-
-Como forma de mitigação, buscou-se documentar as etapas do estudo, as adaptações realizadas na ferramenta e os procedimentos de avaliação, de modo a permitir a reprodução do processo, ainda que pequenas variações nas saídas da IA possam ocorrer.
-
-
-\todo[inline, color=pink]{Os apontamentos a seguir precisam ser criteriosamente tratado.}
-
-
-
-O capítulo lista ameaças genéricas (qualidade dos cenários, dependência da ferramenta, variabilidade do modelo) com mitigações do tipo ``buscou-se''. Estas ameaças, que o notebook torna concretas,\textbf{não aparecem}:
-\begin{enumerate} 
-    \item \textbf{Viés do pesquisador.} Vocês enquanto autores, desenvolveram o CAPJu, escreveram os BDDs com conhecimento da interface, corrigiram os cenários e classificaram os erros.
-    \item \textbf{Conjunto de calibração = conjunto de avaliação.} O prompt foi ajustado nas mesmas USs (ver item 6).
-    \item \textbf{Contaminação de treino.} O CAPJu é público no GitHub desde 2023, então o GPT-4o pode ter visto o código. 
-    \item \textbf{Seletores fornecidos.} O que a IA fez foi ``usar o seletor dado'' ( ver item2). 
-    \item \textbf{Execução única por cenário} de um modelo não determinístico. O capítulo reconhece a variabilidade, mas não propõe repetição. O notebook mostra o caso US25, com resultados distintos para o mesmo BDD e o mesmo prompt.
-    \item \textbf{Critério de parada que garante 100\% de sucesso final} (os cenários são ajustados até funcionar). Isso é sobrevivência, não resultado.
-    \item \textbf{Seleção das USs e exclusão de 10 cenários.} Os 6 por CA ambíguo e os 4 por bugs são, de fato, achados relevantes para a QP. Hoje aparecem só como ``obstáculos''.
-    \item \textbf{Uso de IA na construção do instrumento}.
-    \item \textbf{Mitigações que não mitigam.} ``Buscou-se padronizar/documentar'' não é mitigação verificável. Cada ameaça precisa de ação concreta e evidência (por exemplo, ``repetimos N vezes'', ``duas pessoas codificaram'').
-    \item a classificação em construto/interna/externa/confiabilidade é atribuída a Wohlin. Utilizem  a definição deRuneson e Höst. Wohlin usa ``conclusão'' para experimentos.
- \end{enumerate}
+\begin{itemize}
+    \item \textbf{Viés e dependência dos pesquisadores.} Os autores participaram do desenvolvimento do CAPJu e, por isso, conheciam a interface ao escrever os cenários BDD e ao escolher e corrigir seletores. Os mesmos autores escreveram e corrigiram os cenários, registraram as observações e classificaram as 27 falhas. A classificação foi feita manualmente, a partir de texto livre, por uma única visão, e os registros nem sempre descrevem todas as alterações entre tentativas. Um pesquisador externo, sem esse conhecimento prévio, poderia precisar de mais tentativas ou escrever cenários diferentes. Esse conhecimento tende a favorecer o resultado.
+    \item \textbf{Uso de IA na construção do instrumento.} O Claude auxiliou na escrita das regras do \textit{prompt} e na consulta à arquitetura do CAPJu. Isso pode ter influenciado o instrumento.
+    \item \textbf{Não determinismo e versões.} Um modelo acessado por API pode mudar com o tempo, e execuções repetidas podem divergir. O estudo utilizou o GPT-4o, mas a versão exata do modelo, as datas das execuções e os parâmetros de geração, como a temperatura, não foram registrados.
+    \item \textbf{Validação dos seletores.} O critério de estabilidade do seletor foi verificado manualmente, por tentativa e erro, e não por um procedimento automatizado.
+\end{itemize}
