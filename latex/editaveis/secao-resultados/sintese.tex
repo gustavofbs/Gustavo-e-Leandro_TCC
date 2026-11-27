@@ -50,9 +50,9 @@ A eficácia avalia se a IA produz código estruturalmente completo a partir do c
 \legend{Fonte: Autores (2026).}
 \end{table}
 
-Foram gerados 546 Métodos de Passo e 428 Métodos POM, e nenhum método, em nenhuma das duas categorias, ficou sem implementação. Os totais somam todas as tentativas e, como o código é gerado novamente a cada tentativa, não representam métodos distintos. Por tentativa, a IA gerou de 5 a 15 Métodos de Passo (média de 10,1) e de 4 a 12 Métodos POM (média de 7,9). A completude foi de 100\% em todas as 54 tentativas, inclusive nas 27 que falharam na execução, e já havia sido de 100\% nas três etapas de calibração do \textit{system prompt}.
+Foram gerados 546 Métodos de Passo e 428 Métodos POM, e nenhum método, em nenhuma das duas categorias, ficou sem implementação. Os totais somam todas as tentativas e, como o código é gerado novamente a cada tentativa, não representam métodos distintos. Por tentativa, a IA gerou de 5 a 15 Métodos de Passo (média de 10,1) e de 4 a 12 Métodos POM (média de 7,9). A completude foi de 100\% em todas as 54 tentativas, inclusive nas 27 que falharam na execução, e já havia sido de 100\% nas três etapas de calibração do \textit{prompt} de sistema.
 
-A eficácia, portanto, não variou entre os cenários, e não há diferença a ser explicada por essa métrica. Isso não permite afirmar que a escrita do BDD seja irrelevante para a completude, pois a ausência de variação indica um efeito teto: nas condições do estudo (modelo, ferramenta e \textit{system prompt}), a métrica ficou saturada e não discriminou cenários mais bem ou mais mal escritos. Além disso, ela mede apenas a completude estrutural: um método com corpo implementado conta como completo mesmo que o seletor utilizado esteja errado e o teste falhe, como ocorreu nas 27 execuções com falha. A influência da escrita do BDD aparece, por isso, na qualidade.
+A eficácia, portanto, não variou entre os cenários, e não há diferença a ser explicada por essa métrica. Isso não permite afirmar que a escrita do BDD seja irrelevante para a completude, pois a ausência de variação indica um efeito teto: nas condições do estudo (modelo, ferramenta e \textit{prompt} de sistema), a métrica ficou saturada e não discriminou cenários mais bem ou mais mal escritos. Além disso, ela mede apenas a completude estrutural: um método com corpo implementado conta como completo mesmo que o seletor utilizado esteja errado e o teste falhe, como ocorreu nas 27 execuções com falha. A influência da escrita do BDD aparece, por isso, na qualidade.
 
 \subsection{Qualidade: erros sintáticos e de execução (Métrica 1.9)}
 \label{subsec:qualidade}
@@ -64,7 +64,7 @@ Apenas 12 dos 27 cenários (44,4\%) executaram sem erros na primeira execução,
 Quatro ressalvas de método devem ser consideradas na leitura desse resultado:
 
 \begin{enumerate}
-    \item A primeira execução da base é a primeira com o \textit{system prompt} definitivo, mas os cenários BDD já haviam sido escritos e ajustados na calibração. O valor de 44,4\% tende, por isso, a ser favorável em relação a uma primeira geração.
+    \item A primeira execução da base é a primeira com o \textit{prompt} de sistema definitivo, mas os cenários BDD já haviam sido escritos e ajustados na calibração. O valor de 44,4\% tende, por isso, a ser favorável em relação a uma primeira geração.
     \item O resultado de 100\% de cenários sem erro após as correções decorre do protocolo, no qual cada cenário foi ajustado até funcionar. Esse indicador apenas confirma o protocolo, pois toda execução bem-sucedida é, por definição, livre de erros. Por isso, ele não foi usado como medida de qualidade.
     \item A proporção de 50\% de execuções sem erro (27 de 54) equivale ao inverso da média de execuções por cenário (1 ÷ 2,0) e depende da política de correção adotada. Ela também serve apenas como contexto.
     \item Cada cenário teve uma única geração inicial, de modo que o resultado da primeira execução pode refletir também a variabilidade do modelo, e não apenas a escrita do BDD, como exemplificam a US16-CA00 e a US25-CA00 (Seções~\ref{subsec:correcoes} e~\ref{subsec:imprevisibilidade}).

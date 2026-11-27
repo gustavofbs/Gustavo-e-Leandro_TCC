@@ -7,7 +7,7 @@ As seções anteriores mostraram quanto esforço cada cenário exigiu, mas não 
 \subsection{O que foi alterado para o teste passar}
 \label{subsec:correcoes}
 
-Em todas as tentativas da execução final foram mantidos o mesmo modelo (GPT-4o), o mesmo \textit{system prompt} e a mesma aplicação. Dentro de um mesmo cenário, o que muda de uma tentativa para a seguinte é, portanto, o BDD ou o acaso do modelo. Para cada cenário que precisou de mais de uma tentativa, a alteração foi classificada a partir do registro dos autores na tentativa bem-sucedida. A classificação usou o texto das observações, e não a comparação automática da coluna do cenário BDD entre execuções, porque essa coluna nem sempre reflete as alterações descritas (por exemplo, na US36-CA00 e na US09-CA02). A Tabela~\ref{tab:correcoes} apresenta o resultado.
+Em todas as tentativas da execução final foram mantidos o mesmo modelo (GPT-4o), o mesmo \textit{prompt} de sistema e a mesma aplicação. Dentro de um mesmo cenário, o que muda de uma tentativa para a seguinte é, portanto, o BDD ou o acaso do modelo. Para cada cenário que precisou de mais de uma tentativa, a alteração foi classificada a partir do registro dos autores na tentativa bem-sucedida. A classificação usou o texto das observações, e não a comparação automática da coluna do cenário BDD entre execuções, porque essa coluna nem sempre reflete as alterações descritas (por exemplo, na US36-CA00 e na US09-CA02). A Tabela~\ref{tab:correcoes} apresenta o resultado.
 
 \begin{table}[htb]
 \centering
@@ -39,7 +39,7 @@ US36-CA00 & 2 & Passo removido ou BDD reformulado \\
 
 Dos 15 cenários que precisaram de correção, 13 (86,7\%) foram resolvidos alterando a escrita do BDD: troca do seletor ou do ID do elemento (7), inclusão do índice [N] para elemento repetido (3), remoção das aspas do texto do passo (1) e remoção de passo ou reformulação do BDD (2). Na US36-CA00, por exemplo, o passo que verificava o \textit{status} ``Arquivado'' teve de ser removido porque o texto nunca aparece naquele elemento. Na US41-CA00, o BDD foi reformulado com um novo ID para o menu Processos. Em apenas 2 cenários (13,3\%), US16-CA00 e US25-CA00, o teste passou na última tentativa sem nenhuma alteração no BDD em relação à anterior, o que sugere variabilidade do modelo. Na US25-CA00, porém, a primeira falha já havia exigido uma troca de seletor no BDD (Seção~\ref{subsec:imprevisibilidade}).
 
-Como o \textit{system prompt}, o modelo e a aplicação não mudaram, podemos afirmar que esse padrão é compatível com a hipótese de que a forma de escrita do BDD influencia a qualidade do código gerado (Métrica 1.9).
+Como o \textit{prompt} de sistema, o modelo e a aplicação não mudaram, podemos afirmar que esse padrão é compatível com a hipótese de que a forma de escrita do BDD influencia a qualidade do código gerado (Métrica 1.9).
 
 \subsection{Causas das falhas}
 \label{subsec:causas-erros}
@@ -113,7 +113,7 @@ Os 37,0\% restantes têm origem mista (geração de código pela Inteligência A
 \subsection{Imprevisibilidade da IA: dois casos}
 \label{subsec:imprevisibilidade}
 
-Dois cenários ilustram a imprevisibilidade do modelo mesmo com um \textit{system prompt} robusto: um erro de geração sensível à notação do BDD (US06-CA00) e um caso em que o mesmo BDD produziu resultados diferentes (US25-CA00). A Tabela~\ref{tab:casos} reúne a evidência registrada tentativa a tentativa.
+Dois cenários ilustram a imprevisibilidade do modelo mesmo com um \textit{prompt} de sistema robusto: um erro de geração sensível à notação do BDD (US06-CA00) e um caso em que o mesmo BDD produziu resultados diferentes (US25-CA00). A Tabela~\ref{tab:casos} reúne a evidência registrada tentativa a tentativa.
 
 \begin{table}[htb]
 \centering
@@ -136,6 +136,6 @@ US25-CA00 & 3 & S & -- & -- \\
 \legend{Fonte: Autores (2026).}
 \end{table}
 
-Na US06-CA00, o texto dos passos não mudou nas cinco primeiras tentativas, e os erros foram de geração de código: primeiro uma divergência de aspas e depois, repetidamente, definições duplicadas. Só na sexta tentativa o teste passou, depois que as aspas duplas foram removidas do BDD. Isso sugere que uma pequena alteração de notação pode produzir erros repetidos mesmo com um \textit{system prompt} mais técnico.
+Na US06-CA00, o texto dos passos não mudou nas cinco primeiras tentativas, e os erros foram de geração de código: primeiro uma divergência de aspas e depois, repetidamente, definições duplicadas. Só na sexta tentativa o teste passou, depois que as aspas duplas foram removidas do BDD. Isso sugere que uma pequena alteração de notação pode produzir erros repetidos mesmo com um \textit{prompt} de sistema mais técnico.
 
-Na US25-CA00, a primeira falha decorreu de um seletor dinâmico, corrigido no BDD. A segunda ocorreu porque o modelo não interpretou que o passo das quatro colunas descrevia quatro verificações separadas. Na terceira tentativa, com o BDD idêntico ao da segunda, o teste passou, e o modelo passou a interpretar corretamente a mesma instrução. Esse caso evidencia a natureza de caixa-preta do modelo e sua variabilidade, onde com o BDD e \textit{system prompt} fixos, o resultado pode variar entre execuções. Esse achado sustenta a limitação de que não há garantia de sucesso na primeira execução.
+Na US25-CA00, a primeira falha decorreu de um seletor dinâmico, corrigido no BDD. A segunda ocorreu porque o modelo não interpretou que o passo das quatro colunas descrevia quatro verificações separadas. Na terceira tentativa, com o BDD idêntico ao da segunda, o teste passou, e o modelo passou a interpretar corretamente a mesma instrução. Esse caso evidencia a natureza de caixa-preta do modelo e sua variabilidade, onde com o BDD e \textit{prompt} de sistema fixos, o resultado pode variar entre execuções. Esse achado sustenta a limitação de que não há garantia de sucesso na primeira execução.

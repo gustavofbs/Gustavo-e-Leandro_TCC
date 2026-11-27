@@ -47,8 +47,8 @@ CA ambíguo & 6 & US01-CA00, US01-CA01, US01-CA03, US19-CA00, US19-CA01, US19-CA
 Para o tratamento dos dados, foram adotadas as seguintes premissas:
 
 \begin{itemize}
-    \item Apenas a execução final foi considerada na análise. As fases de calibração do \textit{system prompt} ficaram de fora, pois constituem uma etapa exploratória de ajuste do instrumento, e não uma medição de resultados. Além disso, só a execução final registra, tentativa a tentativa, se o teste gerado de fato executou com sucesso.
-    \item O mesmo modelo (GPT-4o) e o mesmo \textit{system prompt} definitivo, composto por 20 regras (numeradas de 0 a 19), foram usados em todas as tentativas.
+    \item Apenas a execução final foi considerada na análise. As fases de calibração do \textit{prompt} de sistema ficaram de fora, pois constituem uma etapa exploratória de ajuste do instrumento, e não uma medição de resultados. Além disso, só a execução final registra, tentativa a tentativa, se o teste gerado de fato executou com sucesso.
+    \item O mesmo modelo (GPT-4o) e o mesmo \textit{prompt} de sistema definitivo, composto por 20 regras (numeradas de 0 a 19), foram usados em todas as tentativas.
     \item Cada cenário termina com exatamente uma tentativa bem-sucedida, que é a última registrada. Assim, o número de tentativas de um cenário equivale ao número de execuções até o primeiro teste sem erros, e as 54 tentativas se dividem em 27 sucessos e 27 falhas.
     \item As contagens das Métricas 1.1 a 1.4 foram extraídas automaticamente pela extensão adaptada a partir do código gerado, e as frações das Métricas 1.5 a 1.8 foram calculadas a partir dessas contagens. A Métrica 1.9 foi avaliada pelo resultado (S ou N) de cada execução, considerando-se livre de erros o cenário cuja primeira tentativa resultou em S.
 \end{itemize}
