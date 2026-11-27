@@ -1,4 +1,4 @@
-\documentclass[12pt,openright,twoside,a4paper,english,french,spanish,brazil]{abntex2}
+\documentclass[12pt,openany,twoside,a4paper,english,french,spanish,brazil]{abntex2}
 
 \input{fixos/pacotes}
 \input{fixos/comandos}
@@ -6,6 +6,9 @@
 \usepackage{caption}
 \usepackage{graphicx}
 \usepackage{longtable}
+\usepackage{fvextra}
+\usepackage{xurl}
+\fvset{breakanywheresymbolpre={}, breaksymbolleft={}}
 
 
 \input{editaveis/informacoes}
@@ -39,10 +42,12 @@
 \input{editaveis/referencialteorico}
 \input{editaveis/revisao}
 \input{editaveis/proposta}
+\input{editaveis/execucao}
 %\input{editaveis/inteligencia}
+\input{editaveis/resultados}
 %\input{editaveis/aspectosgerais}
 %\input{editaveis/consideracoes}
-%\input{editaveis/conclusao}
+\input{editaveis/conclusao}
 %\input{editaveis/textoepostexto}
 %\input{editaveis/elementosdotexto}
 %\input{editaveis/elementosdopostexto}
@@ -52,7 +57,7 @@
 \postextual
 
 \bibliography{bibliografia} 
-%\input{editaveis/apendices}
+\input{editaveis/apendices}
 %\input{editaveis/anexos}
 \printindex
 

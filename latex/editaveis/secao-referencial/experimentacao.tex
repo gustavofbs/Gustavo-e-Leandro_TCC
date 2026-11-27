@@ -97,9 +97,9 @@ Segundo \citeonline{Wohlin:2012:ESE:2349018}, o processo de experimento é compo
 
 \section{Verificação e Validação de Software}
 
-Segundo a ISO/IEC/IEEE 29119-1 e a ISO/IEC/IEEE 12207, a Verificação e Validação (V\&V) consistem em processos diferentes, mas que se complementam e contribuem para a gestão da qualidade em engenharia de software utilizando o teste como uma das suas principais práticas \cite{iso29119_1_2022,iso12207_2017}.
+Segundo a ISO/IEC/IEEE 29119-1 e a ISO/IEC/IEEE 12207, a Verificação e Validação (V\&V) consistem em processos diferentes, mas que se complementam e contribuem para a gestão da qualidade em engenharia de software utilizando o teste como uma das suas principais práticas \cite{iso29119_1_2022,iso12207_2026}.
 
-A verificação tem como objetivo confirmar que um item de teste está em conformidade com as especificações, requisitos e demais artefatos de desenvolvimento para responder se o produto está sendo construído corretamente \cite{iso29119_1_2022,iso12207_2017}. Já a validação tem como foco "a aceitabilidade do item de teste para atender às necessidades das partes interessadas, quando usado conforme o previsto" \cite[p.~16, tradução nossa]{iso29119_1_2022}, ou seja, se o produto construído é o produto certo na visão do usuário e do negócio \cite{iso12207_2017}.
+A verificação tem como objetivo confirmar que um item de teste está em conformidade com as especificações, requisitos e demais artefatos de desenvolvimento para responder se o produto está sendo construído corretamente \cite{iso29119_1_2022,iso12207_2026}. Já a validação tem como foco "a aceitabilidade do item de teste para atender às necessidades das partes interessadas, quando usado conforme o previsto" \cite[p.~16, tradução nossa]{iso29119_1_2022}, ou seja, se o produto construído é o produto certo na visão do usuário e do negócio \cite{iso12207_2026}.
 
 O teste de software é uma das principais práticas que é utilizada tanto em verificação quanto em validação e pode ser conduzido por meio de abordagens estáticas ou dinâmicas. No teste estático a avaliação acontece sem a execução do código, por isso esse tipo de teste pode ser aplicado a documentos e código-fonte. Já o teste dinâmico precisa da execução do software e é aplicado em código executável permitindo observar o comportamento do sistema em tempo de execução \cite{iso29119_1_2022}.
 
@@ -117,17 +117,18 @@ Devido ao tamanho e à complexidade dos sistemas de software, a execução de te
 
 As técnicas de design de teste são definidas como "procedimento utilizado para criar ou selecionar um modelo de teste, identificar itens de cobertura de teste e derivar os casos de teste correspondentes" \cite[p.~11, tradução nossa]{iso29119_1_2022}. De acordo com a ISO/IEC/IEEE 29119-4, essas técnicas podem ser classificadas em técnicas baseadas em especificação, nas quais os testes são derivados das entradas e saídas do sistema ou produto, sem que o testador precise conhecer detalhes da implementação; técnicas baseadas em estrutura, nas quais o testador observa como o software foi construído, geralmente analisando o código, e cria testes para partes específicas dele; e técnicas baseadas em experiência, nas quais os testes são criados a partir da experiência e do conhecimento do testador \cite{iso29119_4_2021,iso29119_1_2022}.
 
-Neste trabalho, destacam-se as técnicas baseadas em especificação, pois os cenários de Desenvolvimento Orientado por Comportamento (BDD) derivam os testes a partir do comportamento descrito nos requisitos, sem depender do código-fonte.
+Neste trabalho, destacam-se as técnicas baseadas em especificação, pois os cenários de BDD derivam os testes a partir do comportamento descrito nos requisitos, sem depender do código-fonte.
 
 \section{Metodologias Ágeis}
 
 \subsection{As Origens Iterativas e Evolucionárias}
 
 A Programação Extrema (XP) e o Scrum ganharam notoriedade no final da década de 1990, porém a base dos métodos ágeis está nas práticas de ciclo de vida iterativo e incremental que foram aplicadas com sucesso no desenvolvimento de software desde a década de 1960, como no Projeto Mercury \cite{Larman2003iid}. De acordo com \citeonline{Larman2003iid}, essas abordagens evolutivas foram uma alternativa ao modelo sequencial em cascata que dominava a engenharia de software na época. O modelo sequencial em cascata oferecia a ilusão de ordem e controle, enquanto as abordagens evolutivas defendiam a implementação em pequenos passos baseada em retorno \cite{Larman2003iid}.
+Entretanto, foi com os métodos ágeis que o ciclo de entregas contínuas e a colaboração com o cliente se tornaram práticas amplamente difundidas, permitindo que as equipes de desenvolvimento de software respondessem rapidamente às mudanças nos requisitos, se transformando na abordagem proeminente do desenvolvimento de software moderno \cite{lopez-fernandez_2022}.
 
 \subsection{O Surgimento das Metodologias \textit{Lightweight}}
 
-A insatisfação com métodos complexos focados em documentação, medição e ferramentas gerou um movimento em direção a metodologias mais leves no final da década de 1990 \cite{Hoda2018re}. Kent Beck desenvolveu a Programação Extrema (XP) originalmente para atender às necessidades de pequenas e médias equipes lidando com requisitos vagos e em constante mudança \cite{Beck2004}. 
+A insatisfação com métodos complexos focados em documentação, medição e ferramentas gerou um movimento em direção a metodologias mais leves no final da década de 1990 \cite{Hoda2018re}. Kent Beck desenvolveu a XP originalmente para atender às necessidades de pequenas e médias equipes lidando com requisitos vagos e em constante mudança \cite{Beck2004}. 
 
 \subsection{A Formalização do Movimento Ágil}
 
@@ -140,21 +141,21 @@ O Manifesto Ágil surgiu em 2001, quando 17 pessoas se reuniram em Utah para bus
     \item Responder a mudanças mais que seguir um plano.
 \end{itemize}
 
-Conforme \citeonline[não paginado, tradução nossa]{FowlerHighsmith2001}, o manifesto enfatizou que, "mesmo havendo valor nos itens à direita, valorizamos mais os itens à esquerda".  
 
-\section{Behavior-Driven Development}
+
+\section{Desenvolvimento Orientado por Comportamento (BDD)}
 
 \subsection{Raízes no Desenvolvimento Orientado por Testes (TDD)}
 
-O Desenvolvimento Orientado por Comportamento (BDD) é uma abordagem ágil que surgiu como uma resposta aos problemas e desafios observados na prática do Desenvolvimento Orientado por Testes (TDD) \cite{Solis2011}. O TDD, apesar de ser uma técnica eficaz \cite{smart2014bdd}, apresentava alguns conflitos: "os programadores não queriam escrever testes; os testadores não queriam que os programadores escrevessem testes; e os stakeholders de negócio não viam valor em nada que não fosse código de produção" \cite[p.~xviii, tradução nossa]{smart2014bdd}.
+O BDD é uma abordagem ágil que surgiu como uma resposta aos problemas e desafios observados na prática do Desenvolvimento Orientado por Testes (TDD) \cite{Solis2011}. O TDD, apesar de ser uma técnica eficaz \cite{smart2014bdd}, apresentava alguns conflitos: "os programadores não queriam escrever testes; os testadores não queriam que os programadores escrevessem testes; e os stakeholders de negócio não viam valor em nada que não fosse código de produção" \cite[p.~xviii, tradução nossa]{smart2014bdd}.
 
 Conforme \citeonline{smart2014bdd}, o BDD foi concebido por Dan North no início e meados dos anos 2000. Segundo o autor, em vez de focar em testes e validação de métodos, North reorientou a prática para o comportamento esperado do software. Essa mudança de foco respondia à demanda dos desenvolvedores que se sentiam confusos ao usar o TDD \cite{Solis2011}.
 
-O BDD pode ser considerado uma evolução do TDD e do Desenvolvimento Orientado por Testes de Aceitação (ATDD) \cite{Solis2011}. Segundo \citeonline[p.~383, tradução nossa]{Solis2011}, "o ATDD é um tipo de TDD no qual o processo de desenvolvimento é guiado por testes de aceitação que representam os requisitos dos stakeholders". O BDD, por sua vez, baseia-se no ATDD, mas oferece uma linguagem específica fazendo com que seus testes sejam mais claros e compreensíveis \cite{Solis2011}.
+O BDD geralmente é considerado uma evolução do TDD e do Desenvolvimento Orientado por Testes de Aceitação (ATDD) \cite{Solis2011}. Segundo \citeonline[p.~383, tradução nossa]{Solis2011}, "o ATDD é um tipo de TDD no qual o processo de desenvolvimento é guiado por testes de aceitação que representam os requisitos dos stakeholders". O BDD, por sua vez, baseia-se no ATDD, mas oferece uma linguagem específica fazendo com que seus testes sejam mais claros e compreensíveis \cite{Solis2011}.
 
 \subsection{A Formalização da Linguagem e o Foco no Comportamento}
 
-O Desenvolvimento Orientado por Comportamento (BDD) se baseia na especificação do comportamento do sistema e na definição de especificações executáveis \cite{Solis2011}. Segundo \citeonline{smart2014bdd}, Dan North e o analista de negócios Chris Matts passaram a utilizar o formato Dado-Quando-Então para aplicar essa abordagem à análise de requisitos. 
+O BDD se baseia na especificação do comportamento do sistema e na definição de especificações executáveis \cite{Solis2011}. Segundo \citeonline{smart2014bdd}, Dan North e o analista de negócios Chris Matts passaram a utilizar o formato Dado-Quando-Então para aplicar essa abordagem à análise de requisitos. 
 
 O formato Dado-Quando-Então descreve cenários de comportamento de forma clara \cite{smart2014bdd}:
 
@@ -164,33 +165,20 @@ O formato Dado-Quando-Então descreve cenários de comportamento de forma clara 
     \item \textbf{Então}: especifica o resultado esperado.
 \end{itemize}
 
-Essa notação deu origem ao Gherkin, que é adotado por muitas ferramentas de BDD \cite{smart2014bdd}. Por serem escritos em linguagem comum e estruturada, os cenários permitem que desenvolvedores, testadores e analistas de negócio consigam definir os requisitos em conjunto \cite{smart2014bdd}.
+Essa notação evoluiu para o Gherkin, que é adotado por muitas ferramentas de BDD para a escrita de cenários \cite{smart2014bdd}. Por serem escritos em linguagem comum e estruturada, os cenários permitem que desenvolvedores, testadores e analistas de negócio consigam definir os requisitos em conjunto \cite{smart2014bdd}.
 
-\section{Processamento de Linguagem Natural}
+\subsection{Automação de Testes com Cypress e Cucumber}
 
-O Processamento de Linguagem Natural (NLP) é uma subárea da ciência da computação que permite que os computadores interpretem a linguagem humana. O NLP é formado por um conjunto de técnicas que têm como objetivo extrair informações de forma estruturada de documentos escritos em linguagem natural \cite{Wang2022}.
+Os testes automatizados são testes executados por \textit{scripts} ou ferramentas, que comparam o resultado de cada execução com o resultado esperado \cite{iso29119_1_2022}. O Cypress é um \textit{framework} gratuito e de código aberto que permite escrever e executar testes automatizados de aplicações \textit{web} \cite{cypressdocs}. No entanto, seus testes são escritos em código, o que os torna difíceis de entender para pessoas não técnicas. É nesse ponto que entra o BDD, uma abordagem que busca facilitar o entendimento entre todos os membros do time \cite{smart2014bdd}. No BDD, os cenários são escritos em linguagem próxima da natural, e o Gherkin é uma das notações usadas para isso. O Cucumber é uma ferramenta que permite executar esses cenários como testes automatizados \cite{cucumberdocs}. Assim, o Cucumber pode ser usado em conjunto com o Cypress para que todo o time compreenda os testes automatizados.
 
-Segundo \citeonline{Wang2022}, o NLP é geralmente organizado como um pipeline de processamento formado por múltiplas camadas analíticas. Entre as técnicas e etapas de processamento tradicionalmente utilizadas, destacam-se:
+Nesta pesquisa, o Cypress foi utilizado com o \textit{plugin} do Cucumber para converter cenários BDD, escritos em Gherkin, em código de teste automatizado de uma forma que todos consigam entender. Para isso, foram utilizados três elementos: o arquivo \textit{feature}, que contém o cenário BDD no formato \textit{Given-When-Then}; o Modelo de Objeto de Página (POM), que concentra os seletores pertencentes a cada página; e os métodos de passo (\textit{step definitions}), que contêm o código de execução do teste, com uma implementação para cada passo do Gherkin descrito na \textit{feature} \cite{Nettur2025}. O Cucumber foi escolhido porque o objetivo desta pesquisa é estudar como os cenários BDD podem ser escritos e detalhados para que, a partir deles, sejam gerados testes automatizados com o apoio de inteligência artificial (IA).
 
-\begin{itemize}
-    \item \textbf{Tokenização}: é responsável por dividir frases em pequenas partes chamadas de tokens, geralmente com base em regras predefinidas \cite{Wang2022}.
-
-    \item \textbf{Identificação da Classe Gramatical (POS)}: atribui a cada palavra sua classe gramatical, como substantivo, verbo ou pronome \cite{Wang2022}.
-
-    \item \textbf{Lematização}: é responsável por transformar as palavras em sua forma base. A palavra comendo, por exemplo viraria comer. No trabalho de \citeonline{Rotaru2023} essa técnica foi utilizada em conjunto com a tokenização e etiquetagem de Classe Gramatical para padronizar os dados textuais.
-
-    \item \textbf{Reconhecimento de Entidades Nomeadas (NER)}: identifica e classifica entidades específicas em categorias como pessoas, organizações ou localidades (WANG et al., 2022; LI et al., 2020).
-
-    \item \textbf{Rotulação de Papéis Semânticos (SRL)}: identifica a função de cada elemento em uma frase, como quem realiza e quem recebe uma ação e em quais circunstâncias ela acontece \cite{Wang2022, Paduraru2025}. É utilizada em situações que exigem interpretação de comportamentos, como no mapeamento Dado-Quando-Então do Desenvolvimento Orientado por Comportamento (BDD) \cite{Paduraru2025}.
-\end{itemize}
-
-O NLP possui aplicações diretas em engenharia de software. Em BDD, por exemplo, os cenários são escritos em linguagem natural \cite{Mastain2023}, o que permite aplicar técnicas de NLP para extrair a informação de seus passos e gerar casos de teste automaticamente \cite{Paduraru2025}.
 
 \section{Inteligência Artificial}
 
-Os Grandes Modelos de Linguagem (LLMs) são modelos treinados com grandes quantidades de textos que possuem a capacidade de realizar tarefas como gerar textos e códigos de programação. Além da geração de código, esses modelos são capazes de revisar código e escrever requisitos \cite{Brockenbrough2025}. Os LLMs também são capazes de gerar casos de teste a partir de critérios de aceitação \cite{Pysmennyi2025}.
+Os Grandes Modelos de Linguagem (LLMs) são modelos treinados com grandes quantidades de textos, capazes de realizar tarefas como gerar textos e códigos de programação. Muitos deles não são treinados apenas com textos, mas também com imagens, vídeos e outros tipos de dados, e por isso são chamados de multimodais \cite{OpenAI2024GPT4o}. Além de gerar textos e códigos, esses modelos são capazes de revisar código e escrever requisitos \cite{Brockenbrough2025}. Os LLMs também são capazes de gerar casos de teste a partir de critérios de aceitação (CAs) \cite{Pysmennyi2025}. Os cenários BDD escritos em Gherkin utilizam texto, por isso o foco deste trabalho é utilizar LLMs para interpretar os cenários em texto e gerar código.
 
-Os cenários escritos em Desenvolvimento Orientado por Comportamento (BDD) utilizam linguagem natural, mas, por esse motivo, eles podem ser ambíguos, dificultando a interpretação. LLMs como o GPT-4 Turbo conseguem gerar cenários de teste úteis a partir de histórias de usuário, que também são escritas em linguagem natural, e até revelar casos não considerados inicialmente, demonstrando capacidade de lidar com descrições pouco claras \cite{Ferreira2025}. 
+Os cenários escritos em BDD utilizam linguagem natural, mas, por esse motivo, eles podem ser ambíguos, dificultando a interpretação. LLMs como o GPT-4 Turbo conseguem gerar cenários de teste úteis a partir de histórias de usuário (HUs), que também são escritas em linguagem natural, e até revelar casos não considerados inicialmente, demonstrando capacidade de lidar com descrições pouco claras \cite{Ferreira2025}. 
 
 Além disso, LLMs conseguem transformar as descrições textuais dos cenários BDD em código para frameworks de teste como o Cypress, desde que recebam também o código HTML das páginas testadas \cite{Ferreira2025}. Isso acontece porque os cenários BDD escritos em Gherkin carecem de identificadores dos elementos da interface, o que faz com que, mesmo que o código gerado seja sintaticamente correto, ele possa não ser executável.
 
@@ -198,6 +186,7 @@ Além disso, LLMs conseguem transformar as descrições textuais dos cenários B
 
 A ISO/IEC 25010 é uma referência importante para a avaliação da qualidade de software, e suas características e subcaracterísticas fornecem ferramentas para especificar a qualidade, possibilitando maior consistência entre requisitos de desenvolvimento. Apesar de sua relevância, ela possui uma limitação importante: define o que é qualidade, mas não descreve como operacionalizar essa qualidade na prática. Segundo \citeonline[p.~2, tradução nossa]{Wagner2016}, modelos como a ISO/IEC 25010 “não especificam como os atributos de qualidade devem ser medidos e como os resultados das medições podem ser agregados para obter uma avaliação geral da qualidade de um sistema”. Os autores também destacam que “modelos do primeiro tipo, por exemplo a ISO 25010, descrevem e estruturam conceitos gerais que constituem um software de alta qualidade. A maioria deles, contudo, não se presta a ser utilizada para a avaliação ou a melhoria efetiva da qualidade” \cite[p.~1, tradução nossa]{Wagner2016}.
 
-A norma não apresenta metodologias como o Desenvolvimento Orientado por Comportamento (BDD). Entretanto, dentro da ISO/IEC 25010, a característica manutenibilidade e sua subcaracterística testabilidade oferecem o fundamento conceitual necessário para contextualizar o papel do BDD nesta pesquisa. A testabilidade é definida como o "grau de eficácia e eficiência com que critérios de teste podem ser estabelecidos para um sistema, produto ou componente, e com que testes podem ser realizados para determinar se esses critérios foram atendidos" \cite[p.~15, tradução nossa]{ISO25010}.
+A norma não apresenta metodologias como o BDD. Entretanto, dentro da ISO/IEC 25010, a característica manutenibilidade e sua subcaracterística testabilidade oferecem o fundamento conceitual necessário para contextualizar o papel do BDD nesta pesquisa. A testabilidade é definida como o "grau de eficácia e eficiência com que critérios de teste podem ser estabelecidos para um sistema, produto ou componente, e com que testes podem ser realizados para determinar se esses critérios foram atendidos" \cite[p.~15, tradução nossa]{ISO25010}.
 
 Nesse sentido, o BDD pode contribuir para a testabilidade ao descrever comportamentos do sistema em cenários estruturados Dado-Quando-Então, que, quando bem escritos, reduzem ambiguidades e tornam mais claros os critérios de verificação. Assim, mesmo sem propor metodologias específicas, a ISO/IEC 25010 fornece a base conceitual que permite relacionar o uso do BDD à melhoria da testabilidade. 
+
