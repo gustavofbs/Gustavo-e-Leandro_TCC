@@ -5,12 +5,13 @@ Após a definição da \textit{string} de busca e a seleção dos estudos, proce
 
 
 \subsection{Quais padrões e boas práticas de escrita em BDD já são utilizados para reduzir ambiguidades em cenários de teste?}
+\label{qp:2}
 
 Os padrões e boas práticas de escrita em formato BDD desempenham um papel central na estruturação e no refinamento de cenários de teste, constituindo um mecanismo essencial para reduzir ambiguidades e promover um entendimento compartilhado entre as partes interessadas técnicas e não técnicas \cite{Alinezhadtilaki2025}. O elemento estruturante desse processo é a linguagem Gherkin, cuja natureza semiestruturada e legível \cite{Karpurapu2024} por humanos permite descrever comportamentos de forma clara e consistente \cite{Alinezhadtilaki2025}. O padrão fundamental utilizado é o modelo Dado-Quando-Então, que define o comportamento esperado do sistema: o \textbf{Dado} estabelece o contexto inicial ou as pré-condições relevantes; o \textbf{Quando} descreve a ação executada pelo usuário ou pelo sistema que desencadeia o comportamento analisado; e o \textbf{Então} especifica o resultado esperado após a conclusão da ação \cite{GUPTA2023102141}.
 
 Segundo \cite{Alinezhadtilaki2025}, a escrita eficaz de cenários BDD depende da adesão a essa estrutura e da clareza da linguagem empregada, de modo a minimizar subjetividades e eliminar ambiguidades. A conformidade de estrita com o formato contribui para a uniformidade da comunicação entre equipes, reduzindo falhas interpretativas e inconsistências na implementação. Além disso, espera-se que os cenários apresentem atributos como unicidade, integridade, clareza e foco, de forma que a descrição dos comportamentos seja acessível e facilmente operacionalizável. Outro princípio importante é a restrição da granularidade: cada cenário deve contemplar apenas uma ação realizada por um único tipo de usuário sobre um único objeto \cite{GUPTA2023102141}. Caso múltiplas ações ou objetos sejam envolvidos, recomenda-se a decomposição em cenários menores e mais específicos \cite{GUPTA2023102141}. Para ampliar a reutilização e abrangência dos testes, emprega-se também o padrão \textit{Scenario Outline} \cite{Paduraru2025}, associado a tabelas de exemplos, o que possibilita testar diversas instâncias de um mesmo modelo de comportamento sem redundância. A isso somam-se modelos de requisitos restritos, como a Modelagem de Casos de Uso Restrita (RUCM) \cite{Wang2022}, que, ao incorporá-los com palavras-chave e regras rígidas de construção, contribuem para reduzir imprecisões e aumentar o potencial de análise automatizada das especificações, mesmo permitindo o uso do vocabulário completo do inglês desde que com complexidade sintática limitada.
 
-A utilização de técnicas e ferramentas de suporte, especialmente com a incorporação de recursos de IA, tem se mostrado decisiva para garantir a consistência dos padrões de escrita e a mitigação de ambiguidades. Ferramentas de validação sintática, como o \textit{Gherkin-lint} \cite{Karpurapu2024}, são usadas para identificar violações de sintaxe e assegurar conformidade com diretrizes de estilo, superando limitações inerentes à revisão manual. Na geração automatizada de cenários BDD por meio de LLMs, destaca-se o uso de \textit{few-shot prompting} \cite{Karpurapu2024}, técnica que, ao fornecer exemplos previamente curados, aumenta a precisão dos cenários produzidos e reduz erros sintáticos \cite{Karpurapu2024}. Adicionalmente, métodos de RAG enriquecem o contexto fornecido aos modelos com dados internos, como documentação e conhecimento organizacional, resultando em cenários mais completos e alinhados com a lógica de negócio \cite{Pysmennyi2025}. A participação humana por meio da abordagem \textit{human-in-the-loop} permanece indispensável, pois permite que especialistas revisem, ajustem e validem os cenários gerados, garantindo sua aderência ao comportamento esperado do sistema \cite{Pysmennyi2025}.
+A utilização de técnicas e ferramentas de suporte, especialmente com a incorporação de recursos de IA, tem se mostrado decisiva para garantir a consistência dos padrões de escrita e a mitigação de ambiguidades. Ferramentas de validação sintática, como o \textit{Gherkin-lint} \cite{Karpurapu2024}, são usadas para identificar violações de sintaxe e assegurar conformidade com diretrizes de estilo, superando limitações inerentes à revisão manual. Na geração automatizada de cenários BDD por meio de LLMs, destaca-se o uso de \textit{few-shot prompting} \cite{Karpurapu2024}, técnica que, ao fornecer exemplos previamente curados, aumenta a precisão dos cenários produzidos e reduz erros sintáticos \cite{Karpurapu2024}. Adicionalmente, métodos de RAG enriquecem o contexto fornecido aos modelos com dados internos, como documentação e conhecimento organizacional, resultando em cenários mais completos e alinhados com a lógica de negócio \cite{Pysmennyi2025}. A participação humana por meio da abordagem \textit{human-in-the-loop} permanece indispensável, pois permite que especialistas revisem, ajustem e validem os cenários gerados, garantindo sua aderência ao comportamento esperado do sistema \cite{Pysmennyi2025}. Em contexto educacional, \citeonline{Brockenbrough2025} observaram que estudantes que utilizaram um LLM com instruções guiadas obtiveram um aumento estatisticamente significativo na qualidade dos critérios de aceitação das histórias de usuário (88\%), mas tiveram desempenho inferior na definição de histórias com escopo adequado (redução de 24\%), o que indica que o uso de LLMs não garante, por si só, melhores especificações.
 
 \subsection{Quais são os principais desafios técnicos que os sistemas de Inteligência Artificial enfrentam ao interpretar especificações BDD para identificar elementos da interface gráfica?}
 
@@ -22,8 +23,7 @@ Além das dificuldades linguísticas, os sistemas de IA enfrentam barreiras rela
 
 Por fim, as limitações estruturais dos próprios modelos de IA introduzem desafios adicionais. A natureza de “caixa preta” dos LLMs dificulta a obtenção de explicações claras sobre suas decisões, tornando mais complexa a depuração e o projeto de casos de teste \cite{Pysmennyi2025}. O comportamento probabilístico desses modelos resulta em não determinismo e na ocorrência de "alucinações", isto é, respostas plausíveis porém incorretas, o que complica o processo de validação, já que nem sempre é evidente qual deveria ser o resultado esperado \cite{Freeman2025}. Modelos menores também enfrentam limitações de planejamento e raciocínio, podendo entrar em ciclos improdutivos ou ficar presos na execução repetitiva de subtarefas quando confrontados com problemas complexos que exigem raciocínio multietapas \cite{Pysmennyi2025}. Adicionalmente, agentes de IA tendem a evitar cenários de teste negativos ao tentar “corrigir” o fluxo de execução para alcançar um resultado positivo, o que pode mascarar falhas críticas e aumentar o risco de falsos negativos \cite{Pysmennyi2025}.
 
-\subsection{De que forma a padronização da nomenclatura e da estrutura dos cenários influencia a identificação de elementos da interface?}
-
+\subsection{De que forma a padronização da nomenclatura e da estrutura dos cenários influencia a identificação de elementos da interface?} 
 
 A estrutura “Dado-Quando-Então”, típica do \textit{Gherkin}, organiza a escrita dos cenários e deixa explícito o que deve acontecer em cada etapa, ajudando na definição dos CAs \cite{Alinezhadtilaki2025, Babikian2025}. Essa clareza faz com que todos os envolvidos no projeto entendam o comportamento esperado do sistema, diminuindo as chances de erro e falhas de comunicação \cite{Alinezhadtilaki2025}.
 
@@ -31,7 +31,7 @@ Essa estrutura também facilita diretamente a automação e a identificação do
 
 Além disso, a padronização e o uso de uma linguagem voltada ao usuário, como acontece no BDD e no Desenvolvimento Orientado por Testes de Aceitação (ATDD), ajudam as plataformas de automação a separar a lógica do teste da dificuldade de identificar elementos técnicos da interface \cite{Penagos2024}. Quando os cenários estão bem estruturados, ferramentas baseadas em IA conseguem extrair com mais precisão o comportamento descrito, identificar padrões e gerar código alinhado ao que o negócio realmente precisa \cite{Zhang2025}. Isso torna mais fácil transformar instruções em linguagem natural, mesmo com variações na escrita, em ações concretas sobre os elementos do sistema, sugerindo funções, parâmetros e interações coerentes com o que foi especificado \cite{Paduraru2025}.
 
-A padronização dos cenários em BDD/\textit{Gherkin} fornece uma descrição mais precisa do comportamento esperado do sistema. Ao especificar o estado inicial (“Dado”), a ação executada (“Quando”) e o resultado esperado (“Então”), essa estrutura facilita a identificação dos elementos da interface envolvidos, como um simples botão de soma e um campo de resultado, além dos seus respectivos identificadores técnicos, quando possível, como o \textbf{data-test-id}, necessários à implementação dos testes automatizados \cite{Ferreira2025}.
+A padronização dos cenários em BDD/\textit{Gherkin} fornece uma descrição mais precisa do comportamento esperado do sistema. Ao especificar o estado inicial (“Dado”), a ação executada (“Quando”) e o resultado esperado (“Então”), essa estrutura facilita a identificação dos elementos da interface envolvidos, como um simples botão de soma e um campo de resultado, além dos seus respectivos identificadores técnicos, quando possível, como o \textbf{data-test-id}, necessários à implementação dos testes automatizados \cite{Ferreira2025}. \citeonline{Chemnitz2023}, em uma proposta ainda sem prova de conceito, teorizam que especificações de teste de maior qualidade levam a código gerado de maior qualidade, e sugerem investigar se utilizar apenas a parte em linguagem natural dos testes BDD produz melhores resultados do que utilizá-los por inteiro.
 
 \subsection{Quais ferramentas atuais já tentam automatizar a geração de testes a partir de especificações BDD e como lidam com ambiguidades?}
 \label{sec:rsl-ferramentas}
@@ -59,15 +59,17 @@ LLMs baseados em transformadores, como BERT, reduzem subjetividades ao avaliar c
 
 Além desses modelos semânticos, técnicas clássicas de SRL também contribuem para a redução de ambiguidades ao identificar automaticamente os papéis desempenhados por cada termo da frase como agente, alvo e ação. Isso permite transformar descrições informais em estruturas mais claras e consistentes, facilitando que sistemas de IA interpretem corretamente “quem faz o quê”, independentemente da ordem ou variação sintática das sentenças \cite{Wang2022}.
 
-Outra técnica relevante é a detecção de similaridade semântica, empregada para lidar com variações linguísticas comuns. Expressões diferentes, mas semanticamente equivalentes, são reconhecidas como tendo o mesmo significado. Para isso, utilizam-se recursos como redes lexicais e bases de relações semânticas entre verbos e substantivos, que agrupam termos semelhantes e auxiliam na interpretação consistente das instruções presentes nos cenários \cite{Wang2022}. Esse mecanismo reduz confusões geradas por sinonímias ou escolhas lexicais variadas, aumentando a precisão da interpretação automatizada.
+Outra técnica relevante é a detecção de similaridade semântica, empregada para lidar com variações linguísticas comuns. Expressões diferentes, mas semanticamente equivalentes, são reconhecidas como tendo o mesmo significado. Para isso, utilizam-se recursos como \textit{VerbNet}\footnote{VerbNet disponível em: \url{https://verbnetparser.com/}} e \textit{WordNet}\footnote{WordNet disponível em: \url{https://wordnet.princeton.edu/citing-wordnet}}, redes lexicais e bases de relações semânticas entre verbos e substantivos que agrupam termos semelhantes e auxiliam na interpretação consistente das instruções presentes nos cenários \cite{Wang2022}. Esse mecanismo reduz confusões geradas por sinonímias ou escolhas lexicais variadas, aumentando a precisão da interpretação automatizada. Combinada à rotulação de papéis semânticos, essa detecção permite traduzir pré e pós-condições em restrições formais expressas na Linguagem de Restrições de Objetos (OCL), o que viabiliza a geração automática de dados de teste \cite{Wang2022}.
 
-Em etapas de preparação dos artefatos, técnicas como tokenização e reconhecimento de entidades nomeadas (NER) são utilizadas para padronizar textos escritos em \textit{Gherkin} antes da análise automatizada. Já a etiquetagem de classes gramaticais (POS) permite identificar categorias gramaticais relevantes para a análise de requisitos \cite{Wang2022,Gudaparthi2023}.
+Em etapas de preparação dos artefatos, técnicas como tokenização e reconhecimento de entidades nomeadas (NER) são utilizadas para padronizar textos escritos em \textit{Gherkin} antes da análise automatizada \cite{Wang2022}. Já a etiquetagem de classes gramaticais permite identificar categorias gramaticais relevantes para a análise de rastreabilidade \cite{Gudaparthi2023}, e representações vetoriais de palavras, como \textit{Word2Vec}\footnote{Word2Vec disponível em: \url{https://www.tensorflow.org/text/tutorials/word2vec}}, possibilitam calcular a similaridade de cosseno para inferir relações entre narrativas de requisitos e trechos de código-fonte \cite{Rotaru2023}.
 
 \subsection{Como a complexidade do projeto da interface gráfica do usuário englobando a quantidade de elementos, a densidade visual e a inconsistência de layout impacta a precisão e a cobertura de um LLM ao identificar elementos para gerar testes automatizados baseados BDD?} 
 
 A representação do estado da interface pelo agente baseia-se na combinação de extração do Modelo de Objeto de Documento (DOM), a estrutura hierárquica que organiza e descreve todos os elementos presentes em uma página web juntamente com reconhecimento visual e processamento textual. Essa integração reforça que aplicações web dinâmicas apresentam desafios significativos para agentes autônomos de teste \cite{Mughal2025}.
 
 Interfaces dinâmicas, especialmente em aplicações web, sofrem atualizações frequentes que tornam \textit{XPaths} caminhos estruturais que indicam a posição de um elemento no DOM e seletores CSS identificadores utilizados por ferramentas de automação para localizar elementos na interface instáveis. Pequenas alterações na estrutura ou no layout podem invalidar esses apontamentos, elevando o risco de erros de identificação e prejudicando a execução de testes automatizados \cite{Pysmennyi2025}.
+
+Como alternativa à identificação de elementos pelo DOM, \citeonline{Ragel2023} integram IA visual (\textit{Applitools}) a um \textit{framework} BDD, no qual a validação é feita pela comparação de capturas de tela com uma imagem de referência, dispensando a identificação manual de elementos HTML. Em uma avaliação com 15 profissionais de teste, os autores relatam diferença estatisticamente significativa na fase de criação dos testes e diferença não significativa na fase de execução.
 
 Apesar dessas limitações técnicas relacionadas à interface, a precisão e a cobertura dos testes gerados também dependem fortemente da clareza e completude das especificações escritas em BDD. Em particular, os CAs são determinantes para orientar a construção dos cenários: se a HU não explicita claramente o comportamento esperado, as etapas Dado–Quando–Então tornam-se ambíguas e insuficientes, comprometendo tanto a interpretação humana quanto a automática. Assim, testes gerados por IA são influenciados principalmente pela qualidade das HUss e dos cenários \textit{Gherkin} especialmente pelos CAs mais do que por caracteristicas estruturais da interface \cite{Ferreira2025}. Quando os cenários carecem de contexto ou não descrevem de forma explícita as condições e resultados esperados, a IA tende a associar ações a elementos incorretos na tela, resultando em erros de execução e perda de cobertura \cite{Ferreira2025}.
 
@@ -91,6 +93,8 @@ LLMs como GPT-3.5 e GPT-4 apresentam melhor desempenho quando são empregadas t�
 
 Em abordagens como a UMTG, que geram casos de teste executáveis a partir de especificações de caso de uso, o emprego de um formato estruturado de RUCM, com palavras-chave e regras de restrição, contribuiu para reduzir ambiguidades e permitiu a análise e extração automatizada de informações comportamentais. Isso garantiu à IA informações suficientes para o processo de automação \cite{Wang2022}.
 
+\citeonline{Lee2023} propõem uma especificação executável de módulos em linguagem humana, na qual o comportamento é descrito por sentenças curtas e simples, organizadas em uma estrutura de Condição, Ação e Resultado (CAR), semelhante ao Dado-Quando-Então do BDD, porém orientada a objetos. Segundo os autores, como cada sentença é curta e simples, é mais fácil para a IA generativa traduzi-la corretamente em código, e erros causados por sentenças ambíguas podem ser identificados e corrigidos com facilidade.
+
 Além disso, o uso da linguagem \textit{Gherkin} para descrever HUs, incluindo CAs bem definidos, funciona como uma ponte para manter a consistência semântica entre os requisitos e o código gerado pelo agente de IA \cite{Zhang2025}.
 
 % \todo[inline, color=pink]{Qual(is) artigos apontam isso?} Optamos por retirar, considerando que foi uma interpretação nossa mas isso não cabe nessa seção, na nossa visão.
@@ -110,6 +114,7 @@ Mesmo com LLMs, os testes gerados ainda requerem intervenção humana para garan
 A utilização de IA generativa também pode gerar preocupações relacionadas à segurança dos dados, especialmente quando os cenários envolvem sistemas críticos \cite{Ferreira2025}. Além disso, integrar essas soluções às pipelines de Integração e Entrega Contínuas (CI/CD) pode demandar customizações específicas, dependendo das características de cada pipeline \cite{Ferreira2025}.
 
 \subsection{Quais métricas têm sido utilizadas na literatura para avaliar testes automatizados gerados por Inteligência Artificial a partir de especificações BDD?}
+\label{qp:10}
 
 Os estudos analisados nesta revisão empregam métricas, em sua maioria quantitativas, que podem ser agrupadas em três dimensões: completude e cobertura dos artefatos gerados, qualidade técnica e eficiência (esforço de correção, tempo e custo).
 
@@ -124,6 +129,60 @@ Dentre as métricas identificadas, este trabalho adota as de completude e de err
 \section{Síntese da Literatura e Concepção da Solução}
 \label{sec:sintese-literatura}
 
+Para sintetizar de forma quantitativa a contribuição da literatura, a Tabela~\ref{tab:estudos-qp} relaciona cada um dos 22 estudos da Tabela~\ref{tab:artigos-selecionados} às questões de pesquisa secundárias (QP2 a QP10) para as quais ele foi utilizado como evidência em \ref{qp:2} a \ref{qp:10}. A QP1 corresponde à questão principal deste trabalho e, por isso, não integra a matriz. Considerou-se que um estudo sustenta uma questão quando é citado como evidência na seção de resultados correspondente.
+
+\begin{table}[H]
+\caption{Estudos selecionados e questões de pesquisa secundárias sustentadas por cada um}
+\label{tab:estudos-qp}
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{c p{4.7cm} *{9}{c} c}
+\hline
+\textbf{Nº} & \textbf{Estudo} & \textbf{QP2} & \textbf{QP3} & \textbf{QP4} & \textbf{QP5} & \textbf{QP6} & \textbf{QP7} & \textbf{QP8} & \textbf{QP9} & \textbf{QP10} & \textbf{Total} \\
+ & & 3.4.1 & 3.4.2 & 3.4.3 & 3.4.4 & 3.4.5 & 3.4.6 & 3.4.7 & 3.4.8 & 3.4.9 & \\
+\hline
+1 & \citeonline{Mastain2024} &  & $\bullet$ &  &  &  &  &  &  &  & 1 \\
+2 & \citeonline{Pysmennyi2025} & $\bullet$ & $\bullet$ &  &  &  & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & 6 \\
+3 & \citeonline{Leotta2024} &  &  &  &  &  &  &  &  & $\bullet$ & 1 \\
+4 & \citeonline{Ferreira2025} &  &  & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & 7 \\
+5 & \citeonline{Paduraru2025} & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ &  &  & $\bullet$ &  & 6 \\
+6 & \citeonline{Penagos2024} &  &  & $\bullet$ &  &  &  &  &  &  & 1 \\
+7 & \citeonline{Mughal2025} &  & $\bullet$ &  &  &  & $\bullet$ &  &  &  & 2 \\
+8 & \citeonline{Alinezhadtilaki2025} & $\bullet$ &  & $\bullet$ &  & $\bullet$ &  & $\bullet$ &  &  & 4 \\
+9 & \citeonline{Wang2022} & $\bullet$ & $\bullet$ &  &  & $\bullet$ &  & $\bullet$ &  &  & 4 \\
+10 & \citeonline{Karpurapu2024} & $\bullet$ &  &  &  &  &  & $\bullet$ &  & $\bullet$ & 3 \\
+11 & \citeonline{Nettur2025} &  &  &  & $\bullet$ &  &  & $\bullet$ &  & $\bullet$ & 3 \\
+12 & \citeonline{Zhang2025} &  & $\bullet$ & $\bullet$ &  & $\bullet$ &  & $\bullet$ &  & $\bullet$ & 5 \\
+13 & \citeonline{Brockenbrough2025} & $\bullet$ &  &  &  &  &  &  &  &  & 1 \\
+14 & \citeonline{Babikian2025} &  &  & $\bullet$ &  &  &  &  & $\bullet$ &  & 2 \\
+15 & \citeonline{GUPTA2023102141} & $\bullet$ &  &  &  &  &  &  &  &  & 1 \\
+16 & \citeonline{Lee2023} &  &  &  &  &  &  & $\bullet$ &  &  & 1 \\
+17 & \citeonline{Gudaparthi2023} &  &  &  &  & $\bullet$ &  &  &  &  & 1 \\
+18 & \citeonline{Paduraru2022} &  & $\bullet$ &  &  &  &  &  &  &  & 1 \\
+19 & \citeonline{Rotaru2023} &  &  &  &  & $\bullet$ &  &  &  &  & 1 \\
+20 & \citeonline{Freeman2025} &  & $\bullet$ &  &  &  &  &  & $\bullet$ &  & 2 \\
+21 & \citeonline{Chemnitz2023} &  &  & $\bullet$ &  &  &  &  &  &  & 1 \\
+22 & \citeonline{Ragel2023} &  &  &  &  &  & $\bullet$ &  &  &  & 1 \\
+\hline
+ & \textbf{Estudos por questão} & \textbf{7} & \textbf{8} & \textbf{7} & \textbf{3} & \textbf{7} & \textbf{4} & \textbf{8} & \textbf{5} & \textbf{6} & \textbf{55} \\
+\hline
+\end{tabular}
+\caption*{Fonte: Autores (2026).}
+\end{table}
+
+Todos os 22 estudos selecionados sustentam ao menos uma questão secundária, totalizando 55 relações entre estudos e questões. Como mostra a Figura~\ref{fig:estudos-por-qp}, as questões mais cobertas são a QP3 (desafios técnicos da IA) e a QP8 (estilos de escrita), com 8 estudos cada, seguidas pela QP2 (boas práticas de BDD), pela QP4 (padronização de cenários) e pela QP6 (modelos semânticos), com 7 estudos cada. Em contrapartida, a QP5 (ferramentas de automação) e a QP7 (complexidade da interface gráfica) contam com apenas 3 e 4 estudos, respectivamente. Destaca-se que a QP7, relacionada à identificação de elementos de interface, está entre as menos cobertas pela literatura selecionada.
+
+\begin{figure}[H]
+    \caption{Número de estudos por questão de pesquisa secundária}
+    \label{fig:estudos-por-qp}
+    \centering
+    \includegraphics[width=0.9\linewidth]{figuras/estudos_por_qp.png}
+    \caption*{Fonte: Autores (2026).}
+\end{figure}
+
+Quanto aos estudos, a Tabela~\ref{tab:estudos-qp} mostra que \citeonline{Ferreira2025} é o de maior abrangência, sustentando 7 das 9 questões, seguido por \citeonline{Pysmennyi2025} e \citeonline{Paduraru2025}, com 6 cada.
+
 A análise dos estudos selecionados ao longo da revisão estruturada da literatura evidenciou que, embora existam diversas abordagens voltadas à automação de testes baseadas em BDD e no uso de técnicas de IA, tais soluções tendem a tratar o problema de forma parcial. Em geral, os trabalhos concentram-se em etapas específicas do processo, como a geração de cenários, a conversão de especificações em código de teste ou a validação de resultados, sem contemplar, de maneira integrada, todo o fluxo necessário para a automação completa dos testes.
 
 Porém, o estudo \citeonline{Nettur2025} apresenta uma solução baseada em uma extensão para o \textit{Visual Studio Code} que utiliza um modelo de IA, como o GPT-4o, para gerar código de teste automatizado em \textit{Cypress} a partir de cenários escritos em BDD. Essa solução se aproxima muito do que está sendo investigado neste trabalho, mas a nossa questão de pesquisa parte localiza-se no eixo sobre \textit{como as especificações BDD devem ser escritas e detalhadas para que sistemas baseados em IA consigam identificar os elementos de interface gráfica necessários para criar testes de sistema automatizados.} Com a solução apresentada por \citeonline{Nettur2025}, não é possível avaliar a influência da escrita e do detalhamento dos cenários BDD na capacidade de identificação dos elementos de interface gráfica, pois a solução se concentra na geração de código a partir de cenários, mas esses cenários são escritos de forma que não identificam elementos de interface gráfica. Ou seja, o código de teste gerado ao final não tem a intenção de interagir com elementos de uma interface gráfica real, mas sim de gerar código de teste a partir de cenários escritos em BDD. Assim, embora seja uma solução interessante e relevante para o tema, ela ainda não se adequa completamente para responder à questão de pesquisa proposta neste trabalho.
@@ -131,10 +190,6 @@ Porém, o estudo \citeonline{Nettur2025} apresenta uma solução baseada em uma 
 Outro agravante é que o estudo \citeonline{Nettur2025} não apresenta um estudo de caso real, ou seja, não há uma aplicação prática da solução em um projeto de software real. A ausência de um estudo de caso real é uma lacuna importante na literatura, pois impede a análise da questão de pesquisa proposta.
 
 Contudo, a solução apresentada por \citeonline{Nettur2025} constitui uma base importante para a investigação proposta neste trabalho, pois demonstra que é possível gerar código de teste automatizado a partir de cenários escritos em BDD com o uso de IA. Por se tratar de uma solução de código aberto e passível de adaptação, será possível aplicá-la ao caso investigado nesta pesquisa, com as modificações necessárias para adequá-la aos objetivos do estudo.
-
-
-
-\todo[inline, color=pink]{Ficou muito boa essa argumentação. Contudo, faltou a sintese quantitativa de quantos e quais estudos respondem as questoes de pesquisa secundárias. Sugiro que vocês utilizem tabelas e gráficos relacionando de forma quantitativa os estudos e as questões de pesquisa secundárias que eles respondem.}
 
 
 
